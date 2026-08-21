@@ -1,416 +1,193 @@
 export function calculateGoldenEggScore(candidate) {
   const breakdown = [];
-
-  let rawScore = 0;
+  let score = 0;
 
   function add(factor, points, reason) {
-    breakdown.push({
-      factor,
-      points,
-      reason
-    });
-
-    rawScore += points;
+    breakdown.push({ factor, points, reason });
+    score += points;
   }
 
   const creator = candidate.creatorIntel;
   const metadata = candidate.metadataIntel;
   const market = candidate.marketIntel;
   const risk = candidate.riskIntel;
+  const alpha = candidate.alphaIntel;
+  const wallet = candidate.walletIntel;
+  const social = candidate.socialIntel;
 
-  /*
-   * =========================================================
-   * 1. CREATOR QUALITY — 25 POINTS
-   * =========================================================
-   */
+  /* ==========================================================
+   * 1. CREATOR INTELLIGENCE (25)
+   * ========================================================== */
 
   if (creator?.status === "IDENTIFIED") {
-    add(
-      "CREATOR_IDENTIFIED",
-      5,
-      "Creator address has been identified."
-    );
+    add("CREATOR_IDENTIFIED", 5, "Creator identified.");
   }
 
-  if (
-    creator?.identity?.username ||
-    creator?.identity?.ensName
-  ) {
-    add(
-      "CREATOR_PUBLIC_IDENTITY",
-      5,
-      "Creator has a public OpenSea username or ENS identity."
-    );
+  if (creator?.identity?.username || creator?.identity?.ensName) {
+    add("PUBLIC_CREATOR_IDENTITY", 5, "Creator has OpenSea username or ENS.");
   }
 
-  if (
-    creator?.attribution?.source === "CONTRACT_OWNER"
-  ) {
-    add(
-      "CREATOR_CONTRACT_ATTRIBUTION",
-      3,
-      "Creator attribution is linked to contract ownership."
-    );
+  const history = creator?.historicalCollections;
+
+  if ((history?.totalVolume ?? 0) >= 1000) {
+    add("CREATOR_VOLUME_HISTORY", 5, "Historical creator volume exceeds 1,000 ETH.");
   }
 
-  const historical =
-    creator?.historicalCollections;
-
-  if (
-    historical?.collectionCount > 0
-  ) {
-    add(
-      "CREATOR_PORTFOLIO",
-      4,
-      "Creator has historical collection activity."
-    );
+  if ((history?.totalSales ?? 0) >= 5000) {
+    add("CREATOR_SALES_HISTORY", 5, "Historical creator sales exceed 5,000.");
   }
 
-  if (
-    historical?.successfulCollections > 0
-  ) {
-    add(
-      "CREATOR_SUCCESS_HISTORY",
-      3,
-      `Creator has ${historical.successfulCollections} successful historical collections in the analyzed sample.`
-    );
+  if ((history?.highFloorCollections ?? 0) >= 1) {
+    add("BLUECHIP_CREATOR_HISTORY", 5, "Creator has historical collection with floor above 1 ETH.");
   }
 
-  if (
-    historical?.totalSales >= 10
-  ) {
-    add(
-      "CREATOR_ITEM_HISTORY",
-      3,
-      "Creator has meaningful historical sales activity."
-    );
+  /* ==========================================================
+   * 2. PROJECT QUALITY (20)
+   * ========================================================== */
+
+  if (candidate.identity?.chain === "robinhood") {
+    add("ROBINHOOD_CHAIN", 4, "Robinhood chain collection.");
   }
 
-  /*
-   * =========================================================
-   * 2. PROJECT QUALITY — 20 POINTS
-   * =========================================================
-   */
-
-  if (
-    candidate.identity?.name
-  ) {
-    add(
-      "COLLECTION_NAME",
-      2,
-      "Collection name is available."
-    );
+  if (candidate.identity?.contract) {
+    add("CONTRACT_PRESENT", 3, "Contract available.");
   }
 
-  if (
-    metadata?.collection?.description ||
-    candidate.description
-  ) {
-    add(
-      "PROJECT_DESCRIPTION",
-      3,
-      "Project description is available."
-    );
+  if (metadata?.collection?.description) {
+    add("DESCRIPTION_PRESENT", 4, "Collection description available.");
   }
 
-  if (
-    candidate.opensea?.url
-  ) {
-    add(
-      "OPENSEA_COLLECTION",
-      3,
-      "OpenSea collection page is available."
-    );
+  if (candidate.opensea?.url) {
+    add("OPENSEA_PAGE", 3, "OpenSea collection page available.");
   }
 
-  if (
-    metadata?.collection?.category ||
-    metadata?.category
-  ) {
-    add(
-      "PROJECT_CATEGORY",
-      2,
-      "Collection category is identified."
-    );
+  if (metadata?.collection?.category) {
+    add("CATEGORY_PRESENT", 2, "Project category available.");
   }
 
-  if (
-    metadata?.supply?.max ||
-    metadata?.supply?.total
-  ) {
-    add(
-      "MAX_SUPPLY_KNOWN",
-      3,
-      "Maximum collection supply is known."
-    );
+  if (metadata?.contract?.standard === "erc721") {
+    add("ERC721_STANDARD", 4, "ERC721 contract detected.");
   }
 
-  if (
-    metadata?.contract?.standard
-  ) {
-    add(
-      "KNOWN_CONTRACT_STANDARD",
-      2,
-      "Contract standard is identified."
-    );
+  /* ==========================================================
+   * 3. MINT ECONOMICS (15)
+   * ========================================================== */
+
+  if (candidate.mint?.type === "public_sale") {
+    add("PUBLIC_SALE", 8, "Public mint stage.");
+  } else if (candidate.mint?.type === "signed_presale") {
+    add("SIGNED_PRESALE", 6, "Signed presale stage.");
   }
 
-  if (
-    metadata?.mint?.type ||
-    candidate.mint?.type
-  ) {
-    add(
-      "MINT_METADATA_COMPLETE",
-      2,
-      "Mint stage metadata is available."
-    );
+  if (candidate.mint?.priceWei !== null) {
+    add("MINT_PRICE", 3, "Mint price known.");
   }
 
-  /*
-   * =========================================================
-   * 3. MINT ECONOMICS — 15 POINTS
-   * =========================================================
-   */
-
-  const mintType =
-    candidate.mint?.type;
-
-  if (
-    mintType === "public_sale"
-  ) {
-    add(
-      "PUBLIC_MINT",
-      8,
-      "Public mint stage detected."
-    );
-  } else if (
-    mintType === "signed_presale"
-  ) {
-    add(
-      "SIGNED_PRESALE",
-      8,
-      "Signed presale stage detected."
-    );
-  } else if (
-    mintType
-  ) {
-    add(
-      "MINT_STAGE_KNOWN",
-      5,
-      "Mint stage is known."
-    );
+  if (candidate.mint?.maxPerWallet) {
+    add("MINT_LIMIT", 2, "Mint limit known.");
   }
 
-  if (
-    candidate.mint?.priceWei !== null &&
-    candidate.mint?.priceWei !== undefined
-  ) {
-    add(
-      "MINT_PRICE_PRESENT",
-      3,
-      "Mint price information is available."
-    );
+  if (candidate.mint?.startTime) {
+    add("MINT_START_TIME", 2, "Mint start time known.");
   }
 
-  if (
-    candidate.mint?.maxPerWallet
-  ) {
-    add(
-      "MINT_LIMIT_PRESENT",
-      2,
-      "Maximum mint per wallet is known."
-    );
+  /* ==========================================================
+   * 4. SUPPLY & SCARCITY (10)
+   * ========================================================== */
+
+  const maxSupply = Number(metadata?.supply?.max ?? 0);
+
+  if (maxSupply > 0 && maxSupply <= 3333) {
+    add("SCARCE_SUPPLY", 6, "Supply ≤ 3,333.");
+  } else if (maxSupply <= 5555) {
+    add("MEDIUM_SUPPLY", 4, "Supply ≤ 5,555.");
+  } else if (maxSupply <= 10000) {
+    add("STANDARD_SUPPLY", 3, "Supply ≤ 10,000.");
   }
 
-  /*
-   * =========================================================
-   * 4. SUPPLY / SCARCITY — 10 POINTS
-   * =========================================================
-   */
-
-  const maxSupply =
-    Number(
-      metadata?.supply?.max ??
-      metadata?.supply?.total ??
-      0
-    );
-
-  if (
-    maxSupply > 0 &&
-    maxSupply <= 10000
-  ) {
-    add(
-      "SUPPLY_DISCIPLINE",
-      8,
-      "Maximum supply is 10,000 or lower."
-    );
-  } else if (
-    maxSupply > 0
-  ) {
-    add(
-      "SUPPLY_KNOWN",
-      3,
-      "Maximum supply is known."
-    );
+  if (metadata?.supply?.remaining !== undefined) {
+    add("SUPPLY_VISIBLE", 2, "Remaining supply visible.");
   }
 
-  if (
-    metadata?.contract?.standard
-  ) {
-    add(
-      "CONTRACT_STANDARD",
-      2,
-      "NFT contract standard is known."
-    );
+  if (metadata?.royalty?.length) {
+    add("ROYALTY_VISIBLE", 2, "Royalty configuration available.");
   }
 
-  /*
-   * =========================================================
-   * 5. TIMING — 10 POINTS
-   * =========================================================
-   */
+  /* ==========================================================
+   * 5. TIMING (10)
+   * ========================================================== */
 
-  if (
-    candidate.mint?.startTime
-  ) {
-    add(
-      "MINT_TIME_KNOWN",
-      4,
-      "Mint start time is known."
-    );
+  if (candidate.status?.nextStage) {
+    add("UPCOMING_STAGE", 4, "Upcoming mint stage detected.");
   }
 
-  if (
-    candidate.mint?.endTime
-  ) {
-    add(
-      "MINT_END_TIME_KNOWN",
-      2,
-      "Mint end time is known."
-    );
+  if (candidate.status?.isMinting === false) {
+    add("PRE_MINT_WINDOW", 2, "Collection has not started minting yet.");
   }
 
-  if (
-    candidate.mint?.type
-  ) {
-    add(
-      "STAGE_KNOWN",
-      2,
-      "Mint stage is known."
-    );
+  if (candidate.executionStatus === "EXECUTION_ELIGIBLE") {
+    add("EXECUTION_READY", 4, "Eligible for execution.");
   }
 
-  if (
-    candidate.status
-  ) {
-    add(
-      "DROP_STATUS_AVAILABLE",
-      2,
-      "Drop status information is available."
-    );
+  /* ==========================================================
+   * 6. MARKET INTELLIGENCE (10)
+   * ========================================================== */
+
+  if (market?.status === "FOUND") {
+    add("MARKET_FOUND", 3, "Market endpoint returned collection.");
   }
 
-  /*
-   * =========================================================
-   * 6. MARKET INTELLIGENCE — 10 POINTS
-   * =========================================================
-   */
-
-  if (
-    market?.status === "FOUND"
-  ) {
-    add(
-      "MARKET_DATA_FOUND",
-      3,
-      "OpenSea market data is available."
-    );
+  if (market?.verified) {
+    add("MARKET_VERIFIED", 2, "Market verified.");
   }
 
-  if (
-    market?.verified === true
-  ) {
-    add(
-      "MARKET_VERIFIED",
-      2,
-      "Market data has been verified."
-    );
+  if ((market?.stats?.volume ?? 0) > 0) {
+    add("MARKET_VOLUME", 3, "Historical market volume exists.");
   }
 
-  const marketStats =
-    market?.stats;
-
-  if (
-    Number(marketStats?.sales ?? 0) > 0
-  ) {
-    add(
-      "MARKET_SALES_HISTORY",
-      2,
-      "Collection has historical sales."
-    );
+  if ((market?.stats?.sales ?? 0) > 0) {
+    add("MARKET_SALES", 2, "Historical market sales exist.");
   }
 
-  if (
-    Number(marketStats?.volume ?? 0) > 0 ||
-    Number(marketStats?.floorPrice ?? 0) > 0
-  ) {
-    add(
-      "MARKET_ACTIVITY",
-      3,
-      "Collection has measurable market activity."
-    );
+  /* ==========================================================
+   * 7. ALPHA INTELLIGENCE (10)
+   * ========================================================== */
+
+  if (alpha?.classification === "HIGH_ALPHA") {
+    add("HIGH_ALPHA", 4, "High alpha signal.");
+  } else if (alpha?.classification === "MEDIUM_ALPHA") {
+    add("MEDIUM_ALPHA", 2, "Medium alpha signal.");
   }
 
-  /*
-   * =========================================================
-   * 7. RISK ADJUSTMENT — 10 POINTS
-   * =========================================================
-   *
-   * Risk is converted into positive score contribution.
-   *
-   * 0 risk       = +10
-   * 1–10 risk    = +8
-   * 11–20 risk   = +5
-   * 21–30 risk   = +2
-   * >30 risk     = 0
-   */
-
-  const riskScore =
-    Number(risk?.score ?? 0);
-
-  const maxRisk =
-    Number(risk?.maxRisk ?? 40);
-
-  let riskPoints = 0;
-
-  if (riskScore === 0) {
-    riskPoints = 10;
-  } else if (riskScore <= 10) {
-    riskPoints = 8;
-  } else if (riskScore <= 20) {
-    riskPoints = 5;
-  } else if (riskScore <= 30) {
-    riskPoints = 2;
+  if (wallet?.classification === "SMART_CREATOR") {
+    add("SMART_CREATOR", 3, "Smart creator wallet.");
+  } else if (wallet?.classification === "ESTABLISHED_CREATOR") {
+    add("ESTABLISHED_CREATOR", 2, "Established creator wallet.");
   }
 
-  if (riskPoints > 0) {
-    add(
-      "RISK_ADJUSTED",
-      riskPoints,
-      `Risk score ${riskScore}/${maxRisk}.`
-    );
+  if (social?.classification === "HIGH_SOCIAL") {
+    add("HIGH_SOCIAL", 2, "Strong social presence.");
+  } else if (social?.classification === "MEDIUM_SOCIAL") {
+    add("MEDIUM_SOCIAL", 1, "Medium social presence.");
   }
 
-  /*
-   * =========================================================
+  /* ==========================================================
+   * RISK BONUS (max +5)
+   * ========================================================== */
+
+  if (risk?.score === 0) {
+    add("MINIMAL_RISK", 5, "Risk score 0/40.");
+  } else if (risk?.score <= 10) {
+    add("LOW_RISK", 3, "Risk score ≤10.");
+  } else if (risk?.score <= 20) {
+    add("MEDIUM_RISK", 1, "Risk score ≤20.");
+  }
+
+  /* ==========================================================
    * FINAL SCORE
-   * =========================================================
-   */
+   * ========================================================== */
 
-  const score =
-    Math.min(
-      Math.max(rawScore, 0),
-      100
-    );
+  score = Math.min(score, 100);
 
   let classification = "IGNORE";
 
@@ -420,6 +197,8 @@ export function calculateGoldenEggScore(candidate) {
     classification = "ALPHA_CANDIDATE";
   } else if (score >= 80) {
     classification = "WATCHLIST";
+  } else if (score >= 70) {
+    classification = "MONITOR";
   }
 
   return {
