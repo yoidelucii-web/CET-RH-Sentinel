@@ -19,6 +19,7 @@
 
   "sources": {
     "openSeaFirst": true,
-    "robinhoodChain": true
+    "robinhoodChain": true,
+    "openSeaDrops": true
   }
 }
