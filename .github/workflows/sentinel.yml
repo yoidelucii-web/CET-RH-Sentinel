@@ -1,1 +1,241 @@
+name: CET RH Sentinel
 
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run CET RH Sentinel
+        env:
+          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+        run: npm run scan
+
+      - name: Display Sentinel Result
+        run: |
+          echo "======================================"
+          echo "      CET RH SENTINEL"
+          echo "======================================"
+
+          node -e '
+            const fs = require("fs");
+
+            const report = JSON.parse(
+              fs.readFileSync(
+                "output/sentinel_report.json",
+                "utf8"
+              )
+            );
+
+            const s = report.summary || {};
+
+            console.log("Scan Time          :", report.scanTime);
+            console.log("Network            :", report.network);
+            console.log("Total Drops        :", s.totalDrops);
+            console.log("Execution Eligible :", s.executionEligible);
+            console.log("Auto Mint Eligible :", s.autoMintEligible);
+            console.log("Alpha Candidates   :", s.alphaCandidates);
+            console.log("Watchlist          :", s.watchlist);
+            console.log("Ignore             :", s.ignore);
+            console.log("Average Score      :", s.averageScore);
+            console.log(
+              "Top Candidate      :",
+              s.topCandidate?.name || "None"
+            );
+
+            console.log("");
+            console.log("============= TOP FIVE =============");
+
+            for (const item of s.topFive || []) {
+              console.log(
+                `#${item.rank} [${item.tier}] ${item.name}`
+              );
+              console.log(
+                `   Score      : ${item.score}/100`
+              );
+              console.log(
+                `   Class      : ${item.classification}`
+              );
+              console.log(
+                `   Stage      : ${item.stage}`
+              );
+              console.log(
+                `   Execution  : ${item.executionStatus}`
+              );
+            }
+
+            console.log("======================================");
+          '
+
+      - name: Telegram Alert
+        if: success()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          node <<'NODE'
+          const fs = require("fs");
+          const https = require("https");
+
+          const report = JSON.parse(
+            fs.readFileSync(
+              "output/sentinel_report.json",
+              "utf8"
+            )
+          );
+
+          const summary = report.summary || {};
+          const topFive = summary.topFive || [];
+
+          const important = topFive.filter((item) => {
+            return (
+              Number(item.score || 0) >= 90 ||
+              item.classification === "AUTO_MINT_ELIGIBLE" ||
+              item.classification === "ALPHA_CANDIDATE"
+            );
+          });
+
+          if (important.length === 0) {
+            console.log(
+              "No important candidate. Telegram skipped."
+            );
+            process.exit(0);
+          }
+
+          const lines = [];
+
+          lines.push("🚨 CET RH SENTINEL ALERT");
+          lines.push("");
+          lines.push(
+            `Network: ${report.network || "robinhood"}`
+          );
+          lines.push(
+            `Scan: ${report.scanTime || "unknown"}`
+          );
+          lines.push("");
+
+          for (const item of important) {
+            lines.push(`🔥 ${item.name}`);
+            lines.push(`Score: ${item.score}/100`);
+            lines.push(`Tier: ${item.tier}`);
+            lines.push(`Class: ${item.classification}`);
+            lines.push(`Stage: ${item.stage}`);
+            lines.push(
+              `Execution: ${item.executionStatus}`
+            );
+            lines.push("");
+          }
+
+          lines.push(
+            `Top Candidate: ${
+              summary.topCandidate?.name || "None"
+            }`
+          );
+
+          lines.push(
+            `Average Score: ${
+              summary.averageScore ?? "N/A"
+            }`
+          );
+
+          const token =
+            process.env.TELEGRAM_BOT_TOKEN;
+
+          const chatId =
+            process.env.TELEGRAM_CHAT_ID;
+
+          if (!token || !chatId) {
+            console.log(
+              "Telegram secrets not configured."
+            );
+            process.exit(0);
+          }
+
+          const data = new URLSearchParams({
+            chat_id: chatId,
+            text: lines.join("\n"),
+            disable_web_page_preview: "true"
+          }).toString();
+
+          const request = https.request(
+            {
+              hostname: "api.telegram.org",
+              path: `/bot${token}/sendMessage`,
+              method: "POST",
+              headers: {
+                "Content-Type":
+                  "application/x-www-form-urlencoded",
+                "Content-Length":
+                  Buffer.byteLength(data)
+              }
+            },
+            (response) => {
+              let body = "";
+
+              response.on("data", (chunk) => {
+                body += chunk;
+              });
+
+              response.on("end", () => {
+                if (
+                  response.statusCode < 200 ||
+                  response.statusCode >= 300
+                ) {
+                  console.error(
+                    "Telegram API error:",
+                    body
+                  );
+                  process.exit(1);
+                }
+
+                console.log(
+                  "Telegram notification sent."
+                );
+              });
+            }
+          );
+
+          request.on("error", (error) => {
+            console.error(
+              "Telegram request failed:",
+              error.message
+            );
+            process.exit(1);
+          });
+
+          request.write(data);
+          request.end();
+          NODE
+
+      - name: Save Sentinel Report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add output/sentinel_report.json
+
+          if git diff --cached --quiet; then
+            echo "No report changes."
+          else
+            git commit -m "chore: update sentinel report"
+            git push
+          fi
