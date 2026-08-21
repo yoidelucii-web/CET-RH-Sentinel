@@ -14,9 +14,6 @@ if (!apiKey) {
 
 const drops = await getUpcomingDrops(apiKey);
 
-console.log("RAW DROP SAMPLE:");
-console.log(JSON.stringify(drops.drops?.[0], null, 2));
-
 const candidates = drops.drops.map((drop) => {
   const candidate = normalizeDrop(drop);
   const gates = evaluateHardGates(candidate);
