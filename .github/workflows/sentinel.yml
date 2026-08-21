@@ -23,7 +23,10 @@ jobs:
         run: node --check src/opensea.js
         
       - name: Check normalizer module
-        run: node --check src/normalizer.js  
+        run: node --check src/normalizer.js
+        
+      - name: Check gates module
+        run: node --check src/gates.js
         
       - name: Test OpenSea drops
         env:
