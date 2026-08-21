@@ -15,5 +15,10 @@
     "goldenThreshold": 95,
     "alphaThreshold": 90,
     "watchThreshold": 80
+  },
+
+  "sources": {
+    "openSeaFirst": true,
+    "robinhoodChain": true
   }
 }
