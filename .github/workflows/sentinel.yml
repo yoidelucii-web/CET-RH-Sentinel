@@ -22,6 +22,18 @@ jobs:
       - name: Check OpenSea module
         run: node --check src/opensea.js
         
+      - name: Test OpenSea drops
+        env:
+          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+        run: |
+          node --input-type=module <<'EOF'
+          import { getUpcomingDrops } from "./src/opensea.js";
+
+          const result = await getUpcomingDrops(process.env.OPENSEA_API_KEY);
+
+          console.log(JSON.stringify(result, null, 2));
+          EOF
+        
       - name: Test OpenSea API key
         env:
           OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
