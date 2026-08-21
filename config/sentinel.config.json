@@ -1,0 +1,19 @@
+{
+  "network": "robinhood",
+  "scanIntervalMinutes": 30,
+
+  "hardGates": {
+    "maxMintPriceETH": 0.015,
+    "minSupply": 500,
+    "maxSupply": 10000,
+    "maxMintAgeHours": 48,
+    "requireOpenSea": true,
+    "requireVerifiedContract": true
+  },
+
+  "goldenEgg": {
+    "goldenThreshold": 95,
+    "alphaThreshold": 90,
+    "watchThreshold": 80
+  }
+}
