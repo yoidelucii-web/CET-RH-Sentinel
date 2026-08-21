@@ -22,6 +22,9 @@ jobs:
       - name: Check OpenSea module
         run: node --check src/opensea.js
         
+      - name: Check normalizer module
+        run: node --check src/normalizer.js  
+        
       - name: Test OpenSea drops
         env:
           OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
