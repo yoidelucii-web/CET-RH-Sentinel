@@ -1,9 +1,0 @@
-{
-  "name": "cet-rh-sentinel",
-  "version": "0.1.0",
-  "description": "Robinhood NFT Alpha Scanner",
-  "type": "module",
-  "scripts": {
-    "scan": "node src/scanner.js"
-  }
-}
