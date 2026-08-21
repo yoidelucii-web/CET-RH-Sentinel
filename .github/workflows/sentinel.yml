@@ -30,6 +30,9 @@ jobs:
 
       - name: Check stage module
         run: node --check src/stage.js
+
+      - name: Check execution module
+        run: node --check src/execution.js
         
       - name: Test OpenSea drops
         env:
