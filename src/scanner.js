@@ -1,13 +1,20 @@
 import fs from "fs";
+
 import { getUpcomingDrops } from "./opensea.js";
 import { normalizeDrop } from "./normalizer.js";
 import { evaluateHardGates } from "./gates.js";
 import { classifyMintStage } from "./stage.js";
 import { getExecutionStatus } from "./execution.js";
+
 import { analyzeCreator } from "./creator.js";
 import { analyzeMetadata } from "./metadata.js";
 import { analyzeMarket } from "./market.js";
+
 import { calculateRisk } from "./risk.js";
+import { calculateAlpha } from "./alpha.js";
+import { analyzeWallet } from "./wallet.js";
+import { analyzeSocial } from "./social.js";
+
 import { calculateGoldenEggScore } from "./score.js";
 
 const apiKey = process.env.OPENSEA_API_KEY;
@@ -19,7 +26,7 @@ if (!apiKey) {
 const drops = await getUpcomingDrops(apiKey);
 
 if (!drops.drops || drops.drops.length === 0) {
-  throw new Error("No drops returned by OpenSea");
+  throw new Error("No drops returned by OpenSea.");
 }
 
 const candidates = [];
@@ -27,22 +34,23 @@ const candidates = [];
 for (const drop of drops.drops) {
   const candidate = normalizeDrop(drop);
 
-  const hardGates =
-    evaluateHardGates(candidate);
+  const hardGates = evaluateHardGates(candidate);
 
-  const stageClassification =
-    classifyMintStage(candidate.mint.type);
+  const stageClassification = classifyMintStage(candidate.mint.type);
 
-  const executionStatus =
-    getExecutionStatus(stageClassification);
+  const executionStatus = getExecutionStatus(stageClassification);
 
-  let creatorIntel;
-  let metadataIntel;
-  let marketIntel;
+  let creatorIntel = {};
+  let metadataIntel = {};
+  let marketIntel = {};
+  let riskIntel = {};
+  let alphaIntel = {};
+  let walletIntel = {};
+  let socialIntel = {};
+  let goldenEgg = {};
 
   try {
-    creatorIntel =
-      await analyzeCreator(candidate, apiKey);
+    creatorIntel = await analyzeCreator(candidate, apiKey);
   } catch (error) {
     creatorIntel = {
       status: "ERROR",
@@ -51,8 +59,7 @@ for (const drop of drops.drops) {
   }
 
   try {
-    metadataIntel =
-      await analyzeMetadata(candidate, apiKey);
+    metadataIntel = await analyzeMetadata(candidate, apiKey);
   } catch (error) {
     metadataIntel = {
       status: "ERROR",
@@ -60,12 +67,35 @@ for (const drop of drops.drops) {
     };
   }
 
+  const creatorCandidate = {
+    ...candidate,
+    creatorIntel,
+    metadataIntel
+  };
+
   try {
-    marketIntel =
-      await analyzeMarket(candidate, apiKey);
+    marketIntel = await analyzeMarket(creatorCandidate, apiKey);
   } catch (error) {
     marketIntel = {
       status: "ERROR",
+      errors: [error.message]
+    };
+  }
+
+  const riskCandidate = {
+    ...creatorCandidate,
+    marketIntel
+  };
+
+  try {
+    riskIntel = calculateRisk(riskCandidate);
+  } catch (error) {
+    riskIntel = {
+      level: "UNKNOWN",
+      score: 40,
+      maxRisk: 40,
+      penalties: [],
+      flags: [],
       errors: [error.message]
     };
   }
@@ -77,36 +107,55 @@ for (const drop of drops.drops) {
     executionStatus,
     creatorIntel,
     metadataIntel,
-    marketIntel
+    marketIntel,
+    riskIntel
   };
 
-  let riskIntel;
+  try {
+    alphaIntel = calculateAlpha(enrichedCandidate);
+  } catch (error) {
+    alphaIntel = {
+      score: 0,
+      maxScore: 10,
+      classification: "ERROR",
+      signals: [],
+      errors: [error.message]
+    };
+  }
 
   try {
-    riskIntel =
-      calculateRisk(enrichedCandidate);
+    walletIntel = analyzeWallet(enrichedCandidate);
   } catch (error) {
-    riskIntel = {
-      level: "UNKNOWN",
+    walletIntel = {
       score: 0,
-      maxRisk: 40,
-      penalties: [],
-      flags: [],
-      context: {},
+      maxScore: 10,
+      classification: "ERROR",
+      signals: [],
+      errors: [error.message]
+    };
+  }
+
+  try {
+    socialIntel = analyzeSocial(enrichedCandidate);
+  } catch (error) {
+    socialIntel = {
+      score: 0,
+      maxScore: 10,
+      classification: "ERROR",
+      signals: [],
       errors: [error.message]
     };
   }
 
   const finalCandidate = {
     ...enrichedCandidate,
-    riskIntel
+    alphaIntel,
+    walletIntel,
+    socialIntel
   };
 
-  let goldenEgg;
-
   try {
-    goldenEgg =
-      calculateGoldenEggScore(finalCandidate);
+    goldenEgg = calculateGoldenEggScore(finalCandidate);
   } catch (error) {
     goldenEgg = {
       score: 0,
@@ -123,36 +172,137 @@ for (const drop of drops.drops) {
   });
 }
 
-fs.mkdirSync("./output", {
-  recursive: true
-});
+/* ============================================================
+ * SORT BY SCORE
+ * ============================================================
+ */
+
+candidates.sort(
+  (a, b) => b.goldenEgg.score - a.goldenEgg.score
+);
+
+/* ============================================================
+ * SUMMARY
+ * ============================================================
+ */
+
+const summary = {
+  totalDrops: candidates.length,
+
+  autoMintEligible: candidates.filter(
+    (c) =>
+      c.goldenEgg.classification ===
+      "AUTO_MINT_ELIGIBLE"
+  ).length,
+
+  alphaCandidates: candidates.filter(
+    (c) =>
+      c.goldenEgg.classification ===
+      "ALPHA_CANDIDATE"
+  ).length,
+
+  watchlist: candidates.filter(
+    (c) =>
+      c.goldenEgg.classification ===
+      "WATCHLIST"
+  ).length,
+
+  ignore: candidates.filter(
+    (c) =>
+      c.goldenEgg.classification ===
+      "IGNORE"
+  ).length
+};
+
+/* ============================================================
+ * REPORT
+ * ============================================================
+ */
 
 const report = {
   scanner: "CET RH Sentinel",
-  version: "0.2.0",
+  version: "1.0.0",
   network: "robinhood",
   scanTime: new Date().toISOString(),
-  totalDrops: candidates.length,
+
+  summary,
+
   candidates
 };
+
+fs.mkdirSync("./output", {
+  recursive: true
+});
 
 fs.writeFileSync(
   "./output/sentinel_report.json",
   JSON.stringify(report, null, 2)
 );
 
+/* ============================================================
+ * CONSOLE OUTPUT
+ * ============================================================
+ */
+
+console.log("=====================================");
+console.log("CET RH Sentinel v1.0");
+console.log("=====================================");
+console.log(`Total Drops          : ${summary.totalDrops}`);
 console.log(
-  "CET RH Sentinel report generated."
+  `AUTO_MINT_ELIGIBLE  : ${summary.autoMintEligible}`
+);
+console.log(
+  `ALPHA_CANDIDATE     : ${summary.alphaCandidates}`
+);
+console.log(
+  `WATCHLIST           : ${summary.watchlist}`
+);
+console.log(
+  `IGNORE              : ${summary.ignore}`
 );
 
-console.log(
-  `Candidates: ${candidates.length}`
-);
+console.log("");
+console.log("===== TOP CANDIDATES =====");
 
-for (const candidate of candidates) {
+candidates.forEach((candidate, index) => {
   console.log(
-    `${candidate.identity.name} | ` +
-    `${candidate.goldenEgg.score}/100 | ` +
-    `${candidate.goldenEgg.classification}`
+    `${index + 1}. ${candidate.identity.name}`
   );
-}
+
+  console.log(
+    `   Score      : ${candidate.goldenEgg.score}/100`
+  );
+
+  console.log(
+    `   Class      : ${candidate.goldenEgg.classification}`
+  );
+
+  console.log(
+    `   Stage      : ${candidate.stageClassification}`
+  );
+
+  console.log(
+    `   Execution  : ${candidate.executionStatus}`
+  );
+
+  console.log(
+    `   Risk       : ${candidate.riskIntel.level} (${candidate.riskIntel.score}/${candidate.riskIntel.maxRisk})`
+  );
+
+  console.log(
+    `   Alpha      : ${candidate.alphaIntel.score}/${candidate.alphaIntel.maxScore}`
+  );
+
+  console.log(
+    `   Wallet     : ${candidate.walletIntel.classification} (${candidate.walletIntel.score}/10)`
+  );
+
+  console.log(
+    `   Social     : ${candidate.socialIntel.classification} (${candidate.socialIntel.score}/10)`
+  );
+
+  console.log("");
+});
+
+console.log("Sentinel report generated.");
+console.log("Saved to output/sentinel_report.json");
