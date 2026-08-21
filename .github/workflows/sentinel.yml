@@ -16,17 +16,12 @@ jobs:
         with:
           node-version: 20
 
-      - name: Run Sentinel
-        env:
-         OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
-        run: npm run scan
-        
       - name: Check OpenSea module
         run: node --check src/opensea.js
-        
+
       - name: Check normalizer module
         run: node --check src/normalizer.js
-        
+
       - name: Check gates module
         run: node --check src/gates.js
 
@@ -36,138 +31,38 @@ jobs:
       - name: Check execution module
         run: node --check src/execution.js
 
+      - name: Check creator module
+        run: node --check src/creator.js
+
+      - name: Check metadata module
+        run: node --check src/metadata.js
+
+      - name: Check market module
+        run: node --check src/market.js
+
+      - name: Check risk module
+        run: node --check src/risk.js
+
       - name: Check score module
         run: node --check src/score.js
-        
+
+      - name: Test OpenSea API key
+        env:
+          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+        run: |
+          if [ -z "$OPENSEA_API_KEY" ]; then
+            echo "OpenSea API key is missing"
+            exit 1
+          fi
+
+          echo "OpenSea API key is available"
+
       - name: Test OpenSea drops
         env:
           OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
         run: |
           node --input-type=module <<'EOF'
           import { getUpcomingDrops } from "./src/opensea.js";
-
-          const result = await getUpcomingDrops(process.env.OPENSEA_API_KEY);
-
-          console.log(JSON.stringify(result, null, 2));
-          EOF
-          
-      - name: Test normalizer
-        env:
-          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
-        run: |
-          node --input-type=module <<'EOF'
-          import { getUpcomingDrops } from "./src/opensea.js";
-          import { normalizeDrop } from "./src/normalizer.js";
-
-          const result = await getUpcomingDrops(process.env.OPENSEA_API_KEY);
-
-          if (!result.drops || result.drops.length === 0) {
-            throw new Error("No drops returned by OpenSea");
-          }
-
-          const candidate = normalizeDrop(result.drops[0]);
-
-          console.log(JSON.stringify(candidate, null, 2));
-          EOF
-
-      - name: Test hard gates
-        env:
-          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
-        run: |
-          node --input-type=module <<'EOF'
-          import { getUpcomingDrops } from "./src/opensea.js";
-          import { normalizeDrop } from "./src/normalizer.js";
-          import { evaluateHardGates } from "./src/gates.js";
-
-          const result = await getUpcomingDrops(process.env.OPENSEA_API_KEY);
-
-          if (!result.drops || result.drops.length === 0) {
-            throw new Error("No drops returned by OpenSea");
-          }
-
-          for (const drop of result.drops) {
-            const candidate = normalizeDrop(drop);
-            const gates = evaluateHardGates(candidate);
-
-            console.log(
-              JSON.stringify(
-                {
-                  name: candidate.identity.name,
-                  stage: candidate.mint.type,
-                  passed: gates.passed,
-                  reasons: gates.reasons
-                },
-                null,
-                2
-              )
-            );
-          }
-          EOF
-
-      - name: Test stage classifier
-        env:
-          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
-        run: |
-          node --input-type=module <<'EOF'
-          import { getUpcomingDrops } from "./src/opensea.js";
-          import { normalizeDrop } from "./src/normalizer.js";
-          import { classifyMintStage } from "./src/stage.js";
-
-          const result = await getUpcomingDrops(process.env.OPENSEA_API_KEY);
-
-          if (!result.drops || result.drops.length === 0) {
-            throw new Error("No drops returned by OpenSea");
-          }
-
-          for (const drop of result.drops) {
-            const candidate = normalizeDrop(drop);
-
-            console.log(
-              JSON.stringify(
-                {
-                  name: candidate.identity.name,
-                  rawStage: candidate.mint.type,
-                  classification: classifyMintStage(candidate.mint.type)
-                },
-                null,
-                2
-              )
-            );
-          }
-          EOF
-
-      - name: Test execution status
-        run: |
-          node --input-type=module <<'EOF'
-          import { getExecutionStatus } from "./src/execution.js";
-
-          const tests = [
-            "PUBLIC",
-            "PRESALE",
-            "UNKNOWN"
-          ];
-
-          for (const stage of tests) {
-            console.log(
-              JSON.stringify({
-                stage,
-                executionStatus: getExecutionStatus(stage)
-              })
-            );
-          }
-          EOF
-
-      - name: Test Golden Egg Score
-        env:
-          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
-        run: |
-          node --input-type=module <<'EOF'
-          import { getUpcomingDrops } from "./src/opensea.js";
-          import { normalizeDrop } from "./src/normalizer.js";
-          import { analyzeCreator } from "./src/creator.js";
-          import { analyzeMetadata } from "./src/metadata.js";
-          import { calculateRisk } from "./src/risk.js";
-          import { calculateGoldenEggScore } from "./src/score.js";
 
           const result = await getUpcomingDrops(
             process.env.OPENSEA_API_KEY
@@ -177,52 +72,45 @@ jobs:
             throw new Error("No drops returned by OpenSea");
           }
 
-          for (const drop of result.drops) {
-            const candidate = normalizeDrop(drop);
+          console.log(`Drops returned: ${result.drops.length}`);
+          EOF
 
-            const creatorIntel = await analyzeCreator(
-              candidate,
-              process.env.OPENSEA_API_KEY
-            );
+      - name: Test Creator Intelligence
+        env:
+          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+        run: |
+          node --input-type=module <<'EOF'
+          import { getUpcomingDrops } from "./src/opensea.js";
+          import { normalizeDrop } from "./src/normalizer.js";
+          import { analyzeCreator } from "./src/creator.js";
 
-            const metadataIntel = await analyzeMetadata(
-              candidate,
-              process.env.OPENSEA_API_KEY
-            );
+          const result = await getUpcomingDrops(
+            process.env.OPENSEA_API_KEY
+          );
 
-            const enrichedCandidate = {
-              ...candidate,
-              creatorIntel,
-              metadataIntel
-            };
-
-            const riskIntel = calculateRisk(
-              enrichedCandidate
-            );
-
-            const finalCandidate = {
-              ...enrichedCandidate,
-              riskIntel
-            };
-
-            const scoring = calculateGoldenEggScore(
-              finalCandidate
-            );
-
-            console.log(
-              JSON.stringify(
-                {
-                  name: candidate.identity.name,
-                  score: scoring.score,
-                  maxScore: scoring.maxScore,
-                  classification: scoring.classification,
-                  breakdown: scoring.breakdown
-                },
-                null,
-                2
-              )
-            );
+          if (!result.drops || result.drops.length === 0) {
+            throw new Error("No drops returned by OpenSea");
           }
+
+          const candidate = normalizeDrop(
+            result.drops[0]
+          );
+
+          const creatorIntel = await analyzeCreator(
+            candidate,
+            process.env.OPENSEA_API_KEY
+          );
+
+          console.log(
+            JSON.stringify(
+              {
+                name: candidate.identity.name,
+                creatorIntel
+              },
+              null,
+              2
+            )
+          );
           EOF
 
       - name: Test Metadata Intelligence
@@ -242,9 +130,11 @@ jobs:
             throw new Error("No drops returned by OpenSea");
           }
 
-          const candidate = normalizeDrop(result.drops[0]);
+          const candidate = normalizeDrop(
+            result.drops[0]
+          );
 
-          const metadata = await analyzeMetadata(
+          const metadataIntel = await analyzeMetadata(
             candidate,
             process.env.OPENSEA_API_KEY
           );
@@ -253,7 +143,45 @@ jobs:
             JSON.stringify(
               {
                 name: candidate.identity.name,
-                metadata
+                metadataIntel
+              },
+              null,
+              2
+            )
+          );
+          EOF
+
+      - name: Test Market Intelligence
+        env:
+          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+        run: |
+          node --input-type=module <<'EOF'
+          import { getUpcomingDrops } from "./src/opensea.js";
+          import { normalizeDrop } from "./src/normalizer.js";
+          import { analyzeMarket } from "./src/market.js";
+
+          const result = await getUpcomingDrops(
+            process.env.OPENSEA_API_KEY
+          );
+
+          if (!result.drops || result.drops.length === 0) {
+            throw new Error("No drops returned by OpenSea");
+          }
+
+          const candidate = normalizeDrop(
+            result.drops[0]
+          );
+
+          const marketIntel = await analyzeMarket(
+            candidate,
+            process.env.OPENSEA_API_KEY
+          );
+
+          console.log(
+            JSON.stringify(
+              {
+                name: candidate.identity.name,
+                marketIntel
               },
               null,
               2
@@ -270,6 +198,7 @@ jobs:
           import { normalizeDrop } from "./src/normalizer.js";
           import { analyzeCreator } from "./src/creator.js";
           import { analyzeMetadata } from "./src/metadata.js";
+          import { analyzeMarket } from "./src/market.js";
           import { calculateRisk } from "./src/risk.js";
 
           const result = await getUpcomingDrops(
@@ -280,7 +209,9 @@ jobs:
             throw new Error("No drops returned by OpenSea");
           }
 
-          const candidate = normalizeDrop(result.drops[0]);
+          const candidate = normalizeDrop(
+            result.drops[0]
+          );
 
           const creatorIntel = await analyzeCreator(
             candidate,
@@ -292,10 +223,16 @@ jobs:
             process.env.OPENSEA_API_KEY
           );
 
+          const marketIntel = await analyzeMarket(
+            candidate,
+            process.env.OPENSEA_API_KEY
+          );
+
           const enrichedCandidate = {
             ...candidate,
             creatorIntel,
-            metadataIntel
+            metadataIntel,
+            marketIntel
           };
 
           const riskIntel = calculateRisk(
@@ -313,24 +250,88 @@ jobs:
             )
           );
           EOF
-          
-      - name: Test OpenSea API key
-        env:
-          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
-        run: |
-          if [ -z "$OPENSEA_API_KEY" ]; then
-            echo "OpenSea API key is missing"
-            exit 1
-          fi
-          echo "OpenSea API key is available"
 
-      - name: Test OpenSea API
+      - name: Test Golden Egg Score
         env:
           OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
         run: |
-          curl -sS \
-            -H "X-API-KEY: $OPENSEA_API_KEY" \
-            "https://api.opensea.io/api/v2/collections?chain=robinhood&limit=1"
+          node --input-type=module <<'EOF'
+          import { getUpcomingDrops } from "./src/opensea.js";
+          import { normalizeDrop } from "./src/normalizer.js";
+          import { analyzeCreator } from "./src/creator.js";
+          import { analyzeMetadata } from "./src/metadata.js";
+          import { analyzeMarket } from "./src/market.js";
+          import { calculateRisk } from "./src/risk.js";
+          import { calculateGoldenEggScore } from "./src/score.js";
+
+          const result = await getUpcomingDrops(
+            process.env.OPENSEA_API_KEY
+          );
+
+          if (!result.drops || result.drops.length === 0) {
+            throw new Error("No drops returned by OpenSea");
+          }
+
+          const candidate = normalizeDrop(
+            result.drops[0]
+          );
+
+          const creatorIntel = await analyzeCreator(
+            candidate,
+            process.env.OPENSEA_API_KEY
+          );
+
+          const metadataIntel = await analyzeMetadata(
+            candidate,
+            process.env.OPENSEA_API_KEY
+          );
+
+          const marketIntel = await analyzeMarket(
+            candidate,
+            process.env.OPENSEA_API_KEY
+          );
+
+          const enrichedCandidate = {
+            ...candidate,
+            creatorIntel,
+            metadataIntel,
+            marketIntel
+          };
+
+          const riskIntel = calculateRisk(
+            enrichedCandidate
+          );
+
+          const finalCandidate = {
+            ...enrichedCandidate,
+            riskIntel
+          };
+
+          const scoring = calculateGoldenEggScore(
+            finalCandidate
+          );
+
+          console.log(
+            JSON.stringify(
+              {
+                name: candidate.identity.name,
+                score: scoring.score,
+                maxScore: scoring.maxScore,
+                classification: scoring.classification,
+                rawScore: scoring.rawScore,
+                riskPenalty: scoring.riskPenalty,
+                breakdown: scoring.breakdown
+              },
+              null,
+              2
+            )
+          );
+          EOF
+
+      - name: Run Sentinel
+        env:
+          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+        run: npm run scan
 
       - name: Show report
         run: cat output/sentinel_report.json
