@@ -179,7 +179,8 @@ jobs:
                 {
                   name: candidate.identity.name,
                   score: scoring.score,
-                  maxScore: scoring.maxScore
+                  maxScore: scoring.maxScore,
+                  breakdown: scoring.breakdown
                 },
                 null,
                 2
