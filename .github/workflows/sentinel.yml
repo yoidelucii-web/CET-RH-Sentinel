@@ -17,6 +17,8 @@ jobs:
           node-version: 20
 
       - name: Run Sentinel
+        env:
+         OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
         run: npm run scan
         
       - name: Check OpenSea module
