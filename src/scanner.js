@@ -1,13 +1,15 @@
 import fs from "fs";
+
 import { getUpcomingDrops } from "./opensea.js";
 import { normalizeDrop } from "./normalizer.js";
 import { evaluateHardGates } from "./gates.js";
 import { classifyMintStage } from "./stage.js";
 import { getExecutionStatus } from "./execution.js";
-import { calculateGoldenEggScore } from "./score.js";
 import { analyzeCreator } from "./creator.js";
 import { analyzeMetadata } from "./metadata.js";
+import { analyzeMarket } from "./market.js";
 import { calculateRisk } from "./risk.js";
+import { calculateGoldenEggScore } from "./score.js";
 
 const apiKey = process.env.OPENSEA_API_KEY;
 
@@ -16,6 +18,10 @@ if (!apiKey) {
 }
 
 const drops = await getUpcomingDrops(apiKey);
+
+if (!drops.drops || drops.drops.length === 0) {
+  throw new Error("No drops returned by OpenSea");
+}
 
 const candidates = await Promise.all(
   drops.drops.map(async (drop) => {
@@ -41,35 +47,36 @@ const candidates = await Promise.all(
       apiKey
     );
 
+    const marketIntel = await analyzeMarket(
+      candidate,
+      apiKey
+    );
+
     const enrichedCandidate = {
       ...candidate,
       creatorIntel,
-      metadataIntel
+      metadataIntel,
+      marketIntel
     };
 
     const riskIntel = calculateRisk(
       enrichedCandidate
     );
 
+    const finalCandidate = {
+      ...enrichedCandidate,
+      riskIntel
+    };
+
     const scoring = calculateGoldenEggScore(
-      candidate
+      finalCandidate
     );
 
     return {
-      ...candidate,
-
+      ...finalCandidate,
       hardGates: gates,
-
       stageClassification: stageClass,
-
       executionStatus,
-
-      creatorIntel,
-
-      metadataIntel,
-
-      riskIntel,
-
       goldenEgg: scoring
     };
   })
@@ -77,7 +84,7 @@ const candidates = await Promise.all(
 
 const report = {
   scanner: "CET RH Sentinel",
-  version: "0.1.0",
+  version: "0.2.0",
   network: "robinhood",
   scanTime: new Date().toISOString(),
   totalDrops: candidates.length,
