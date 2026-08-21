@@ -164,9 +164,14 @@ jobs:
           node --input-type=module <<'EOF'
           import { getUpcomingDrops } from "./src/opensea.js";
           import { normalizeDrop } from "./src/normalizer.js";
+          import { analyzeCreator } from "./src/creator.js";
+          import { analyzeMetadata } from "./src/metadata.js";
+          import { calculateRisk } from "./src/risk.js";
           import { calculateGoldenEggScore } from "./src/score.js";
 
-          const result = await getUpcomingDrops(process.env.OPENSEA_API_KEY);
+          const result = await getUpcomingDrops(
+            process.env.OPENSEA_API_KEY
+          );
 
           if (!result.drops || result.drops.length === 0) {
             throw new Error("No drops returned by OpenSea");
@@ -174,7 +179,35 @@ jobs:
 
           for (const drop of result.drops) {
             const candidate = normalizeDrop(drop);
-            const scoring = calculateGoldenEggScore(candidate);
+
+            const creatorIntel = await analyzeCreator(
+              candidate,
+              process.env.OPENSEA_API_KEY
+            );
+
+            const metadataIntel = await analyzeMetadata(
+              candidate,
+              process.env.OPENSEA_API_KEY
+            );
+
+            const enrichedCandidate = {
+              ...candidate,
+              creatorIntel,
+              metadataIntel
+            };
+
+            const riskIntel = calculateRisk(
+              enrichedCandidate
+            );
+
+            const finalCandidate = {
+              ...enrichedCandidate,
+              riskIntel
+            };
+
+            const scoring = calculateGoldenEggScore(
+              finalCandidate
+            );
 
             console.log(
               JSON.stringify(
@@ -182,6 +215,7 @@ jobs:
                   name: candidate.identity.name,
                   score: scoring.score,
                   maxScore: scoring.maxScore,
+                  classification: scoring.classification,
                   breakdown: scoring.breakdown
                 },
                 null,
