@@ -29,5 +29,13 @@ jobs:
           fi
           echo "OpenSea API key is available"
 
+      - name: Test OpenSea API
+        env:
+          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+        run: |
+          curl -sS \
+            -H "X-API-KEY: $OPENSEA_API_KEY" \
+            "https://api.opensea.io/api/v2/collections?chain=robinhood&limit=1"
+
       - name: Show report
         run: cat output/sentinel_report.json
