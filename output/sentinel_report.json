@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.2.0",
   "network": "robinhood",
-  "scanTime": "2026-08-21T14:20:52.531Z",
+  "scanTime": "2026-08-21T19:16:20.537Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -10,17 +10,17 @@
     "technicalExecutionRequired": true
   },
   "summary": {
-    "scanTime": "2026-08-21T14:20:52.531Z",
+    "scanTime": "2026-08-21T19:16:20.537Z",
     "network": "robinhood",
-    "totalDrops": 5,
+    "totalDrops": 4,
     "executionEligible": 1,
-    "watchOnly": 4,
+    "watchOnly": 3,
     "reject": 0,
     "autoMintEligible": 0,
     "alphaCandidates": 0,
     "watchlist": 0,
-    "ignore": 4,
-    "averageScore": 67.4,
+    "ignore": 3,
+    "averageScore": 67.25,
     "topCandidate": {
       "name": "GAWSWRLD",
       "slug": "gawswrld2026",
@@ -41,15 +41,6 @@
       {
         "rank": 2,
         "tier": "D",
-        "name": "Rekt Tradooor",
-        "score": 68,
-        "classification": "IGNORE",
-        "stage": "PRESALE",
-        "executionStatus": "WATCH_ONLY"
-      },
-      {
-        "rank": 3,
-        "tier": "D",
         "name": "Internet Monkes",
         "score": 67,
         "classification": "IGNORE",
@@ -57,7 +48,7 @@
         "executionStatus": "WATCH_ONLY"
       },
       {
-        "rank": 4,
+        "rank": 3,
         "tier": "D",
         "name": "Galaktic Gang Embodied",
         "score": 65,
@@ -66,7 +57,7 @@
         "executionStatus": "WATCH_ONLY"
       },
       {
-        "rank": 5,
+        "rank": 4,
         "tier": "D",
         "name": "The Doll Club",
         "score": 58,
@@ -80,11 +71,11 @@
       "aTier": 0,
       "bTier": 0,
       "cTier": 1,
-      "dTier": 4
+      "dTier": 3
     },
-    "averageRisk": 7.2,
+    "averageRisk": 5.75,
     "autoMintApproved": 0,
-    "autoMintBlocked": 5
+    "autoMintBlocked": 4
   },
   "candidates": [
     {
@@ -131,20 +122,20 @@
         "portfolio": {
           "ownedCollections": 47,
           "ownedItems": 92,
-          "estimatedUsdValue": 46.42
+          "estimatedUsdValue": 47.56
         },
         "historicalCollections": {
           "collectionCount": 47,
           "analyzedCollections": 10,
-          "totalVolume": 5744.2506,
-          "totalSales": 58183,
-          "totalOwners": 74982,
-          "averageVolume": 574.4251,
-          "averageSales": 5818.3,
-          "averageOwners": 7498.2,
-          "medianVolume": 152.568,
-          "medianSales": 3690,
-          "medianOwners": 2802.5,
+          "totalVolume": 6648.3931,
+          "totalSales": 66088,
+          "totalOwners": 64991,
+          "averageVolume": 664.8393,
+          "averageSales": 6608.8,
+          "averageOwners": 6499.1,
+          "medianVolume": 326.8153,
+          "medianSales": 4645,
+          "medianOwners": 2682.5,
           "bestFloorPrice": 3.33,
           "bestCollection": {
             "name": "Aurora Capsules",
@@ -162,10 +153,10 @@
             {
               "name": "The WynLambo",
               "slug": "thewynlambo",
-              "volume": 489.41342595895793,
-              "sales": 5518,
+              "volume": 489.4162259589579,
+              "sales": 5519,
               "owners": 2626,
-              "floorPrice": 0.00799
+              "floorPrice": 0.0078
             },
             {
               "name": "Rogue Society Bots",
@@ -208,6 +199,14 @@
               "floorPrice": 0.000398
             },
             {
+              "name": "AlphaBetty Doodles",
+              "slug": "alphabetty-doodles",
+              "volume": 1473.2006184540512,
+              "sales": 12797,
+              "owners": 3490,
+              "floorPrice": 0.00034437
+            },
+            {
               "name": "Elysium Shell",
               "slug": "e-shell",
               "volume": 481.8286618593395,
@@ -216,28 +215,20 @@
               "floorPrice": 0.00836
             },
             {
-              "name": "AlphaBetty Doodles",
-              "slug": "alphabetty-doodles",
-              "volume": 1473.62183201349,
-              "sales": 12797,
-              "owners": 3490,
-              "floorPrice": 0.00034437
-            },
-            {
               "name": "The Alien Doogle",
               "slug": "thealiendoogle",
-              "volume": 106.4058093149692,
+              "volume": 106.37539474814288,
               "sales": 2689,
               "owners": 2896,
               "floorPrice": 0.00118999
             },
             {
-              "name": "oncyber & friends",
-              "slug": "oncyber-andfriends",
-              "volume": 133.3340342269806,
-              "sales": 3609,
-              "owners": 12616,
-              "floorPrice": 0.000799
+              "name": "Fudders",
+              "slug": "fudders",
+              "volume": 1037.9253011297799,
+              "sales": 11513,
+              "owners": 2625,
+              "floorPrice": 0.00079
             }
           ]
         },
@@ -347,12 +338,12 @@
           {
             "signal": "HIGH_VOLUME_CREATOR",
             "points": 2,
-            "reason": "Creator historical volume is 5744.25 ETH."
+            "reason": "Creator historical volume is 6648.39 ETH."
           },
           {
             "signal": "HIGH_SALES_CREATOR",
             "points": 2,
-            "reason": "Creator historical sales are 58183."
+            "reason": "Creator historical sales are 66088."
           },
           {
             "signal": "HIGH_FLOOR_HISTORY",
@@ -607,539 +598,6 @@
     },
     {
       "identity": {
-        "name": "Rekt Tradooor",
-        "slug": "rekt-tradooor",
-        "contract": "0x7b3ecfa33657de415ff269dc97dfa82954cee706",
-        "chain": "robinhood"
-      },
-      "mint": {
-        "type": "signed_presale",
-        "label": "Honoraries",
-        "priceWei": "0",
-        "currencyAddress": "0x0000000000000000000000000000000000000000",
-        "startTime": "2026-08-21T16:00:00Z",
-        "endTime": "2026-08-21T16:15:00Z",
-        "maxPerWallet": "101"
-      },
-      "opensea": {
-        "url": "https://opensea.io/collection/rekt-tradooor"
-      },
-      "status": {
-        "isMinting": false,
-        "activeStage": null,
-        "nextStage": "signed_presale"
-      },
-      "hardGates": {
-        "passed": true,
-        "reasons": []
-      },
-      "stageClassification": "PRESALE",
-      "executionStatus": "WATCH_ONLY",
-      "creatorIntel": {
-        "status": "IDENTIFIED",
-        "address": "0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1",
-        "identity": {
-          "username": "OSF",
-          "ensName": "osf.eth"
-        },
-        "attribution": {
-          "source": "CONTRACT_OWNER",
-          "confidence": "HIGH"
-        },
-        "portfolio": {
-          "ownedCollections": 50,
-          "ownedItems": 222,
-          "estimatedUsdValue": 4651.88
-        },
-        "historicalCollections": {
-          "collectionCount": 50,
-          "analyzedCollections": 10,
-          "totalVolume": 1061.9466,
-          "totalSales": 9852,
-          "totalOwners": 9056,
-          "averageVolume": 106.1947,
-          "averageSales": 985.2,
-          "averageOwners": 905.6,
-          "medianVolume": 49.3519,
-          "medianSales": 227,
-          "medianOwners": 150.5,
-          "bestFloorPrice": 2.5,
-          "bestCollection": {
-            "name": "The Present",
-            "slug": "the-present-by-mendezmendez",
-            "volume": 39.359,
-            "sales": 17,
-            "owners": 63,
-            "floorPrice": 2.5
-          },
-          "activeCollections": 10,
-          "highVolumeCollections": 3,
-          "highSalesCollections": 3,
-          "highFloorCollections": 1,
-          "collections": [
-            {
-              "name": "The Present",
-              "slug": "the-present-by-mendezmendez",
-              "volume": 39.359,
-              "sales": 17,
-              "owners": 63,
-              "floorPrice": 2.5
-            },
-            {
-              "name": "FREE MATT KANE",
-              "slug": "free-matt-kane",
-              "volume": 59.344889,
-              "sales": 85,
-              "owners": 151,
-              "floorPrice": 0.51
-            },
-            {
-              "name": "Signature Series by mendezmendez",
-              "slug": "mendezmendez",
-              "volume": 88.08331491168832,
-              "sales": 1262,
-              "owners": 793,
-              "floorPrice": 0.04348
-            },
-            {
-              "name": "The S.E.X Club",
-              "slug": "the-sex-club",
-              "volume": 19.97258989999994,
-              "sales": 339,
-              "owners": 148,
-              "floorPrice": 0.01
-            },
-            {
-              "name": "Latent",
-              "slug": "vv-latent",
-              "volume": 4.612,
-              "sales": 7,
-              "owners": 59,
-              "floorPrice": 0.93819591
-            },
-            {
-              "name": "Die with the most mmERCH",
-              "slug": "mmerch-receipt",
-              "volume": 2.3906454778990005,
-              "sales": 189,
-              "owners": 587,
-              "floorPrice": 0.0245685
-            },
-            {
-              "name": "Agoria {Comp-nd} x [ L ] Market",
-              "slug": "agoria-comp-nd-x-l-market",
-              "volume": 180.44624768923057,
-              "sales": 6424,
-              "owners": 5542,
-              "floorPrice": 0.0056947
-            },
-            {
-              "name": "Asprey Studio Club",
-              "slug": "asprey-studio-club",
-              "volume": 555.2435064733892,
-              "sales": 265,
-              "owners": 150,
-              "floorPrice": 0.13305
-            },
-            {
-              "name": "ClickCreate",
-              "slug": "clickcreate",
-              "volume": 100.21925565998814,
-              "sales": 1156,
-              "owners": 1420,
-              "floorPrice": 0.00328
-            },
-            {
-              "name": "Editions x Lisa Fogarty",
-              "slug": "editions-x-lisa-fogarty",
-              "volume": 12.275144999999998,
-              "sales": 108,
-              "owners": 143,
-              "floorPrice": 0.17499
-            }
-          ]
-        },
-        "flags": [
-          "CONTRACT_OWNER",
-          "OPENSEA_USERNAME",
-          "ENS_IDENTITY",
-          "HISTORICAL_ACTIVITY",
-          "HIGH_VOLUME_HISTORY",
-          "HIGH_SALES_HISTORY",
-          "HIGH_FLOOR_HISTORY"
-        ],
-        "score": 25,
-        "maxScore": 25,
-        "errors": []
-      },
-      "metadataIntel": {
-        "status": "FOUND",
-        "supply": {
-          "max": 10000,
-          "minted": 0,
-          "remaining": 10000
-        },
-        "mint": {
-          "type": "signed_presale",
-          "label": "Honoraries",
-          "priceWei": "0",
-          "currencyAddress": "0x0000000000000000000000000000000000000000",
-          "maxPerWallet": "101",
-          "startTime": "2026-08-21T16:00:00Z",
-          "endTime": "2026-08-21T16:15:00Z"
-        },
-        "royalty": [
-          {
-            "fee": 1,
-            "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
-            "required": true
-          },
-          {
-            "fee": 5,
-            "recipient": "0x6bf609583cd3cfa2393c535ca8c3f49fd23e00b3",
-            "required": true
-          }
-        ],
-        "contract": {
-          "address": "0x7b3ecfa33657de415ff269dc97dfa82954cee706",
-          "chain": "robinhood",
-          "standard": "erc721"
-        },
-        "collection": {
-          "name": "Rekt Tradooor",
-          "slug": "rekt-tradooor",
-          "category": "art",
-          "description": "10,000 tradooors trade real markets with fixed DNA until one is left alive. The Squeeze forces leverage up every week. Death is permanent. Committed before, revealed after, so you can replay it yourself."
-        },
-        "signals": [
-          "MAX_SUPPLY_PRESENT",
-          "TOTAL_SUPPLY_PRESENT",
-          "MINT_STAGE_PRESENT",
-          "ROYALTY_DATA_PRESENT",
-          "CONTRACT_STANDARD_PRESENT"
-        ],
-        "errors": []
-      },
-      "marketIntel": {
-        "status": "FOUND",
-        "verified": true,
-        "collection": {
-          "name": "Rekt Tradooor",
-          "slug": "rekt-tradooor",
-          "owner": "0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1",
-          "category": "art"
-        },
-        "stats": {
-          "floorPrice": 0,
-          "volume": 0,
-          "sales": 0,
-          "averagePrice": null,
-          "numOwners": 0,
-          "marketCap": null
-        },
-        "errors": []
-      },
-      "riskIntel": {
-        "level": "MEDIUM",
-        "score": 13,
-        "maxRisk": 40,
-        "penalties": [
-          {
-            "factor": "LARGE_SUPPLY",
-            "points": 5,
-            "reason": "Collection supply is 10,000 or greater."
-          },
-          {
-            "factor": "VERY_HIGH_MINT_LIMIT",
-            "points": 5,
-            "reason": "Maximum mint per wallet is 100 or greater."
-          },
-          {
-            "factor": "ELEVATED_ROYALTY",
-            "points": 3,
-            "reason": "Total configured royalty is 6%."
-          }
-        ],
-        "flags": [
-          "LARGE_SUPPLY",
-          "VERY_HIGH_MINT_LIMIT",
-          "ELEVATED_ROYALTY"
-        ],
-        "context": {
-          "maxSupply": 10000,
-          "maxPerWallet": 101,
-          "royaltyPercentage": 6,
-          "creatorConfidence": "HIGH",
-          "creatorUsername": "OSF",
-          "creatorEns": "osf.eth",
-          "ownedCollections": 50,
-          "ownedItems": 222,
-          "contractStandard": "erc721"
-        }
-      },
-      "alphaIntel": {
-        "score": 7,
-        "maxScore": 10,
-        "classification": "MEDIUM_ALPHA",
-        "signals": [
-          {
-            "signal": "HIGH_VOLUME_CREATOR",
-            "points": 2,
-            "reason": "Creator historical volume is 1061.95 ETH."
-          },
-          {
-            "signal": "HIGH_SALES_CREATOR",
-            "points": 2,
-            "reason": "Creator historical sales are 9852."
-          },
-          {
-            "signal": "HIGH_FLOOR_HISTORY",
-            "points": 2,
-            "reason": "Creator has 1 historical collection(s) with floor ≥ 1 ETH."
-          },
-          {
-            "signal": "SIGNED_PRESALE_STAGE",
-            "points": 1,
-            "reason": "Collection is currently in signed presale."
-          }
-        ]
-      },
-      "walletIntel": {
-        "score": 10,
-        "maxScore": 10,
-        "classification": "SMART_CREATOR",
-        "signals": [
-          {
-            "signal": "CREATOR_IDENTIFIED",
-            "points": 2,
-            "reason": "Creator wallet has been identified."
-          },
-          {
-            "signal": "ENS_IDENTITY",
-            "points": 1,
-            "reason": "Creator wallet has an ENS identity."
-          },
-          {
-            "signal": "LARGE_COLLECTION_HISTORY",
-            "points": 2,
-            "reason": "Creator owns 50 collections."
-          },
-          {
-            "signal": "MULTIPLE_HIGH_VOLUME_COLLECTIONS",
-            "points": 2,
-            "reason": "Creator has 3 high-volume collections."
-          },
-          {
-            "signal": "MULTIPLE_HIGH_SALES_COLLECTIONS",
-            "points": 2,
-            "reason": "Creator has 3 collections with over 1,000 sales."
-          },
-          {
-            "signal": "BLUECHIP_HISTORY",
-            "points": 1,
-            "reason": "Best historical floor is 2.5 ETH."
-          }
-        ]
-      },
-      "socialIntel": {
-        "score": 8,
-        "maxScore": 10,
-        "classification": "HIGH_SOCIAL",
-        "signals": [
-          {
-            "signal": "OPENSEA_USERNAME",
-            "points": 2,
-            "reason": "Creator has OpenSea username \"OSF\"."
-          },
-          {
-            "signal": "ENS_IDENTITY",
-            "points": 2,
-            "reason": "Creator has ENS \"osf.eth\"."
-          },
-          {
-            "signal": "LONG_PROJECT_DESCRIPTION",
-            "points": 2,
-            "reason": "Project has a detailed collection description."
-          },
-          {
-            "signal": "OPENSEA_COLLECTION_PAGE",
-            "points": 2,
-            "reason": "Collection has an OpenSea page."
-          }
-        ]
-      },
-      "goldenEgg": {
-        "score": 68,
-        "maxScore": 100,
-        "classification": "IGNORE",
-        "breakdown": [
-          {
-            "factor": "CREATOR_IDENTIFIED",
-            "points": 5,
-            "reason": "Creator address has been identified."
-          },
-          {
-            "factor": "PUBLIC_CREATOR_IDENTITY",
-            "points": 3,
-            "reason": "Creator has a public identity."
-          },
-          {
-            "factor": "CREATOR_VOLUME_HISTORY",
-            "points": 4,
-            "reason": "Creator has significant historical volume."
-          },
-          {
-            "factor": "CREATOR_SALES_HISTORY",
-            "points": 4,
-            "reason": "Creator has significant historical sales."
-          },
-          {
-            "factor": "BLUECHIP_CREATOR_HISTORY",
-            "points": 3,
-            "reason": "Creator has historical collection with floor ≥1 ETH."
-          },
-          {
-            "factor": "HIGH_CREATOR_CONFIDENCE",
-            "points": 2,
-            "reason": "Creator attribution has high confidence."
-          },
-          {
-            "factor": "ROBINHOOD_CHAIN",
-            "points": 4,
-            "reason": "Collection is launching on Robinhood Chain."
-          },
-          {
-            "factor": "CONTRACT_PRESENT",
-            "points": 3,
-            "reason": "NFT contract is identified."
-          },
-          {
-            "factor": "PROJECT_DESCRIPTION",
-            "points": 3,
-            "reason": "Project description is available."
-          },
-          {
-            "factor": "PROJECT_CATEGORY",
-            "points": 2,
-            "reason": "Project category is identified."
-          },
-          {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
-          },
-          {
-            "factor": "OPENSEA_COLLECTION",
-            "points": 2,
-            "reason": "OpenSea collection page exists."
-          },
-          {
-            "factor": "COLLECTION_NAME",
-            "points": 1,
-            "reason": "Collection name is available."
-          },
-          {
-            "factor": "SIGNED_PRESALE",
-            "points": 4,
-            "reason": "Signed presale stage detected."
-          },
-          {
-            "factor": "MINT_PRICE_KNOWN",
-            "points": 3,
-            "reason": "Mint price is known."
-          },
-          {
-            "factor": "MINT_LIMIT_KNOWN",
-            "points": 2,
-            "reason": "Maximum mint per wallet is known."
-          },
-          {
-            "factor": "MINT_START_KNOWN",
-            "points": 2,
-            "reason": "Mint start time is known."
-          },
-          {
-            "factor": "MINT_END_KNOWN",
-            "points": 1,
-            "reason": "Mint end time is known."
-          },
-          {
-            "factor": "STANDARD_SUPPLY",
-            "points": 2,
-            "reason": "Maximum supply is 10,000 or lower."
-          },
-          {
-            "factor": "SUPPLY_VISIBLE",
-            "points": 2,
-            "reason": "Remaining supply is known."
-          },
-          {
-            "factor": "ROYALTY_DATA_PRESENT",
-            "points": 1,
-            "reason": "Royalty configuration is known."
-          },
-          {
-            "factor": "TIMING_KNOWN",
-            "points": 3,
-            "reason": "Mint timing is known."
-          },
-          {
-            "factor": "PRE_MINT_OPPORTUNITY",
-            "points": 3,
-            "reason": "Upcoming mint opportunity detected."
-          },
-          {
-            "factor": "MARKET_VERIFIED",
-            "points": 1,
-            "reason": "OpenSea market data is verified."
-          },
-          {
-            "factor": "MEDIUM_ALPHA_SIGNAL",
-            "points": 2,
-            "reason": "Medium alpha signal detected."
-          },
-          {
-            "factor": "SMART_CREATOR",
-            "points": 1,
-            "reason": "Creator wallet shows strong historical signals."
-          },
-          {
-            "factor": "HIGH_SOCIAL",
-            "points": 1,
-            "reason": "Strong social signal detected."
-          },
-          {
-            "factor": "CONTROLLED_RISK",
-            "points": 1,
-            "reason": "Risk score is 20/40 or lower."
-          }
-        ]
-      },
-      "executionApproval": {
-        "approved": false,
-        "status": "AUTO_MINT_BLOCKED",
-        "threshold": {
-          "minScore": 90,
-          "maxRisk": 10
-        },
-        "score": 68,
-        "risk": 13,
-        "classification": "IGNORE",
-        "reasons": [
-          "Hard gates passed."
-        ],
-        "blockers": [
-          "NOT_TECHNICALLY_EXECUTABLE",
-          "SCORE_BELOW_AUTO_MINT_THRESHOLD",
-          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE",
-          "RISK_ABOVE_AUTO_MINT_LIMIT"
-        ]
-      },
-      "rank": 2,
-      "tier": "D"
-    },
-    {
-      "identity": {
         "name": "Internet Monkes",
         "slug": "internetmonkes",
         "contract": "0x315c62f3a56dc2f581cc09096a5b438f3171cacb",
@@ -1182,20 +640,20 @@
         "portfolio": {
           "ownedCollections": 43,
           "ownedItems": 135,
-          "estimatedUsdValue": 5221.64
+          "estimatedUsdValue": 5522.63
         },
         "historicalCollections": {
           "collectionCount": 43,
           "analyzedCollections": 10,
-          "totalVolume": 3281.7635,
-          "totalSales": 73469,
+          "totalVolume": 3282.3622,
+          "totalSales": 73494,
           "totalOwners": 8442,
-          "averageVolume": 328.1764,
-          "averageSales": 7346.9,
+          "averageVolume": 328.2362,
+          "averageSales": 7349.4,
           "averageOwners": 844.2,
-          "medianVolume": 110.0966,
-          "medianSales": 3346.5,
-          "medianOwners": 877.5,
+          "medianVolume": 110.1121,
+          "medianSales": 3347,
+          "medianOwners": 878,
           "bestFloorPrice": 0.0721,
           "bestCollection": {
             "name": "P⊙RTR∆ITS",
@@ -1213,10 +671,10 @@
             {
               "name": "NODES",
               "slug": "nodes-by-hunter",
-              "volume": 283.50630745188033,
-              "sales": 12775,
-              "owners": 962,
-              "floorPrice": 0.045
+              "volume": 283.7041874518803,
+              "sales": 12780,
+              "owners": 963,
+              "floorPrice": 0.0439999
             },
             {
               "name": "Primitives",
@@ -1224,15 +682,23 @@
               "volume": 856.6154448348674,
               "sales": 6067,
               "owners": 1032,
-              "floorPrice": 0.01236999
+              "floorPrice": 0.01236998
             },
             {
               "name": "Abstract Pepes",
               "slug": "abstract-pepes-abstract",
-              "volume": 17.798699142237588,
-              "sales": 1697,
+              "volume": 17.81979914223759,
+              "sales": 1700,
               "owners": 1002,
-              "floorPrice": 0.00715
+              "floorPrice": 0.0067
+            },
+            {
+              "name": "Lil' Bangers",
+              "slug": "lil-bangers-",
+              "volume": 509.28080621214133,
+              "sales": 25898,
+              "owners": 1224,
+              "floorPrice": 0.0142
             },
             {
               "name": "P⊙RTR∆ITS",
@@ -1243,42 +709,34 @@
               "floorPrice": 0.0721
             },
             {
-              "name": "Lil' Bangers",
-              "slug": "lil-bangers-",
-              "volume": 509.11111922214127,
-              "sales": 25890,
-              "owners": 1226,
-              "floorPrice": 0.011739
-            },
-            {
               "name": "Suited Riot",
               "slug": "suited-riot-v2",
-              "volume": 36.13601803493258,
-              "sales": 283,
-              "owners": 558,
-              "floorPrice": 0.009537
+              "volume": 36.150618034932585,
+              "sales": 285,
+              "owners": 560,
+              "floorPrice": 0.0092642
             },
             {
               "name": "fwogs",
               "slug": "fwogs",
-              "volume": 1282.7253500192362,
-              "sales": 18370,
-              "owners": 1512,
-              "floorPrice": 0.0276999
+              "volume": 1282.8823885192362,
+              "sales": 18375,
+              "owners": 1511,
+              "floorPrice": 0.027696
             },
             {
               "name": "Doomsayers",
               "slug": "doomsayers",
-              "volume": 10.580316671565779,
-              "sales": 3316,
+              "volume": 10.58771607156578,
+              "sales": 3317,
               "owners": 726,
-              "floorPrice": 0.007399
+              "floorPrice": 0.0073989
             },
             {
               "name": "Signature Series by mendezmendez",
               "slug": "mendezmendez",
-              "volume": 88.08331491168832,
-              "sales": 1262,
+              "volume": 88.11431491168833,
+              "sales": 1263,
               "owners": 793,
               "floorPrice": 0.04348
             },
@@ -1288,7 +746,7 @@
               "volume": 132.1099076975009,
               "sales": 3377,
               "owners": 438,
-              "floorPrice": 0.02193
+              "floorPrice": 0.020834199999
             }
           ]
         },
@@ -1404,12 +862,12 @@
           {
             "signal": "HIGH_VOLUME_CREATOR",
             "points": 2,
-            "reason": "Creator historical volume is 3281.76 ETH."
+            "reason": "Creator historical volume is 3282.36 ETH."
           },
           {
             "signal": "HIGH_SALES_CREATOR",
             "points": 2,
-            "reason": "Creator historical sales are 73469."
+            "reason": "Creator historical sales are 73494."
           },
           {
             "signal": "SIGNED_PRESALE_STAGE",
@@ -1624,7 +1082,7 @@
           "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE"
         ]
       },
-      "rank": 3,
+      "rank": 2,
       "tier": "D"
     },
     {
@@ -1676,10 +1134,10 @@
         "historicalCollections": {
           "collectionCount": 9,
           "analyzedCollections": 9,
-          "totalVolume": 13362.9586,
+          "totalVolume": 13362.9483,
           "totalSales": 61087,
           "totalOwners": 250816,
-          "averageVolume": 1484.7732,
+          "averageVolume": 1484.772,
           "averageSales": 6787.44,
           "averageOwners": 27868.44,
           "medianVolume": 3.8776,
@@ -1689,7 +1147,7 @@
           "bestCollection": {
             "name": ".:. DAN  OTSUKI .:. UNCATEGORIZABLE",
             "slug": "dan-otsuki-artworks",
-            "volume": 32.87222055178809,
+            "volume": 32.86282450137375,
             "sales": 51,
             "owners": 2366,
             "floorPrice": 0.96
@@ -1718,7 +1176,7 @@
             {
               "name": ".:. DAN  OTSUKI .:. UNCATEGORIZABLE",
               "slug": "dan-otsuki-artworks",
-              "volume": 32.87222055178809,
+              "volume": 32.86282450137375,
               "sales": 51,
               "owners": 2366,
               "floorPrice": 0.96
@@ -1758,7 +1216,7 @@
             {
               "name": "Chris Dyer Verse Immersive Experience",
               "slug": "chris-dyer-verse-immersive",
-              "volume": 3.160903498702861,
+              "volume": 3.160000000000001,
               "sales": 14,
               "owners": 0,
               "floorPrice": 0
@@ -1891,7 +1349,7 @@
           {
             "signal": "HIGH_VOLUME_CREATOR",
             "points": 2,
-            "reason": "Creator historical volume is 13362.96 ETH."
+            "reason": "Creator historical volume is 13362.95 ETH."
           },
           {
             "signal": "HIGH_SALES_CREATOR",
@@ -2096,7 +1554,7 @@
           "RISK_ABOVE_AUTO_MINT_LIMIT"
         ]
       },
-      "rank": 4,
+      "rank": 3,
       "tier": "D"
     },
     {
@@ -2456,7 +1914,7 @@
           "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE"
         ]
       },
-      "rank": 5,
+      "rank": 4,
       "tier": "D"
     }
   ]
