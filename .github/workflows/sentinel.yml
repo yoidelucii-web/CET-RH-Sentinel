@@ -95,6 +95,38 @@ jobs:
             );
           }
           EOF
+
+      - name: Test stage classifier
+        env:
+          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+        run: |
+          node --input-type=module <<'EOF'
+          import { getUpcomingDrops } from "./src/opensea.js";
+          import { normalizeDrop } from "./src/normalizer.js";
+          import { classifyMintStage } from "./src/stage.js";
+
+          const result = await getUpcomingDrops(process.env.OPENSEA_API_KEY);
+
+          if (!result.drops || result.drops.length === 0) {
+            throw new Error("No drops returned by OpenSea");
+          }
+
+          for (const drop of result.drops) {
+            const candidate = normalizeDrop(drop);
+
+            console.log(
+              JSON.stringify(
+                {
+                  name: candidate.identity.name,
+                  rawStage: candidate.mint.type,
+                  classification: classifyMintStage(candidate.mint.type)
+                },
+                null,
+                2
+              )
+            );
+          }
+          EOF
           
       - name: Test OpenSea API key
         env:
