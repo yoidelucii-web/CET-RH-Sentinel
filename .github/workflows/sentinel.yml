@@ -50,61 +50,7 @@ jobs:
 
           console.log(JSON.stringify(result, null, 2));
           EOF
-
-      - name: Test Creator Account
-        env:
-          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
-        run: |
-          node --input-type=module <<'EOF'
-          const address = "0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1";
-
-          const response = await fetch(
-            `https://api.opensea.io/api/v2/account/${address}/collections`,
-            {
-              headers: {
-                "X-API-KEY": process.env.OPENSEA_API_KEY
-              }
-            }
-          );
-
-          if (!response.ok) {
-            throw new Error(
-              `OpenSea account collections error: ${response.status} ${response.statusText}`
-            );
-          }
-
-          const result = await response.json();
-
-          console.log(JSON.stringify(result, null, 2));
-          EOF
-
-      - name: Test Creator Profile
-        env:
-          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
-        run: |
-          node --input-type=module <<'EOF'
-          const address = "0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1";
-
-          const response = await fetch(
-            `https://api.opensea.io/api/v2/accounts/resolve/${address}`,
-            {
-              headers: {
-                "X-API-KEY": process.env.OPENSEA_API_KEY
-              }
-            }
-          );
-
-          if (!response.ok) {
-            throw new Error(
-              `OpenSea account resolve error: ${response.status} ${response.statusText}`
-            );
-          }
-
-          const result = await response.json();
-
-          console.log(JSON.stringify(result, null, 2));
-          EOF
-
+          
       - name: Test normalizer
         env:
           OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
