@@ -130,6 +130,27 @@ jobs:
             );
           }
           EOF
+
+      - name: Test execution status
+        run: |
+          node --input-type=module <<'EOF'
+          import { getExecutionStatus } from "./src/execution.js";
+
+          const tests = [
+            "PUBLIC",
+            "PRESALE",
+            "UNKNOWN"
+          ];
+
+          for (const stage of tests) {
+            console.log(
+              JSON.stringify({
+                stage,
+                executionStatus: getExecutionStatus(stage)
+              })
+            );
+          }
+          EOF
           
       - name: Test OpenSea API key
         env:
