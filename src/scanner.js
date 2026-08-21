@@ -1,16 +1,42 @@
 import fs from "fs";
+import { getUpcomingDrops } from "./opensea.js";
+import { normalizeDrop } from "./normalizer.js";
+import { evaluateHardGates } from "./gates.js";
+import { classifyMintStage } from "./stage.js";
+import { getExecutionStatus } from "./execution.js";
+import { calculateGoldenEggScore } from "./score.js";
 
-const config = JSON.parse(
-  fs.readFileSync("./config/sentinel.config.json", "utf8")
-);
+const apiKey = process.env.OPENSEA_API_KEY;
+
+if (!apiKey) {
+  throw new Error("Missing OPENSEA_API_KEY");
+}
+
+const drops = await getUpcomingDrops(apiKey);
+
+const candidates = drops.drops.map((drop) => {
+  const candidate = normalizeDrop(drop);
+  const gates = evaluateHardGates(candidate);
+  const stageClass = classifyMintStage(candidate.mint.type);
+  const executionStatus = getExecutionStatus(stageClass);
+  const scoring = calculateGoldenEggScore(candidate);
+
+  return {
+    ...candidate,
+    hardGates: gates,
+    stageClassification: stageClass,
+    executionStatus,
+    goldenEgg: scoring
+  };
+});
 
 const report = {
-  status: "OK",
   scanner: "CET RH Sentinel",
   version: "0.1.0",
-  network: config.network,
+  network: "robinhood",
   scanTime: new Date().toISOString(),
-  message: "Scanner is working."
+  totalDrops: candidates.length,
+  candidates
 };
 
 fs.writeFileSync(
@@ -18,5 +44,5 @@ fs.writeFileSync(
   JSON.stringify(report, null, 2)
 );
 
-console.log("CET RH Sentinel v0.1 scan completed.");
-console.log(report);
+console.log("Sentinel report generated.");
+console.log(`Candidates: ${candidates.length}`);
