@@ -1,15 +1,22 @@
-function add(breakdown, factor, points, reason) {
-  if (points <= 0) return;
-
-  breakdown.push({
-    factor,
-    points,
-    reason
-  });
-}
-
 export function calculateGoldenEggScore(candidate) {
   const breakdown = [];
+
+  let rawScore = 0;
+
+  function add(factor, points, reason) {
+    breakdown.push({
+      factor,
+      points,
+      reason
+    });
+
+    rawScore += points;
+  }
+
+  const creator = candidate.creatorIntel;
+  const metadata = candidate.metadataIntel;
+  const market = candidate.marketIntel;
+  const risk = candidate.riskIntel;
 
   /*
    * =========================================================
@@ -17,149 +24,147 @@ export function calculateGoldenEggScore(candidate) {
    * =========================================================
    */
 
-  const creator = candidate?.creatorIntel;
-
-  let creatorScore = 0;
-
   if (creator?.status === "IDENTIFIED") {
-    creatorScore += 5;
+    add(
+      "CREATOR_IDENTIFIED",
+      5,
+      "Creator address has been identified."
+    );
   }
 
   if (
     creator?.identity?.username ||
     creator?.identity?.ensName
   ) {
-    creatorScore += 4;
+    add(
+      "CREATOR_PUBLIC_IDENTITY",
+      5,
+      "Creator has a public OpenSea username or ENS identity."
+    );
   }
 
   if (
-    creator?.attribution?.source === "CONTRACT_OWNER" &&
-    creator?.attribution?.confidence === "HIGH"
+    creator?.attribution?.source === "CONTRACT_OWNER"
   ) {
-    creatorScore += 5;
-  } else if (
-    creator?.attribution?.source === "CONTRACT_OWNER" &&
-    creator?.attribution?.confidence === "MEDIUM"
-  ) {
-    creatorScore += 2;
+    add(
+      "CREATOR_CONTRACT_ATTRIBUTION",
+      3,
+      "Creator attribution is linked to contract ownership."
+    );
   }
 
-  const ownedCollections = Number(
-    creator?.portfolio?.ownedCollections
-  );
+  const historical =
+    creator?.historicalCollections;
 
   if (
-    Number.isFinite(ownedCollections) &&
-    ownedCollections >= 25
+    historical?.collectionCount > 0
   ) {
-    creatorScore += 4;
-  } else if (
-    Number.isFinite(ownedCollections) &&
-    ownedCollections >= 10
-  ) {
-    creatorScore += 2;
+    add(
+      "CREATOR_PORTFOLIO",
+      4,
+      "Creator has historical collection activity."
+    );
   }
-
-  const ownedItems = Number(
-    creator?.portfolio?.ownedItems
-  );
 
   if (
-    Number.isFinite(ownedItems) &&
-    ownedItems >= 100
+    historical?.successfulCollections > 0
   ) {
-    creatorScore += 4;
-  } else if (
-    Number.isFinite(ownedItems) &&
-    ownedItems >= 50
-  ) {
-    creatorScore += 2;
+    add(
+      "CREATOR_SUCCESS_HISTORY",
+      3,
+      `Creator has ${historical.successfulCollections} successful historical collections in the analyzed sample.`
+    );
   }
 
-  creatorScore = Math.min(creatorScore, 25);
-
-  add(
-    breakdown,
-    "CREATOR_QUALITY",
-    creatorScore,
-    `Creator quality evidence: ${creatorScore}/25.`
-  );
+  if (
+    historical?.totalSales >= 10
+  ) {
+    add(
+      "CREATOR_ITEM_HISTORY",
+      3,
+      "Creator has meaningful historical sales activity."
+    );
+  }
 
   /*
    * =========================================================
-   * 2. PROJECT / COLLECTION — 20 POINTS
+   * 2. PROJECT QUALITY — 20 POINTS
    * =========================================================
    */
 
-  const metadata = candidate?.metadataIntel;
-
-  let projectScore = 0;
-
-  const description =
-    metadata?.collection?.description;
-
   if (
-    typeof description === "string" &&
-    description.trim().length >= 100
+    candidate.identity?.name
   ) {
-    projectScore += 6;
-  } else if (
-    typeof description === "string" &&
-    description.trim().length >= 40
-  ) {
-    projectScore += 3;
-  }
-
-  const category =
-    metadata?.collection?.category;
-
-  if (category) {
-    projectScore += 2;
+    add(
+      "COLLECTION_NAME",
+      2,
+      "Collection name is available."
+    );
   }
 
   if (
-    candidate?.identity?.name &&
-    candidate?.identity?.slug
+    metadata?.collection?.description ||
+    candidate.description
   ) {
-    projectScore += 2;
-  }
-
-  if (candidate?.opensea?.url) {
-    projectScore += 1;
-  }
-
-  /*
-   * Utility/traction signals are intentionally not invented.
-   *
-   * These points remain unavailable until Sentinel has
-   * verified evidence for them.
-   */
-
-  const projectSignals =
-    Array.isArray(metadata?.signals)
-      ? metadata.signals
-      : [];
-
-  if (
-    projectSignals.includes("ROYALTY_DATA_PRESENT")
-  ) {
-    projectScore += 2;
+    add(
+      "PROJECT_DESCRIPTION",
+      3,
+      "Project description is available."
+    );
   }
 
   if (
-    projectSignals.includes("CONTRACT_STANDARD_PRESENT")
+    candidate.opensea?.url
   ) {
-    projectScore += 2;
+    add(
+      "OPENSEA_COLLECTION",
+      3,
+      "OpenSea collection page is available."
+    );
   }
 
-  projectScore = Math.min(projectScore, 20);
+  if (
+    metadata?.collection?.category ||
+    metadata?.category
+  ) {
+    add(
+      "PROJECT_CATEGORY",
+      2,
+      "Collection category is identified."
+    );
+  }
 
-  add(
-    breakdown,
-    "PROJECT_QUALITY",
-    projectScore,
-    `Project quality evidence: ${projectScore}/20.`
-  );
+  if (
+    metadata?.supply?.max ||
+    metadata?.supply?.total
+  ) {
+    add(
+      "MAX_SUPPLY_KNOWN",
+      3,
+      "Maximum collection supply is known."
+    );
+  }
+
+  if (
+    metadata?.contract?.standard
+  ) {
+    add(
+      "KNOWN_CONTRACT_STANDARD",
+      2,
+      "Contract standard is identified."
+    );
+  }
+
+  if (
+    metadata?.mint?.type ||
+    candidate.mint?.type
+  ) {
+    add(
+      "MINT_METADATA_COMPLETE",
+      2,
+      "Mint stage metadata is available."
+    );
+  }
 
   /*
    * =========================================================
@@ -167,58 +172,55 @@ export function calculateGoldenEggScore(candidate) {
    * =========================================================
    */
 
-  let economicsScore = 0;
-
-  const priceWei =
-    metadata?.mint?.priceWei ??
-    candidate?.mint?.priceWei;
-
-  if (priceWei !== null && priceWei !== undefined) {
-    const numericPrice = Number(priceWei);
-
-    if (
-      Number.isFinite(numericPrice) &&
-      numericPrice === 0
-    ) {
-      economicsScore += 8;
-    } else {
-      economicsScore += 5;
-    }
-  }
-
   const mintType =
-    metadata?.mint?.type ??
-    candidate?.mint?.type;
-
-  if (mintType === "public_sale") {
-    economicsScore += 4;
-  } else if (mintType === "signed_presale") {
-    economicsScore += 2;
-  }
-
-  const maxPerWallet = Number(
-    metadata?.mint?.maxPerWallet
-  );
+    candidate.mint?.type;
 
   if (
-    Number.isFinite(maxPerWallet) &&
-    maxPerWallet > 0 &&
-    maxPerWallet <= 5
+    mintType === "public_sale"
   ) {
-    economicsScore += 3;
+    add(
+      "PUBLIC_MINT",
+      8,
+      "Public mint stage detected."
+    );
+  } else if (
+    mintType === "signed_presale"
+  ) {
+    add(
+      "SIGNED_PRESALE",
+      8,
+      "Signed presale stage detected."
+    );
+  } else if (
+    mintType
+  ) {
+    add(
+      "MINT_STAGE_KNOWN",
+      5,
+      "Mint stage is known."
+    );
   }
 
-  economicsScore = Math.min(
-    economicsScore,
-    15
-  );
+  if (
+    candidate.mint?.priceWei !== null &&
+    candidate.mint?.priceWei !== undefined
+  ) {
+    add(
+      "MINT_PRICE_PRESENT",
+      3,
+      "Mint price information is available."
+    );
+  }
 
-  add(
-    breakdown,
-    "MINT_ECONOMICS",
-    economicsScore,
-    `Mint economics quality: ${economicsScore}/15.`
-  );
+  if (
+    candidate.mint?.maxPerWallet
+  ) {
+    add(
+      "MINT_LIMIT_PRESENT",
+      2,
+      "Maximum mint per wallet is known."
+    );
+  }
 
   /*
    * =========================================================
@@ -226,167 +228,175 @@ export function calculateGoldenEggScore(candidate) {
    * =========================================================
    */
 
-  let supplyScore = 0;
+  const maxSupply =
+    Number(
+      metadata?.supply?.max ??
+      metadata?.supply?.total ??
+      0
+    );
 
-  const maxSupply = Number(
-    metadata?.supply?.max
-  );
-
-  if (Number.isFinite(maxSupply)) {
-    if (maxSupply <= 1000) {
-      supplyScore += 10;
-    } else if (maxSupply <= 5000) {
-      supplyScore += 8;
-    } else if (maxSupply <= 10000) {
-      supplyScore += 5;
-    } else if (maxSupply <= 25000) {
-      supplyScore += 2;
-    }
-  }
-
-  supplyScore = Math.min(
-    supplyScore,
-    10
-  );
-
-  add(
-    breakdown,
-    "SUPPLY_SCARCITY",
-    supplyScore,
-    `Supply scarcity evidence: ${supplyScore}/10.`
-  );
-
-  /*
-   * =========================================================
-   * 5. MARKET / TRACTION — 10 POINTS
-   * =========================================================
-   *
-   * Deliberately conservative.
-   *
-   * No sales / holders / volume data = 0.
-   * We do NOT manufacture traction from OpenSea presence.
-   */
-
-  let tractionScore = 0;
-
-  const stats =
-    candidate?.marketIntel;
-
-  if (stats?.verified) {
-    const volume = Number(stats?.volumeUsd);
-    const sales = Number(stats?.sales);
-    const owners = Number(stats?.owners);
-
-    if (
-      Number.isFinite(volume) &&
-      volume > 10000
-    ) {
-      tractionScore += 4;
-    }
-
-    if (
-      Number.isFinite(sales) &&
-      sales >= 100
-    ) {
-      tractionScore += 3;
-    }
-
-    if (
-      Number.isFinite(owners) &&
-      owners >= 100
-    ) {
-      tractionScore += 3;
-    }
-  }
-
-  tractionScore = Math.min(
-    tractionScore,
-    10
-  );
-
-  add(
-    breakdown,
-    "MARKET_TRACTION",
-    tractionScore,
-    `Verified market traction: ${tractionScore}/10.`
-  );
-
-  /*
-   * =========================================================
-   * 6. TIMING / OPPORTUNITY — 10 POINTS
-   * =========================================================
-   */
-
-  let timingScore = 0;
-
-  const startTime =
-    candidate?.mint?.startTime;
-
-  const endTime =
-    candidate?.mint?.endTime;
-
-  if (startTime) {
-    timingScore += 4;
-  }
-
-  if (endTime) {
-    timingScore += 2;
+  if (
+    maxSupply > 0 &&
+    maxSupply <= 10000
+  ) {
+    add(
+      "SUPPLY_DISCIPLINE",
+      8,
+      "Maximum supply is 10,000 or lower."
+    );
+  } else if (
+    maxSupply > 0
+  ) {
+    add(
+      "SUPPLY_KNOWN",
+      3,
+      "Maximum supply is known."
+    );
   }
 
   if (
-    candidate?.status?.nextStage ||
-    candidate?.status?.activeStage
+    metadata?.contract?.standard
   ) {
-    timingScore += 2;
+    add(
+      "CONTRACT_STANDARD",
+      2,
+      "NFT contract standard is known."
+    );
   }
-
-  if (
-    candidate?.executionStatus ===
-    "EXECUTION_ELIGIBLE"
-  ) {
-    timingScore += 2;
-  }
-
-  timingScore = Math.min(
-    timingScore,
-    10
-  );
-
-  add(
-    breakdown,
-    "TIMING_OPPORTUNITY",
-    timingScore,
-    `Timing evidence: ${timingScore}/10.`
-  );
 
   /*
    * =========================================================
-   * 7. RISK ADJUSTMENT — MAX -10
+   * 5. TIMING — 10 POINTS
    * =========================================================
-   *
-   * Risk is a penalty, NOT an alpha source.
    */
 
-  const riskScore = Number(
-    candidate?.riskIntel?.score
-  );
-
-  const maxRisk = Number(
-    candidate?.riskIntel?.maxRisk ?? 40
-  );
-
-  let riskPenalty = 0;
+  if (
+    candidate.mint?.startTime
+  ) {
+    add(
+      "MINT_TIME_KNOWN",
+      4,
+      "Mint start time is known."
+    );
+  }
 
   if (
-    Number.isFinite(riskScore) &&
-    Number.isFinite(maxRisk) &&
-    maxRisk > 0
+    candidate.mint?.endTime
   ) {
-    riskPenalty = Math.min(
-      10,
-      Math.round(
-        (riskScore / maxRisk) * 10
-      )
+    add(
+      "MINT_END_TIME_KNOWN",
+      2,
+      "Mint end time is known."
+    );
+  }
+
+  if (
+    candidate.mint?.type
+  ) {
+    add(
+      "STAGE_KNOWN",
+      2,
+      "Mint stage is known."
+    );
+  }
+
+  if (
+    candidate.status
+  ) {
+    add(
+      "DROP_STATUS_AVAILABLE",
+      2,
+      "Drop status information is available."
+    );
+  }
+
+  /*
+   * =========================================================
+   * 6. MARKET INTELLIGENCE — 10 POINTS
+   * =========================================================
+   */
+
+  if (
+    market?.status === "FOUND"
+  ) {
+    add(
+      "MARKET_DATA_FOUND",
+      3,
+      "OpenSea market data is available."
+    );
+  }
+
+  if (
+    market?.verified === true
+  ) {
+    add(
+      "MARKET_VERIFIED",
+      2,
+      "Market data has been verified."
+    );
+  }
+
+  const marketStats =
+    market?.stats;
+
+  if (
+    Number(marketStats?.sales ?? 0) > 0
+  ) {
+    add(
+      "MARKET_SALES_HISTORY",
+      2,
+      "Collection has historical sales."
+    );
+  }
+
+  if (
+    Number(marketStats?.volume ?? 0) > 0 ||
+    Number(marketStats?.floorPrice ?? 0) > 0
+  ) {
+    add(
+      "MARKET_ACTIVITY",
+      3,
+      "Collection has measurable market activity."
+    );
+  }
+
+  /*
+   * =========================================================
+   * 7. RISK ADJUSTMENT — 10 POINTS
+   * =========================================================
+   *
+   * Risk is converted into positive score contribution.
+   *
+   * 0 risk       = +10
+   * 1–10 risk    = +8
+   * 11–20 risk   = +5
+   * 21–30 risk   = +2
+   * >30 risk     = 0
+   */
+
+  const riskScore =
+    Number(risk?.score ?? 0);
+
+  const maxRisk =
+    Number(risk?.maxRisk ?? 40);
+
+  let riskPoints = 0;
+
+  if (riskScore === 0) {
+    riskPoints = 10;
+  } else if (riskScore <= 10) {
+    riskPoints = 8;
+  } else if (riskScore <= 20) {
+    riskPoints = 5;
+  } else if (riskScore <= 30) {
+    riskPoints = 2;
+  }
+
+  if (riskPoints > 0) {
+    add(
+      "RISK_ADJUSTED",
+      riskPoints,
+      `Risk score ${riskScore}/${maxRisk}.`
     );
   }
 
@@ -394,71 +404,28 @@ export function calculateGoldenEggScore(candidate) {
    * =========================================================
    * FINAL SCORE
    * =========================================================
-   *
-   * Positive components:
-   *
-   * Creator       25
-   * Project       20
-   * Economics     15
-   * Scarcity      10
-   * Traction      10
-   * Timing        10
-   * ----------------
-   * Raw           90
-   *
-   * Risk          -10
-   * ----------------
-   * Maximum       90
-   *
-   * IMPORTANT:
-   *
-   * The remaining 10 points are reserved for future
-   * verified alpha signals.
    */
 
-  const rawScore =
-    creatorScore +
-    projectScore +
-    economicsScore +
-    supplyScore +
-    tractionScore +
-    timingScore;
-
-  const finalScore = Math.min(
-    100,
-    Math.max(
-      0,
-      rawScore - riskPenalty
-    )
-  );
-
-  if (riskPenalty > 0) {
-    add(
-      breakdown,
-      "RISK_PENALTY",
-      -riskPenalty,
-      `Risk penalty: ${riskScore}/${maxRisk}.`
+  const score =
+    Math.min(
+      Math.max(rawScore, 0),
+      100
     );
-  }
 
-  let classification;
+  let classification = "IGNORE";
 
-  if (finalScore >= 95) {
+  if (score >= 95) {
     classification = "AUTO_MINT_ELIGIBLE";
-  } else if (finalScore >= 90) {
+  } else if (score >= 90) {
     classification = "ALPHA_CANDIDATE";
-  } else if (finalScore >= 80) {
+  } else if (score >= 80) {
     classification = "WATCHLIST";
-  } else {
-    classification = "IGNORE";
   }
 
   return {
-    score: finalScore,
+    score,
     maxScore: 100,
     classification,
-    rawScore,
-    riskPenalty,
     breakdown
   };
 }
