@@ -16,6 +16,7 @@ import { analyzeWallet } from "./wallet.js";
 import { analyzeSocial } from "./social.js";
 
 import { calculateGoldenEggScore } from "./score.js";
+import { buildSummary } from "./summary.js";
 
 const apiKey = process.env.OPENSEA_API_KEY;
 
@@ -35,9 +36,7 @@ for (const drop of drops.drops) {
   const candidate = normalizeDrop(drop);
 
   const hardGates = evaluateHardGates(candidate);
-
   const stageClassification = classifyMintStage(candidate.mint.type);
-
   const executionStatus = getExecutionStatus(stageClassification);
 
   let creatorIntel = {};
@@ -67,14 +66,15 @@ for (const drop of drops.drops) {
     };
   }
 
-  const creatorCandidate = {
-    ...candidate,
-    creatorIntel,
-    metadataIntel
-  };
-
   try {
-    marketIntel = await analyzeMarket(creatorCandidate, apiKey);
+    marketIntel = await analyzeMarket(
+      {
+        ...candidate,
+        creatorIntel,
+        metadataIntel
+      },
+      apiKey
+    );
   } catch (error) {
     marketIntel = {
       status: "ERROR",
@@ -82,13 +82,13 @@ for (const drop of drops.drops) {
     };
   }
 
-  const riskCandidate = {
-    ...creatorCandidate,
-    marketIntel
-  };
-
   try {
-    riskIntel = calculateRisk(riskCandidate);
+    riskIntel = calculateRisk({
+      ...candidate,
+      creatorIntel,
+      metadataIntel,
+      marketIntel
+    });
   } catch (error) {
     riskIntel = {
       level: "UNKNOWN",
@@ -100,7 +100,7 @@ for (const drop of drops.drops) {
     };
   }
 
-  const enrichedCandidate = {
+  const enriched = {
     ...candidate,
     hardGates,
     stageClassification,
@@ -112,7 +112,7 @@ for (const drop of drops.drops) {
   };
 
   try {
-    alphaIntel = calculateAlpha(enrichedCandidate);
+    alphaIntel = calculateAlpha(enriched);
   } catch (error) {
     alphaIntel = {
       score: 0,
@@ -124,7 +124,7 @@ for (const drop of drops.drops) {
   }
 
   try {
-    walletIntel = analyzeWallet(enrichedCandidate);
+    walletIntel = analyzeWallet(enriched);
   } catch (error) {
     walletIntel = {
       score: 0,
@@ -136,7 +136,7 @@ for (const drop of drops.drops) {
   }
 
   try {
-    socialIntel = analyzeSocial(enrichedCandidate);
+    socialIntel = analyzeSocial(enriched);
   } catch (error) {
     socialIntel = {
       score: 0,
@@ -148,7 +148,7 @@ for (const drop of drops.drops) {
   }
 
   const finalCandidate = {
-    ...enrichedCandidate,
+    ...enriched,
     alphaIntel,
     walletIntel,
     socialIntel
@@ -172,137 +172,70 @@ for (const drop of drops.drops) {
   });
 }
 
-/* ============================================================
- * SORT BY SCORE
- * ============================================================
- */
+/* ===========================
+ * SUMMARY + RANKING
+ * =========================== */
 
-candidates.sort(
-  (a, b) => b.goldenEgg.score - a.goldenEgg.score
-);
+const scanTime = new Date().toISOString();
 
-/* ============================================================
- * SUMMARY
- * ============================================================
- */
+const summary = buildSummary(candidates, scanTime);
 
-const summary = {
-  totalDrops: candidates.length,
+// buildSummary sudah memberi rank & tier
+candidates.sort((a, b) => a.rank - b.rank);
 
-  autoMintEligible: candidates.filter(
-    (c) =>
-      c.goldenEgg.classification ===
-      "AUTO_MINT_ELIGIBLE"
-  ).length,
-
-  alphaCandidates: candidates.filter(
-    (c) =>
-      c.goldenEgg.classification ===
-      "ALPHA_CANDIDATE"
-  ).length,
-
-  watchlist: candidates.filter(
-    (c) =>
-      c.goldenEgg.classification ===
-      "WATCHLIST"
-  ).length,
-
-  ignore: candidates.filter(
-    (c) =>
-      c.goldenEgg.classification ===
-      "IGNORE"
-  ).length
-};
-
-/* ============================================================
+/* ===========================
  * REPORT
- * ============================================================
- */
+ * =========================== */
 
 const report = {
   scanner: "CET RH Sentinel",
-  version: "1.0.0",
+  version: "1.1.0",
   network: "robinhood",
-  scanTime: new Date().toISOString(),
-
+  scanTime,
   summary,
-
   candidates
 };
 
-fs.mkdirSync("./output", {
-  recursive: true
-});
+fs.mkdirSync("./output", { recursive: true });
 
 fs.writeFileSync(
   "./output/sentinel_report.json",
   JSON.stringify(report, null, 2)
 );
 
-/* ============================================================
+/* ===========================
  * CONSOLE OUTPUT
- * ============================================================
- */
+ * =========================== */
 
-console.log("=====================================");
-console.log("CET RH Sentinel v1.0");
-console.log("=====================================");
-console.log(`Total Drops          : ${summary.totalDrops}`);
-console.log(
-  `AUTO_MINT_ELIGIBLE  : ${summary.autoMintEligible}`
-);
-console.log(
-  `ALPHA_CANDIDATE     : ${summary.alphaCandidates}`
-);
-console.log(
-  `WATCHLIST           : ${summary.watchlist}`
-);
-console.log(
-  `IGNORE              : ${summary.ignore}`
-);
+console.log("======================================");
+console.log("      CET RH SENTINEL v1.1");
+console.log("======================================");
 
+console.log(`Scan Time           : ${scanTime}`);
+console.log(`Network             : Robinhood`);
+console.log(`Total Drops         : ${summary.totalDrops}`);
+console.log(`Execution Eligible  : ${summary.executionEligible}`);
+console.log(`Watch Only          : ${summary.watchOnly}`);
+console.log(`Rejected            : ${summary.reject}`);
 console.log("");
-console.log("===== TOP CANDIDATES =====");
 
-candidates.forEach((candidate, index) => {
+console.log(`Average Score       : ${summary.averageScore}`);
+console.log(`Top Candidate       : ${summary.topCandidate?.name ?? "None"}`);
+console.log("");
+
+console.log("============= TOP FIVE =============");
+
+summary.topFive.forEach((item) => {
   console.log(
-    `${index + 1}. ${candidate.identity.name}`
+    `#${item.rank} [${item.tier}] ${item.name}`
   );
-
-  console.log(
-    `   Score      : ${candidate.goldenEgg.score}/100`
-  );
-
-  console.log(
-    `   Class      : ${candidate.goldenEgg.classification}`
-  );
-
-  console.log(
-    `   Stage      : ${candidate.stageClassification}`
-  );
-
-  console.log(
-    `   Execution  : ${candidate.executionStatus}`
-  );
-
-  console.log(
-    `   Risk       : ${candidate.riskIntel.level} (${candidate.riskIntel.score}/${candidate.riskIntel.maxRisk})`
-  );
-
-  console.log(
-    `   Alpha      : ${candidate.alphaIntel.score}/${candidate.alphaIntel.maxScore}`
-  );
-
-  console.log(
-    `   Wallet     : ${candidate.walletIntel.classification} (${candidate.walletIntel.score}/10)`
-  );
-
-  console.log(
-    `   Social     : ${candidate.socialIntel.classification} (${candidate.socialIntel.score}/10)`
-  );
-
+  console.log(`   Score      : ${item.score}`);
+  console.log(`   Class      : ${item.classification}`);
+  console.log(`   Stage      : ${item.stage}`);
+  console.log(`   Execution  : ${item.executionStatus}`);
   console.log("");
 });
 
-console.log("Sentinel report generated.");
-console.log("Saved to output/sentinel_report.json");
+console.log("======================================");
+console.log("Sentinel report generated successfully.");
+console.log("Saved -> output/sentinel_report.json");
