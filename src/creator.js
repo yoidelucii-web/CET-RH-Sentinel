@@ -48,70 +48,63 @@ function extractAddress(value) {
   return null;
 }
 
-function extractCreatorAddress(collection, contract) {
-  const candidates = [
-    collection?.creator,
-    collection?.owner,
-    collection?.creator_address,
-    collection?.owner_address,
-    contract?.creator,
-    contract?.owner,
-    contract?.creator_address,
-    contract?.owner_address
-  ];
-
-  for (const value of candidates) {
-    const address = extractAddress(value);
-
-    if (address) {
-      return address;
-    }
-  }
-
-  return null;
-}
-
-function calculateCreatorScore({
-  creatorAddress,
-  collection,
-  contract
-}) {
+function calculateCreatorScore({ identity, attribution }) {
   let score = 0;
   const flags = [];
 
-  if (creatorAddress) {
-    score += 5;
-    flags.push("CREATOR_ADDRESS_FOUND");
-  } else {
-    flags.push("CREATOR_UNKNOWN");
+  if (identity.username) {
+    score += 1;
+    flags.push("OPENSEA_USERNAME");
   }
 
-  const collectionOwner = extractAddress(
-    collection?.owner || collection?.owner_address
-  );
-
-  if (collectionOwner) {
-    score += 2;
-    flags.push("COLLECTION_OWNER_FOUND");
+  if (identity.ensName) {
+    score += 1;
+    flags.push("ENS_IDENTITY");
   }
 
-  const contractOwner = extractAddress(
-    contract?.owner || contract?.owner_address
-  );
-
-  if (contractOwner) {
+  if (attribution.source === "CONTRACT_OWNER") {
     score += 3;
-    flags.push("CONTRACT_OWNER_FOUND");
+    flags.push("CONTRACT_OWNER");
+  }
+
+  if (attribution.confidence === "HIGH") {
+    score += 2;
+    flags.push("HIGH_ATTRIBUTION_CONFIDENCE");
   }
 
   return {
-    score: Math.min(score, 10),
-    maxScore: 10,
+    score: Math.min(score, 25),
+    maxScore: 25,
     flags
   };
 }
 
-export async function analyzeCreator(candidate, apiKey = process.env.OPENSEA_API_KEY) {
+async function getAccountIdentity(address, apiKey) {
+  try {
+    return await fetchOpenSea(
+      `/accounts/resolve/${encodeURIComponent(address)}`,
+      apiKey
+    );
+  } catch {
+    return null;
+  }
+}
+
+async function getAccountCollections(address, apiKey) {
+  try {
+    return await fetchOpenSea(
+      `/account/${encodeURIComponent(address)}/collections`,
+      apiKey
+    );
+  } catch {
+    return null;
+  }
+}
+
+export async function analyzeCreator(
+  candidate,
+  apiKey = process.env.OPENSEA_API_KEY
+) {
   if (!apiKey) {
     throw new Error("Missing OPENSEA_API_KEY");
   }
@@ -123,12 +116,23 @@ export async function analyzeCreator(candidate, apiKey = process.env.OPENSEA_API
   if (!slug && !contractAddress) {
     return {
       status: "UNKNOWN",
-      creatorAddress: null,
-      collection: null,
-      contract: null,
+      address: null,
+      identity: {
+        username: null,
+        ensName: null
+      },
+      attribution: {
+        source: "NONE",
+        confidence: "NONE"
+      },
+      portfolio: {
+        ownedCollections: 0,
+        ownedItems: 0,
+        estimatedUsdValue: 0
+      },
+      flags: ["NO_CREATOR_LOOKUP_DATA"],
       score: 0,
-      maxScore: 10,
-      flags: ["NO_CREATOR_LOOKUP_DATA"]
+      maxScore: 25
     };
   }
 
@@ -167,48 +171,99 @@ export async function analyzeCreator(candidate, apiKey = process.env.OPENSEA_API
     }
   }
 
-  const creatorAddress = extractCreatorAddress(collection, contract);
+  const contractOwner =
+    extractAddress(contract?.owner) ||
+    normalizeAddress(contract?.owner_address) ||
+    extractAddress(collection?.owner) ||
+    normalizeAddress(collection?.owner_address);
+
+  if (!contractOwner) {
+    return {
+      status: "UNKNOWN",
+      address: null,
+      identity: {
+        username: null,
+        ensName: null
+      },
+      attribution: {
+        source: "NONE",
+        confidence: "NONE"
+      },
+      portfolio: {
+        ownedCollections: 0,
+        ownedItems: 0,
+        estimatedUsdValue: 0
+      },
+      flags: ["OWNER_NOT_FOUND"],
+      score: 0,
+      maxScore: 25,
+      errors
+    };
+  }
+
+  const accountIdentity = await getAccountIdentity(
+    contractOwner,
+    apiKey
+  );
+
+  const accountCollections = await getAccountCollections(
+    contractOwner,
+    apiKey
+  );
+
+  const collections =
+    Array.isArray(accountCollections?.collections)
+      ? accountCollections.collections
+      : [];
+
+  const ownedItems = collections.reduce(
+    (total, item) =>
+      total + Number(item.item_count ?? 0),
+    0
+  );
+
+  const estimatedUsdValue = collections.reduce(
+    (total, item) =>
+      total + Number(item.usd_value ?? 0),
+    0
+  );
+
+  const identity = {
+    username: accountIdentity?.username ?? null,
+    ensName: accountIdentity?.ens_name ?? null
+  };
+
+  const attribution = {
+    source: "CONTRACT_OWNER",
+    confidence: "MEDIUM"
+  };
 
   const scoring = calculateCreatorScore({
-    creatorAddress,
-    collection,
-    contract
+    identity,
+    attribution
   });
 
   return {
-    status: creatorAddress ? "FOUND" : "UNKNOWN",
+    status: "IDENTIFIED",
 
-    creatorAddress,
+    address: contractOwner,
 
-    collection: {
-      name: collection?.name ?? null,
-      slug: collection?.slug ?? slug ?? null,
-      owner: extractAddress(
-        collection?.owner || collection?.owner_address
-      ),
-      createdDate: collection?.created_date ?? null,
-      totalSupply: collection?.total_supply ?? null
+    identity,
+
+    attribution,
+
+    portfolio: {
+      ownedCollections: collections.length,
+      ownedItems,
+      estimatedUsdValue: Number(
+        estimatedUsdValue.toFixed(2)
+      )
     },
 
-    contract: {
-      address: contractAddress ?? null,
-      chain: chain ?? null,
-      standard:
-        contract?.contract_standard ??
-        contract?.standard ??
-        null,
-      owner: extractAddress(
-        contract?.owner || contract?.owner_address
-      ),
-      totalSupply:
-        contract?.total_supply ??
-        contract?.supply ??
-        null
-    },
+    flags: scoring.flags,
 
     score: scoring.score,
     maxScore: scoring.maxScore,
-    flags: scoring.flags,
 
     errors
   };
