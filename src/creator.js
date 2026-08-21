@@ -1,198 +1,190 @@
 const OPENSEA_API = "https://api.opensea.io/api/v2";
 
-async function resolveAccount(address, apiKey) {
-  const response = await fetch(
-    `${OPENSEA_API}/accounts/resolve/${address}`,
-    {
-      headers: {
-        "X-API-KEY": apiKey
-      }
+/* ============================================================
+ * Generic OpenSea Fetch
+ * ============================================================
+ */
+
+async function fetchOpenSea(path, apiKey) {
+  const response = await fetch(`${OPENSEA_API}${path}`, {
+    headers: {
+      "X-API-KEY": apiKey
     }
-  );
+  });
 
   if (!response.ok) {
     throw new Error(
-      `OpenSea account resolve error: ${response.status} ${response.statusText}`
+      `OpenSea API error: ${response.status} ${response.statusText}`
     );
   }
 
   return response.json();
 }
+
+/* ============================================================
+ * Resolve creator identity
+ * ============================================================
+ */
+
+async function resolveAccount(address, apiKey) {
+  return fetchOpenSea(`/accounts/resolve/${address}`, apiKey);
+}
+
+/* ============================================================
+ * Creator portfolio (FIXED ENDPOINT)
+ * ============================================================
+ */
 
 async function getAccountCollections(address, apiKey) {
-  const response = await fetch(
-    `${OPENSEA_API}/accounts/${address}/collections?limit=50`,
-    {
-      headers: {
-        "X-API-KEY": apiKey
-      }
-    }
-  );
-
-  if (!response.ok) {
-    throw new Error(
-      `OpenSea account collections error: ${response.status} ${response.statusText}`
-    );
-  }
-
-  return response.json();
+  return fetchOpenSea(`/account/${address}/collections`, apiKey);
 }
+
+/* ============================================================
+ * Collection statistics
+ * ============================================================
+ */
 
 async function getCollectionStats(slug, apiKey) {
-  const response = await fetch(
-    `${OPENSEA_API}/collections/${slug}/stats`,
-    {
-      headers: {
-        "X-API-KEY": apiKey
-      }
-    }
-  );
+  try {
+    const stats = await fetchOpenSea(
+      `/collections/${encodeURIComponent(slug)}/stats`,
+      apiKey
+    );
 
-  if (!response.ok) {
+    return stats.total ?? null;
+  } catch {
     return null;
   }
-
-  const data = await response.json();
-
-  return data.total ?? null;
 }
 
-function calculateHistoricalMetrics(collections) {
+/* ============================================================
+ * Historical metrics calculator
+ * ============================================================
+ */
+
+function median(values) {
+  if (!values.length) return 0;
+
+  const sorted = [...values].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+
+  if (sorted.length % 2 === 0) {
+    return (sorted[mid - 1] + sorted[mid]) / 2;
+  }
+
+  return sorted[mid];
+}
+
+function buildHistoricalMetrics(collections) {
   if (!collections.length) {
     return {
+      collectionCount: 0,
+      analyzedCollections: 0,
+
       totalVolume: 0,
       totalSales: 0,
       totalOwners: 0,
-      bestFloorPrice: 0,
-      bestCollection: null,
+
       averageVolume: 0,
       averageSales: 0,
       averageOwners: 0,
+
       medianVolume: 0,
       medianSales: 0,
       medianOwners: 0,
+
+      bestFloorPrice: 0,
+      bestCollection: null,
+
+      activeCollections: 0,
       highVolumeCollections: 0,
       highSalesCollections: 0,
       highFloorCollections: 0,
-      activeCollections: 0
+
+      collections: []
     };
   }
 
-  const volumes = collections
-    .map((item) => Number(item.volume ?? 0))
-    .sort((a, b) => a - b);
+  const volumes = collections.map((c) => c.volume);
+  const sales = collections.map((c) => c.sales);
+  const owners = collections.map((c) => c.owners);
 
-  const sales = collections
-    .map((item) => Number(item.sales ?? 0))
-    .sort((a, b) => a - b);
-
-  const owners = collections
-    .map((item) => Number(item.owners ?? 0))
-    .sort((a, b) => a - b);
-
-  const totalVolume = volumes.reduce(
-    (sum, value) => sum + value,
-    0
-  );
-
-  const totalSales = sales.reduce(
-    (sum, value) => sum + value,
-    0
-  );
-
-  const totalOwners = owners.reduce(
-    (sum, value) => sum + value,
-    0
-  );
-
-  function median(values) {
-    if (!values.length) return 0;
-
-    const middle = Math.floor(values.length / 2);
-
-    if (values.length % 2 === 0) {
-      return (
-        (values[middle - 1] + values[middle]) / 2
-      );
-    }
-
-    return values[middle];
-  }
+  const totalVolume = volumes.reduce((a, b) => a + b, 0);
+  const totalSales = sales.reduce((a, b) => a + b, 0);
+  const totalOwners = owners.reduce((a, b) => a + b, 0);
 
   const bestCollection =
-    [...collections]
-      .sort(
-        (a, b) =>
-          Number(b.floorPrice ?? 0) -
-          Number(a.floorPrice ?? 0)
-      )[0] ?? null;
+    [...collections].sort((a, b) => b.floorPrice - a.floorPrice)[0] ?? null;
 
   return {
-    totalVolume,
+    collectionCount: collections.length,
+    analyzedCollections: collections.length,
+
+    totalVolume: Number(totalVolume.toFixed(4)),
     totalSales,
     totalOwners,
 
-    bestFloorPrice: Number(
-      bestCollection?.floorPrice ?? 0
-    ),
+    averageVolume: Number((totalVolume / collections.length).toFixed(4)),
+    averageSales: Number((totalSales / collections.length).toFixed(2)),
+    averageOwners: Number((totalOwners / collections.length).toFixed(2)),
 
+    medianVolume: Number(median(volumes).toFixed(4)),
+    medianSales: Number(median(sales).toFixed(2)),
+    medianOwners: Number(median(owners).toFixed(2)),
+
+    bestFloorPrice: Number((bestCollection?.floorPrice ?? 0).toFixed(4)),
     bestCollection,
 
-    averageVolume:
-      totalVolume / collections.length,
+    activeCollections: collections.filter(
+      (c) => c.volume > 0 || c.sales > 0
+    ).length,
 
-    averageSales:
-      totalSales / collections.length,
+    highVolumeCollections: collections.filter((c) => c.volume >= 100).length,
 
-    averageOwners:
-      totalOwners / collections.length,
+    highSalesCollections: collections.filter((c) => c.sales >= 1000).length,
 
-    medianVolume: median(volumes),
-    medianSales: median(sales),
-    medianOwners: median(owners),
+    highFloorCollections: collections.filter((c) => c.floorPrice >= 1).length,
 
-    highVolumeCollections:
-      collections.filter(
-        (item) =>
-          Number(item.volume ?? 0) >= 100
-      ).length,
-
-    highSalesCollections:
-      collections.filter(
-        (item) =>
-          Number(item.sales ?? 0) >= 1000
-      ).length,
-
-    highFloorCollections:
-      collections.filter(
-        (item) =>
-          Number(item.floorPrice ?? 0) >= 1
-      ).length,
-
-    activeCollections:
-      collections.filter(
-        (item) =>
-          Number(item.volume ?? 0) > 0 ||
-          Number(item.sales ?? 0) > 0
-      ).length
+    collections
   };
 }
 
-function findCreatorAddress(candidate) {
-  return (
-    candidate?.creatorAddress ??
-    candidate?.metadataIntel?.collection?.owner ??
-    candidate?.metadataIntel?.owner ??
-    candidate?.identity?.creator ??
-    null
-  );
+/* ============================================================
+ * Creator score (0–25)
+ * ============================================================
+ */
+
+function calculateCreatorScore(metrics, username, ensName) {
+  let score = 0;
+
+  if (username) score += 2;
+  if (ensName) score += 2;
+
+  score += 3; // creator identified
+
+  if (metrics.activeCollections >= 3) score += 3;
+  if (metrics.highVolumeCollections >= 1) score += 3;
+  if (metrics.highSalesCollections >= 1) score += 3;
+  if (metrics.highFloorCollections >= 1) score += 3;
+
+  if (metrics.totalSales >= 1000) score += 3;
+  if (metrics.totalVolume >= 500) score += 3;
+
+  return Math.min(score, 25);
 }
 
-export async function analyzeCreator(candidate, apiKey) {
-  const creatorAddress =
-    findCreatorAddress(candidate);
+/* ============================================================
+ * Main Creator Intelligence
+ * ============================================================
+ */
 
-  if (!creatorAddress) {
+export async function analyzeCreator(candidate, apiKey) {
+  const errors = [];
+  const flags = [];
+
+  const slug = candidate.identity?.slug;
+
+  if (!slug) {
     return {
       status: "UNKNOWN",
       address: null,
@@ -209,199 +201,115 @@ export async function analyzeCreator(candidate, apiKey) {
         ownedItems: 0,
         estimatedUsdValue: 0
       },
-      historicalCollections: {
-        collectionCount: 0,
-        analyzedCollections: 0,
-        totalVolume: 0,
-        totalSales: 0,
-        totalOwners: 0,
-        bestFloorPrice: 0,
-        bestCollection: null,
-        averageVolume: 0,
-        averageSales: 0,
-        averageOwners: 0,
-        medianVolume: 0,
-        medianSales: 0,
-        medianOwners: 0,
-        highVolumeCollections: 0,
-        highSalesCollections: 0,
-        highFloorCollections: 0,
-        activeCollections: 0,
-        collections: []
-      },
+      historicalCollections: buildHistoricalMetrics([]),
       flags: [],
       score: 0,
       maxScore: 25,
-      errors: ["Creator address unavailable"]
+      errors: ["Collection slug unavailable."]
     };
   }
 
   try {
-    const account =
-      await resolveAccount(
-        creatorAddress,
-        apiKey
-      );
+    /*
+     * STEP 1
+     * Resolve creator from collection owner.
+     */
 
-    const collectionsResponse =
-      await getAccountCollections(
-        creatorAddress,
-        apiKey
-      );
+    const collection = await fetchOpenSea(
+      `/collections/${encodeURIComponent(slug)}`,
+      apiKey
+    );
 
-    const rawCollections =
-      collectionsResponse.collections ?? [];
+    const creatorAddress = collection.owner;
 
-    const analyzedCollections = [];
+    if (!creatorAddress) {
+      throw new Error("Creator owner unavailable.");
+    }
 
-    for (
-      const collection
-      of rawCollections.slice(0, 10)
-    ) {
-      const stats =
-        await getCollectionStats(
-          collection.collection,
-          apiKey
-        );
+    flags.push("CONTRACT_OWNER");
 
-      const total =
-        stats ?? {};
+    /*
+     * STEP 2
+     * Resolve username / ENS.
+     */
 
-      analyzedCollections.push({
-        name:
-          collection.name ??
-          collection.collection,
+    let username = null;
+    let ensName = null;
 
-        slug:
-          collection.collection,
+    try {
+      const account = await resolveAccount(creatorAddress, apiKey);
 
-        volume:
-          Number(total.volume ?? 0),
+      username = account.username ?? null;
+      ensName = account.ens_name ?? null;
 
-        sales:
-          Number(total.sales ?? 0),
+      if (username) flags.push("OPENSEA_USERNAME");
+      if (ensName) flags.push("ENS_IDENTITY");
+    } catch (error) {
+      errors.push(error.message);
+    }
 
-        owners:
-          Number(total.num_owners ?? 0),
+    /*
+     * STEP 3
+     * Portfolio collections.
+     */
 
-        floorPrice:
-          Number(total.floor_price ?? 0)
+    const portfolioData = await getAccountCollections(
+      creatorAddress,
+      apiKey
+    );
+
+    const portfolioCollections = portfolioData.collections ?? [];
+
+    const ownedItems = portfolioCollections.reduce(
+      (sum, collection) => sum + Number(collection.total_quantity ?? 0),
+      0
+    );
+
+    const estimatedUsdValue = portfolioCollections.reduce(
+      (sum, collection) => sum + Number(collection.usd_value ?? 0),
+      0
+    );
+
+    /*
+     * STEP 4
+     * Analyze first 10 historical collections.
+     */
+
+    const analyzed = [];
+
+    for (const item of portfolioCollections.slice(0, 10)) {
+      const stats = await getCollectionStats(item.collection, apiKey);
+
+      analyzed.push({
+        name: item.name ?? item.collection,
+        slug: item.collection,
+
+        volume: Number(stats?.volume ?? 0),
+        sales: Number(stats?.sales ?? 0),
+        owners: Number(stats?.num_owners ?? 0),
+        floorPrice: Number(stats?.floor_price ?? 0)
       });
     }
 
-    const historicalMetrics =
-      calculateHistoricalMetrics(
-        analyzedCollections
-      );
+    const metrics = buildHistoricalMetrics(analyzed);
 
-    const portfolio = {
-      ownedCollections:
-        rawCollections.length,
-
-      ownedItems:
-        Number(
-          collectionsResponse.total_items ??
-          0
-        ),
-
-      estimatedUsdValue:
-        Number(
-          collectionsResponse.total_usd_value ??
-          0
-        )
-    };
-
-    const flags = [
-      "CONTRACT_OWNER"
-    ];
-
-    if (account.username) {
-      flags.push("OPENSEA_USERNAME");
+    if (metrics.activeCollections > 0) {
+      flags.push("HISTORICAL_ACTIVITY");
     }
 
-    if (account.ens_name) {
-      flags.push("ENS_IDENTITY");
+    if (metrics.highVolumeCollections > 0) {
+      flags.push("HIGH_VOLUME_HISTORY");
     }
 
-    if (
-      historicalMetrics.activeCollections > 0
-    ) {
-      flags.push(
-        "HISTORICAL_ACTIVITY"
-      );
+    if (metrics.highSalesCollections > 0) {
+      flags.push("HIGH_SALES_HISTORY");
     }
 
-    if (
-      historicalMetrics.highVolumeCollections > 0
-    ) {
-      flags.push(
-        "HIGH_VOLUME_HISTORY"
-      );
+    if (metrics.highFloorCollections > 0) {
+      flags.push("HIGH_FLOOR_HISTORY");
     }
 
-    if (
-      historicalMetrics.highSalesCollections > 0
-    ) {
-      flags.push(
-        "HIGH_SALES_HISTORY"
-      );
-    }
-
-    if (
-      historicalMetrics.highFloorCollections > 0
-    ) {
-      flags.push(
-        "HIGH_FLOOR_HISTORY"
-      );
-    }
-
-    let score = 0;
-
-    if (account.username) {
-      score += 2;
-    }
-
-    if (account.ens_name) {
-      score += 2;
-    }
-
-    if (creatorAddress) {
-      score += 3;
-    }
-
-    if (
-      historicalMetrics.activeCollections >= 3
-    ) {
-      score += 3;
-    }
-
-    if (
-      historicalMetrics.highVolumeCollections >= 1
-    ) {
-      score += 3;
-    }
-
-    if (
-      historicalMetrics.highSalesCollections >= 1
-    ) {
-      score += 3;
-    }
-
-    if (
-      historicalMetrics.highFloorCollections >= 1
-    ) {
-      score += 3;
-    }
-
-    if (
-      historicalMetrics.totalSales >= 1000
-    ) {
-      score += 3;
-    }
-
-    if (score > 25) {
-      score = 25;
-    }
+    const score = calculateCreatorScore(metrics, username, ensName);
 
     return {
       status: "IDENTIFIED",
@@ -409,31 +317,46 @@ export async function analyzeCreator(candidate, apiKey) {
       address: creatorAddress,
 
       identity: {
-        username:
-          account.username ?? null,
-
-        ensName:
-          account.ens_name ?? null
+        username,
+        ensName
       },
 
       attribution: {
         source: "CONTRACT_OWNER",
-        confidence: "HIGH"
+        confidence: username || ensName ? "HIGH" : "MEDIUM"
       },
 
-      portfolio,
+      portfolio: {
+        ownedCollections: portfolioCollections.length,
+        ownedItems,
+        estimatedUsdValue: Number(estimatedUsdValue.toFixed(2))
+      },
 
       historicalCollections: {
-        collectionCount:
-          rawCollections.length,
+        collectionCount: portfolioCollections.length,
+        analyzedCollections: metrics.analyzedCollections,
 
-        analyzedCollections:
-          analyzedCollections.length,
+        totalVolume: metrics.totalVolume,
+        totalSales: metrics.totalSales,
+        totalOwners: metrics.totalOwners,
 
-        ...historicalMetrics,
+        averageVolume: metrics.averageVolume,
+        averageSales: metrics.averageSales,
+        averageOwners: metrics.averageOwners,
 
-        collections:
-          analyzedCollections
+        medianVolume: metrics.medianVolume,
+        medianSales: metrics.medianSales,
+        medianOwners: metrics.medianOwners,
+
+        bestFloorPrice: metrics.bestFloorPrice,
+        bestCollection: metrics.bestCollection,
+
+        activeCollections: metrics.activeCollections,
+        highVolumeCollections: metrics.highVolumeCollections,
+        highSalesCollections: metrics.highSalesCollections,
+        highFloorCollections: metrics.highFloorCollections,
+
+        collections: metrics.collections
       },
 
       flags,
@@ -441,48 +364,37 @@ export async function analyzeCreator(candidate, apiKey) {
       score,
       maxScore: 25,
 
-      errors: []
+      errors
     };
   } catch (error) {
     return {
       status: "ERROR",
-      address: creatorAddress,
+
+      address: null,
+
       identity: {
         username: null,
         ensName: null
       },
+
       attribution: {
-        source: "CONTRACT_OWNER",
-        confidence: "MEDIUM"
+        source: "UNAVAILABLE",
+        confidence: "LOW"
       },
+
       portfolio: {
         ownedCollections: 0,
         ownedItems: 0,
         estimatedUsdValue: 0
       },
-      historicalCollections: {
-        collectionCount: 0,
-        analyzedCollections: 0,
-        totalVolume: 0,
-        totalSales: 0,
-        totalOwners: 0,
-        bestFloorPrice: 0,
-        bestCollection: null,
-        averageVolume: 0,
-        averageSales: 0,
-        averageOwners: 0,
-        medianVolume: 0,
-        medianSales: 0,
-        medianOwners: 0,
-        highVolumeCollections: 0,
-        highSalesCollections: 0,
-        highFloorCollections: 0,
-        activeCollections: 0,
-        collections: []
-      },
-      flags: [],
+
+      historicalCollections: buildHistoricalMetrics([]),
+
+      flags,
+
       score: 0,
       maxScore: 25,
+
       errors: [error.message]
     };
   }
