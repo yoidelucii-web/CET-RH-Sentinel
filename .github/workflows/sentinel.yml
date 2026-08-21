@@ -27,6 +27,9 @@ jobs:
         
       - name: Check gates module
         run: node --check src/gates.js
+
+      - name: Check stage module
+        run: node --check src/stage.js
         
       - name: Test OpenSea drops
         env:
