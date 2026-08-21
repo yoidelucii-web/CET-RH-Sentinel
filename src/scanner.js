@@ -6,6 +6,7 @@ import { classifyMintStage } from "./stage.js";
 import { getExecutionStatus } from "./execution.js";
 import { calculateGoldenEggScore } from "./score.js";
 import { analyzeCreator } from "./creator.js";
+import { analyzeMetadata } from "./metadata.js";
 
 const apiKey = process.env.OPENSEA_API_KEY;
 
@@ -22,6 +23,7 @@ const candidates = await Promise.all(
     const stageClass = classifyMintStage(candidate.mint.type);
     const executionStatus = getExecutionStatus(stageClass);
     const creatorIntel = await analyzeCreator(candidate, apiKey);
+    const metadataIntel = await analyzeMetadata(candidate, apiKey);
     const scoring = calculateGoldenEggScore(candidate);
 
     return {
@@ -30,6 +32,7 @@ const candidates = await Promise.all(
       stageClassification: stageClass,
       executionStatus,
       creatorIntel,
+      metadataIntel,
       goldenEgg: scoring
     };
   })
