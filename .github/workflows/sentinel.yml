@@ -33,6 +33,9 @@ jobs:
 
       - name: Check execution module
         run: node --check src/execution.js
+
+      - name: Check score module
+        run: node --check src/score.js
         
       - name: Test OpenSea drops
         env:
