@@ -1,5 +1,2463 @@
 {
-  "status": "INITIALIZED",
   "scanner": "CET RH Sentinel",
-  "version": "0.1.0"
+  "version": "1.2.0",
+  "network": "robinhood",
+  "scanTime": "2026-08-21T14:20:52.531Z",
+  "executionPolicy": {
+    "autoMintMinScore": 90,
+    "autoMintMaxRisk": 10,
+    "hardGatesRequired": true,
+    "technicalExecutionRequired": true
+  },
+  "summary": {
+    "scanTime": "2026-08-21T14:20:52.531Z",
+    "network": "robinhood",
+    "totalDrops": 5,
+    "executionEligible": 1,
+    "watchOnly": 4,
+    "reject": 0,
+    "autoMintEligible": 0,
+    "alphaCandidates": 0,
+    "watchlist": 0,
+    "ignore": 4,
+    "averageScore": 67.4,
+    "topCandidate": {
+      "name": "GAWSWRLD",
+      "slug": "gawswrld2026",
+      "score": 79,
+      "classification": "MONITOR",
+      "executionStatus": "EXECUTION_ELIGIBLE"
+    },
+    "topFive": [
+      {
+        "rank": 1,
+        "tier": "C",
+        "name": "GAWSWRLD",
+        "score": 79,
+        "classification": "MONITOR",
+        "stage": "PUBLIC",
+        "executionStatus": "EXECUTION_ELIGIBLE"
+      },
+      {
+        "rank": 2,
+        "tier": "D",
+        "name": "Rekt Tradooor",
+        "score": 68,
+        "classification": "IGNORE",
+        "stage": "PRESALE",
+        "executionStatus": "WATCH_ONLY"
+      },
+      {
+        "rank": 3,
+        "tier": "D",
+        "name": "Internet Monkes",
+        "score": 67,
+        "classification": "IGNORE",
+        "stage": "PRESALE",
+        "executionStatus": "WATCH_ONLY"
+      },
+      {
+        "rank": 4,
+        "tier": "D",
+        "name": "Galaktic Gang Embodied",
+        "score": 65,
+        "classification": "IGNORE",
+        "stage": "PRESALE",
+        "executionStatus": "WATCH_ONLY"
+      },
+      {
+        "rank": 5,
+        "tier": "D",
+        "name": "The Doll Club",
+        "score": 58,
+        "classification": "IGNORE",
+        "stage": "PRESALE",
+        "executionStatus": "WATCH_ONLY"
+      }
+    ],
+    "scoreDistribution": {
+      "sTier": 0,
+      "aTier": 0,
+      "bTier": 0,
+      "cTier": 1,
+      "dTier": 4
+    },
+    "averageRisk": 7.2,
+    "autoMintApproved": 0,
+    "autoMintBlocked": 5
+  },
+  "candidates": [
+    {
+      "identity": {
+        "name": "GAWSWRLD",
+        "slug": "gawswrld2026",
+        "contract": "0x60a40caa5353df0aa2cc9cf33999a952bf3475c6",
+        "chain": "robinhood"
+      },
+      "mint": {
+        "type": "public_sale",
+        "label": "Public stage",
+        "priceWei": "11100000000000000",
+        "currencyAddress": "0x0000000000000000000000000000000000000000",
+        "startTime": "2026-08-21T22:33:00Z",
+        "endTime": "2026-08-29T05:40:00Z",
+        "maxPerWallet": "9"
+      },
+      "opensea": {
+        "url": "https://opensea.io/collection/gawswrld2026"
+      },
+      "status": {
+        "isMinting": false,
+        "activeStage": null,
+        "nextStage": "public_sale"
+      },
+      "hardGates": {
+        "passed": true,
+        "reasons": []
+      },
+      "stageClassification": "PUBLIC",
+      "executionStatus": "EXECUTION_ELIGIBLE",
+      "creatorIntel": {
+        "status": "IDENTIFIED",
+        "address": "0xf7c4574fbef01b5281fd6a705e3e59278ca390c5",
+        "identity": {
+          "username": "gawswolf",
+          "ensName": "gawswolf.eth"
+        },
+        "attribution": {
+          "source": "CONTRACT_OWNER",
+          "confidence": "HIGH"
+        },
+        "portfolio": {
+          "ownedCollections": 47,
+          "ownedItems": 92,
+          "estimatedUsdValue": 46.42
+        },
+        "historicalCollections": {
+          "collectionCount": 47,
+          "analyzedCollections": 10,
+          "totalVolume": 5744.2506,
+          "totalSales": 58183,
+          "totalOwners": 74982,
+          "averageVolume": 574.4251,
+          "averageSales": 5818.3,
+          "averageOwners": 7498.2,
+          "medianVolume": 152.568,
+          "medianSales": 3690,
+          "medianOwners": 2802.5,
+          "bestFloorPrice": 3.33,
+          "bestCollection": {
+            "name": "Aurora Capsules",
+            "slug": "auroracapsules",
+            "volume": 25.411329999999953,
+            "sales": 406,
+            "owners": 487,
+            "floorPrice": 3.33
+          },
+          "activeCollections": 10,
+          "highVolumeCollections": 7,
+          "highSalesCollections": 7,
+          "highFloorCollections": 1,
+          "collections": [
+            {
+              "name": "The WynLambo",
+              "slug": "thewynlambo",
+              "volume": 489.41342595895793,
+              "sales": 5518,
+              "owners": 2626,
+              "floorPrice": 0.00799
+            },
+            {
+              "name": "Rogue Society Bots",
+              "slug": "roguesocietybot",
+              "volume": 2815.504923102536,
+              "sales": 17398,
+              "owners": 6747,
+              "floorPrice": 0.0005
+            },
+            {
+              "name": "Aurora Capsules",
+              "slug": "auroracapsules",
+              "volume": 25.411329999999953,
+              "sales": 406,
+              "owners": 487,
+              "floorPrice": 3.33
+            },
+            {
+              "name": "Obey Make Art Not War Ukraine",
+              "slug": "obey-make-art-not-war-ukraine",
+              "volume": 18.245628557043183,
+              "sales": 684,
+              "owners": 2208,
+              "floorPrice": 0.0046997
+            },
+            {
+              "name": "Originals by Ozzy Osbourne",
+              "slug": "originalsbyozzyosbourne",
+              "volume": 28.683003609810903,
+              "sales": 973,
+              "owners": 2709,
+              "floorPrice": 0.00392
+            },
+            {
+              "name": "Augminted Labs Scientists",
+              "slug": "augminted-labs-scientists",
+              "volume": 171.80199877719699,
+              "sales": 10338,
+              "owners": 38547,
+              "floorPrice": 0.000398
+            },
+            {
+              "name": "Elysium Shell",
+              "slug": "e-shell",
+              "volume": 481.8286618593395,
+              "sales": 3771,
+              "owners": 2656,
+              "floorPrice": 0.00836
+            },
+            {
+              "name": "AlphaBetty Doodles",
+              "slug": "alphabetty-doodles",
+              "volume": 1473.62183201349,
+              "sales": 12797,
+              "owners": 3490,
+              "floorPrice": 0.00034437
+            },
+            {
+              "name": "The Alien Doogle",
+              "slug": "thealiendoogle",
+              "volume": 106.4058093149692,
+              "sales": 2689,
+              "owners": 2896,
+              "floorPrice": 0.00118999
+            },
+            {
+              "name": "oncyber & friends",
+              "slug": "oncyber-andfriends",
+              "volume": 133.3340342269806,
+              "sales": 3609,
+              "owners": 12616,
+              "floorPrice": 0.000799
+            }
+          ]
+        },
+        "flags": [
+          "CONTRACT_OWNER",
+          "OPENSEA_USERNAME",
+          "ENS_IDENTITY",
+          "HISTORICAL_ACTIVITY",
+          "HIGH_VOLUME_HISTORY",
+          "HIGH_SALES_HISTORY",
+          "HIGH_FLOOR_HISTORY"
+        ],
+        "score": 25,
+        "maxScore": 25,
+        "errors": []
+      },
+      "metadataIntel": {
+        "status": "FOUND",
+        "supply": {
+          "max": 3333,
+          "minted": 0,
+          "remaining": 3333
+        },
+        "mint": {
+          "type": "public_sale",
+          "label": "Public stage",
+          "priceWei": "11100000000000000",
+          "currencyAddress": "0x0000000000000000000000000000000000000000",
+          "maxPerWallet": "9",
+          "startTime": "2026-08-21T22:33:00Z",
+          "endTime": "2026-08-29T05:40:00Z"
+        },
+        "royalty": [
+          {
+            "fee": 1,
+            "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
+            "required": true
+          },
+          {
+            "fee": 0.1,
+            "recipient": "0xf7c4574fbef01b5281fd6a705e3e59278ca390c5",
+            "required": false
+          }
+        ],
+        "contract": {
+          "address": "0x60a40caa5353df0aa2cc9cf33999a952bf3475c6",
+          "chain": "robinhood",
+          "standard": "erc721"
+        },
+        "collection": {
+          "name": "GAWSWRLD",
+          "slug": "gawswrld2026",
+          "category": "art",
+          "description": "3333 art PFP's on the RH chain. "
+        },
+        "signals": [
+          "MAX_SUPPLY_PRESENT",
+          "TOTAL_SUPPLY_PRESENT",
+          "MINT_STAGE_PRESENT",
+          "ROYALTY_DATA_PRESENT",
+          "CONTRACT_STANDARD_PRESENT"
+        ],
+        "errors": []
+      },
+      "marketIntel": {
+        "status": "FOUND",
+        "verified": true,
+        "collection": {
+          "name": "GAWSWRLD",
+          "slug": "gawswrld2026",
+          "owner": "0xf7c4574fbef01b5281fd6a705e3e59278ca390c5",
+          "category": "art"
+        },
+        "stats": {
+          "floorPrice": 0,
+          "volume": 0,
+          "sales": 0,
+          "averagePrice": null,
+          "numOwners": 0,
+          "marketCap": null
+        },
+        "errors": []
+      },
+      "riskIntel": {
+        "level": "MINIMAL",
+        "score": 0,
+        "maxRisk": 40,
+        "penalties": [],
+        "flags": [],
+        "context": {
+          "maxSupply": 3333,
+          "maxPerWallet": 9,
+          "royaltyPercentage": 1.1,
+          "creatorConfidence": "HIGH",
+          "creatorUsername": "gawswolf",
+          "creatorEns": "gawswolf.eth",
+          "ownedCollections": 47,
+          "ownedItems": 92,
+          "contractStandard": "erc721"
+        }
+      },
+      "alphaIntel": {
+        "score": 9,
+        "maxScore": 10,
+        "classification": "HIGH_ALPHA",
+        "signals": [
+          {
+            "signal": "HIGH_VOLUME_CREATOR",
+            "points": 2,
+            "reason": "Creator historical volume is 5744.25 ETH."
+          },
+          {
+            "signal": "HIGH_SALES_CREATOR",
+            "points": 2,
+            "reason": "Creator historical sales are 58183."
+          },
+          {
+            "signal": "HIGH_FLOOR_HISTORY",
+            "points": 2,
+            "reason": "Creator has 1 historical collection(s) with floor ≥ 1 ETH."
+          },
+          {
+            "signal": "PUBLIC_STAGE_READY",
+            "points": 2,
+            "reason": "Collection has an upcoming public mint stage."
+          },
+          {
+            "signal": "MINIMAL_RISK",
+            "points": 1,
+            "reason": "Risk engine reports minimal risk."
+          }
+        ]
+      },
+      "walletIntel": {
+        "score": 10,
+        "maxScore": 10,
+        "classification": "SMART_CREATOR",
+        "signals": [
+          {
+            "signal": "CREATOR_IDENTIFIED",
+            "points": 2,
+            "reason": "Creator wallet has been identified."
+          },
+          {
+            "signal": "ENS_IDENTITY",
+            "points": 1,
+            "reason": "Creator wallet has an ENS identity."
+          },
+          {
+            "signal": "LARGE_COLLECTION_HISTORY",
+            "points": 2,
+            "reason": "Creator owns 47 collections."
+          },
+          {
+            "signal": "MULTIPLE_HIGH_VOLUME_COLLECTIONS",
+            "points": 2,
+            "reason": "Creator has 7 high-volume collections."
+          },
+          {
+            "signal": "MULTIPLE_HIGH_SALES_COLLECTIONS",
+            "points": 2,
+            "reason": "Creator has 7 collections with over 1,000 sales."
+          },
+          {
+            "signal": "BLUECHIP_HISTORY",
+            "points": 1,
+            "reason": "Best historical floor is 3.33 ETH."
+          }
+        ]
+      },
+      "socialIntel": {
+        "score": 7,
+        "maxScore": 10,
+        "classification": "MEDIUM_SOCIAL",
+        "signals": [
+          {
+            "signal": "OPENSEA_USERNAME",
+            "points": 2,
+            "reason": "Creator has OpenSea username \"gawswolf\"."
+          },
+          {
+            "signal": "ENS_IDENTITY",
+            "points": 2,
+            "reason": "Creator has ENS \"gawswolf.eth\"."
+          },
+          {
+            "signal": "PROJECT_DESCRIPTION",
+            "points": 1,
+            "reason": "Project has a collection description."
+          },
+          {
+            "signal": "OPENSEA_COLLECTION_PAGE",
+            "points": 2,
+            "reason": "Collection has an OpenSea page."
+          }
+        ]
+      },
+      "goldenEgg": {
+        "score": 79,
+        "maxScore": 100,
+        "classification": "MONITOR",
+        "breakdown": [
+          {
+            "factor": "CREATOR_IDENTIFIED",
+            "points": 5,
+            "reason": "Creator address has been identified."
+          },
+          {
+            "factor": "PUBLIC_CREATOR_IDENTITY",
+            "points": 3,
+            "reason": "Creator has a public identity."
+          },
+          {
+            "factor": "CREATOR_VOLUME_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical volume."
+          },
+          {
+            "factor": "CREATOR_SALES_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical sales."
+          },
+          {
+            "factor": "BLUECHIP_CREATOR_HISTORY",
+            "points": 3,
+            "reason": "Creator has historical collection with floor ≥1 ETH."
+          },
+          {
+            "factor": "HIGH_CREATOR_CONFIDENCE",
+            "points": 2,
+            "reason": "Creator attribution has high confidence."
+          },
+          {
+            "factor": "ROBINHOOD_CHAIN",
+            "points": 4,
+            "reason": "Collection is launching on Robinhood Chain."
+          },
+          {
+            "factor": "CONTRACT_PRESENT",
+            "points": 3,
+            "reason": "NFT contract is identified."
+          },
+          {
+            "factor": "PROJECT_DESCRIPTION",
+            "points": 3,
+            "reason": "Project description is available."
+          },
+          {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
+            "factor": "OPENSEA_COLLECTION",
+            "points": 2,
+            "reason": "OpenSea collection page exists."
+          },
+          {
+            "factor": "COLLECTION_NAME",
+            "points": 1,
+            "reason": "Collection name is available."
+          },
+          {
+            "factor": "PUBLIC_MINT",
+            "points": 5,
+            "reason": "Public mint stage detected."
+          },
+          {
+            "factor": "MINT_PRICE_KNOWN",
+            "points": 3,
+            "reason": "Mint price is known."
+          },
+          {
+            "factor": "MINT_LIMIT_KNOWN",
+            "points": 2,
+            "reason": "Maximum mint per wallet is known."
+          },
+          {
+            "factor": "MINT_START_KNOWN",
+            "points": 2,
+            "reason": "Mint start time is known."
+          },
+          {
+            "factor": "MINT_END_KNOWN",
+            "points": 1,
+            "reason": "Mint end time is known."
+          },
+          {
+            "factor": "SCARCE_SUPPLY",
+            "points": 6,
+            "reason": "Maximum supply is 3,333 or lower."
+          },
+          {
+            "factor": "SUPPLY_VISIBLE",
+            "points": 2,
+            "reason": "Remaining supply is known."
+          },
+          {
+            "factor": "ROYALTY_DATA_PRESENT",
+            "points": 1,
+            "reason": "Royalty configuration is known."
+          },
+          {
+            "factor": "TIMING_KNOWN",
+            "points": 3,
+            "reason": "Mint timing is known."
+          },
+          {
+            "factor": "PRE_MINT_OPPORTUNITY",
+            "points": 3,
+            "reason": "Upcoming mint opportunity detected."
+          },
+          {
+            "factor": "EXECUTION_WINDOW",
+            "points": 4,
+            "reason": "Candidate currently satisfies execution timing requirements."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "HIGH_ALPHA_SIGNAL",
+            "points": 3,
+            "reason": "High alpha signal detected."
+          },
+          {
+            "factor": "SMART_CREATOR",
+            "points": 1,
+            "reason": "Creator wallet shows strong historical signals."
+          },
+          {
+            "factor": "MINIMAL_RISK",
+            "points": 3,
+            "reason": "Risk engine reports 0/40."
+          }
+        ]
+      },
+      "executionApproval": {
+        "approved": false,
+        "status": "AUTO_MINT_BLOCKED",
+        "threshold": {
+          "minScore": 90,
+          "maxRisk": 10
+        },
+        "score": 79,
+        "risk": 0,
+        "classification": "MONITOR",
+        "reasons": [
+          "Hard gates passed.",
+          "Mint stage is technically executable.",
+          "Risk score 0/40 is within auto-mint limit."
+        ],
+        "blockers": [
+          "SCORE_BELOW_AUTO_MINT_THRESHOLD",
+          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE"
+        ]
+      },
+      "rank": 1,
+      "tier": "C"
+    },
+    {
+      "identity": {
+        "name": "Rekt Tradooor",
+        "slug": "rekt-tradooor",
+        "contract": "0x7b3ecfa33657de415ff269dc97dfa82954cee706",
+        "chain": "robinhood"
+      },
+      "mint": {
+        "type": "signed_presale",
+        "label": "Honoraries",
+        "priceWei": "0",
+        "currencyAddress": "0x0000000000000000000000000000000000000000",
+        "startTime": "2026-08-21T16:00:00Z",
+        "endTime": "2026-08-21T16:15:00Z",
+        "maxPerWallet": "101"
+      },
+      "opensea": {
+        "url": "https://opensea.io/collection/rekt-tradooor"
+      },
+      "status": {
+        "isMinting": false,
+        "activeStage": null,
+        "nextStage": "signed_presale"
+      },
+      "hardGates": {
+        "passed": true,
+        "reasons": []
+      },
+      "stageClassification": "PRESALE",
+      "executionStatus": "WATCH_ONLY",
+      "creatorIntel": {
+        "status": "IDENTIFIED",
+        "address": "0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1",
+        "identity": {
+          "username": "OSF",
+          "ensName": "osf.eth"
+        },
+        "attribution": {
+          "source": "CONTRACT_OWNER",
+          "confidence": "HIGH"
+        },
+        "portfolio": {
+          "ownedCollections": 50,
+          "ownedItems": 222,
+          "estimatedUsdValue": 4651.88
+        },
+        "historicalCollections": {
+          "collectionCount": 50,
+          "analyzedCollections": 10,
+          "totalVolume": 1061.9466,
+          "totalSales": 9852,
+          "totalOwners": 9056,
+          "averageVolume": 106.1947,
+          "averageSales": 985.2,
+          "averageOwners": 905.6,
+          "medianVolume": 49.3519,
+          "medianSales": 227,
+          "medianOwners": 150.5,
+          "bestFloorPrice": 2.5,
+          "bestCollection": {
+            "name": "The Present",
+            "slug": "the-present-by-mendezmendez",
+            "volume": 39.359,
+            "sales": 17,
+            "owners": 63,
+            "floorPrice": 2.5
+          },
+          "activeCollections": 10,
+          "highVolumeCollections": 3,
+          "highSalesCollections": 3,
+          "highFloorCollections": 1,
+          "collections": [
+            {
+              "name": "The Present",
+              "slug": "the-present-by-mendezmendez",
+              "volume": 39.359,
+              "sales": 17,
+              "owners": 63,
+              "floorPrice": 2.5
+            },
+            {
+              "name": "FREE MATT KANE",
+              "slug": "free-matt-kane",
+              "volume": 59.344889,
+              "sales": 85,
+              "owners": 151,
+              "floorPrice": 0.51
+            },
+            {
+              "name": "Signature Series by mendezmendez",
+              "slug": "mendezmendez",
+              "volume": 88.08331491168832,
+              "sales": 1262,
+              "owners": 793,
+              "floorPrice": 0.04348
+            },
+            {
+              "name": "The S.E.X Club",
+              "slug": "the-sex-club",
+              "volume": 19.97258989999994,
+              "sales": 339,
+              "owners": 148,
+              "floorPrice": 0.01
+            },
+            {
+              "name": "Latent",
+              "slug": "vv-latent",
+              "volume": 4.612,
+              "sales": 7,
+              "owners": 59,
+              "floorPrice": 0.93819591
+            },
+            {
+              "name": "Die with the most mmERCH",
+              "slug": "mmerch-receipt",
+              "volume": 2.3906454778990005,
+              "sales": 189,
+              "owners": 587,
+              "floorPrice": 0.0245685
+            },
+            {
+              "name": "Agoria {Comp-nd} x [ L ] Market",
+              "slug": "agoria-comp-nd-x-l-market",
+              "volume": 180.44624768923057,
+              "sales": 6424,
+              "owners": 5542,
+              "floorPrice": 0.0056947
+            },
+            {
+              "name": "Asprey Studio Club",
+              "slug": "asprey-studio-club",
+              "volume": 555.2435064733892,
+              "sales": 265,
+              "owners": 150,
+              "floorPrice": 0.13305
+            },
+            {
+              "name": "ClickCreate",
+              "slug": "clickcreate",
+              "volume": 100.21925565998814,
+              "sales": 1156,
+              "owners": 1420,
+              "floorPrice": 0.00328
+            },
+            {
+              "name": "Editions x Lisa Fogarty",
+              "slug": "editions-x-lisa-fogarty",
+              "volume": 12.275144999999998,
+              "sales": 108,
+              "owners": 143,
+              "floorPrice": 0.17499
+            }
+          ]
+        },
+        "flags": [
+          "CONTRACT_OWNER",
+          "OPENSEA_USERNAME",
+          "ENS_IDENTITY",
+          "HISTORICAL_ACTIVITY",
+          "HIGH_VOLUME_HISTORY",
+          "HIGH_SALES_HISTORY",
+          "HIGH_FLOOR_HISTORY"
+        ],
+        "score": 25,
+        "maxScore": 25,
+        "errors": []
+      },
+      "metadataIntel": {
+        "status": "FOUND",
+        "supply": {
+          "max": 10000,
+          "minted": 0,
+          "remaining": 10000
+        },
+        "mint": {
+          "type": "signed_presale",
+          "label": "Honoraries",
+          "priceWei": "0",
+          "currencyAddress": "0x0000000000000000000000000000000000000000",
+          "maxPerWallet": "101",
+          "startTime": "2026-08-21T16:00:00Z",
+          "endTime": "2026-08-21T16:15:00Z"
+        },
+        "royalty": [
+          {
+            "fee": 1,
+            "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
+            "required": true
+          },
+          {
+            "fee": 5,
+            "recipient": "0x6bf609583cd3cfa2393c535ca8c3f49fd23e00b3",
+            "required": true
+          }
+        ],
+        "contract": {
+          "address": "0x7b3ecfa33657de415ff269dc97dfa82954cee706",
+          "chain": "robinhood",
+          "standard": "erc721"
+        },
+        "collection": {
+          "name": "Rekt Tradooor",
+          "slug": "rekt-tradooor",
+          "category": "art",
+          "description": "10,000 tradooors trade real markets with fixed DNA until one is left alive. The Squeeze forces leverage up every week. Death is permanent. Committed before, revealed after, so you can replay it yourself."
+        },
+        "signals": [
+          "MAX_SUPPLY_PRESENT",
+          "TOTAL_SUPPLY_PRESENT",
+          "MINT_STAGE_PRESENT",
+          "ROYALTY_DATA_PRESENT",
+          "CONTRACT_STANDARD_PRESENT"
+        ],
+        "errors": []
+      },
+      "marketIntel": {
+        "status": "FOUND",
+        "verified": true,
+        "collection": {
+          "name": "Rekt Tradooor",
+          "slug": "rekt-tradooor",
+          "owner": "0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1",
+          "category": "art"
+        },
+        "stats": {
+          "floorPrice": 0,
+          "volume": 0,
+          "sales": 0,
+          "averagePrice": null,
+          "numOwners": 0,
+          "marketCap": null
+        },
+        "errors": []
+      },
+      "riskIntel": {
+        "level": "MEDIUM",
+        "score": 13,
+        "maxRisk": 40,
+        "penalties": [
+          {
+            "factor": "LARGE_SUPPLY",
+            "points": 5,
+            "reason": "Collection supply is 10,000 or greater."
+          },
+          {
+            "factor": "VERY_HIGH_MINT_LIMIT",
+            "points": 5,
+            "reason": "Maximum mint per wallet is 100 or greater."
+          },
+          {
+            "factor": "ELEVATED_ROYALTY",
+            "points": 3,
+            "reason": "Total configured royalty is 6%."
+          }
+        ],
+        "flags": [
+          "LARGE_SUPPLY",
+          "VERY_HIGH_MINT_LIMIT",
+          "ELEVATED_ROYALTY"
+        ],
+        "context": {
+          "maxSupply": 10000,
+          "maxPerWallet": 101,
+          "royaltyPercentage": 6,
+          "creatorConfidence": "HIGH",
+          "creatorUsername": "OSF",
+          "creatorEns": "osf.eth",
+          "ownedCollections": 50,
+          "ownedItems": 222,
+          "contractStandard": "erc721"
+        }
+      },
+      "alphaIntel": {
+        "score": 7,
+        "maxScore": 10,
+        "classification": "MEDIUM_ALPHA",
+        "signals": [
+          {
+            "signal": "HIGH_VOLUME_CREATOR",
+            "points": 2,
+            "reason": "Creator historical volume is 1061.95 ETH."
+          },
+          {
+            "signal": "HIGH_SALES_CREATOR",
+            "points": 2,
+            "reason": "Creator historical sales are 9852."
+          },
+          {
+            "signal": "HIGH_FLOOR_HISTORY",
+            "points": 2,
+            "reason": "Creator has 1 historical collection(s) with floor ≥ 1 ETH."
+          },
+          {
+            "signal": "SIGNED_PRESALE_STAGE",
+            "points": 1,
+            "reason": "Collection is currently in signed presale."
+          }
+        ]
+      },
+      "walletIntel": {
+        "score": 10,
+        "maxScore": 10,
+        "classification": "SMART_CREATOR",
+        "signals": [
+          {
+            "signal": "CREATOR_IDENTIFIED",
+            "points": 2,
+            "reason": "Creator wallet has been identified."
+          },
+          {
+            "signal": "ENS_IDENTITY",
+            "points": 1,
+            "reason": "Creator wallet has an ENS identity."
+          },
+          {
+            "signal": "LARGE_COLLECTION_HISTORY",
+            "points": 2,
+            "reason": "Creator owns 50 collections."
+          },
+          {
+            "signal": "MULTIPLE_HIGH_VOLUME_COLLECTIONS",
+            "points": 2,
+            "reason": "Creator has 3 high-volume collections."
+          },
+          {
+            "signal": "MULTIPLE_HIGH_SALES_COLLECTIONS",
+            "points": 2,
+            "reason": "Creator has 3 collections with over 1,000 sales."
+          },
+          {
+            "signal": "BLUECHIP_HISTORY",
+            "points": 1,
+            "reason": "Best historical floor is 2.5 ETH."
+          }
+        ]
+      },
+      "socialIntel": {
+        "score": 8,
+        "maxScore": 10,
+        "classification": "HIGH_SOCIAL",
+        "signals": [
+          {
+            "signal": "OPENSEA_USERNAME",
+            "points": 2,
+            "reason": "Creator has OpenSea username \"OSF\"."
+          },
+          {
+            "signal": "ENS_IDENTITY",
+            "points": 2,
+            "reason": "Creator has ENS \"osf.eth\"."
+          },
+          {
+            "signal": "LONG_PROJECT_DESCRIPTION",
+            "points": 2,
+            "reason": "Project has a detailed collection description."
+          },
+          {
+            "signal": "OPENSEA_COLLECTION_PAGE",
+            "points": 2,
+            "reason": "Collection has an OpenSea page."
+          }
+        ]
+      },
+      "goldenEgg": {
+        "score": 68,
+        "maxScore": 100,
+        "classification": "IGNORE",
+        "breakdown": [
+          {
+            "factor": "CREATOR_IDENTIFIED",
+            "points": 5,
+            "reason": "Creator address has been identified."
+          },
+          {
+            "factor": "PUBLIC_CREATOR_IDENTITY",
+            "points": 3,
+            "reason": "Creator has a public identity."
+          },
+          {
+            "factor": "CREATOR_VOLUME_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical volume."
+          },
+          {
+            "factor": "CREATOR_SALES_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical sales."
+          },
+          {
+            "factor": "BLUECHIP_CREATOR_HISTORY",
+            "points": 3,
+            "reason": "Creator has historical collection with floor ≥1 ETH."
+          },
+          {
+            "factor": "HIGH_CREATOR_CONFIDENCE",
+            "points": 2,
+            "reason": "Creator attribution has high confidence."
+          },
+          {
+            "factor": "ROBINHOOD_CHAIN",
+            "points": 4,
+            "reason": "Collection is launching on Robinhood Chain."
+          },
+          {
+            "factor": "CONTRACT_PRESENT",
+            "points": 3,
+            "reason": "NFT contract is identified."
+          },
+          {
+            "factor": "PROJECT_DESCRIPTION",
+            "points": 3,
+            "reason": "Project description is available."
+          },
+          {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
+            "factor": "OPENSEA_COLLECTION",
+            "points": 2,
+            "reason": "OpenSea collection page exists."
+          },
+          {
+            "factor": "COLLECTION_NAME",
+            "points": 1,
+            "reason": "Collection name is available."
+          },
+          {
+            "factor": "SIGNED_PRESALE",
+            "points": 4,
+            "reason": "Signed presale stage detected."
+          },
+          {
+            "factor": "MINT_PRICE_KNOWN",
+            "points": 3,
+            "reason": "Mint price is known."
+          },
+          {
+            "factor": "MINT_LIMIT_KNOWN",
+            "points": 2,
+            "reason": "Maximum mint per wallet is known."
+          },
+          {
+            "factor": "MINT_START_KNOWN",
+            "points": 2,
+            "reason": "Mint start time is known."
+          },
+          {
+            "factor": "MINT_END_KNOWN",
+            "points": 1,
+            "reason": "Mint end time is known."
+          },
+          {
+            "factor": "STANDARD_SUPPLY",
+            "points": 2,
+            "reason": "Maximum supply is 10,000 or lower."
+          },
+          {
+            "factor": "SUPPLY_VISIBLE",
+            "points": 2,
+            "reason": "Remaining supply is known."
+          },
+          {
+            "factor": "ROYALTY_DATA_PRESENT",
+            "points": 1,
+            "reason": "Royalty configuration is known."
+          },
+          {
+            "factor": "TIMING_KNOWN",
+            "points": 3,
+            "reason": "Mint timing is known."
+          },
+          {
+            "factor": "PRE_MINT_OPPORTUNITY",
+            "points": 3,
+            "reason": "Upcoming mint opportunity detected."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "MEDIUM_ALPHA_SIGNAL",
+            "points": 2,
+            "reason": "Medium alpha signal detected."
+          },
+          {
+            "factor": "SMART_CREATOR",
+            "points": 1,
+            "reason": "Creator wallet shows strong historical signals."
+          },
+          {
+            "factor": "HIGH_SOCIAL",
+            "points": 1,
+            "reason": "Strong social signal detected."
+          },
+          {
+            "factor": "CONTROLLED_RISK",
+            "points": 1,
+            "reason": "Risk score is 20/40 or lower."
+          }
+        ]
+      },
+      "executionApproval": {
+        "approved": false,
+        "status": "AUTO_MINT_BLOCKED",
+        "threshold": {
+          "minScore": 90,
+          "maxRisk": 10
+        },
+        "score": 68,
+        "risk": 13,
+        "classification": "IGNORE",
+        "reasons": [
+          "Hard gates passed."
+        ],
+        "blockers": [
+          "NOT_TECHNICALLY_EXECUTABLE",
+          "SCORE_BELOW_AUTO_MINT_THRESHOLD",
+          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE",
+          "RISK_ABOVE_AUTO_MINT_LIMIT"
+        ]
+      },
+      "rank": 2,
+      "tier": "D"
+    },
+    {
+      "identity": {
+        "name": "Internet Monkes",
+        "slug": "internetmonkes",
+        "contract": "0x315c62f3a56dc2f581cc09096a5b438f3171cacb",
+        "chain": "robinhood"
+      },
+      "mint": {
+        "type": "signed_presale",
+        "label": "GTD",
+        "priceWei": "7500000000000000",
+        "currencyAddress": "0x0000000000000000000000000000000000000000",
+        "startTime": "2026-08-28T16:00:00Z",
+        "endTime": "2026-08-28T17:30:00Z",
+        "maxPerWallet": "2"
+      },
+      "opensea": {
+        "url": "https://opensea.io/collection/internetmonkes"
+      },
+      "status": {
+        "isMinting": false,
+        "activeStage": null,
+        "nextStage": "signed_presale"
+      },
+      "hardGates": {
+        "passed": true,
+        "reasons": []
+      },
+      "stageClassification": "PRESALE",
+      "executionStatus": "WATCH_ONLY",
+      "creatorIntel": {
+        "status": "IDENTIFIED",
+        "address": "0x0380e168fd4a0d6ede3110c740278fe35bc6eb3f",
+        "identity": {
+          "username": "gm_hunterart",
+          "ensName": null
+        },
+        "attribution": {
+          "source": "CONTRACT_OWNER",
+          "confidence": "HIGH"
+        },
+        "portfolio": {
+          "ownedCollections": 43,
+          "ownedItems": 135,
+          "estimatedUsdValue": 5221.64
+        },
+        "historicalCollections": {
+          "collectionCount": 43,
+          "analyzedCollections": 10,
+          "totalVolume": 3281.7635,
+          "totalSales": 73469,
+          "totalOwners": 8442,
+          "averageVolume": 328.1764,
+          "averageSales": 7346.9,
+          "averageOwners": 844.2,
+          "medianVolume": 110.0966,
+          "medianSales": 3346.5,
+          "medianOwners": 877.5,
+          "bestFloorPrice": 0.0721,
+          "bestCollection": {
+            "name": "P⊙RTR∆ITS",
+            "slug": "portraitsbycem",
+            "volume": 65.09703524449995,
+            "sales": 432,
+            "owners": 193,
+            "floorPrice": 0.0721
+          },
+          "activeCollections": 10,
+          "highVolumeCollections": 5,
+          "highSalesCollections": 8,
+          "highFloorCollections": 0,
+          "collections": [
+            {
+              "name": "NODES",
+              "slug": "nodes-by-hunter",
+              "volume": 283.50630745188033,
+              "sales": 12775,
+              "owners": 962,
+              "floorPrice": 0.045
+            },
+            {
+              "name": "Primitives",
+              "slug": "primitives-6",
+              "volume": 856.6154448348674,
+              "sales": 6067,
+              "owners": 1032,
+              "floorPrice": 0.01236999
+            },
+            {
+              "name": "Abstract Pepes",
+              "slug": "abstract-pepes-abstract",
+              "volume": 17.798699142237588,
+              "sales": 1697,
+              "owners": 1002,
+              "floorPrice": 0.00715
+            },
+            {
+              "name": "P⊙RTR∆ITS",
+              "slug": "portraitsbycem",
+              "volume": 65.09703524449995,
+              "sales": 432,
+              "owners": 193,
+              "floorPrice": 0.0721
+            },
+            {
+              "name": "Lil' Bangers",
+              "slug": "lil-bangers-",
+              "volume": 509.11111922214127,
+              "sales": 25890,
+              "owners": 1226,
+              "floorPrice": 0.011739
+            },
+            {
+              "name": "Suited Riot",
+              "slug": "suited-riot-v2",
+              "volume": 36.13601803493258,
+              "sales": 283,
+              "owners": 558,
+              "floorPrice": 0.009537
+            },
+            {
+              "name": "fwogs",
+              "slug": "fwogs",
+              "volume": 1282.7253500192362,
+              "sales": 18370,
+              "owners": 1512,
+              "floorPrice": 0.0276999
+            },
+            {
+              "name": "Doomsayers",
+              "slug": "doomsayers",
+              "volume": 10.580316671565779,
+              "sales": 3316,
+              "owners": 726,
+              "floorPrice": 0.007399
+            },
+            {
+              "name": "Signature Series by mendezmendez",
+              "slug": "mendezmendez",
+              "volume": 88.08331491168832,
+              "sales": 1262,
+              "owners": 793,
+              "floorPrice": 0.04348
+            },
+            {
+              "name": "ENTROPY by mendezmendez",
+              "slug": "entropy-by-mendezmendez",
+              "volume": 132.1099076975009,
+              "sales": 3377,
+              "owners": 438,
+              "floorPrice": 0.02193
+            }
+          ]
+        },
+        "flags": [
+          "CONTRACT_OWNER",
+          "OPENSEA_USERNAME",
+          "HISTORICAL_ACTIVITY",
+          "HIGH_VOLUME_HISTORY",
+          "HIGH_SALES_HISTORY"
+        ],
+        "score": 20,
+        "maxScore": 25,
+        "errors": []
+      },
+      "metadataIntel": {
+        "status": "FOUND",
+        "supply": {
+          "max": 5000,
+          "minted": 0,
+          "remaining": 5000
+        },
+        "mint": {
+          "type": "signed_presale",
+          "label": "GTD",
+          "priceWei": "7500000000000000",
+          "currencyAddress": "0x0000000000000000000000000000000000000000",
+          "maxPerWallet": "2",
+          "startTime": "2026-08-28T16:00:00Z",
+          "endTime": "2026-08-28T17:30:00Z"
+        },
+        "royalty": [
+          {
+            "fee": 1,
+            "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
+            "required": true
+          },
+          {
+            "fee": 5,
+            "recipient": "0x0380e168fd4a0d6ede3110c740278fe35bc6eb3f",
+            "required": true
+          }
+        ],
+        "contract": {
+          "address": "0x315c62f3a56dc2f581cc09096a5b438f3171cacb",
+          "chain": "robinhood",
+          "standard": "erc721"
+        },
+        "collection": {
+          "name": "Internet Monkes",
+          "slug": "internetmonkes",
+          "category": "pfps",
+          "description": "A new era of digital collectibles coming to Robinhood Chain. "
+        },
+        "signals": [
+          "MAX_SUPPLY_PRESENT",
+          "TOTAL_SUPPLY_PRESENT",
+          "MINT_STAGE_PRESENT",
+          "ROYALTY_DATA_PRESENT",
+          "CONTRACT_STANDARD_PRESENT"
+        ],
+        "errors": []
+      },
+      "marketIntel": {
+        "status": "FOUND",
+        "verified": true,
+        "collection": {
+          "name": "Internet Monkes",
+          "slug": "internetmonkes",
+          "owner": "0x0380e168fd4a0d6ede3110c740278fe35bc6eb3f",
+          "category": "pfps"
+        },
+        "stats": {
+          "floorPrice": 0,
+          "volume": 0,
+          "sales": 0,
+          "averagePrice": null,
+          "numOwners": 0,
+          "marketCap": null
+        },
+        "errors": []
+      },
+      "riskIntel": {
+        "level": "MINIMAL",
+        "score": 3,
+        "maxRisk": 40,
+        "penalties": [
+          {
+            "factor": "ELEVATED_ROYALTY",
+            "points": 3,
+            "reason": "Total configured royalty is 6%."
+          }
+        ],
+        "flags": [
+          "ELEVATED_ROYALTY"
+        ],
+        "context": {
+          "maxSupply": 5000,
+          "maxPerWallet": 2,
+          "royaltyPercentage": 6,
+          "creatorConfidence": "HIGH",
+          "creatorUsername": "gm_hunterart",
+          "creatorEns": null,
+          "ownedCollections": 43,
+          "ownedItems": 135,
+          "contractStandard": "erc721"
+        }
+      },
+      "alphaIntel": {
+        "score": 5,
+        "maxScore": 10,
+        "classification": "MEDIUM_ALPHA",
+        "signals": [
+          {
+            "signal": "HIGH_VOLUME_CREATOR",
+            "points": 2,
+            "reason": "Creator historical volume is 3281.76 ETH."
+          },
+          {
+            "signal": "HIGH_SALES_CREATOR",
+            "points": 2,
+            "reason": "Creator historical sales are 73469."
+          },
+          {
+            "signal": "SIGNED_PRESALE_STAGE",
+            "points": 1,
+            "reason": "Collection is currently in signed presale."
+          }
+        ]
+      },
+      "walletIntel": {
+        "score": 8,
+        "maxScore": 10,
+        "classification": "SMART_CREATOR",
+        "signals": [
+          {
+            "signal": "CREATOR_IDENTIFIED",
+            "points": 2,
+            "reason": "Creator wallet has been identified."
+          },
+          {
+            "signal": "LARGE_COLLECTION_HISTORY",
+            "points": 2,
+            "reason": "Creator owns 43 collections."
+          },
+          {
+            "signal": "MULTIPLE_HIGH_VOLUME_COLLECTIONS",
+            "points": 2,
+            "reason": "Creator has 5 high-volume collections."
+          },
+          {
+            "signal": "MULTIPLE_HIGH_SALES_COLLECTIONS",
+            "points": 2,
+            "reason": "Creator has 8 collections with over 1,000 sales."
+          }
+        ]
+      },
+      "socialIntel": {
+        "score": 5,
+        "maxScore": 10,
+        "classification": "MEDIUM_SOCIAL",
+        "signals": [
+          {
+            "signal": "OPENSEA_USERNAME",
+            "points": 2,
+            "reason": "Creator has OpenSea username \"gm_hunterart\"."
+          },
+          {
+            "signal": "PROJECT_DESCRIPTION",
+            "points": 1,
+            "reason": "Project has a collection description."
+          },
+          {
+            "signal": "OPENSEA_COLLECTION_PAGE",
+            "points": 2,
+            "reason": "Collection has an OpenSea page."
+          }
+        ]
+      },
+      "goldenEgg": {
+        "score": 67,
+        "maxScore": 100,
+        "classification": "IGNORE",
+        "breakdown": [
+          {
+            "factor": "CREATOR_IDENTIFIED",
+            "points": 5,
+            "reason": "Creator address has been identified."
+          },
+          {
+            "factor": "PUBLIC_CREATOR_IDENTITY",
+            "points": 3,
+            "reason": "Creator has a public identity."
+          },
+          {
+            "factor": "CREATOR_VOLUME_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical volume."
+          },
+          {
+            "factor": "CREATOR_SALES_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical sales."
+          },
+          {
+            "factor": "HIGH_CREATOR_CONFIDENCE",
+            "points": 2,
+            "reason": "Creator attribution has high confidence."
+          },
+          {
+            "factor": "ROBINHOOD_CHAIN",
+            "points": 4,
+            "reason": "Collection is launching on Robinhood Chain."
+          },
+          {
+            "factor": "CONTRACT_PRESENT",
+            "points": 3,
+            "reason": "NFT contract is identified."
+          },
+          {
+            "factor": "PROJECT_DESCRIPTION",
+            "points": 3,
+            "reason": "Project description is available."
+          },
+          {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
+            "factor": "OPENSEA_COLLECTION",
+            "points": 2,
+            "reason": "OpenSea collection page exists."
+          },
+          {
+            "factor": "COLLECTION_NAME",
+            "points": 1,
+            "reason": "Collection name is available."
+          },
+          {
+            "factor": "SIGNED_PRESALE",
+            "points": 4,
+            "reason": "Signed presale stage detected."
+          },
+          {
+            "factor": "MINT_PRICE_KNOWN",
+            "points": 3,
+            "reason": "Mint price is known."
+          },
+          {
+            "factor": "MINT_LIMIT_KNOWN",
+            "points": 2,
+            "reason": "Maximum mint per wallet is known."
+          },
+          {
+            "factor": "MINT_START_KNOWN",
+            "points": 2,
+            "reason": "Mint start time is known."
+          },
+          {
+            "factor": "MINT_END_KNOWN",
+            "points": 1,
+            "reason": "Mint end time is known."
+          },
+          {
+            "factor": "MODERATE_SUPPLY",
+            "points": 4,
+            "reason": "Maximum supply is 5,555 or lower."
+          },
+          {
+            "factor": "SUPPLY_VISIBLE",
+            "points": 2,
+            "reason": "Remaining supply is known."
+          },
+          {
+            "factor": "ROYALTY_DATA_PRESENT",
+            "points": 1,
+            "reason": "Royalty configuration is known."
+          },
+          {
+            "factor": "TIMING_KNOWN",
+            "points": 3,
+            "reason": "Mint timing is known."
+          },
+          {
+            "factor": "PRE_MINT_OPPORTUNITY",
+            "points": 3,
+            "reason": "Upcoming mint opportunity detected."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "MEDIUM_ALPHA_SIGNAL",
+            "points": 2,
+            "reason": "Medium alpha signal detected."
+          },
+          {
+            "factor": "SMART_CREATOR",
+            "points": 1,
+            "reason": "Creator wallet shows strong historical signals."
+          },
+          {
+            "factor": "LOW_RISK",
+            "points": 2,
+            "reason": "Risk score is 10/40 or lower."
+          }
+        ]
+      },
+      "executionApproval": {
+        "approved": false,
+        "status": "AUTO_MINT_BLOCKED",
+        "threshold": {
+          "minScore": 90,
+          "maxRisk": 10
+        },
+        "score": 67,
+        "risk": 3,
+        "classification": "IGNORE",
+        "reasons": [
+          "Hard gates passed.",
+          "Risk score 3/40 is within auto-mint limit."
+        ],
+        "blockers": [
+          "NOT_TECHNICALLY_EXECUTABLE",
+          "SCORE_BELOW_AUTO_MINT_THRESHOLD",
+          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE"
+        ]
+      },
+      "rank": 3,
+      "tier": "D"
+    },
+    {
+      "identity": {
+        "name": "Galaktic Gang Embodied",
+        "slug": "galaktic-gang-embodied",
+        "contract": "0xf7135cdd82e8b01a1a492a3b61b0cc034b92eb35",
+        "chain": "robinhood"
+      },
+      "mint": {
+        "type": "signed_presale",
+        "label": "Team",
+        "priceWei": "0",
+        "currencyAddress": "0x0000000000000000000000000000000000000000",
+        "startTime": "2026-08-25T19:00:00Z",
+        "endTime": "2026-08-25T19:30:00Z",
+        "maxPerWallet": "300"
+      },
+      "opensea": {
+        "url": "https://opensea.io/collection/galaktic-gang-embodied"
+      },
+      "status": {
+        "isMinting": false,
+        "activeStage": null,
+        "nextStage": "signed_presale"
+      },
+      "hardGates": {
+        "passed": true,
+        "reasons": []
+      },
+      "stageClassification": "PRESALE",
+      "executionStatus": "WATCH_ONLY",
+      "creatorIntel": {
+        "status": "IDENTIFIED",
+        "address": "0x8fc83d5db716d2ed579e1ab07473512be259e78a",
+        "identity": {
+          "username": "ChrisDyer",
+          "ensName": null
+        },
+        "attribution": {
+          "source": "CONTRACT_OWNER",
+          "confidence": "HIGH"
+        },
+        "portfolio": {
+          "ownedCollections": 9,
+          "ownedItems": 24,
+          "estimatedUsdValue": 0.24
+        },
+        "historicalCollections": {
+          "collectionCount": 9,
+          "analyzedCollections": 9,
+          "totalVolume": 13362.9586,
+          "totalSales": 61087,
+          "totalOwners": 250816,
+          "averageVolume": 1484.7732,
+          "averageSales": 6787.44,
+          "averageOwners": 27868.44,
+          "medianVolume": 3.8776,
+          "medianSales": 51,
+          "medianOwners": 92,
+          "bestFloorPrice": 0.96,
+          "bestCollection": {
+            "name": ".:. DAN  OTSUKI .:. UNCATEGORIZABLE",
+            "slug": "dan-otsuki-artworks",
+            "volume": 32.87222055178809,
+            "sales": 51,
+            "owners": 2366,
+            "floorPrice": 0.96
+          },
+          "activeCollections": 6,
+          "highVolumeCollections": 1,
+          "highSalesCollections": 2,
+          "highFloorCollections": 0,
+          "collections": [
+            {
+              "name": "DOKUROMEN",
+              "slug": "dokuromen",
+              "volume": 3.8776,
+              "sales": 67,
+              "owners": 69,
+              "floorPrice": 0
+            },
+            {
+              "name": "Rarible",
+              "slug": "rarible",
+              "volume": 13234.320758587499,
+              "sales": 58880,
+              "owners": 245765,
+              "floorPrice": 1e-14
+            },
+            {
+              "name": ".:. DAN  OTSUKI .:. UNCATEGORIZABLE",
+              "slug": "dan-otsuki-artworks",
+              "volume": 32.87222055178809,
+              "sales": 51,
+              "owners": 2366,
+              "floorPrice": 0.96
+            },
+            {
+              "name": "Invalid contract GG1",
+              "slug": "invalid-contract-gg1",
+              "volume": 0,
+              "sales": 0,
+              "owners": 1,
+              "floorPrice": 0
+            },
+            {
+              "name": "Galaktic Gadgets",
+              "slug": "galaktic-gadgets",
+              "volume": 5.910038999999995,
+              "sales": 91,
+              "owners": 1054,
+              "floorPrice": 0.004692
+            },
+            {
+              "name": "Peace DAO Distortion V2",
+              "slug": "peace-dao-distortion-v2",
+              "volume": 0,
+              "sales": 0,
+              "owners": 92,
+              "floorPrice": 0
+            },
+            {
+              "name": "Wixarika",
+              "slug": "wixa",
+              "volume": 82.81705152136739,
+              "sales": 1984,
+              "owners": 1466,
+              "floorPrice": 0.0029
+            },
+            {
+              "name": "Chris Dyer Verse Immersive Experience",
+              "slug": "chris-dyer-verse-immersive",
+              "volume": 3.160903498702861,
+              "sales": 14,
+              "owners": 0,
+              "floorPrice": 0
+            },
+            {
+              "name": "kimkardashian NFT",
+              "slug": "kimkardashian-nft",
+              "volume": 0,
+              "sales": 0,
+              "owners": 3,
+              "floorPrice": 0
+            }
+          ]
+        },
+        "flags": [
+          "CONTRACT_OWNER",
+          "OPENSEA_USERNAME",
+          "HISTORICAL_ACTIVITY",
+          "HIGH_VOLUME_HISTORY",
+          "HIGH_SALES_HISTORY"
+        ],
+        "score": 20,
+        "maxScore": 25,
+        "errors": []
+      },
+      "metadataIntel": {
+        "status": "FOUND",
+        "supply": {
+          "max": 5555,
+          "minted": 0,
+          "remaining": 5555
+        },
+        "mint": {
+          "type": "signed_presale",
+          "label": "Team",
+          "priceWei": "0",
+          "currencyAddress": "0x0000000000000000000000000000000000000000",
+          "maxPerWallet": "300",
+          "startTime": "2026-08-25T19:00:00Z",
+          "endTime": "2026-08-25T19:30:00Z"
+        },
+        "royalty": [
+          {
+            "fee": 1,
+            "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
+            "required": true
+          },
+          {
+            "fee": 7.5,
+            "recipient": "0x8fc83d5db716d2ed579e1ab07473512be259e78a",
+            "required": true
+          }
+        ],
+        "contract": {
+          "address": "0xf7135cdd82e8b01a1a492a3b61b0cc034b92eb35",
+          "chain": "robinhood",
+          "standard": "erc721"
+        },
+        "collection": {
+          "name": "Galaktic Gang Embodied",
+          "slug": "galaktic-gang-embodied",
+          "category": "pfps",
+          "description": "5555 Interdimensional Gangstas by Chris Dyer"
+        },
+        "signals": [
+          "MAX_SUPPLY_PRESENT",
+          "TOTAL_SUPPLY_PRESENT",
+          "MINT_STAGE_PRESENT",
+          "ROYALTY_DATA_PRESENT",
+          "CONTRACT_STANDARD_PRESENT"
+        ],
+        "errors": []
+      },
+      "marketIntel": {
+        "status": "FOUND",
+        "verified": true,
+        "collection": {
+          "name": "Galaktic Gang Embodied",
+          "slug": "galaktic-gang-embodied",
+          "owner": "0x8fc83d5db716d2ed579e1ab07473512be259e78a",
+          "category": "pfps"
+        },
+        "stats": {
+          "floorPrice": 0,
+          "volume": 0,
+          "sales": 0,
+          "averagePrice": null,
+          "numOwners": 0,
+          "marketCap": null
+        },
+        "errors": []
+      },
+      "riskIntel": {
+        "level": "MEDIUM",
+        "score": 12,
+        "maxRisk": 40,
+        "penalties": [
+          {
+            "factor": "VERY_HIGH_MINT_LIMIT",
+            "points": 5,
+            "reason": "Maximum mint per wallet is 100 or greater."
+          },
+          {
+            "factor": "HIGH_ROYALTY",
+            "points": 7,
+            "reason": "Total configured royalty is 8.5%."
+          }
+        ],
+        "flags": [
+          "VERY_HIGH_MINT_LIMIT",
+          "HIGH_ROYALTY"
+        ],
+        "context": {
+          "maxSupply": 5555,
+          "maxPerWallet": 300,
+          "royaltyPercentage": 8.5,
+          "creatorConfidence": "HIGH",
+          "creatorUsername": "ChrisDyer",
+          "creatorEns": null,
+          "ownedCollections": 9,
+          "ownedItems": 24,
+          "contractStandard": "erc721"
+        }
+      },
+      "alphaIntel": {
+        "score": 5,
+        "maxScore": 10,
+        "classification": "MEDIUM_ALPHA",
+        "signals": [
+          {
+            "signal": "HIGH_VOLUME_CREATOR",
+            "points": 2,
+            "reason": "Creator historical volume is 13362.96 ETH."
+          },
+          {
+            "signal": "HIGH_SALES_CREATOR",
+            "points": 2,
+            "reason": "Creator historical sales are 61087."
+          },
+          {
+            "signal": "SIGNED_PRESALE_STAGE",
+            "points": 1,
+            "reason": "Collection is currently in signed presale."
+          }
+        ]
+      },
+      "walletIntel": {
+        "score": 4,
+        "maxScore": 10,
+        "classification": "KNOWN_CREATOR",
+        "signals": [
+          {
+            "signal": "CREATOR_IDENTIFIED",
+            "points": 2,
+            "reason": "Creator wallet has been identified."
+          },
+          {
+            "signal": "MULTIPLE_HIGH_SALES_COLLECTIONS",
+            "points": 2,
+            "reason": "Creator has 2 collections with over 1,000 sales."
+          }
+        ]
+      },
+      "socialIntel": {
+        "score": 5,
+        "maxScore": 10,
+        "classification": "MEDIUM_SOCIAL",
+        "signals": [
+          {
+            "signal": "OPENSEA_USERNAME",
+            "points": 2,
+            "reason": "Creator has OpenSea username \"ChrisDyer\"."
+          },
+          {
+            "signal": "PROJECT_DESCRIPTION",
+            "points": 1,
+            "reason": "Project has a collection description."
+          },
+          {
+            "signal": "OPENSEA_COLLECTION_PAGE",
+            "points": 2,
+            "reason": "Collection has an OpenSea page."
+          }
+        ]
+      },
+      "goldenEgg": {
+        "score": 65,
+        "maxScore": 100,
+        "classification": "IGNORE",
+        "breakdown": [
+          {
+            "factor": "CREATOR_IDENTIFIED",
+            "points": 5,
+            "reason": "Creator address has been identified."
+          },
+          {
+            "factor": "PUBLIC_CREATOR_IDENTITY",
+            "points": 3,
+            "reason": "Creator has a public identity."
+          },
+          {
+            "factor": "CREATOR_VOLUME_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical volume."
+          },
+          {
+            "factor": "CREATOR_SALES_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical sales."
+          },
+          {
+            "factor": "HIGH_CREATOR_CONFIDENCE",
+            "points": 2,
+            "reason": "Creator attribution has high confidence."
+          },
+          {
+            "factor": "ROBINHOOD_CHAIN",
+            "points": 4,
+            "reason": "Collection is launching on Robinhood Chain."
+          },
+          {
+            "factor": "CONTRACT_PRESENT",
+            "points": 3,
+            "reason": "NFT contract is identified."
+          },
+          {
+            "factor": "PROJECT_DESCRIPTION",
+            "points": 3,
+            "reason": "Project description is available."
+          },
+          {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
+            "factor": "OPENSEA_COLLECTION",
+            "points": 2,
+            "reason": "OpenSea collection page exists."
+          },
+          {
+            "factor": "COLLECTION_NAME",
+            "points": 1,
+            "reason": "Collection name is available."
+          },
+          {
+            "factor": "SIGNED_PRESALE",
+            "points": 4,
+            "reason": "Signed presale stage detected."
+          },
+          {
+            "factor": "MINT_PRICE_KNOWN",
+            "points": 3,
+            "reason": "Mint price is known."
+          },
+          {
+            "factor": "MINT_LIMIT_KNOWN",
+            "points": 2,
+            "reason": "Maximum mint per wallet is known."
+          },
+          {
+            "factor": "MINT_START_KNOWN",
+            "points": 2,
+            "reason": "Mint start time is known."
+          },
+          {
+            "factor": "MINT_END_KNOWN",
+            "points": 1,
+            "reason": "Mint end time is known."
+          },
+          {
+            "factor": "MODERATE_SUPPLY",
+            "points": 4,
+            "reason": "Maximum supply is 5,555 or lower."
+          },
+          {
+            "factor": "SUPPLY_VISIBLE",
+            "points": 2,
+            "reason": "Remaining supply is known."
+          },
+          {
+            "factor": "ROYALTY_DATA_PRESENT",
+            "points": 1,
+            "reason": "Royalty configuration is known."
+          },
+          {
+            "factor": "TIMING_KNOWN",
+            "points": 3,
+            "reason": "Mint timing is known."
+          },
+          {
+            "factor": "PRE_MINT_OPPORTUNITY",
+            "points": 3,
+            "reason": "Upcoming mint opportunity detected."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "MEDIUM_ALPHA_SIGNAL",
+            "points": 2,
+            "reason": "Medium alpha signal detected."
+          },
+          {
+            "factor": "CONTROLLED_RISK",
+            "points": 1,
+            "reason": "Risk score is 20/40 or lower."
+          }
+        ]
+      },
+      "executionApproval": {
+        "approved": false,
+        "status": "AUTO_MINT_BLOCKED",
+        "threshold": {
+          "minScore": 90,
+          "maxRisk": 10
+        },
+        "score": 65,
+        "risk": 12,
+        "classification": "IGNORE",
+        "reasons": [
+          "Hard gates passed."
+        ],
+        "blockers": [
+          "NOT_TECHNICALLY_EXECUTABLE",
+          "SCORE_BELOW_AUTO_MINT_THRESHOLD",
+          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE",
+          "RISK_ABOVE_AUTO_MINT_LIMIT"
+        ]
+      },
+      "rank": 4,
+      "tier": "D"
+    },
+    {
+      "identity": {
+        "name": "The Doll Club",
+        "slug": "the-doll-club-nfts",
+        "contract": "0x0d77e2b193ca6549c3bba68bf7b4516d14376534",
+        "chain": "robinhood"
+      },
+      "mint": {
+        "type": "signed_presale",
+        "label": "Team",
+        "priceWei": "0",
+        "currencyAddress": "0x0000000000000000000000000000000000000000",
+        "startTime": "2026-08-24T17:00:00Z",
+        "endTime": "2026-08-24T17:30:00Z",
+        "maxPerWallet": "100"
+      },
+      "opensea": {
+        "url": "https://opensea.io/collection/the-doll-club-nfts"
+      },
+      "status": {
+        "isMinting": false,
+        "activeStage": null,
+        "nextStage": "signed_presale"
+      },
+      "hardGates": {
+        "passed": true,
+        "reasons": []
+      },
+      "stageClassification": "PRESALE",
+      "executionStatus": "WATCH_ONLY",
+      "creatorIntel": {
+        "status": "IDENTIFIED",
+        "address": "0x0ee9ed4b88f8b39bee10119337eb964a3fc9bfdc",
+        "identity": {
+          "username": "thedollclub",
+          "ensName": null
+        },
+        "attribution": {
+          "source": "CONTRACT_OWNER",
+          "confidence": "HIGH"
+        },
+        "portfolio": {
+          "ownedCollections": 0,
+          "ownedItems": 0,
+          "estimatedUsdValue": 0
+        },
+        "historicalCollections": {
+          "collectionCount": 0,
+          "analyzedCollections": 0,
+          "totalVolume": 0,
+          "totalSales": 0,
+          "totalOwners": 0,
+          "averageVolume": 0,
+          "averageSales": 0,
+          "averageOwners": 0,
+          "medianVolume": 0,
+          "medianSales": 0,
+          "medianOwners": 0,
+          "bestFloorPrice": 0,
+          "bestCollection": null,
+          "activeCollections": 0,
+          "highVolumeCollections": 0,
+          "highSalesCollections": 0,
+          "highFloorCollections": 0,
+          "collections": []
+        },
+        "flags": [
+          "CONTRACT_OWNER",
+          "OPENSEA_USERNAME"
+        ],
+        "score": 5,
+        "maxScore": 25,
+        "errors": []
+      },
+      "metadataIntel": {
+        "status": "FOUND",
+        "supply": {
+          "max": 3333,
+          "minted": 0,
+          "remaining": 3333
+        },
+        "mint": {
+          "type": "signed_presale",
+          "label": "Team",
+          "priceWei": "0",
+          "currencyAddress": "0x0000000000000000000000000000000000000000",
+          "maxPerWallet": "100",
+          "startTime": "2026-08-24T17:00:00Z",
+          "endTime": "2026-08-24T17:30:00Z"
+        },
+        "royalty": [
+          {
+            "fee": 1,
+            "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
+            "required": true
+          },
+          {
+            "fee": 4,
+            "recipient": "0x7e70936d093a3ca5ca75320d52d48ee7ac78a01f",
+            "required": true
+          }
+        ],
+        "contract": {
+          "address": "0x0d77e2b193ca6549c3bba68bf7b4516d14376534",
+          "chain": "robinhood",
+          "standard": "erc721"
+        },
+        "collection": {
+          "name": "The Doll Club",
+          "slug": "the-doll-club-nfts",
+          "category": "pfps",
+          "description": "The Doll Club is a club of silly dolls exploring our world -> no context, no opinions, no idea what any of it means. They turn up where they don't belong, stare at things they don't understand, and keep going.\n\nA doll is the easiest character in the world to repeat. Redraw it anywhere, on anything, and it still reads as the same doll. Nothing to explain, nothing lost. \n\nSimple characters travel further than complicated ones, that's the IP."
+        },
+        "signals": [
+          "MAX_SUPPLY_PRESENT",
+          "TOTAL_SUPPLY_PRESENT",
+          "MINT_STAGE_PRESENT",
+          "ROYALTY_DATA_PRESENT",
+          "CONTRACT_STANDARD_PRESENT"
+        ],
+        "errors": []
+      },
+      "marketIntel": {
+        "status": "FOUND",
+        "verified": true,
+        "collection": {
+          "name": "The Doll Club",
+          "slug": "the-doll-club-nfts",
+          "owner": "0x0ee9ed4b88f8b39bee10119337eb964a3fc9bfdc",
+          "category": "pfps"
+        },
+        "stats": {
+          "floorPrice": 0,
+          "volume": 0,
+          "sales": 0,
+          "averagePrice": null,
+          "numOwners": 0,
+          "marketCap": null
+        },
+        "errors": []
+      },
+      "riskIntel": {
+        "level": "LOW",
+        "score": 8,
+        "maxRisk": 40,
+        "penalties": [
+          {
+            "factor": "VERY_HIGH_MINT_LIMIT",
+            "points": 5,
+            "reason": "Maximum mint per wallet is 100 or greater."
+          },
+          {
+            "factor": "ELEVATED_ROYALTY",
+            "points": 3,
+            "reason": "Total configured royalty is 5%."
+          }
+        ],
+        "flags": [
+          "VERY_HIGH_MINT_LIMIT",
+          "ELEVATED_ROYALTY",
+          "NO_PORTFOLIO_HISTORY"
+        ],
+        "context": {
+          "maxSupply": 3333,
+          "maxPerWallet": 100,
+          "royaltyPercentage": 5,
+          "creatorConfidence": "HIGH",
+          "creatorUsername": "thedollclub",
+          "creatorEns": null,
+          "ownedCollections": 0,
+          "ownedItems": 0,
+          "contractStandard": "erc721"
+        }
+      },
+      "alphaIntel": {
+        "score": 1,
+        "maxScore": 10,
+        "classification": "LOW_ALPHA",
+        "signals": [
+          {
+            "signal": "SIGNED_PRESALE_STAGE",
+            "points": 1,
+            "reason": "Collection is currently in signed presale."
+          }
+        ]
+      },
+      "walletIntel": {
+        "score": 2,
+        "maxScore": 10,
+        "classification": "KNOWN_CREATOR",
+        "signals": [
+          {
+            "signal": "CREATOR_IDENTIFIED",
+            "points": 2,
+            "reason": "Creator wallet has been identified."
+          }
+        ]
+      },
+      "socialIntel": {
+        "score": 6,
+        "maxScore": 10,
+        "classification": "MEDIUM_SOCIAL",
+        "signals": [
+          {
+            "signal": "OPENSEA_USERNAME",
+            "points": 2,
+            "reason": "Creator has OpenSea username \"thedollclub\"."
+          },
+          {
+            "signal": "LONG_PROJECT_DESCRIPTION",
+            "points": 2,
+            "reason": "Project has a detailed collection description."
+          },
+          {
+            "signal": "OPENSEA_COLLECTION_PAGE",
+            "points": 2,
+            "reason": "Collection has an OpenSea page."
+          }
+        ]
+      },
+      "goldenEgg": {
+        "score": 58,
+        "maxScore": 100,
+        "classification": "IGNORE",
+        "breakdown": [
+          {
+            "factor": "CREATOR_IDENTIFIED",
+            "points": 5,
+            "reason": "Creator address has been identified."
+          },
+          {
+            "factor": "PUBLIC_CREATOR_IDENTITY",
+            "points": 3,
+            "reason": "Creator has a public identity."
+          },
+          {
+            "factor": "HIGH_CREATOR_CONFIDENCE",
+            "points": 2,
+            "reason": "Creator attribution has high confidence."
+          },
+          {
+            "factor": "ROBINHOOD_CHAIN",
+            "points": 4,
+            "reason": "Collection is launching on Robinhood Chain."
+          },
+          {
+            "factor": "CONTRACT_PRESENT",
+            "points": 3,
+            "reason": "NFT contract is identified."
+          },
+          {
+            "factor": "PROJECT_DESCRIPTION",
+            "points": 3,
+            "reason": "Project description is available."
+          },
+          {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
+            "factor": "OPENSEA_COLLECTION",
+            "points": 2,
+            "reason": "OpenSea collection page exists."
+          },
+          {
+            "factor": "COLLECTION_NAME",
+            "points": 1,
+            "reason": "Collection name is available."
+          },
+          {
+            "factor": "SIGNED_PRESALE",
+            "points": 4,
+            "reason": "Signed presale stage detected."
+          },
+          {
+            "factor": "MINT_PRICE_KNOWN",
+            "points": 3,
+            "reason": "Mint price is known."
+          },
+          {
+            "factor": "MINT_LIMIT_KNOWN",
+            "points": 2,
+            "reason": "Maximum mint per wallet is known."
+          },
+          {
+            "factor": "MINT_START_KNOWN",
+            "points": 2,
+            "reason": "Mint start time is known."
+          },
+          {
+            "factor": "MINT_END_KNOWN",
+            "points": 1,
+            "reason": "Mint end time is known."
+          },
+          {
+            "factor": "SCARCE_SUPPLY",
+            "points": 6,
+            "reason": "Maximum supply is 3,333 or lower."
+          },
+          {
+            "factor": "SUPPLY_VISIBLE",
+            "points": 2,
+            "reason": "Remaining supply is known."
+          },
+          {
+            "factor": "ROYALTY_DATA_PRESENT",
+            "points": 1,
+            "reason": "Royalty configuration is known."
+          },
+          {
+            "factor": "TIMING_KNOWN",
+            "points": 3,
+            "reason": "Mint timing is known."
+          },
+          {
+            "factor": "PRE_MINT_OPPORTUNITY",
+            "points": 3,
+            "reason": "Upcoming mint opportunity detected."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "LOW_RISK",
+            "points": 2,
+            "reason": "Risk score is 10/40 or lower."
+          }
+        ]
+      },
+      "executionApproval": {
+        "approved": false,
+        "status": "AUTO_MINT_BLOCKED",
+        "threshold": {
+          "minScore": 90,
+          "maxRisk": 10
+        },
+        "score": 58,
+        "risk": 8,
+        "classification": "IGNORE",
+        "reasons": [
+          "Hard gates passed.",
+          "Risk score 8/40 is within auto-mint limit."
+        ],
+        "blockers": [
+          "NOT_TECHNICALLY_EXECUTABLE",
+          "SCORE_BELOW_AUTO_MINT_THRESHOLD",
+          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE"
+        ]
+      },
+      "rank": 5,
+      "tier": "D"
+    }
+  ]
 }
