@@ -1,33 +1,49 @@
 export function calculateGoldenEggScore(candidate) {
-  let score = 0;
+  const breakdown = [];
 
-  // Mint stage: maximum 25 points
   if (candidate.mint.type === "public_sale") {
-    score += 25;
+    breakdown.push({
+      factor: "PUBLIC_MINT",
+      points: 25
+    });
   }
 
-  // Robinhood Chain: maximum 10 points
   if (candidate.identity.chain === "robinhood") {
-    score += 10;
+    breakdown.push({
+      factor: "ROBINHOOD_CHAIN",
+      points: 10
+    });
   }
 
-  // Contract exists: maximum 10 points
   if (candidate.identity.contract) {
-    score += 10;
+    breakdown.push({
+      factor: "CONTRACT_PRESENT",
+      points: 10
+    });
   }
 
-  // Mint timing exists: maximum 10 points
   if (candidate.mint.startTime) {
-    score += 10;
+    breakdown.push({
+      factor: "MINT_TIME_PRESENT",
+      points: 10
+    });
   }
 
-  // OpenSea listing exists: maximum 5 points
   if (candidate.opensea.url) {
-    score += 5;
+    breakdown.push({
+      factor: "OPENSEA_PRESENT",
+      points: 5
+    });
   }
+
+  const score = breakdown.reduce(
+    (total, item) => total + item.points,
+    0
+  );
 
   return {
     score,
-    maxScore: 60
+    maxScore: 60,
+    breakdown
   };
 }
