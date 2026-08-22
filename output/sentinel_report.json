@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.2.0",
   "network": "robinhood",
-  "scanTime": "2026-08-21T19:16:20.537Z",
+  "scanTime": "2026-08-22T00:12:58.835Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -10,17 +10,17 @@
     "technicalExecutionRequired": true
   },
   "summary": {
-    "scanTime": "2026-08-21T19:16:20.537Z",
+    "scanTime": "2026-08-22T00:12:58.835Z",
     "network": "robinhood",
-    "totalDrops": 4,
+    "totalDrops": 5,
     "executionEligible": 1,
-    "watchOnly": 3,
+    "watchOnly": 4,
     "reject": 0,
     "autoMintEligible": 0,
     "alphaCandidates": 0,
     "watchlist": 0,
-    "ignore": 3,
-    "averageScore": 67.25,
+    "ignore": 4,
+    "averageScore": 64.4,
     "topCandidate": {
       "name": "GAWSWRLD",
       "slug": "gawswrld2026",
@@ -64,6 +64,15 @@
         "classification": "IGNORE",
         "stage": "PRESALE",
         "executionStatus": "WATCH_ONLY"
+      },
+      {
+        "rank": 5,
+        "tier": "D",
+        "name": "Builder Bots AI",
+        "score": 53,
+        "classification": "IGNORE",
+        "stage": "PRESALE",
+        "executionStatus": "WATCH_ONLY"
       }
     ],
     "scoreDistribution": {
@@ -71,11 +80,11 @@
       "aTier": 0,
       "bTier": 0,
       "cTier": 1,
-      "dTier": 3
+      "dTier": 4
     },
-    "averageRisk": 5.75,
+    "averageRisk": 6.6,
     "autoMintApproved": 0,
-    "autoMintBlocked": 4
+    "autoMintBlocked": 5
   },
   "candidates": [
     {
@@ -98,9 +107,9 @@
         "url": "https://opensea.io/collection/gawswrld2026"
       },
       "status": {
-        "isMinting": false,
-        "activeStage": null,
-        "nextStage": "public_sale"
+        "isMinting": true,
+        "activeStage": "public_sale",
+        "nextStage": null
       },
       "hardGates": {
         "passed": true,
@@ -122,19 +131,19 @@
         "portfolio": {
           "ownedCollections": 47,
           "ownedItems": 92,
-          "estimatedUsdValue": 47.56
+          "estimatedUsdValue": 51.74
         },
         "historicalCollections": {
           "collectionCount": 47,
           "analyzedCollections": 10,
-          "totalVolume": 6648.3931,
-          "totalSales": 66088,
-          "totalOwners": 64991,
-          "averageVolume": 664.8393,
-          "averageSales": 6608.8,
-          "averageOwners": 6499.1,
-          "medianVolume": 326.8153,
-          "medianSales": 4645,
+          "totalVolume": 7598.49,
+          "totalSales": 70153,
+          "totalOwners": 67192,
+          "averageVolume": 759.849,
+          "averageSales": 7015.3,
+          "averageOwners": 6719.2,
+          "medianVolume": 485.6239,
+          "medianSales": 6136.5,
           "medianOwners": 2682.5,
           "bestFloorPrice": 3.33,
           "bestCollection": {
@@ -153,10 +162,10 @@
             {
               "name": "The WynLambo",
               "slug": "thewynlambo",
-              "volume": 489.4162259589579,
-              "sales": 5519,
+              "volume": 489.4192259589579,
+              "sales": 5520,
               "owners": 2626,
-              "floorPrice": 0.0078
+              "floorPrice": 0.00779
             },
             {
               "name": "Rogue Society Bots",
@@ -199,14 +208,6 @@
               "floorPrice": 0.000398
             },
             {
-              "name": "AlphaBetty Doodles",
-              "slug": "alphabetty-doodles",
-              "volume": 1473.2006184540512,
-              "sales": 12797,
-              "owners": 3490,
-              "floorPrice": 0.00034437
-            },
-            {
               "name": "Elysium Shell",
               "slug": "e-shell",
               "volume": 481.8286618593395,
@@ -215,12 +216,12 @@
               "floorPrice": 0.00836
             },
             {
-              "name": "The Alien Doogle",
-              "slug": "thealiendoogle",
-              "volume": 106.37539474814288,
-              "sales": 2689,
-              "owners": 2896,
-              "floorPrice": 0.00118999
+              "name": "AlphaBetty Doodles",
+              "slug": "alphabetty-doodles",
+              "volume": 1473.2006184540512,
+              "sales": 12797,
+              "owners": 3490,
+              "floorPrice": 0.00034437
             },
             {
               "name": "Fudders",
@@ -229,6 +230,14 @@
               "sales": 11513,
               "owners": 2625,
               "floorPrice": 0.00079
+            },
+            {
+              "name": "Sneaky Vampiress Syndicate",
+              "slug": "sneaky-vampiress-syndicate",
+              "volume": 1056.4693245797498,
+              "sales": 6753,
+              "owners": 5097,
+              "floorPrice": 0.000829
             }
           ]
         },
@@ -249,8 +258,8 @@
         "status": "FOUND",
         "supply": {
           "max": 3333,
-          "minted": 0,
-          "remaining": 3333
+          "minted": 38,
+          "remaining": 3295
         },
         "mint": {
           "type": "public_sale",
@@ -303,11 +312,11 @@
           "category": "art"
         },
         "stats": {
-          "floorPrice": 0,
-          "volume": 0,
-          "sales": 0,
+          "floorPrice": 20,
+          "volume": 0.13319999999999999,
+          "sales": 12,
           "averagePrice": null,
-          "numOwners": 0,
+          "numOwners": 9,
           "marketCap": null
         },
         "errors": []
@@ -331,19 +340,19 @@
         }
       },
       "alphaIntel": {
-        "score": 9,
+        "score": 10,
         "maxScore": 10,
         "classification": "HIGH_ALPHA",
         "signals": [
           {
             "signal": "HIGH_VOLUME_CREATOR",
             "points": 2,
-            "reason": "Creator historical volume is 6648.39 ETH."
+            "reason": "Creator historical volume is 7598.49 ETH."
           },
           {
             "signal": "HIGH_SALES_CREATOR",
             "points": 2,
-            "reason": "Creator historical sales are 66088."
+            "reason": "Creator historical sales are 70153."
           },
           {
             "signal": "HIGH_FLOOR_HISTORY",
@@ -359,6 +368,11 @@
             "signal": "MINIMAL_RISK",
             "points": 1,
             "reason": "Risk engine reports minimal risk."
+          },
+          {
+            "signal": "SECONDARY_MARKET_EXISTS",
+            "points": 1,
+            "reason": "Historical secondary market activity detected."
           }
         ]
       },
@@ -542,11 +556,6 @@
             "reason": "Mint timing is known."
           },
           {
-            "factor": "PRE_MINT_OPPORTUNITY",
-            "points": 3,
-            "reason": "Upcoming mint opportunity detected."
-          },
-          {
             "factor": "EXECUTION_WINDOW",
             "points": 4,
             "reason": "Candidate currently satisfies execution timing requirements."
@@ -555,6 +564,16 @@
             "factor": "MARKET_VERIFIED",
             "points": 1,
             "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "SALES_ACTIVITY",
+            "points": 1,
+            "reason": "Historical sales activity exists."
+          },
+          {
+            "factor": "FLOOR_PRICE_PRESENT",
+            "points": 2,
+            "reason": "Collection has an established floor price."
           },
           {
             "factor": "HIGH_ALPHA_SIGNAL",
@@ -640,20 +659,20 @@
         "portfolio": {
           "ownedCollections": 43,
           "ownedItems": 135,
-          "estimatedUsdValue": 5522.63
+          "estimatedUsdValue": 5933.67
         },
         "historicalCollections": {
           "collectionCount": 43,
           "analyzedCollections": 10,
-          "totalVolume": 3282.3622,
-          "totalSales": 73494,
-          "totalOwners": 8442,
-          "averageVolume": 328.2362,
-          "averageSales": 7349.4,
-          "averageOwners": 844.2,
-          "medianVolume": 110.1121,
-          "medianSales": 3347,
-          "medianOwners": 878,
+          "totalVolume": 3282.8038,
+          "totalSales": 73513,
+          "totalOwners": 8450,
+          "averageVolume": 328.2804,
+          "averageSales": 7351.3,
+          "averageOwners": 845,
+          "medianVolume": 110.1373,
+          "medianSales": 3348.5,
+          "medianOwners": 879,
           "bestFloorPrice": 0.0721,
           "bestCollection": {
             "name": "P⊙RTR∆ITS",
@@ -671,34 +690,34 @@
             {
               "name": "NODES",
               "slug": "nodes-by-hunter",
-              "volume": 283.7041874518803,
-              "sales": 12780,
-              "owners": 963,
-              "floorPrice": 0.0439999
+              "volume": 283.87518735188024,
+              "sales": 12784,
+              "owners": 965,
+              "floorPrice": 0.04497999
             },
             {
               "name": "Primitives",
               "slug": "primitives-6",
-              "volume": 856.6154448348674,
-              "sales": 6067,
-              "owners": 1032,
-              "floorPrice": 0.01236998
+              "volume": 856.6282328328674,
+              "sales": 6068,
+              "owners": 1033,
+              "floorPrice": 0.01236996
             },
             {
               "name": "Abstract Pepes",
               "slug": "abstract-pepes-abstract",
-              "volume": 17.81979914223759,
-              "sales": 1700,
+              "volume": 17.826499142237587,
+              "sales": 1701,
               "owners": 1002,
-              "floorPrice": 0.0067
+              "floorPrice": 0.0071
             },
             {
               "name": "Lil' Bangers",
               "slug": "lil-bangers-",
-              "volume": 509.28080621214133,
-              "sales": 25898,
-              "owners": 1224,
-              "floorPrice": 0.0142
+              "volume": 509.3080962121413,
+              "sales": 25900,
+              "owners": 1225,
+              "floorPrice": 0.01419999
             },
             {
               "name": "P⊙RTR∆ITS",
@@ -711,26 +730,26 @@
             {
               "name": "Suited Riot",
               "slug": "suited-riot-v2",
-              "volume": 36.150618034932585,
-              "sales": 285,
-              "owners": 560,
-              "floorPrice": 0.0092642
-            },
-            {
-              "name": "fwogs",
-              "slug": "fwogs",
-              "volume": 1282.8823885192362,
-              "sales": 18375,
-              "owners": 1511,
-              "floorPrice": 0.027696
+              "volume": 36.17765783493259,
+              "sales": 288,
+              "owners": 562,
+              "floorPrice": 0.009399
             },
             {
               "name": "Doomsayers",
               "slug": "doomsayers",
               "volume": 10.58771607156578,
               "sales": 3317,
-              "owners": 726,
-              "floorPrice": 0.0073989
+              "owners": 727,
+              "floorPrice": 0.0073988
+            },
+            {
+              "name": "fwogs",
+              "slug": "fwogs",
+              "volume": 1283.0287835192362,
+              "sales": 18380,
+              "owners": 1511,
+              "floorPrice": 0.02769899
             },
             {
               "name": "Signature Series by mendezmendez",
@@ -743,10 +762,10 @@
             {
               "name": "ENTROPY by mendezmendez",
               "slug": "entropy-by-mendezmendez",
-              "volume": 132.1099076975009,
-              "sales": 3377,
-              "owners": 438,
-              "floorPrice": 0.020834199999
+              "volume": 132.1602618975009,
+              "sales": 3380,
+              "owners": 439,
+              "floorPrice": 0.0203727
             }
           ]
         },
@@ -862,12 +881,12 @@
           {
             "signal": "HIGH_VOLUME_CREATOR",
             "points": 2,
-            "reason": "Creator historical volume is 3282.36 ETH."
+            "reason": "Creator historical volume is 3282.80 ETH."
           },
           {
             "signal": "HIGH_SALES_CREATOR",
             "points": 2,
-            "reason": "Creator historical sales are 73494."
+            "reason": "Creator historical sales are 73513."
           },
           {
             "signal": "SIGNED_PRESALE_STAGE",
@@ -1129,7 +1148,7 @@
         "portfolio": {
           "ownedCollections": 9,
           "ownedItems": 24,
-          "estimatedUsdValue": 0.24
+          "estimatedUsdValue": 0.25
         },
         "historicalCollections": {
           "collectionCount": 9,
@@ -1915,6 +1934,399 @@
         ]
       },
       "rank": 4,
+      "tier": "D"
+    },
+    {
+      "identity": {
+        "name": "Builder Bots AI",
+        "slug": "builder-bots-ai",
+        "contract": "0x409eab4fa20b5b61d35d2b447b14f384e8ac90e5",
+        "chain": "robinhood"
+      },
+      "mint": {
+        "type": "signed_presale",
+        "label": "l1l b0tz holders",
+        "priceWei": "15000000000000000",
+        "currencyAddress": "0x0000000000000000000000000000000000000000",
+        "startTime": "2026-08-24T15:00:00Z",
+        "endTime": "2026-08-24T18:00:00Z",
+        "maxPerWallet": "3"
+      },
+      "opensea": {
+        "url": "https://opensea.io/collection/builder-bots-ai"
+      },
+      "status": {
+        "isMinting": false,
+        "activeStage": null,
+        "nextStage": "signed_presale"
+      },
+      "hardGates": {
+        "passed": true,
+        "reasons": []
+      },
+      "stageClassification": "PRESALE",
+      "executionStatus": "WATCH_ONLY",
+      "creatorIntel": {
+        "status": "IDENTIFIED",
+        "address": "0xbf955a274cc0d3530bc0528eeb197c3a51a57846",
+        "identity": {
+          "username": "chazzgoldart",
+          "ensName": null
+        },
+        "attribution": {
+          "source": "CONTRACT_OWNER",
+          "confidence": "HIGH"
+        },
+        "portfolio": {
+          "ownedCollections": 5,
+          "ownedItems": 7,
+          "estimatedUsdValue": 0.01
+        },
+        "historicalCollections": {
+          "collectionCount": 5,
+          "analyzedCollections": 5,
+          "totalVolume": 0.1064,
+          "totalSales": 2812,
+          "totalOwners": 22715,
+          "averageVolume": 0.0213,
+          "averageSales": 562.4,
+          "averageOwners": 4543,
+          "medianVolume": 0,
+          "medianSales": 0,
+          "medianOwners": 146,
+          "bestFloorPrice": 0.3899,
+          "bestCollection": {
+            "name": "OpenPage Badges",
+            "slug": "openpage-badges",
+            "volume": 0.0648178422586789,
+            "sales": 1468,
+            "owners": 11533,
+            "floorPrice": 0.38988989
+          },
+          "activeCollections": 2,
+          "highVolumeCollections": 0,
+          "highSalesCollections": 2,
+          "highFloorCollections": 0,
+          "collections": [
+            {
+              "name": "OpenPage Avatars",
+              "slug": "openpage-avatars",
+              "volume": 0.04161769025924822,
+              "sales": 1344,
+              "owners": 10924,
+              "floorPrice": 0.19
+            },
+            {
+              "name": "Just Art",
+              "slug": "just-art-147957730",
+              "volume": 0,
+              "sales": 0,
+              "owners": 146,
+              "floorPrice": 0.0033
+            },
+            {
+              "name": "OpenPage Badges",
+              "slug": "openpage-badges",
+              "volume": 0.0648178422586789,
+              "sales": 1468,
+              "owners": 11533,
+              "floorPrice": 0.38988989
+            },
+            {
+              "name": "PROJCT212",
+              "slug": "projct212",
+              "volume": 0,
+              "sales": 0,
+              "owners": 69,
+              "floorPrice": 0.2
+            },
+            {
+              "name": "chazzgoldart",
+              "slug": "chazzgoldart",
+              "volume": 0,
+              "sales": 0,
+              "owners": 43,
+              "floorPrice": 0
+            }
+          ]
+        },
+        "flags": [
+          "CONTRACT_OWNER",
+          "OPENSEA_USERNAME",
+          "HISTORICAL_ACTIVITY",
+          "HIGH_SALES_HISTORY"
+        ],
+        "score": 11,
+        "maxScore": 25,
+        "errors": []
+      },
+      "metadataIntel": {
+        "status": "FOUND",
+        "supply": {
+          "max": 333,
+          "minted": 0,
+          "remaining": 333
+        },
+        "mint": {
+          "type": "signed_presale",
+          "label": "l1l b0tz holders",
+          "priceWei": "15000000000000000",
+          "currencyAddress": "0x0000000000000000000000000000000000000000",
+          "maxPerWallet": "3",
+          "startTime": "2026-08-24T15:00:00Z",
+          "endTime": "2026-08-24T18:00:00Z"
+        },
+        "royalty": [
+          {
+            "fee": 1,
+            "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
+            "required": true
+          },
+          {
+            "fee": 10,
+            "recipient": "0xbf955a274cc0d3530bc0528eeb197c3a51a57846",
+            "required": true
+          }
+        ],
+        "contract": {
+          "address": "0x409eab4fa20b5b61d35d2b447b14f384e8ac90e5",
+          "chain": "robinhood",
+          "standard": "erc721"
+        },
+        "collection": {
+          "name": "Builder Bots AI",
+          "slug": "builder-bots-ai",
+          "category": "",
+          "description": ""
+        },
+        "signals": [
+          "MAX_SUPPLY_PRESENT",
+          "TOTAL_SUPPLY_PRESENT",
+          "MINT_STAGE_PRESENT",
+          "ROYALTY_DATA_PRESENT",
+          "CONTRACT_STANDARD_PRESENT"
+        ],
+        "errors": []
+      },
+      "marketIntel": {
+        "status": "FOUND",
+        "verified": true,
+        "collection": {
+          "name": "Builder Bots AI",
+          "slug": "builder-bots-ai",
+          "owner": "0xbf955a274cc0d3530bc0528eeb197c3a51a57846",
+          "category": ""
+        },
+        "stats": {
+          "floorPrice": 0,
+          "volume": 0,
+          "sales": 0,
+          "averagePrice": null,
+          "numOwners": 0,
+          "marketCap": null
+        },
+        "errors": []
+      },
+      "riskIntel": {
+        "level": "LOW",
+        "score": 10,
+        "maxRisk": 40,
+        "penalties": [
+          {
+            "factor": "EXTREME_ROYALTY",
+            "points": 10,
+            "reason": "Total configured royalty is 11%."
+          }
+        ],
+        "flags": [
+          "EXTREME_ROYALTY"
+        ],
+        "context": {
+          "maxSupply": 333,
+          "maxPerWallet": 3,
+          "royaltyPercentage": 11,
+          "creatorConfidence": "HIGH",
+          "creatorUsername": "chazzgoldart",
+          "creatorEns": null,
+          "ownedCollections": 5,
+          "ownedItems": 7,
+          "contractStandard": "erc721"
+        }
+      },
+      "alphaIntel": {
+        "score": 1,
+        "maxScore": 10,
+        "classification": "LOW_ALPHA",
+        "signals": [
+          {
+            "signal": "SIGNED_PRESALE_STAGE",
+            "points": 1,
+            "reason": "Collection is currently in signed presale."
+          }
+        ]
+      },
+      "walletIntel": {
+        "score": 4,
+        "maxScore": 10,
+        "classification": "KNOWN_CREATOR",
+        "signals": [
+          {
+            "signal": "CREATOR_IDENTIFIED",
+            "points": 2,
+            "reason": "Creator wallet has been identified."
+          },
+          {
+            "signal": "MULTIPLE_HIGH_SALES_COLLECTIONS",
+            "points": 2,
+            "reason": "Creator has 2 collections with over 1,000 sales."
+          }
+        ]
+      },
+      "socialIntel": {
+        "score": 4,
+        "maxScore": 10,
+        "classification": "LOW_SOCIAL",
+        "signals": [
+          {
+            "signal": "OPENSEA_USERNAME",
+            "points": 2,
+            "reason": "Creator has OpenSea username \"chazzgoldart\"."
+          },
+          {
+            "signal": "OPENSEA_COLLECTION_PAGE",
+            "points": 2,
+            "reason": "Collection has an OpenSea page."
+          }
+        ]
+      },
+      "goldenEgg": {
+        "score": 53,
+        "maxScore": 100,
+        "classification": "IGNORE",
+        "breakdown": [
+          {
+            "factor": "CREATOR_IDENTIFIED",
+            "points": 5,
+            "reason": "Creator address has been identified."
+          },
+          {
+            "factor": "PUBLIC_CREATOR_IDENTITY",
+            "points": 3,
+            "reason": "Creator has a public identity."
+          },
+          {
+            "factor": "HIGH_CREATOR_CONFIDENCE",
+            "points": 2,
+            "reason": "Creator attribution has high confidence."
+          },
+          {
+            "factor": "ROBINHOOD_CHAIN",
+            "points": 4,
+            "reason": "Collection is launching on Robinhood Chain."
+          },
+          {
+            "factor": "CONTRACT_PRESENT",
+            "points": 3,
+            "reason": "NFT contract is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
+            "factor": "OPENSEA_COLLECTION",
+            "points": 2,
+            "reason": "OpenSea collection page exists."
+          },
+          {
+            "factor": "COLLECTION_NAME",
+            "points": 1,
+            "reason": "Collection name is available."
+          },
+          {
+            "factor": "SIGNED_PRESALE",
+            "points": 4,
+            "reason": "Signed presale stage detected."
+          },
+          {
+            "factor": "MINT_PRICE_KNOWN",
+            "points": 3,
+            "reason": "Mint price is known."
+          },
+          {
+            "factor": "MINT_LIMIT_KNOWN",
+            "points": 2,
+            "reason": "Maximum mint per wallet is known."
+          },
+          {
+            "factor": "MINT_START_KNOWN",
+            "points": 2,
+            "reason": "Mint start time is known."
+          },
+          {
+            "factor": "MINT_END_KNOWN",
+            "points": 1,
+            "reason": "Mint end time is known."
+          },
+          {
+            "factor": "SCARCE_SUPPLY",
+            "points": 6,
+            "reason": "Maximum supply is 3,333 or lower."
+          },
+          {
+            "factor": "SUPPLY_VISIBLE",
+            "points": 2,
+            "reason": "Remaining supply is known."
+          },
+          {
+            "factor": "ROYALTY_DATA_PRESENT",
+            "points": 1,
+            "reason": "Royalty configuration is known."
+          },
+          {
+            "factor": "TIMING_KNOWN",
+            "points": 3,
+            "reason": "Mint timing is known."
+          },
+          {
+            "factor": "PRE_MINT_OPPORTUNITY",
+            "points": 3,
+            "reason": "Upcoming mint opportunity detected."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "LOW_RISK",
+            "points": 2,
+            "reason": "Risk score is 10/40 or lower."
+          }
+        ]
+      },
+      "executionApproval": {
+        "approved": false,
+        "status": "AUTO_MINT_BLOCKED",
+        "threshold": {
+          "minScore": 90,
+          "maxRisk": 10
+        },
+        "score": 53,
+        "risk": 10,
+        "classification": "IGNORE",
+        "reasons": [
+          "Hard gates passed.",
+          "Risk score 10/40 is within auto-mint limit."
+        ],
+        "blockers": [
+          "NOT_TECHNICALLY_EXECUTABLE",
+          "SCORE_BELOW_AUTO_MINT_THRESHOLD",
+          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE"
+        ]
+      },
+      "rank": 5,
       "tier": "D"
     }
   ]
