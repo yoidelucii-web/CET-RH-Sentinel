@@ -1,4 +1,3 @@
-```javascript
 import fs from "fs";
 
 import { getUpcomingDrops } from "./opensea.js";
@@ -477,19 +476,6 @@ for (const drop of drops.drops) {
 
   /* ----------------------------------------------------------
    * MOMENTUM / HISTORY
-   *
-   * IMPORTANT:
-   *
-   * We compare the current candidate with its
-   * previous scanner snapshot.
-   *
-   * This allows Sentinel to detect:
-   *
-   * NEW
-   * RISING
-   * BREAKOUT
-   * STABLE
-   * WEAKENING
    * ---------------------------------------------------------- */
 
   const previousSnapshot =
@@ -537,10 +523,6 @@ for (const drop of drops.drops) {
 
   /* ----------------------------------------------------------
    * RECORD HISTORY
-   *
-   * Save snapshot AFTER momentum calculation.
-   * This is important because the next scan will
-   * compare against this snapshot.
    * ---------------------------------------------------------- */
 
   try {
@@ -553,10 +535,13 @@ for (const drop of drops.drops) {
   } catch (error) {
 
     console.error(
-      `History error for ${
+      "History error for " +
+      (
         scoredCandidate.identity?.name ??
         "Unknown"
-      }: ${error.message}`
+      ) +
+      ": " +
+      error.message
     );
   }
 }
@@ -891,6 +876,5 @@ console.log(
 );
 
 console.log(
-  "History  -> data/scan-history.json"
+  "History -> data/scan-history.json"
 );
-```
