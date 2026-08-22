@@ -1,3 +1,4 @@
+```javascript
 import fs from "fs";
 
 import { getUpcomingDrops } from "./opensea.js";
@@ -48,6 +49,12 @@ import {
 import {
   buildSummary
 } from "./summary.js";
+
+import {
+  getPreviousSnapshot,
+  buildMomentum,
+  recordSnapshot
+} from "./history.js";
 
 
 /* ==========================================================
@@ -455,25 +462,56 @@ for (const drop of drops.drops) {
 
 
   /* ----------------------------------------------------------
-   * EXECUTION APPROVAL
+   * ATTACH GOLDEN EGG SCORE
+   * ---------------------------------------------------------- */
+
+  const scoredCandidate = {
+
+    ...finalCandidate,
+
+    goldenEggScore: goldenEgg,
+
+    goldenEgg
+  };
+
+
+  /* ----------------------------------------------------------
+   * MOMENTUM / HISTORY
    *
    * IMPORTANT:
    *
-   * EXECUTION_ELIGIBLE
-   *      =
-   * technically executable
+   * We compare the current candidate with its
+   * previous scanner snapshot.
    *
-   * AUTO_MINT_APPROVED
-   *      =
-   * Sentinel explicitly allows auto mint
+   * This allows Sentinel to detect:
+   *
+   * NEW
+   * RISING
+   * BREAKOUT
+   * STABLE
+   * WEAKENING
+   * ---------------------------------------------------------- */
+
+  const previousSnapshot =
+    getPreviousSnapshot(
+      scoredCandidate
+    );
+
+  const momentum =
+    buildMomentum(
+      scoredCandidate,
+      previousSnapshot
+    );
+
+
+  /* ----------------------------------------------------------
+   * EXECUTION APPROVAL
    * ---------------------------------------------------------- */
 
   const executionApproval =
     evaluateExecutionApproval(
       {
-        ...finalCandidate,
-
-        goldenEgg
+        ...scoredCandidate
       }
     );
 
@@ -482,14 +520,45 @@ for (const drop of drops.drops) {
    * STORE FINAL CANDIDATE
    * ---------------------------------------------------------- */
 
-  candidates.push({
+  const finalStoredCandidate = {
 
-    ...finalCandidate,
+    ...scoredCandidate,
 
-    goldenEgg,
+    momentum,
 
     executionApproval
-  });
+  };
+
+
+  candidates.push(
+    finalStoredCandidate
+  );
+
+
+  /* ----------------------------------------------------------
+   * RECORD HISTORY
+   *
+   * Save snapshot AFTER momentum calculation.
+   * This is important because the next scan will
+   * compare against this snapshot.
+   * ---------------------------------------------------------- */
+
+  try {
+
+    recordSnapshot(
+      scoredCandidate,
+      momentum
+    );
+
+  } catch (error) {
+
+    console.error(
+      `History error for ${
+        scoredCandidate.identity?.name ??
+        "Unknown"
+      }: ${error.message}`
+    );
+  }
 }
 
 
@@ -544,6 +613,26 @@ const autoMintBlocked =
 
 
 /* ==========================================================
+ * MOMENTUM SUMMARY
+ * ========================================================== */
+
+const breakoutCandidates =
+  candidates.filter(
+    (candidate) =>
+      candidate.momentum?.classification ===
+      "BREAKOUT"
+  ).length;
+
+
+const risingCandidates =
+  candidates.filter(
+    (candidate) =>
+      candidate.momentum?.classification ===
+      "RISING"
+  ).length;
+
+
+/* ==========================================================
  * FINAL REPORT
  * ========================================================== */
 
@@ -553,7 +642,7 @@ const report = {
     "CET RH Sentinel",
 
   version:
-    "1.2.0",
+    "1.3.0",
 
   network:
     "robinhood",
@@ -571,13 +660,28 @@ const report = {
     technicalExecutionRequired: true
   },
 
+  momentumPolicy: {
+
+    breakoutScoreDelta: 10,
+
+    breakoutVolumeDelta: 100,
+
+    breakoutSalesDelta: 25,
+
+    breakoutFloorDelta: 0.25
+  },
+
   summary: {
 
     ...summary,
 
     autoMintApproved,
 
-    autoMintBlocked
+    autoMintBlocked,
+
+    breakoutCandidates,
+
+    risingCandidates
   },
 
   candidates
@@ -621,7 +725,7 @@ console.log(
 );
 
 console.log(
-  "      CET RH SENTINEL v1.2"
+  "      CET RH SENTINEL v1.3"
 );
 
 console.log(
@@ -658,6 +762,14 @@ console.log(
 
 console.log(
   `Auto Mint Blocked   : ${autoMintBlocked}`
+);
+
+console.log(
+  `Breakout Candidates : ${breakoutCandidates}`
+);
+
+console.log(
+  `Rising Candidates   : ${risingCandidates}`
 );
 
 console.log(
@@ -707,6 +819,41 @@ summary.topFive.forEach(
     );
 
     console.log(
+      `   Momentum   : ${
+        candidate?.momentum?.classification ??
+        "UNKNOWN"
+      }`
+    );
+
+    console.log(
+      `   Score Δ    : ${
+        candidate?.momentum?.scoreDelta ??
+        0
+      }`
+    );
+
+    console.log(
+      `   Floor Δ    : ${
+        candidate?.momentum?.floorDelta ??
+        0
+      }`
+    );
+
+    console.log(
+      `   Volume Δ   : ${
+        candidate?.momentum?.volumeDelta ??
+        0
+      }`
+    );
+
+    console.log(
+      `   Sales Δ    : ${
+        candidate?.momentum?.salesDelta ??
+        0
+      }`
+    );
+
+    console.log(
       `   Auto Mint  : ${
         candidate?.executionApproval?.status ??
         "UNKNOWN"
@@ -742,3 +889,8 @@ console.log(
 console.log(
   "Saved -> output/sentinel_report.json"
 );
+
+console.log(
+  "History  -> data/scan-history.json"
+);
+```
