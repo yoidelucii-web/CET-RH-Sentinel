@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.2.0",
   "network": "robinhood",
-  "scanTime": "2026-08-22T03:10:10.887Z",
+  "scanTime": "2026-08-22T03:25:13.993Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -10,7 +10,7 @@
     "technicalExecutionRequired": true
   },
   "summary": {
-    "scanTime": "2026-08-22T03:10:10.887Z",
+    "scanTime": "2026-08-22T03:25:13.993Z",
     "network": "robinhood",
     "totalDrops": 5,
     "executionEligible": 1,
@@ -131,7 +131,7 @@
         "portfolio": {
           "ownedCollections": 47,
           "ownedItems": 92,
-          "estimatedUsdValue": 50.62
+          "estimatedUsdValue": 50.66
         },
         "historicalCollections": {
           "collectionCount": 47,
@@ -165,7 +165,7 @@
               "volume": 489.42222595895777,
               "sales": 5521,
               "owners": 2625,
-              "floorPrice": 0.00779
+              "floorPrice": 0.0077
             },
             {
               "name": "Rogue Society Bots",
@@ -659,17 +659,17 @@
         "portfolio": {
           "ownedCollections": 43,
           "ownedItems": 135,
-          "estimatedUsdValue": 5981.71
+          "estimatedUsdValue": 5982.83
         },
         "historicalCollections": {
           "collectionCount": 43,
           "analyzedCollections": 10,
-          "totalVolume": 3283.5078,
-          "totalSales": 73537,
-          "totalOwners": 8445,
-          "averageVolume": 328.3508,
-          "averageSales": 7353.7,
-          "averageOwners": 844.5,
+          "totalVolume": 3283.5645,
+          "totalSales": 73541,
+          "totalOwners": 8443,
+          "averageVolume": 328.3564,
+          "averageSales": 7354.1,
+          "averageOwners": 844.3,
           "medianVolume": 110.1373,
           "medianSales": 3349,
           "medianOwners": 879.5,
@@ -701,7 +701,7 @@
               "volume": 856.6282328328674,
               "sales": 6068,
               "owners": 1033,
-              "floorPrice": 0.01236991999
+              "floorPrice": 0.0123699
             },
             {
               "name": "Abstract Pepes",
@@ -714,10 +714,10 @@
             {
               "name": "Lil' Bangers",
               "slug": "lil-bangers-",
-              "volume": 509.3606962121413,
-              "sales": 25903,
-              "owners": 1225,
-              "floorPrice": 0.0141
+              "volume": 509.4173075638413,
+              "sales": 25907,
+              "owners": 1223,
+              "floorPrice": 0.0142401617
             },
             {
               "name": "P⊙RTR∆ITS",
@@ -765,7 +765,7 @@
               "volume": 132.1602618975009,
               "sales": 3380,
               "owners": 439,
-              "floorPrice": 0.0199885999
+              "floorPrice": 0.0199574
             }
           ]
         },
@@ -881,12 +881,12 @@
           {
             "signal": "HIGH_VOLUME_CREATOR",
             "points": 2,
-            "reason": "Creator historical volume is 3283.51 ETH."
+            "reason": "Creator historical volume is 3283.56 ETH."
           },
           {
             "signal": "HIGH_SALES_CREATOR",
             "points": 2,
-            "reason": "Creator historical sales are 73537."
+            "reason": "Creator historical sales are 73541."
           },
           {
             "signal": "SIGNED_PRESALE_STAGE",
@@ -1985,7 +1985,7 @@
         "historicalCollections": {
           "collectionCount": 5,
           "analyzedCollections": 5,
-          "totalVolume": 0.113,
+          "totalVolume": 0.1131,
           "totalSales": 2812,
           "totalOwners": 22715,
           "averageVolume": 0.0226,
@@ -1998,7 +1998,7 @@
           "bestCollection": {
             "name": "OpenPage Badges",
             "slug": "openpage-badges",
-            "volume": 0.06881533818796393,
+            "volume": 0.06888642715496482,
             "sales": 1468,
             "owners": 11533,
             "floorPrice": 0.38988989
@@ -2011,7 +2011,7 @@
             {
               "name": "OpenPage Avatars",
               "slug": "openpage-avatars",
-              "volume": 0.04418436853177764,
+              "volume": 0.04423001273260872,
               "sales": 1344,
               "owners": 10924,
               "floorPrice": 0.19
@@ -2027,7 +2027,7 @@
             {
               "name": "OpenPage Badges",
               "slug": "openpage-badges",
-              "volume": 0.06881533818796393,
+              "volume": 0.06888642715496482,
               "sales": 1468,
               "owners": 11533,
               "floorPrice": 0.38988989
