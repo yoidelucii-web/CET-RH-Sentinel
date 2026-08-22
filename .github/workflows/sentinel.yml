@@ -58,6 +58,8 @@ jobs:
             console.log("Watchlist          :", s.watchlist);
             console.log("Ignore             :", s.ignore);
             console.log("Average Score      :", s.averageScore);
+            console.log("Breakout Candidates:", s.breakoutCandidates);
+            console.log("Rising Candidates  :", s.risingCandidates);
             console.log(
               "Top Candidate      :",
               s.topCandidate?.name || "None"
@@ -111,7 +113,9 @@ jobs:
             return (
               Number(item.score || 0) >= 90 ||
               item.classification === "AUTO_MINT_ELIGIBLE" ||
-              item.classification === "ALPHA_CANDIDATE"
+              item.classification === "ALPHA_CANDIDATE" ||
+              item.momentum === "BREAKOUT" ||
+              item.momentum === "RISING"
             );
           });
 
@@ -134,6 +138,24 @@ jobs:
           );
           lines.push("");
 
+          if (
+            Number(summary.breakoutCandidates || 0) > 0
+          ) {
+            lines.push(
+              `🚀 Breakouts: ${summary.breakoutCandidates}`
+            );
+          }
+
+          if (
+            Number(summary.risingCandidates || 0) > 0
+          ) {
+            lines.push(
+              `📈 Rising: ${summary.risingCandidates}`
+            );
+          }
+
+          lines.push("");
+
           for (const item of important) {
             lines.push(`🔥 ${item.name}`);
             lines.push(`Score: ${item.score}/100`);
@@ -143,6 +165,21 @@ jobs:
             lines.push(
               `Execution: ${item.executionStatus}`
             );
+
+            if (item.momentum) {
+              lines.push(
+                `Momentum: ${item.momentum}`
+              );
+            }
+
+            if (
+              item.scoreDelta !== undefined
+            ) {
+              lines.push(
+                `Score Δ: ${item.scoreDelta}`
+              );
+            }
+
             lines.push("");
           }
 
@@ -227,17 +264,18 @@ jobs:
           request.end();
           NODE
 
-      - name: Save Sentinel Report
+      - name: Save Sentinel Report and History
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add output/sentinel_report.json
+          git add data/scan-history.json
 
           if git diff --cached --quiet; then
-            echo "No report changes."
+            echo "No report or history changes."
           else
-            git commit -m "chore: update sentinel report"
+            git commit -m "chore: update sentinel report and history"
             git push
           fi
 
@@ -254,6 +292,7 @@ jobs:
 
           ✔ Workflow GitHub Actions berjalan normal.
           ✔ Scan engine aktif.
+          ✔ History engine aktif.
           ✔ Telegram notifier aktif.
 
           Next scan: 6 jam lagi."
