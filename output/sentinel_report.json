@@ -1,16 +1,22 @@
 {
   "scanner": "CET RH Sentinel",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-08-22T03:25:13.993Z",
+  "scanTime": "2026-08-22T03:45:08.532Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
     "hardGatesRequired": true,
     "technicalExecutionRequired": true
   },
+  "momentumPolicy": {
+    "breakoutScoreDelta": 10,
+    "breakoutVolumeDelta": 100,
+    "breakoutSalesDelta": 25,
+    "breakoutFloorDelta": 0.25
+  },
   "summary": {
-    "scanTime": "2026-08-22T03:25:13.993Z",
+    "scanTime": "2026-08-22T03:45:08.532Z",
     "network": "robinhood",
     "totalDrops": 5,
     "executionEligible": 1,
@@ -84,7 +90,9 @@
     },
     "averageRisk": 6.6,
     "autoMintApproved": 0,
-    "autoMintBlocked": 5
+    "autoMintBlocked": 5,
+    "breakoutCandidates": 0,
+    "risingCandidates": 0
   },
   "candidates": [
     {
@@ -131,19 +139,19 @@
         "portfolio": {
           "ownedCollections": 47,
           "ownedItems": 92,
-          "estimatedUsdValue": 50.66
+          "estimatedUsdValue": 50.38
         },
         "historicalCollections": {
           "collectionCount": 47,
           "analyzedCollections": 10,
-          "totalVolume": 7598.493,
-          "totalSales": 70154,
-          "totalOwners": 67191,
-          "averageVolume": 759.8493,
-          "averageSales": 7015.4,
-          "averageOwners": 6719.1,
-          "medianVolume": 485.6254,
-          "medianSales": 6137,
+          "totalVolume": 7598.5008,
+          "totalSales": 70155,
+          "totalOwners": 67192,
+          "averageVolume": 759.8501,
+          "averageSales": 7015.5,
+          "averageOwners": 6719.2,
+          "medianVolume": 485.6293,
+          "medianSales": 6137.5,
           "medianOwners": 2682.5,
           "bestFloorPrice": 3.33,
           "bestCollection": {
@@ -162,9 +170,9 @@
             {
               "name": "The WynLambo",
               "slug": "thewynlambo",
-              "volume": 489.42222595895777,
-              "sales": 5521,
-              "owners": 2625,
+              "volume": 489.43001595895777,
+              "sales": 5522,
+              "owners": 2626,
               "floorPrice": 0.0077
             },
             {
@@ -258,8 +266,8 @@
         "status": "FOUND",
         "supply": {
           "max": 3333,
-          "minted": 40,
-          "remaining": 3293
+          "minted": 41,
+          "remaining": 3292
         },
         "mint": {
           "type": "public_sale",
@@ -313,10 +321,10 @@
         },
         "stats": {
           "floorPrice": 27.7,
-          "volume": 0.14429999999999998,
-          "sales": 13,
+          "volume": 0.15539999999999998,
+          "sales": 14,
           "averagePrice": null,
-          "numOwners": 11,
+          "numOwners": 12,
           "marketCap": null
         },
         "errors": []
@@ -347,12 +355,12 @@
           {
             "signal": "HIGH_VOLUME_CREATOR",
             "points": 2,
-            "reason": "Creator historical volume is 7598.49 ETH."
+            "reason": "Creator historical volume is 7598.50 ETH."
           },
           {
             "signal": "HIGH_SALES_CREATOR",
             "points": 2,
-            "reason": "Creator historical sales are 70154."
+            "reason": "Creator historical sales are 70155."
           },
           {
             "signal": "HIGH_FLOOR_HISTORY",
@@ -437,6 +445,158 @@
             "signal": "OPENSEA_COLLECTION_PAGE",
             "points": 2,
             "reason": "Collection has an OpenSea page."
+          }
+        ]
+      },
+      "goldenEggScore": {
+        "score": 79,
+        "maxScore": 100,
+        "classification": "MONITOR",
+        "breakdown": [
+          {
+            "factor": "CREATOR_IDENTIFIED",
+            "points": 5,
+            "reason": "Creator address has been identified."
+          },
+          {
+            "factor": "PUBLIC_CREATOR_IDENTITY",
+            "points": 3,
+            "reason": "Creator has a public identity."
+          },
+          {
+            "factor": "CREATOR_VOLUME_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical volume."
+          },
+          {
+            "factor": "CREATOR_SALES_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical sales."
+          },
+          {
+            "factor": "BLUECHIP_CREATOR_HISTORY",
+            "points": 3,
+            "reason": "Creator has historical collection with floor ≥1 ETH."
+          },
+          {
+            "factor": "HIGH_CREATOR_CONFIDENCE",
+            "points": 2,
+            "reason": "Creator attribution has high confidence."
+          },
+          {
+            "factor": "ROBINHOOD_CHAIN",
+            "points": 4,
+            "reason": "Collection is launching on Robinhood Chain."
+          },
+          {
+            "factor": "CONTRACT_PRESENT",
+            "points": 3,
+            "reason": "NFT contract is identified."
+          },
+          {
+            "factor": "PROJECT_DESCRIPTION",
+            "points": 3,
+            "reason": "Project description is available."
+          },
+          {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
+            "factor": "OPENSEA_COLLECTION",
+            "points": 2,
+            "reason": "OpenSea collection page exists."
+          },
+          {
+            "factor": "COLLECTION_NAME",
+            "points": 1,
+            "reason": "Collection name is available."
+          },
+          {
+            "factor": "PUBLIC_MINT",
+            "points": 5,
+            "reason": "Public mint stage detected."
+          },
+          {
+            "factor": "MINT_PRICE_KNOWN",
+            "points": 3,
+            "reason": "Mint price is known."
+          },
+          {
+            "factor": "MINT_LIMIT_KNOWN",
+            "points": 2,
+            "reason": "Maximum mint per wallet is known."
+          },
+          {
+            "factor": "MINT_START_KNOWN",
+            "points": 2,
+            "reason": "Mint start time is known."
+          },
+          {
+            "factor": "MINT_END_KNOWN",
+            "points": 1,
+            "reason": "Mint end time is known."
+          },
+          {
+            "factor": "SCARCE_SUPPLY",
+            "points": 6,
+            "reason": "Maximum supply is 3,333 or lower."
+          },
+          {
+            "factor": "SUPPLY_VISIBLE",
+            "points": 2,
+            "reason": "Remaining supply is known."
+          },
+          {
+            "factor": "ROYALTY_DATA_PRESENT",
+            "points": 1,
+            "reason": "Royalty configuration is known."
+          },
+          {
+            "factor": "TIMING_KNOWN",
+            "points": 3,
+            "reason": "Mint timing is known."
+          },
+          {
+            "factor": "EXECUTION_WINDOW",
+            "points": 4,
+            "reason": "Candidate currently satisfies execution timing requirements."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "SALES_ACTIVITY",
+            "points": 1,
+            "reason": "Historical sales activity exists."
+          },
+          {
+            "factor": "FLOOR_PRICE_PRESENT",
+            "points": 2,
+            "reason": "Collection has an established floor price."
+          },
+          {
+            "factor": "HIGH_ALPHA_SIGNAL",
+            "points": 3,
+            "reason": "High alpha signal detected."
+          },
+          {
+            "factor": "SMART_CREATOR",
+            "points": 1,
+            "reason": "Creator wallet shows strong historical signals."
+          },
+          {
+            "factor": "MINIMAL_RISK",
+            "points": 3,
+            "reason": "Risk engine reports 0/40."
           }
         ]
       },
@@ -592,6 +752,15 @@
           }
         ]
       },
+      "momentum": {
+        "hasPrevious": false,
+        "scoreDelta": 0,
+        "floorDelta": 0,
+        "volumeDelta": 0,
+        "salesDelta": 0,
+        "ownersDelta": 0,
+        "classification": "NEW"
+      },
       "executionApproval": {
         "approved": false,
         "status": "AUTO_MINT_BLOCKED",
@@ -659,7 +828,7 @@
         "portfolio": {
           "ownedCollections": 43,
           "ownedItems": 135,
-          "estimatedUsdValue": 5982.83
+          "estimatedUsdValue": 5985.83
         },
         "historicalCollections": {
           "collectionCount": 43,
@@ -765,7 +934,7 @@
               "volume": 132.1602618975009,
               "sales": 3380,
               "owners": 439,
-              "floorPrice": 0.0199574
+              "floorPrice": 0.0199113999
             }
           ]
         },
@@ -944,6 +1113,143 @@
           }
         ]
       },
+      "goldenEggScore": {
+        "score": 67,
+        "maxScore": 100,
+        "classification": "IGNORE",
+        "breakdown": [
+          {
+            "factor": "CREATOR_IDENTIFIED",
+            "points": 5,
+            "reason": "Creator address has been identified."
+          },
+          {
+            "factor": "PUBLIC_CREATOR_IDENTITY",
+            "points": 3,
+            "reason": "Creator has a public identity."
+          },
+          {
+            "factor": "CREATOR_VOLUME_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical volume."
+          },
+          {
+            "factor": "CREATOR_SALES_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical sales."
+          },
+          {
+            "factor": "HIGH_CREATOR_CONFIDENCE",
+            "points": 2,
+            "reason": "Creator attribution has high confidence."
+          },
+          {
+            "factor": "ROBINHOOD_CHAIN",
+            "points": 4,
+            "reason": "Collection is launching on Robinhood Chain."
+          },
+          {
+            "factor": "CONTRACT_PRESENT",
+            "points": 3,
+            "reason": "NFT contract is identified."
+          },
+          {
+            "factor": "PROJECT_DESCRIPTION",
+            "points": 3,
+            "reason": "Project description is available."
+          },
+          {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
+            "factor": "OPENSEA_COLLECTION",
+            "points": 2,
+            "reason": "OpenSea collection page exists."
+          },
+          {
+            "factor": "COLLECTION_NAME",
+            "points": 1,
+            "reason": "Collection name is available."
+          },
+          {
+            "factor": "SIGNED_PRESALE",
+            "points": 4,
+            "reason": "Signed presale stage detected."
+          },
+          {
+            "factor": "MINT_PRICE_KNOWN",
+            "points": 3,
+            "reason": "Mint price is known."
+          },
+          {
+            "factor": "MINT_LIMIT_KNOWN",
+            "points": 2,
+            "reason": "Maximum mint per wallet is known."
+          },
+          {
+            "factor": "MINT_START_KNOWN",
+            "points": 2,
+            "reason": "Mint start time is known."
+          },
+          {
+            "factor": "MINT_END_KNOWN",
+            "points": 1,
+            "reason": "Mint end time is known."
+          },
+          {
+            "factor": "MODERATE_SUPPLY",
+            "points": 4,
+            "reason": "Maximum supply is 5,555 or lower."
+          },
+          {
+            "factor": "SUPPLY_VISIBLE",
+            "points": 2,
+            "reason": "Remaining supply is known."
+          },
+          {
+            "factor": "ROYALTY_DATA_PRESENT",
+            "points": 1,
+            "reason": "Royalty configuration is known."
+          },
+          {
+            "factor": "TIMING_KNOWN",
+            "points": 3,
+            "reason": "Mint timing is known."
+          },
+          {
+            "factor": "PRE_MINT_OPPORTUNITY",
+            "points": 3,
+            "reason": "Upcoming mint opportunity detected."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "MEDIUM_ALPHA_SIGNAL",
+            "points": 2,
+            "reason": "Medium alpha signal detected."
+          },
+          {
+            "factor": "SMART_CREATOR",
+            "points": 1,
+            "reason": "Creator wallet shows strong historical signals."
+          },
+          {
+            "factor": "LOW_RISK",
+            "points": 2,
+            "reason": "Risk score is 10/40 or lower."
+          }
+        ]
+      },
       "goldenEgg": {
         "score": 67,
         "maxScore": 100,
@@ -1080,6 +1386,15 @@
             "reason": "Risk score is 10/40 or lower."
           }
         ]
+      },
+      "momentum": {
+        "hasPrevious": false,
+        "scoreDelta": 0,
+        "floorDelta": 0,
+        "volumeDelta": 0,
+        "salesDelta": 0,
+        "ownersDelta": 0,
+        "classification": "NEW"
       },
       "executionApproval": {
         "approved": false,
@@ -1421,6 +1736,138 @@
           }
         ]
       },
+      "goldenEggScore": {
+        "score": 65,
+        "maxScore": 100,
+        "classification": "IGNORE",
+        "breakdown": [
+          {
+            "factor": "CREATOR_IDENTIFIED",
+            "points": 5,
+            "reason": "Creator address has been identified."
+          },
+          {
+            "factor": "PUBLIC_CREATOR_IDENTITY",
+            "points": 3,
+            "reason": "Creator has a public identity."
+          },
+          {
+            "factor": "CREATOR_VOLUME_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical volume."
+          },
+          {
+            "factor": "CREATOR_SALES_HISTORY",
+            "points": 4,
+            "reason": "Creator has significant historical sales."
+          },
+          {
+            "factor": "HIGH_CREATOR_CONFIDENCE",
+            "points": 2,
+            "reason": "Creator attribution has high confidence."
+          },
+          {
+            "factor": "ROBINHOOD_CHAIN",
+            "points": 4,
+            "reason": "Collection is launching on Robinhood Chain."
+          },
+          {
+            "factor": "CONTRACT_PRESENT",
+            "points": 3,
+            "reason": "NFT contract is identified."
+          },
+          {
+            "factor": "PROJECT_DESCRIPTION",
+            "points": 3,
+            "reason": "Project description is available."
+          },
+          {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
+            "factor": "OPENSEA_COLLECTION",
+            "points": 2,
+            "reason": "OpenSea collection page exists."
+          },
+          {
+            "factor": "COLLECTION_NAME",
+            "points": 1,
+            "reason": "Collection name is available."
+          },
+          {
+            "factor": "SIGNED_PRESALE",
+            "points": 4,
+            "reason": "Signed presale stage detected."
+          },
+          {
+            "factor": "MINT_PRICE_KNOWN",
+            "points": 3,
+            "reason": "Mint price is known."
+          },
+          {
+            "factor": "MINT_LIMIT_KNOWN",
+            "points": 2,
+            "reason": "Maximum mint per wallet is known."
+          },
+          {
+            "factor": "MINT_START_KNOWN",
+            "points": 2,
+            "reason": "Mint start time is known."
+          },
+          {
+            "factor": "MINT_END_KNOWN",
+            "points": 1,
+            "reason": "Mint end time is known."
+          },
+          {
+            "factor": "MODERATE_SUPPLY",
+            "points": 4,
+            "reason": "Maximum supply is 5,555 or lower."
+          },
+          {
+            "factor": "SUPPLY_VISIBLE",
+            "points": 2,
+            "reason": "Remaining supply is known."
+          },
+          {
+            "factor": "ROYALTY_DATA_PRESENT",
+            "points": 1,
+            "reason": "Royalty configuration is known."
+          },
+          {
+            "factor": "TIMING_KNOWN",
+            "points": 3,
+            "reason": "Mint timing is known."
+          },
+          {
+            "factor": "PRE_MINT_OPPORTUNITY",
+            "points": 3,
+            "reason": "Upcoming mint opportunity detected."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "MEDIUM_ALPHA_SIGNAL",
+            "points": 2,
+            "reason": "Medium alpha signal detected."
+          },
+          {
+            "factor": "CONTROLLED_RISK",
+            "points": 1,
+            "reason": "Risk score is 20/40 or lower."
+          }
+        ]
+      },
       "goldenEgg": {
         "score": 65,
         "maxScore": 100,
@@ -1552,6 +1999,15 @@
             "reason": "Risk score is 20/40 or lower."
           }
         ]
+      },
+      "momentum": {
+        "hasPrevious": false,
+        "scoreDelta": 0,
+        "floorDelta": 0,
+        "volumeDelta": 0,
+        "salesDelta": 0,
+        "ownersDelta": 0,
+        "classification": "NEW"
       },
       "executionApproval": {
         "approved": false,
@@ -1796,6 +2252,123 @@
           }
         ]
       },
+      "goldenEggScore": {
+        "score": 58,
+        "maxScore": 100,
+        "classification": "IGNORE",
+        "breakdown": [
+          {
+            "factor": "CREATOR_IDENTIFIED",
+            "points": 5,
+            "reason": "Creator address has been identified."
+          },
+          {
+            "factor": "PUBLIC_CREATOR_IDENTITY",
+            "points": 3,
+            "reason": "Creator has a public identity."
+          },
+          {
+            "factor": "HIGH_CREATOR_CONFIDENCE",
+            "points": 2,
+            "reason": "Creator attribution has high confidence."
+          },
+          {
+            "factor": "ROBINHOOD_CHAIN",
+            "points": 4,
+            "reason": "Collection is launching on Robinhood Chain."
+          },
+          {
+            "factor": "CONTRACT_PRESENT",
+            "points": 3,
+            "reason": "NFT contract is identified."
+          },
+          {
+            "factor": "PROJECT_DESCRIPTION",
+            "points": 3,
+            "reason": "Project description is available."
+          },
+          {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
+            "factor": "OPENSEA_COLLECTION",
+            "points": 2,
+            "reason": "OpenSea collection page exists."
+          },
+          {
+            "factor": "COLLECTION_NAME",
+            "points": 1,
+            "reason": "Collection name is available."
+          },
+          {
+            "factor": "SIGNED_PRESALE",
+            "points": 4,
+            "reason": "Signed presale stage detected."
+          },
+          {
+            "factor": "MINT_PRICE_KNOWN",
+            "points": 3,
+            "reason": "Mint price is known."
+          },
+          {
+            "factor": "MINT_LIMIT_KNOWN",
+            "points": 2,
+            "reason": "Maximum mint per wallet is known."
+          },
+          {
+            "factor": "MINT_START_KNOWN",
+            "points": 2,
+            "reason": "Mint start time is known."
+          },
+          {
+            "factor": "MINT_END_KNOWN",
+            "points": 1,
+            "reason": "Mint end time is known."
+          },
+          {
+            "factor": "SCARCE_SUPPLY",
+            "points": 6,
+            "reason": "Maximum supply is 3,333 or lower."
+          },
+          {
+            "factor": "SUPPLY_VISIBLE",
+            "points": 2,
+            "reason": "Remaining supply is known."
+          },
+          {
+            "factor": "ROYALTY_DATA_PRESENT",
+            "points": 1,
+            "reason": "Royalty configuration is known."
+          },
+          {
+            "factor": "TIMING_KNOWN",
+            "points": 3,
+            "reason": "Mint timing is known."
+          },
+          {
+            "factor": "PRE_MINT_OPPORTUNITY",
+            "points": 3,
+            "reason": "Upcoming mint opportunity detected."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "LOW_RISK",
+            "points": 2,
+            "reason": "Risk score is 10/40 or lower."
+          }
+        ]
+      },
       "goldenEgg": {
         "score": 58,
         "maxScore": 100,
@@ -1913,6 +2486,15 @@
           }
         ]
       },
+      "momentum": {
+        "hasPrevious": false,
+        "scoreDelta": 0,
+        "floorDelta": 0,
+        "volumeDelta": 0,
+        "salesDelta": 0,
+        "ownersDelta": 0,
+        "classification": "NEW"
+      },
       "executionApproval": {
         "approved": false,
         "status": "AUTO_MINT_BLOCKED",
@@ -1985,10 +2567,10 @@
         "historicalCollections": {
           "collectionCount": 5,
           "analyzedCollections": 5,
-          "totalVolume": 0.1131,
+          "totalVolume": 0.1149,
           "totalSales": 2812,
           "totalOwners": 22715,
-          "averageVolume": 0.0226,
+          "averageVolume": 0.023,
           "averageSales": 562.4,
           "averageOwners": 4543,
           "medianVolume": 0,
@@ -1998,7 +2580,7 @@
           "bestCollection": {
             "name": "OpenPage Badges",
             "slug": "openpage-badges",
-            "volume": 0.06888642715496482,
+            "volume": 0.0699986134868893,
             "sales": 1468,
             "owners": 11533,
             "floorPrice": 0.38988989
@@ -2011,7 +2593,7 @@
             {
               "name": "OpenPage Avatars",
               "slug": "openpage-avatars",
-              "volume": 0.04423001273260872,
+              "volume": 0.04494411589710282,
               "sales": 1344,
               "owners": 10924,
               "floorPrice": 0.19
@@ -2027,7 +2609,7 @@
             {
               "name": "OpenPage Badges",
               "slug": "openpage-badges",
-              "volume": 0.06888642715496482,
+              "volume": 0.0699986134868893,
               "sales": 1468,
               "owners": 11533,
               "floorPrice": 0.38988989
@@ -2199,6 +2781,113 @@
           }
         ]
       },
+      "goldenEggScore": {
+        "score": 53,
+        "maxScore": 100,
+        "classification": "IGNORE",
+        "breakdown": [
+          {
+            "factor": "CREATOR_IDENTIFIED",
+            "points": 5,
+            "reason": "Creator address has been identified."
+          },
+          {
+            "factor": "PUBLIC_CREATOR_IDENTITY",
+            "points": 3,
+            "reason": "Creator has a public identity."
+          },
+          {
+            "factor": "HIGH_CREATOR_CONFIDENCE",
+            "points": 2,
+            "reason": "Creator attribution has high confidence."
+          },
+          {
+            "factor": "ROBINHOOD_CHAIN",
+            "points": 4,
+            "reason": "Collection is launching on Robinhood Chain."
+          },
+          {
+            "factor": "CONTRACT_PRESENT",
+            "points": 3,
+            "reason": "NFT contract is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
+            "factor": "OPENSEA_COLLECTION",
+            "points": 2,
+            "reason": "OpenSea collection page exists."
+          },
+          {
+            "factor": "COLLECTION_NAME",
+            "points": 1,
+            "reason": "Collection name is available."
+          },
+          {
+            "factor": "SIGNED_PRESALE",
+            "points": 4,
+            "reason": "Signed presale stage detected."
+          },
+          {
+            "factor": "MINT_PRICE_KNOWN",
+            "points": 3,
+            "reason": "Mint price is known."
+          },
+          {
+            "factor": "MINT_LIMIT_KNOWN",
+            "points": 2,
+            "reason": "Maximum mint per wallet is known."
+          },
+          {
+            "factor": "MINT_START_KNOWN",
+            "points": 2,
+            "reason": "Mint start time is known."
+          },
+          {
+            "factor": "MINT_END_KNOWN",
+            "points": 1,
+            "reason": "Mint end time is known."
+          },
+          {
+            "factor": "SCARCE_SUPPLY",
+            "points": 6,
+            "reason": "Maximum supply is 3,333 or lower."
+          },
+          {
+            "factor": "SUPPLY_VISIBLE",
+            "points": 2,
+            "reason": "Remaining supply is known."
+          },
+          {
+            "factor": "ROYALTY_DATA_PRESENT",
+            "points": 1,
+            "reason": "Royalty configuration is known."
+          },
+          {
+            "factor": "TIMING_KNOWN",
+            "points": 3,
+            "reason": "Mint timing is known."
+          },
+          {
+            "factor": "PRE_MINT_OPPORTUNITY",
+            "points": 3,
+            "reason": "Upcoming mint opportunity detected."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "LOW_RISK",
+            "points": 2,
+            "reason": "Risk score is 10/40 or lower."
+          }
+        ]
+      },
       "goldenEgg": {
         "score": 53,
         "maxScore": 100,
@@ -2305,6 +2994,15 @@
             "reason": "Risk score is 10/40 or lower."
           }
         ]
+      },
+      "momentum": {
+        "hasPrevious": false,
+        "scoreDelta": 0,
+        "floorDelta": 0,
+        "volumeDelta": 0,
+        "salesDelta": 0,
+        "ownersDelta": 0,
+        "classification": "NEW"
       },
       "executionApproval": {
         "approved": false,
