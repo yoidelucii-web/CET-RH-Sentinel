@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-08-23T03:31:12.845Z",
+  "scanTime": "2026-08-23T03:38:18.302Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,7 +16,7 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-08-23T03:31:12.845Z",
+    "scanTime": "2026-08-23T03:38:18.302Z",
     "network": "robinhood",
     "totalDrops": 5,
     "executionEligible": 1,
@@ -92,7 +92,7 @@
     "autoMintApproved": 0,
     "autoMintBlocked": 5,
     "breakoutCandidates": 0,
-    "risingCandidates": 1
+    "risingCandidates": 0
   },
   "candidates": [
     {
@@ -139,7 +139,7 @@
         "portfolio": {
           "ownedCollections": 47,
           "ownedItems": 92,
-          "estimatedUsdValue": 47.35
+          "estimatedUsdValue": 47.23
         },
         "historicalCollections": {
           "collectionCount": 47,
@@ -756,10 +756,10 @@
         "hasPrevious": true,
         "scoreDelta": 0,
         "floorDelta": 0,
-        "volumeDelta": 0.02169747326881291,
-        "salesDelta": 2,
-        "ownersDelta": 2,
-        "classification": "RISING"
+        "volumeDelta": 0,
+        "salesDelta": 0,
+        "ownersDelta": 0,
+        "classification": "STABLE"
       },
       "executionApproval": {
         "approved": false,
@@ -828,15 +828,15 @@
         "portfolio": {
           "ownedCollections": 43,
           "ownedItems": 135,
-          "estimatedUsdValue": 6350.15
+          "estimatedUsdValue": 6384.07
         },
         "historicalCollections": {
           "collectionCount": 43,
           "analyzedCollections": 10,
-          "totalVolume": 3286.5692,
+          "totalVolume": 3286.7583,
           "totalSales": 73633,
           "totalOwners": 8478,
-          "averageVolume": 328.6569,
+          "averageVolume": 328.6758,
           "averageSales": 7363.3,
           "averageOwners": 847.8,
           "medianVolume": 110.2344,
@@ -875,18 +875,10 @@
             {
               "name": "Abstract Pepes",
               "slug": "abstract-pepes-abstract",
-              "volume": 17.847789142237588,
+              "volume": 17.85038114481011,
               "sales": 1704,
               "owners": 1004,
               "floorPrice": 0.0071
-            },
-            {
-              "name": "Suited Riot",
-              "slug": "suited-riot-v2",
-              "volume": 36.269682634932586,
-              "sales": 298,
-              "owners": 567,
-              "floorPrice": 0.009539
             },
             {
               "name": "Lil' Bangers",
@@ -895,6 +887,14 @@
               "sales": 25907,
               "owners": 1226,
               "floorPrice": 0.01424015
+            },
+            {
+              "name": "Suited Riot",
+              "slug": "suited-riot-v2",
+              "volume": 36.269682634932586,
+              "sales": 298,
+              "owners": 567,
+              "floorPrice": 0.009539
             },
             {
               "name": "P⊙RTR∆ITS",
@@ -907,7 +907,7 @@
             {
               "name": "fwogs",
               "slug": "fwogs",
-              "volume": 1284.378027825142,
+              "volume": 1284.5645557544942,
               "sales": 18421,
               "owners": 1508,
               "floorPrice": 0.0289899
@@ -1050,7 +1050,7 @@
           {
             "signal": "HIGH_VOLUME_CREATOR",
             "points": 2,
-            "reason": "Creator historical volume is 3286.57 ETH."
+            "reason": "Creator historical volume is 3286.76 ETH."
           },
           {
             "signal": "HIGH_SALES_CREATOR",
@@ -2567,10 +2567,10 @@
         "historicalCollections": {
           "collectionCount": 5,
           "analyzedCollections": 5,
-          "totalVolume": 0.1093,
+          "totalVolume": 0.1091,
           "totalSales": 2812,
           "totalOwners": 22714,
-          "averageVolume": 0.0219,
+          "averageVolume": 0.0218,
           "averageSales": 562.4,
           "averageOwners": 4542.8,
           "medianVolume": 0,
@@ -2580,7 +2580,7 @@
           "bestCollection": {
             "name": "OpenPage Badges",
             "slug": "openpage-badges",
-            "volume": 0.06658783160763808,
+            "volume": 0.06644189507981851,
             "sales": 1468,
             "owners": 11533,
             "floorPrice": 0.38988989
@@ -2593,7 +2593,7 @@
             {
               "name": "OpenPage Avatars",
               "slug": "openpage-avatars",
-              "volume": 0.04275415000428529,
+              "volume": 0.042660448316591555,
               "sales": 1344,
               "owners": 10923,
               "floorPrice": 0.19
@@ -2609,7 +2609,7 @@
             {
               "name": "OpenPage Badges",
               "slug": "openpage-badges",
-              "volume": 0.06658783160763808,
+              "volume": 0.06644189507981851,
               "sales": 1468,
               "owners": 11533,
               "floorPrice": 0.38988989
