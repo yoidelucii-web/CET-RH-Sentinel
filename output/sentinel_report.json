@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-08-23T07:49:02.992Z",
+  "scanTime": "2026-08-23T13:46:20.409Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,7 +16,7 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-08-23T07:49:02.992Z",
+    "scanTime": "2026-08-23T13:46:20.409Z",
     "network": "robinhood",
     "totalDrops": 5,
     "executionEligible": 1,
@@ -91,8 +91,8 @@
     "averageRisk": 6.6,
     "autoMintApproved": 0,
     "autoMintBlocked": 5,
-    "breakoutCandidates": 0,
-    "risingCandidates": 1
+    "breakoutCandidates": 1,
+    "risingCandidates": 0
   },
   "candidates": [
     {
@@ -139,20 +139,20 @@
         "portfolio": {
           "ownedCollections": 47,
           "ownedItems": 92,
-          "estimatedUsdValue": 47.58
+          "estimatedUsdValue": 52.5
         },
         "historicalCollections": {
           "collectionCount": 47,
           "analyzedCollections": 10,
-          "totalVolume": 5743.8186,
-          "totalSales": 58192,
-          "totalOwners": 74981,
-          "averageVolume": 574.3819,
-          "averageSales": 5819.2,
-          "averageOwners": 7498.1,
-          "medianVolume": 152.5695,
-          "medianSales": 3691.5,
-          "medianOwners": 2802.5,
+          "totalVolume": 6705.1835,
+          "totalSales": 61868,
+          "totalOwners": 74051,
+          "averageVolume": 670.5184,
+          "averageSales": 6186.8,
+          "averageOwners": 7405.1,
+          "medianVolume": 326.8156,
+          "medianSales": 4646.5,
+          "medianOwners": 2682.5,
           "bestFloorPrice": 3.33,
           "bestCollection": {
             "name": "Aurora Capsules",
@@ -181,7 +181,7 @@
               "volume": 2815.504923102536,
               "sales": 17398,
               "owners": 6747,
-              "floorPrice": 0.00053891
+              "floorPrice": 0.00052899
             },
             {
               "name": "Aurora Capsules",
@@ -192,6 +192,14 @@
               "floorPrice": 3.33
             },
             {
+              "name": "Originals by Ozzy Osbourne",
+              "slug": "originalsbyozzyosbourne",
+              "volume": 28.683003609810903,
+              "sales": 973,
+              "owners": 2709,
+              "floorPrice": 0.00391
+            },
+            {
               "name": "Obey Make Art Not War Ukraine",
               "slug": "obey-make-art-not-war-ukraine",
               "volume": 18.245628557043183,
@@ -200,12 +208,12 @@
               "floorPrice": 0.0046797
             },
             {
-              "name": "Originals by Ozzy Osbourne",
-              "slug": "originalsbyozzyosbourne",
-              "volume": 28.683003609810903,
-              "sales": 973,
-              "owners": 2709,
-              "floorPrice": 0.00391
+              "name": "AlphaBetty Doodles",
+              "slug": "alphabetty-doodles",
+              "volume": 1473.2020606040512,
+              "sales": 12801,
+              "owners": 3490,
+              "floorPrice": 0.000409898
             },
             {
               "name": "oncyber & friends",
@@ -224,14 +232,6 @@
               "floorPrice": 0.00835
             },
             {
-              "name": "AlphaBetty Doodles",
-              "slug": "alphabetty-doodles",
-              "volume": 1473.2006184540512,
-              "sales": 12797,
-              "owners": 3491,
-              "floorPrice": 0.00034437
-            },
-            {
               "name": "Augminted Labs Scientists",
               "slug": "augminted-labs-scientists",
               "volume": 171.802598777197,
@@ -240,12 +240,12 @@
               "floorPrice": 0.000398
             },
             {
-              "name": "The Alien Doogle",
-              "slug": "thealiendoogle",
-              "volume": 106.37539474814288,
-              "sales": 2689,
-              "owners": 2896,
-              "floorPrice": 0.00117997
+              "name": "CyberFrogz",
+              "slug": "cyberfrogz",
+              "volume": 1067.738881574273,
+              "sales": 6361,
+              "owners": 1967,
+              "floorPrice": 0.0048
             }
           ]
         },
@@ -320,9 +320,9 @@
           "category": "art"
         },
         "stats": {
-          "floorPrice": 25.7,
-          "volume": 0.2103974732688129,
-          "sales": 19,
+          "floorPrice": 100,
+          "volume": 0.1992974732688129,
+          "sales": 18,
           "averagePrice": null,
           "numOwners": 17,
           "marketCap": null
@@ -355,12 +355,12 @@
           {
             "signal": "HIGH_VOLUME_CREATOR",
             "points": 2,
-            "reason": "Creator historical volume is 5743.82 ETH."
+            "reason": "Creator historical volume is 6705.18 ETH."
           },
           {
             "signal": "HIGH_SALES_CREATOR",
             "points": 2,
-            "reason": "Creator historical sales are 58192."
+            "reason": "Creator historical sales are 61868."
           },
           {
             "signal": "HIGH_FLOOR_HISTORY",
@@ -755,11 +755,11 @@
       "momentum": {
         "hasPrevious": true,
         "scoreDelta": 0,
-        "floorDelta": 0,
-        "volumeDelta": 0.011099999999999999,
-        "salesDelta": 1,
-        "ownersDelta": 1,
-        "classification": "RISING"
+        "floorDelta": 74.3,
+        "volumeDelta": -0.011099999999999999,
+        "salesDelta": -1,
+        "ownersDelta": 0,
+        "classification": "BREAKOUT"
       },
       "executionApproval": {
         "approved": false,
@@ -828,20 +828,20 @@
         "portfolio": {
           "ownedCollections": 43,
           "ownedItems": 135,
-          "estimatedUsdValue": 6428.28
+          "estimatedUsdValue": 5837.6
         },
         "historicalCollections": {
           "collectionCount": 43,
           "analyzedCollections": 10,
-          "totalVolume": 3286.8436,
-          "totalSales": 73640,
-          "totalOwners": 8475,
-          "averageVolume": 328.6844,
-          "averageSales": 7364,
-          "averageOwners": 847.5,
-          "medianVolume": 110.2594,
-          "medianSales": 3356.5,
-          "medianOwners": 892.5,
+          "totalVolume": 3287.3923,
+          "totalSales": 73657,
+          "totalOwners": 8486,
+          "averageVolume": 328.7392,
+          "averageSales": 7365.7,
+          "averageOwners": 848.6,
+          "medianVolume": 110.2674,
+          "medianSales": 3357,
+          "medianOwners": 897,
           "bestFloorPrice": 0.0719,
           "bestCollection": {
             "name": "P⊙RTR∆ITS",
@@ -859,10 +859,10 @@
             {
               "name": "NODES",
               "slug": "nodes-by-hunter",
-              "volume": 285.8798622918803,
-              "sales": 12828,
-              "owners": 992,
-              "floorPrice": 0.0499777
+              "volume": 286.2986166818802,
+              "sales": 12837,
+              "owners": 1001,
+              "floorPrice": 0.0499711
             },
             {
               "name": "Primitives",
@@ -870,15 +870,23 @@
               "volume": 856.6440328328673,
               "sales": 6070,
               "owners": 1033,
-              "floorPrice": 0.01089995898
+              "floorPrice": 0.01089988
             },
             {
               "name": "Abstract Pepes",
               "slug": "abstract-pepes-abstract",
-              "volume": 17.847789142237588,
-              "sales": 1704,
-              "owners": 1004,
+              "volume": 17.852589142237587,
+              "sales": 1705,
+              "owners": 1005,
               "floorPrice": 0.0071
+            },
+            {
+              "name": "Lil' Bangers",
+              "slug": "lil-bangers-",
+              "volume": 509.4335075638413,
+              "sales": 25908,
+              "owners": 1225,
+              "floorPrice": 0.01424015
             },
             {
               "name": "P⊙RTR∆ITS",
@@ -891,26 +899,18 @@
             {
               "name": "Suited Riot",
               "slug": "suited-riot-v2",
-              "volume": 36.269682634932586,
-              "sales": 298,
-              "owners": 567,
-              "floorPrice": 0.009539
-            },
-            {
-              "name": "Lil' Bangers",
-              "slug": "lil-bangers-",
-              "volume": 509.4335075638413,
-              "sales": 25908,
-              "owners": 1225,
-              "floorPrice": 0.01424015
+              "volume": 36.29830063493259,
+              "sales": 301,
+              "owners": 569,
+              "floorPrice": 0.00954
             },
             {
               "name": "fwogs",
               "slug": "fwogs",
-              "volume": 1284.442727825142,
-              "sales": 18423,
-              "owners": 1506,
-              "floorPrice": 0.0289899
+              "volume": 1284.5232177251416,
+              "sales": 18426,
+              "owners": 1505,
+              "floorPrice": 0.02899
             },
             {
               "name": "Signature Series by mendezmendez",
@@ -918,7 +918,7 @@
               "volume": 88.11431491168833,
               "sales": 1263,
               "owners": 793,
-              "floorPrice": 0.04348
+              "floorPrice": 0.043
             },
             {
               "name": "Doomsayers",
@@ -926,15 +926,15 @@
               "volume": 10.630190861565783,
               "sales": 3325,
               "owners": 727,
-              "floorPrice": 0.0070898
+              "floorPrice": 0.0070897
             },
             {
               "name": "ENTROPY by mendezmendez",
               "slug": "entropy-by-mendezmendez",
-              "volume": 132.40440859749987,
-              "sales": 3388,
+              "volume": 132.42050859749986,
+              "sales": 3389,
               "owners": 436,
-              "floorPrice": 0.0192499999
+              "floorPrice": 0.0191919999
             }
           ]
         },
@@ -1050,12 +1050,12 @@
           {
             "signal": "HIGH_VOLUME_CREATOR",
             "points": 2,
-            "reason": "Creator historical volume is 3286.84 ETH."
+            "reason": "Creator historical volume is 3287.39 ETH."
           },
           {
             "signal": "HIGH_SALES_CREATOR",
             "points": 2,
-            "reason": "Creator historical sales are 73640."
+            "reason": "Creator historical sales are 73657."
           },
           {
             "signal": "SIGNED_PRESALE_STAGE",
@@ -1463,7 +1463,7 @@
         "portfolio": {
           "ownedCollections": 9,
           "ownedItems": 24,
-          "estimatedUsdValue": 0.24
+          "estimatedUsdValue": 0.25
         },
         "historicalCollections": {
           "collectionCount": 9,
@@ -2567,12 +2567,12 @@
         "historicalCollections": {
           "collectionCount": 5,
           "analyzedCollections": 5,
-          "totalVolume": 0.11,
-          "totalSales": 2812,
-          "totalOwners": 22714,
-          "averageVolume": 0.022,
-          "averageSales": 562.4,
-          "averageOwners": 4542.8,
+          "totalVolume": 0.1111,
+          "totalSales": 2814,
+          "totalOwners": 22716,
+          "averageVolume": 0.0222,
+          "averageSales": 562.8,
+          "averageOwners": 4543.2,
           "medianVolume": 0,
           "medianSales": 0,
           "medianOwners": 146,
@@ -2580,7 +2580,7 @@
           "bestCollection": {
             "name": "OpenPage Badges",
             "slug": "openpage-badges",
-            "volume": 0.06697496998677828,
+            "volume": 0.06763960794321766,
             "sales": 1468,
             "owners": 11533,
             "floorPrice": 0.38988989
@@ -2593,9 +2593,9 @@
             {
               "name": "OpenPage Avatars",
               "slug": "openpage-avatars",
-              "volume": 0.043002720530379394,
-              "sales": 1344,
-              "owners": 10923,
+              "volume": 0.043452347571029414,
+              "sales": 1346,
+              "owners": 10925,
               "floorPrice": 0.19
             },
             {
@@ -2609,7 +2609,7 @@
             {
               "name": "OpenPage Badges",
               "slug": "openpage-badges",
-              "volume": 0.06697496998677828,
+              "volume": 0.06763960794321766,
               "sales": 1468,
               "owners": 11533,
               "floorPrice": 0.38988989
