@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-08-25T03:16:15.968Z",
+  "scanTime": "2026-08-25T03:36:10.620Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,7 +16,7 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-08-25T03:16:15.968Z",
+    "scanTime": "2026-08-25T03:36:10.620Z",
     "network": "robinhood",
     "totalDrops": 6,
     "executionEligible": 2,
@@ -91,8 +91,8 @@
     "averageRisk": 8,
     "autoMintApproved": 0,
     "autoMintBlocked": 6,
-    "breakoutCandidates": 1,
-    "risingCandidates": 0
+    "breakoutCandidates": 0,
+    "risingCandidates": 1
   },
   "candidates": [
     {
@@ -139,7 +139,7 @@
         "portfolio": {
           "ownedCollections": 45,
           "ownedItems": 137,
-          "estimatedUsdValue": 5914.69
+          "estimatedUsdValue": 5930.83
         },
         "historicalCollections": {
           "collectionCount": 45,
@@ -192,6 +192,14 @@
               "floorPrice": 0.018995001
             },
             {
+              "name": "Suited Riot",
+              "slug": "suited-riot-v2",
+              "volume": 36.38884053493259,
+              "sales": 310,
+              "owners": 576,
+              "floorPrice": 0.0115
+            },
+            {
               "name": "Abstract Pepes",
               "slug": "abstract-pepes-abstract",
               "volume": 17.89028914223759,
@@ -216,14 +224,6 @@
               "floorPrice": 0.07176999
             },
             {
-              "name": "Suited Riot",
-              "slug": "suited-riot-v2",
-              "volume": 36.38884053493259,
-              "sales": 310,
-              "owners": 576,
-              "floorPrice": 0.0115
-            },
-            {
               "name": "Signature Series by mendezmendez",
               "slug": "mendezmendez",
               "volume": 88.23966491168832,
@@ -245,7 +245,7 @@
               "volume": 132.70879859749988,
               "sales": 3397,
               "owners": 435,
-              "floorPrice": 0.0174597
+              "floorPrice": 0.0174159999
             }
           ]
         },
@@ -781,10 +781,10 @@
           "analyzedCollections": 9,
           "totalVolume": 13363.0253,
           "totalSales": 61096,
-          "totalOwners": 250818,
+          "totalOwners": 250817,
           "averageVolume": 1484.7806,
           "averageSales": 6788.44,
-          "averageOwners": 27868.67,
+          "averageOwners": 27868.56,
           "medianVolume": 3.8776,
           "medianSales": 51,
           "medianOwners": 92,
@@ -815,7 +815,7 @@
               "slug": "rarible",
               "volume": 13234.397779343048,
               "sales": 58889,
-              "owners": 245767,
+              "owners": 245766,
               "floorPrice": 1e-14
             },
             {
@@ -1437,8 +1437,8 @@
         "status": "FOUND",
         "supply": {
           "max": 3333,
-          "minted": 2581,
-          "remaining": 752
+          "minted": 2586,
+          "remaining": 747
         },
         "mint": {
           "type": "signed_presale",
@@ -1491,11 +1491,11 @@
           "category": "pfps"
         },
         "stats": {
-          "floorPrice": 0.01597,
-          "volume": 13.932504259154971,
-          "sales": 3444,
+          "floorPrice": 0.0157,
+          "volume": 14.02731425915496,
+          "sales": 3455,
           "averagePrice": null,
-          "numOwners": 2066,
+          "numOwners": 2069,
           "marketCap": null
         },
         "errors": []
@@ -1843,12 +1843,12 @@
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": 2,
-        "floorDelta": 0.0001700100000000017,
-        "volumeDelta": 3.946529131074964,
-        "salesDelta": 538,
-        "ownersDelta": 156,
-        "classification": "BREAKOUT"
+        "scoreDelta": 0,
+        "floorDelta": -0.0002700000000000029,
+        "volumeDelta": 0.09480999999998829,
+        "salesDelta": 11,
+        "ownersDelta": 3,
+        "classification": "RISING"
       },
       "executionApproval": {
         "approved": false,
@@ -2813,13 +2813,13 @@
         ]
       },
       "momentum": {
-        "hasPrevious": false,
+        "hasPrevious": true,
         "scoreDelta": 0,
         "floorDelta": 0,
         "volumeDelta": 0,
         "salesDelta": 0,
         "ownersDelta": 0,
-        "classification": "NEW"
+        "classification": "STABLE"
       },
       "executionApproval": {
         "approved": false,
@@ -2893,10 +2893,10 @@
         "historicalCollections": {
           "collectionCount": 6,
           "analyzedCollections": 6,
-          "totalVolume": 0.1092,
+          "totalVolume": 0.1095,
           "totalSales": 2846,
           "totalOwners": 22715,
-          "averageVolume": 0.0182,
+          "averageVolume": 0.0183,
           "averageSales": 474.33,
           "averageOwners": 3785.83,
           "medianVolume": 0,
@@ -2906,7 +2906,7 @@
           "bestCollection": {
             "name": "OpenPage Badges",
             "slug": "openpage-badges",
-            "volume": 0.06648965812899964,
+            "volume": 0.0666956985019666,
             "sales": 1468,
             "owners": 11533,
             "floorPrice": 0.38988989
@@ -2919,7 +2919,7 @@
             {
               "name": "OpenPage Avatars",
               "slug": "openpage-avatars",
-              "volume": 0.04271775196422363,
+              "volume": 0.04285012716052774,
               "sales": 1347,
               "owners": 10923,
               "floorPrice": 0.19
@@ -2943,7 +2943,7 @@
             {
               "name": "OpenPage Badges",
               "slug": "openpage-badges",
-              "volume": 0.06648965812899964,
+              "volume": 0.0666956985019666,
               "sales": 1468,
               "owners": 11533,
               "floorPrice": 0.38988989
