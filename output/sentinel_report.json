@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-08-26T03:36:06.549Z",
+  "scanTime": "2026-08-26T04:00:55.972Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,7 +16,7 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-08-26T03:36:06.549Z",
+    "scanTime": "2026-08-26T04:00:55.972Z",
     "network": "robinhood",
     "totalDrops": 4,
     "executionEligible": 2,
@@ -130,7 +130,7 @@
         "portfolio": {
           "ownedCollections": 46,
           "ownedItems": 138,
-          "estimatedUsdValue": 6040.3
+          "estimatedUsdValue": 5830.78
         },
         "historicalCollections": {
           "collectionCount": 46,
@@ -164,7 +164,7 @@
               "volume": 290.09965733188017,
               "sales": 12922,
               "owners": 1060,
-              "floorPrice": 0.0499271
+              "floorPrice": 0.0498991
             },
             {
               "name": "Lil' Bangers",
@@ -212,7 +212,7 @@
               "volume": 1287.6475483551412,
               "sales": 18511,
               "owners": 1518,
-              "floorPrice": 0.03266236
+              "floorPrice": 0.03241443
             },
             {
               "name": "Doomsayers",
@@ -220,7 +220,7 @@
               "volume": 10.748755151565785,
               "sales": 3336,
               "owners": 729,
-              "floorPrice": 0.0070877
+              "floorPrice": 0.0070876
             },
             {
               "name": "Signature Series by mendezmendez",
@@ -763,45 +763,29 @@
           "confidence": "HIGH"
         },
         "portfolio": {
-          "ownedCollections": 1,
-          "ownedItems": 1,
+          "ownedCollections": 0,
+          "ownedItems": 0,
           "estimatedUsdValue": 0
         },
         "historicalCollections": {
-          "collectionCount": 1,
-          "analyzedCollections": 1,
+          "collectionCount": 0,
+          "analyzedCollections": 0,
           "totalVolume": 0,
           "totalSales": 0,
-          "totalOwners": 50001,
+          "totalOwners": 0,
           "averageVolume": 0,
           "averageSales": 0,
-          "averageOwners": 50001,
+          "averageOwners": 0,
           "medianVolume": 0,
           "medianSales": 0,
-          "medianOwners": 50001,
+          "medianOwners": 0,
           "bestFloorPrice": 0,
-          "bestCollection": {
-            "name": "ks 𝒆𝒗𝒎𝒆𝒏𝒕𝒓𝒚.𝒄𝒐𝒎",
-            "slug": "ks-842416562",
-            "volume": 0,
-            "sales": 0,
-            "owners": 50001,
-            "floorPrice": 0
-          },
+          "bestCollection": null,
           "activeCollections": 0,
           "highVolumeCollections": 0,
           "highSalesCollections": 0,
           "highFloorCollections": 0,
-          "collections": [
-            {
-              "name": "ks 𝒆𝒗𝒎𝒆𝒏𝒕𝒓𝒚.𝒄𝒐𝒎",
-              "slug": "ks-842416562",
-              "volume": 0,
-              "sales": 0,
-              "owners": 50001,
-              "floorPrice": 0
-            }
-          ]
+          "collections": []
         },
         "flags": [
           "CONTRACT_OWNER",
@@ -890,7 +874,8 @@
           }
         ],
         "flags": [
-          "EXTREME_ROYALTY"
+          "EXTREME_ROYALTY",
+          "NO_PORTFOLIO_HISTORY"
         ],
         "context": {
           "maxSupply": 1666,
@@ -899,8 +884,8 @@
           "creatorConfidence": "HIGH",
           "creatorUsername": "NINJANEX",
           "creatorEns": null,
-          "ownedCollections": 1,
-          "ownedItems": 1,
+          "ownedCollections": 0,
+          "ownedItems": 0,
           "contractStandard": "erc721"
         }
       },
@@ -1756,10 +1741,10 @@
         "historicalCollections": {
           "collectionCount": 6,
           "analyzedCollections": 6,
-          "totalVolume": 0.1064,
+          "totalVolume": 0.1059,
           "totalSales": 2846,
           "totalOwners": 22717,
-          "averageVolume": 0.0177,
+          "averageVolume": 0.0176,
           "averageSales": 474.33,
           "averageOwners": 3786.17,
           "medianVolume": 0,
@@ -1769,7 +1754,7 @@
           "bestCollection": {
             "name": "OpenPage Badges",
             "slug": "openpage-badges",
-            "volume": 0.06475374367935194,
+            "volume": 0.06447388432892774,
             "sales": 1468,
             "owners": 11533,
             "floorPrice": 0.38988989
@@ -1782,7 +1767,7 @@
             {
               "name": "OpenPage Avatars",
               "slug": "openpage-avatars",
-              "volume": 0.041602475318533984,
+              "volume": 0.04142267348690033,
               "sales": 1347,
               "owners": 10923,
               "floorPrice": 0.19
@@ -1806,7 +1791,7 @@
             {
               "name": "OpenPage Badges",
               "slug": "openpage-badges",
-              "volume": 0.06475374367935194,
+              "volume": 0.06447388432892774,
               "sales": 1468,
               "owners": 11533,
               "floorPrice": 0.38988989
@@ -2180,7 +2165,7 @@
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": -6,
+        "scoreDelta": 0,
         "floorDelta": 0,
         "volumeDelta": 0,
         "salesDelta": 0,
