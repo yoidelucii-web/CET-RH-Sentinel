@@ -1818,5 +1818,61 @@
     "sales": 87,
     "owners": 84,
     "momentum": "BREAKOUT"
+  },
+  {
+    "timestamp": "2026-08-30T06:07:40.639Z",
+    "collectionKey": "0x24faec5506e856a7d78c8a3027ad2e528ac722ee",
+    "name": "Fabled Chronicles",
+    "slug": "fabled-chronicles",
+    "contract": "0x24faec5506e856a7d78c8a3027ad2e528ac722ee",
+    "score": 47,
+    "classification": "IGNORE",
+    "floor": 0.007,
+    "volume": 2.9270257777868727,
+    "sales": 1469,
+    "owners": 311,
+    "momentum": "BREAKOUT"
+  },
+  {
+    "timestamp": "2026-08-30T06:07:40.790Z",
+    "collectionKey": "0x54abdf55319f06196458b2581063bffef5684e2a",
+    "name": "Satoshi Bots",
+    "slug": "satoshi-bots",
+    "contract": "0x54abdf55319f06196458b2581063bffef5684e2a",
+    "score": 46,
+    "classification": "IGNORE",
+    "floor": 0.00089,
+    "volume": 0.6083516070345694,
+    "sales": 641,
+    "owners": 180,
+    "momentum": "BREAKOUT"
+  },
+  {
+    "timestamp": "2026-08-30T06:07:40.932Z",
+    "collectionKey": "0x409eab4fa20b5b61d35d2b447b14f384e8ac90e5",
+    "name": "Builder Bots AI",
+    "slug": "builder-bots-ai",
+    "contract": "0x409eab4fa20b5b61d35d2b447b14f384e8ac90e5",
+    "score": 42,
+    "classification": "IGNORE",
+    "floor": 230,
+    "volume": 2.7395741581115836,
+    "sales": 90,
+    "owners": 87,
+    "momentum": "RISING"
+  },
+  {
+    "timestamp": "2026-08-30T06:07:41.073Z",
+    "collectionKey": "0x3750eda69bf4ce9c999ddf328be48c35be8a94ba",
+    "name": "ROBBIN HOOD",
+    "slug": "robbin-hood-2026",
+    "contract": "0x3750eda69bf4ce9c999ddf328be48c35be8a94ba",
+    "score": 42,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
   }
 ]
