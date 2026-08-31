@@ -1916,5 +1916,33 @@
     "sales": 0,
     "owners": 0,
     "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-08-31T00:09:29.200Z",
+    "collectionKey": "0x409eab4fa20b5b61d35d2b447b14f384e8ac90e5",
+    "name": "Builder Bots AI",
+    "slug": "builder-bots-ai",
+    "contract": "0x409eab4fa20b5b61d35d2b447b14f384e8ac90e5",
+    "score": 42,
+    "classification": "IGNORE",
+    "floor": 230,
+    "volume": 3.075574158111582,
+    "sales": 98,
+    "owners": 92,
+    "momentum": "RISING"
+  },
+  {
+    "timestamp": "2026-08-31T00:09:29.897Z",
+    "collectionKey": "0x3750eda69bf4ce9c999ddf328be48c35be8a94ba",
+    "name": "ROBBIN HOOD",
+    "slug": "robbin-hood-2026",
+    "contract": "0x3750eda69bf4ce9c999ddf328be48c35be8a94ba",
+    "score": 41,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
   }
 ]
