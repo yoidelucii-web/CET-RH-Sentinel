@@ -1972,5 +1972,33 @@
     "sales": 0,
     "owners": 0,
     "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-08-31T06:09:03.138Z",
+    "collectionKey": "0xb24176e1c0ac951653c060b252841027b84bf68a",
+    "name": "JACON",
+    "slug": "jaconlab",
+    "contract": "0xb24176e1c0ac951653c060b252841027b84bf68a",
+    "score": 39,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "NEW"
+  },
+  {
+    "timestamp": "2026-08-31T06:09:03.342Z",
+    "collectionKey": "0x3750eda69bf4ce9c999ddf328be48c35be8a94ba",
+    "name": "ROBBIN HOOD",
+    "slug": "robbin-hood-2026",
+    "contract": "0x3750eda69bf4ce9c999ddf328be48c35be8a94ba",
+    "score": 44,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
   }
 ]
