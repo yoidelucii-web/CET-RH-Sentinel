@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-08-31T06:09:03.342Z",
+  "scanTime": "2026-09-01T06:18:03.234Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,7 +16,7 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-08-31T06:09:03.342Z",
+    "scanTime": "2026-09-01T06:18:03.234Z",
     "network": "robinhood",
     "totalDrops": 2,
     "executionEligible": 1,
@@ -26,11 +26,11 @@
     "alphaCandidates": 0,
     "watchlist": 0,
     "ignore": 2,
-    "averageScore": 41.5,
+    "averageScore": 36.5,
     "topCandidate": {
       "name": "ROBBIN HOOD",
       "slug": "robbin-hood-2026",
-      "score": 44,
+      "score": 39,
       "classification": "IGNORE",
       "executionStatus": "EXECUTION_ELIGIBLE"
     },
@@ -39,7 +39,7 @@
         "rank": 1,
         "tier": "D",
         "name": "ROBBIN HOOD",
-        "score": 44,
+        "score": 39,
         "classification": "IGNORE",
         "stage": "PUBLIC",
         "executionStatus": "EXECUTION_ELIGIBLE"
@@ -47,8 +47,8 @@
       {
         "rank": 2,
         "tier": "D",
-        "name": "JACON",
-        "score": 39,
+        "name": "Pixelated Puffins",
+        "score": 34,
         "classification": "IGNORE",
         "stage": "PRESALE",
         "executionStatus": "WATCH_ONLY"
@@ -61,11 +61,11 @@
       "cTier": 0,
       "dTier": 2
     },
-    "averageRisk": 6,
+    "averageRisk": 10,
     "autoMintApproved": 0,
     "autoMintBlocked": 2,
     "breakoutCandidates": 0,
-    "risingCandidates": 0
+    "risingCandidates": 1
   },
   "candidates": [
     {
@@ -88,9 +88,9 @@
         "url": "https://opensea.io/collection/robbin-hood-2026"
       },
       "status": {
-        "isMinting": false,
-        "activeStage": null,
-        "nextStage": "public_sale"
+        "isMinting": true,
+        "activeStage": "public_sale",
+        "nextStage": null
       },
       "hardGates": {
         "passed": true,
@@ -169,7 +169,7 @@
         "contract": {
           "address": "0x3750eda69bf4ce9c999ddf328be48c35be8a94ba",
           "chain": "robinhood",
-          "standard": "erc721"
+          "standard": null
         },
         "collection": {
           "name": "ROBBIN HOOD",
@@ -178,27 +178,41 @@
           "description": "ROBBIN HOOD is my fourth full AI fashion collection and basically me seeing how far i can push one idea: the hood. oversized shapes, wild textures, impossible garments + surreal portraits. fashion that doesn’t need to make sense in the real world."
         },
         "signals": [
-          "ROYALTY_DATA_PRESENT",
-          "CONTRACT_STANDARD_PRESENT"
+          "ROYALTY_DATA_PRESENT"
         ],
         "errors": [
           {
             "source": "drop",
             "message": "OpenSea API error: 401 Unauthorized (/drops/robbin-hood-2026)"
+          },
+          {
+            "source": "contract",
+            "message": "OpenSea API error: 401 Unauthorized (/chain/robinhood/contract/0x3750eda69bf4ce9c999ddf328be48c35be8a94ba)"
           }
         ]
       },
       "marketIntel": {
-        "status": "ERROR",
-        "verified": false,
-        "stats": null,
-        "errors": [
-          "OpenSea market API error: 401 Unauthorized"
-        ]
+        "status": "FOUND",
+        "verified": true,
+        "collection": {
+          "name": "ROBBIN HOOD",
+          "slug": "robbin-hood-2026",
+          "owner": "0x657c1f8421ae93e88fb3171f019779e87b0263ca",
+          "category": "art"
+        },
+        "stats": {
+          "floorPrice": 0,
+          "volume": 0.03,
+          "sales": 3,
+          "averagePrice": null,
+          "numOwners": 1,
+          "marketCap": null
+        },
+        "errors": []
       },
       "riskIntel": {
         "level": "LOW",
-        "score": 6,
+        "score": 9,
         "maxRisk": 40,
         "penalties": [
           {
@@ -210,12 +224,18 @@
             "factor": "NO_PUBLIC_CREATOR_IDENTITY",
             "points": 1,
             "reason": "No OpenSea username or ENS identity was found."
+          },
+          {
+            "factor": "UNKNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "OpenSea did not provide a recognized contract standard."
           }
         ],
         "flags": [
           "LOW_CREATOR_CONFIDENCE",
           "NO_PUBLIC_CREATOR_IDENTITY",
-          "NO_PORTFOLIO_HISTORY"
+          "NO_PORTFOLIO_HISTORY",
+          "UNKNOWN_CONTRACT_STANDARD"
         ],
         "context": {
           "maxSupply": 0,
@@ -226,11 +246,11 @@
           "creatorEns": null,
           "ownedCollections": 0,
           "ownedItems": 0,
-          "contractStandard": "erc721"
+          "contractStandard": null
         }
       },
       "alphaIntel": {
-        "score": 2,
+        "score": 3,
         "maxScore": 10,
         "classification": "LOW_ALPHA",
         "signals": [
@@ -238,6 +258,11 @@
             "signal": "PUBLIC_STAGE_READY",
             "points": 2,
             "reason": "Collection has an upcoming public mint stage."
+          },
+          {
+            "signal": "SECONDARY_MARKET_EXISTS",
+            "points": 1,
+            "reason": "Historical secondary market activity detected."
           }
         ]
       },
@@ -265,7 +290,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 44,
+        "score": 39,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -288,11 +313,6 @@
             "factor": "PROJECT_CATEGORY",
             "points": 2,
             "reason": "Project category is identified."
-          },
-          {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -340,14 +360,14 @@
             "reason": "Mint timing is known."
           },
           {
-            "factor": "PRE_MINT_OPPORTUNITY",
-            "points": 3,
-            "reason": "Upcoming mint opportunity detected."
-          },
-          {
             "factor": "EXECUTION_WINDOW",
             "points": 4,
             "reason": "Candidate currently satisfies execution timing requirements."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
           },
           {
             "factor": "LOW_RISK",
@@ -357,7 +377,7 @@
         ]
       },
       "goldenEgg": {
-        "score": 44,
+        "score": 39,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -380,11 +400,6 @@
             "factor": "PROJECT_CATEGORY",
             "points": 2,
             "reason": "Project category is identified."
-          },
-          {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -432,14 +447,14 @@
             "reason": "Mint timing is known."
           },
           {
-            "factor": "PRE_MINT_OPPORTUNITY",
-            "points": 3,
-            "reason": "Upcoming mint opportunity detected."
-          },
-          {
             "factor": "EXECUTION_WINDOW",
             "points": 4,
             "reason": "Candidate currently satisfies execution timing requirements."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
           },
           {
             "factor": "LOW_RISK",
@@ -450,12 +465,12 @@
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": 3,
+        "scoreDelta": -5,
         "floorDelta": 0,
-        "volumeDelta": 0,
-        "salesDelta": 0,
-        "ownersDelta": 0,
-        "classification": "STABLE"
+        "volumeDelta": 0.03,
+        "salesDelta": 3,
+        "ownersDelta": 1,
+        "classification": "RISING"
       },
       "executionApproval": {
         "approved": false,
@@ -464,13 +479,13 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 44,
-        "risk": 6,
+        "score": 39,
+        "risk": 9,
         "classification": "IGNORE",
         "reasons": [
           "Hard gates passed.",
           "Mint stage is technically executable.",
-          "Risk score 6/40 is within auto-mint limit."
+          "Risk score 9/40 is within auto-mint limit."
         ],
         "blockers": [
           "SCORE_BELOW_AUTO_MINT_THRESHOLD",
@@ -482,22 +497,22 @@
     },
     {
       "identity": {
-        "name": "JACON",
-        "slug": "jaconlab",
-        "contract": "0xb24176e1c0ac951653c060b252841027b84bf68a",
+        "name": "Pixelated Puffins",
+        "slug": "pixelated-puffins",
+        "contract": "0x410ba8ccfdbde637231f39be5c764a349ef158f3",
         "chain": "robinhood"
       },
       "mint": {
         "type": "signed_presale",
-        "label": "TEAM",
+        "label": "Team",
         "priceWei": "0",
         "currencyAddress": "0x0000000000000000000000000000000000000000",
-        "startTime": "2026-08-31T17:15:00Z",
-        "endTime": "2026-08-31T17:30:00Z",
-        "maxPerWallet": "45"
+        "startTime": "2026-09-01T15:50:00Z",
+        "endTime": "2026-09-01T16:00:00Z",
+        "maxPerWallet": "100"
       },
       "opensea": {
-        "url": "https://opensea.io/collection/jaconlab"
+        "url": "https://opensea.io/collection/pixelated-puffins"
       },
       "status": {
         "isMinting": false,
@@ -564,30 +579,35 @@
         },
         "mint": {
           "type": "signed_presale",
-          "label": "TEAM",
+          "label": "Team",
           "priceWei": "0",
           "currencyAddress": "0x0000000000000000000000000000000000000000",
-          "maxPerWallet": "45",
-          "startTime": "2026-08-31T17:15:00Z",
-          "endTime": "2026-08-31T17:30:00Z"
+          "maxPerWallet": "100",
+          "startTime": "2026-09-01T15:50:00Z",
+          "endTime": "2026-09-01T16:00:00Z"
         },
         "royalty": [
           {
             "fee": 1,
             "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
             "required": true
+          },
+          {
+            "fee": 0.01,
+            "recipient": "0x4c1c8f5ca553fbc99b24d827171dd8234820d15c",
+            "required": true
           }
         ],
         "contract": {
-          "address": "0xb24176e1c0ac951653c060b252841027b84bf68a",
+          "address": "0x410ba8ccfdbde637231f39be5c764a349ef158f3",
           "chain": "robinhood",
           "standard": "erc721"
         },
         "collection": {
-          "name": "JACON",
-          "slug": "jaconlab",
-          "category": "pfps",
-          "description": "The first human faces created in Java."
+          "name": "Pixelated Puffins",
+          "slug": "pixelated-puffins",
+          "category": "",
+          "description": ""
         },
         "signals": [
           "ROYALTY_DATA_PRESENT",
@@ -596,23 +616,39 @@
         "errors": [
           {
             "source": "drop",
-            "message": "OpenSea API error: 401 Unauthorized (/drops/jaconlab)"
+            "message": "OpenSea API error: 401 Unauthorized (/drops/pixelated-puffins)"
           }
         ]
       },
       "marketIntel": {
-        "status": "ERROR",
-        "verified": false,
-        "stats": null,
-        "errors": [
-          "OpenSea market API error: 401 Unauthorized"
-        ]
+        "status": "FOUND",
+        "verified": true,
+        "collection": {
+          "name": "Pixelated Puffins",
+          "slug": "pixelated-puffins",
+          "owner": "0x4c1c8f5ca553fbc99b24d827171dd8234820d15c",
+          "category": ""
+        },
+        "stats": {
+          "floorPrice": 0,
+          "volume": 0,
+          "sales": 0,
+          "averagePrice": null,
+          "numOwners": 0,
+          "marketCap": null
+        },
+        "errors": []
       },
       "riskIntel": {
         "level": "LOW",
-        "score": 6,
+        "score": 11,
         "maxRisk": 40,
         "penalties": [
+          {
+            "factor": "VERY_HIGH_MINT_LIMIT",
+            "points": 5,
+            "reason": "Maximum mint per wallet is 100 or greater."
+          },
           {
             "factor": "LOW_CREATOR_CONFIDENCE",
             "points": 5,
@@ -625,14 +661,15 @@
           }
         ],
         "flags": [
+          "VERY_HIGH_MINT_LIMIT",
           "LOW_CREATOR_CONFIDENCE",
           "NO_PUBLIC_CREATOR_IDENTITY",
           "NO_PORTFOLIO_HISTORY"
         ],
         "context": {
           "maxSupply": 0,
-          "maxPerWallet": 45,
-          "royaltyPercentage": 1,
+          "maxPerWallet": 100,
+          "royaltyPercentage": 1.01,
           "creatorConfidence": "LOW",
           "creatorUsername": null,
           "creatorEns": null,
@@ -660,15 +697,10 @@
         "signals": []
       },
       "socialIntel": {
-        "score": 3,
+        "score": 2,
         "maxScore": 10,
         "classification": "LOW_SOCIAL",
         "signals": [
-          {
-            "signal": "PROJECT_DESCRIPTION",
-            "points": 1,
-            "reason": "Project has a collection description."
-          },
           {
             "signal": "OPENSEA_COLLECTION_PAGE",
             "points": 2,
@@ -677,7 +709,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 39,
+        "score": 34,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -690,16 +722,6 @@
             "factor": "CONTRACT_PRESENT",
             "points": 3,
             "reason": "NFT contract is identified."
-          },
-          {
-            "factor": "PROJECT_DESCRIPTION",
-            "points": 3,
-            "reason": "Project description is available."
-          },
-          {
-            "factor": "PROJECT_CATEGORY",
-            "points": 2,
-            "reason": "Project category is identified."
           },
           {
             "factor": "KNOWN_CONTRACT_STANDARD",
@@ -757,14 +779,19 @@
             "reason": "Upcoming mint opportunity detected."
           },
           {
-            "factor": "LOW_RISK",
-            "points": 2,
-            "reason": "Risk score is 10/40 or lower."
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "CONTROLLED_RISK",
+            "points": 1,
+            "reason": "Risk score is 20/40 or lower."
           }
         ]
       },
       "goldenEgg": {
-        "score": 39,
+        "score": 34,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -777,16 +804,6 @@
             "factor": "CONTRACT_PRESENT",
             "points": 3,
             "reason": "NFT contract is identified."
-          },
-          {
-            "factor": "PROJECT_DESCRIPTION",
-            "points": 3,
-            "reason": "Project description is available."
-          },
-          {
-            "factor": "PROJECT_CATEGORY",
-            "points": 2,
-            "reason": "Project category is identified."
           },
           {
             "factor": "KNOWN_CONTRACT_STANDARD",
@@ -844,9 +861,14 @@
             "reason": "Upcoming mint opportunity detected."
           },
           {
-            "factor": "LOW_RISK",
-            "points": 2,
-            "reason": "Risk score is 10/40 or lower."
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "CONTROLLED_RISK",
+            "points": 1,
+            "reason": "Risk score is 20/40 or lower."
           }
         ]
       },
@@ -866,17 +888,17 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 39,
-        "risk": 6,
+        "score": 34,
+        "risk": 11,
         "classification": "IGNORE",
         "reasons": [
-          "Hard gates passed.",
-          "Risk score 6/40 is within auto-mint limit."
+          "Hard gates passed."
         ],
         "blockers": [
           "NOT_TECHNICALLY_EXECUTABLE",
           "SCORE_BELOW_AUTO_MINT_THRESHOLD",
-          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE"
+          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE",
+          "RISK_ABOVE_AUTO_MINT_LIMIT"
         ]
       },
       "rank": 2,

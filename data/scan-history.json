@@ -2000,5 +2000,33 @@
     "sales": 0,
     "owners": 0,
     "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-01T06:18:03.098Z",
+    "collectionKey": "0x410ba8ccfdbde637231f39be5c764a349ef158f3",
+    "name": "Pixelated Puffins",
+    "slug": "pixelated-puffins",
+    "contract": "0x410ba8ccfdbde637231f39be5c764a349ef158f3",
+    "score": 34,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "NEW"
+  },
+  {
+    "timestamp": "2026-09-01T06:18:03.234Z",
+    "collectionKey": "0x3750eda69bf4ce9c999ddf328be48c35be8a94ba",
+    "name": "ROBBIN HOOD",
+    "slug": "robbin-hood-2026",
+    "contract": "0x3750eda69bf4ce9c999ddf328be48c35be8a94ba",
+    "score": 39,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0.03,
+    "sales": 3,
+    "owners": 1,
+    "momentum": "RISING"
   }
 ]
