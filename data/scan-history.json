@@ -2028,5 +2028,19 @@
     "sales": 3,
     "owners": 1,
     "momentum": "RISING"
+  },
+  {
+    "timestamp": "2026-09-01T18:16:07.131Z",
+    "collectionKey": "0x3750eda69bf4ce9c999ddf328be48c35be8a94ba",
+    "name": "ROBBIN HOOD",
+    "slug": "robbin-hood-2026",
+    "contract": "0x3750eda69bf4ce9c999ddf328be48c35be8a94ba",
+    "score": 38,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "WEAKENING"
   }
 ]
