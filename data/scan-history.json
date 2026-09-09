@@ -2042,5 +2042,61 @@
     "sales": 0,
     "owners": 0,
     "momentum": "WEAKENING"
+  },
+  {
+    "timestamp": "2026-09-09T00:23:01.688Z",
+    "collectionKey": "0x8d9862f04f30b1a97399ec439d4a3e104cba16eb",
+    "name": "Peasants",
+    "slug": "thepeasants",
+    "contract": "0x8d9862f04f30b1a97399ec439d4a3e104cba16eb",
+    "score": 34,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "NEW"
+  },
+  {
+    "timestamp": "2026-09-09T00:23:02.218Z",
+    "collectionKey": "0xb036c31a01d7d056f70f339a299111775613cbac",
+    "name": "BoyMeetsHood",
+    "slug": "boymeetshood",
+    "contract": "0xb036c31a01d7d056f70f339a299111775613cbac",
+    "score": 33,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "NEW"
+  },
+  {
+    "timestamp": "2026-09-09T00:23:02.711Z",
+    "collectionKey": "0xf560ae80ba2c121b18de114c3ab0fb5663ab0190",
+    "name": "Beleaf Avatars",
+    "slug": "beleaf-avatars",
+    "contract": "0xf560ae80ba2c121b18de114c3ab0fb5663ab0190",
+    "score": 33,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "NEW"
+  },
+  {
+    "timestamp": "2026-09-09T00:23:03.187Z",
+    "collectionKey": "0xca94e274d769f988f74e2a73cc87d333ee2a3249",
+    "name": "TRUST US // NFT",
+    "slug": "trust-us-nft",
+    "contract": "0xca94e274d769f988f74e2a73cc87d333ee2a3249",
+    "score": 36,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "NEW"
   }
 ]
