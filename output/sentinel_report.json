@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-09-13T12:17:01.694Z",
+  "scanTime": "2026-09-14T01:10:41.976Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,36 +16,27 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-09-13T12:17:01.694Z",
+    "scanTime": "2026-09-14T01:10:41.976Z",
     "network": "robinhood",
-    "totalDrops": 5,
-    "executionEligible": 1,
+    "totalDrops": 4,
+    "executionEligible": 0,
     "watchOnly": 4,
     "reject": 0,
     "autoMintEligible": 0,
     "alphaCandidates": 0,
     "watchlist": 0,
-    "ignore": 5,
-    "averageScore": 35.8,
+    "ignore": 4,
+    "averageScore": 35.25,
     "topCandidate": {
-      "name": "Beleaf Avatars",
-      "slug": "beleaf-avatars",
-      "score": 39,
+      "name": "OpenCatz",
+      "slug": "opencatz-by-dizcorvus",
+      "score": 38,
       "classification": "IGNORE",
-      "executionStatus": "EXECUTION_ELIGIBLE"
+      "executionStatus": "WATCH_ONLY"
     },
     "topFive": [
       {
         "rank": 1,
-        "tier": "D",
-        "name": "Beleaf Avatars",
-        "score": 39,
-        "classification": "IGNORE",
-        "stage": "PUBLIC",
-        "executionStatus": "EXECUTION_ELIGIBLE"
-      },
-      {
-        "rank": 2,
         "tier": "D",
         "name": "OpenCatz",
         "score": 38,
@@ -54,9 +45,18 @@
         "executionStatus": "WATCH_ONLY"
       },
       {
-        "rank": 3,
+        "rank": 2,
         "tier": "D",
         "name": "Zorpians",
+        "score": 37,
+        "classification": "IGNORE",
+        "stage": "PRESALE",
+        "executionStatus": "WATCH_ONLY"
+      },
+      {
+        "rank": 3,
+        "tier": "D",
+        "name": "BoyMeetsHood",
         "score": 34,
         "classification": "IGNORE",
         "stage": "PRESALE",
@@ -66,16 +66,7 @@
         "rank": 4,
         "tier": "D",
         "name": "HoodMiners",
-        "score": 34,
-        "classification": "IGNORE",
-        "stage": "PRESALE",
-        "executionStatus": "WATCH_ONLY"
-      },
-      {
-        "rank": 5,
-        "tier": "D",
-        "name": "BoyMeetsHood",
-        "score": 34,
+        "score": 32,
         "classification": "IGNORE",
         "stage": "PRESALE",
         "executionStatus": "WATCH_ONLY"
@@ -86,418 +77,15 @@
       "aTier": 0,
       "bTier": 0,
       "cTier": 0,
-      "dTier": 5
+      "dTier": 4
     },
-    "averageRisk": 12.4,
+    "averageRisk": 11,
     "autoMintApproved": 0,
-    "autoMintBlocked": 5,
+    "autoMintBlocked": 4,
     "breakoutCandidates": 0,
     "risingCandidates": 0
   },
   "candidates": [
-    {
-      "identity": {
-        "name": "Beleaf Avatars",
-        "slug": "beleaf-avatars",
-        "contract": "0xf560ae80ba2c121b18de114c3ab0fb5663ab0190",
-        "chain": "robinhood"
-      },
-      "mint": {
-        "type": "public_sale",
-        "label": "Public",
-        "priceWei": "2500000000000000",
-        "currencyAddress": "0x0000000000000000000000000000000000000000",
-        "startTime": "2026-09-11T18:00:00Z",
-        "endTime": "2026-09-18T18:15:00Z",
-        "maxPerWallet": "5"
-      },
-      "opensea": {
-        "url": "https://opensea.io/collection/beleaf-avatars"
-      },
-      "status": {
-        "isMinting": true,
-        "activeStage": "public_sale",
-        "nextStage": null
-      },
-      "hardGates": {
-        "passed": true,
-        "reasons": []
-      },
-      "stageClassification": "PUBLIC",
-      "executionStatus": "EXECUTION_ELIGIBLE",
-      "creatorIntel": {
-        "status": "ERROR",
-        "address": null,
-        "identity": {
-          "username": null,
-          "ensName": null
-        },
-        "attribution": {
-          "source": "UNAVAILABLE",
-          "confidence": "LOW"
-        },
-        "portfolio": {
-          "ownedCollections": 0,
-          "ownedItems": 0,
-          "estimatedUsdValue": 0
-        },
-        "historicalCollections": {
-          "collectionCount": 0,
-          "analyzedCollections": 0,
-          "totalVolume": 0,
-          "totalSales": 0,
-          "totalOwners": 0,
-          "averageVolume": 0,
-          "averageSales": 0,
-          "averageOwners": 0,
-          "medianVolume": 0,
-          "medianSales": 0,
-          "medianOwners": 0,
-          "bestFloorPrice": 0,
-          "bestCollection": null,
-          "activeCollections": 0,
-          "highVolumeCollections": 0,
-          "highSalesCollections": 0,
-          "highFloorCollections": 0,
-          "collections": []
-        },
-        "flags": [
-          "CONTRACT_OWNER"
-        ],
-        "score": 0,
-        "maxScore": 25,
-        "errors": [
-          "OpenSea API error: 401 Unauthorized"
-        ]
-      },
-      "metadataIntel": {
-        "status": "FOUND",
-        "supply": {
-          "max": null,
-          "minted": null,
-          "remaining": null
-        },
-        "mint": {
-          "type": "public_sale",
-          "label": "Public",
-          "priceWei": "2500000000000000",
-          "currencyAddress": "0x0000000000000000000000000000000000000000",
-          "maxPerWallet": "5",
-          "startTime": "2026-09-11T18:00:00Z",
-          "endTime": "2026-09-18T18:15:00Z"
-        },
-        "royalty": [
-          {
-            "fee": 1,
-            "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
-            "required": true
-          },
-          {
-            "fee": 5,
-            "recipient": "0x0d6800b8d856009e831a9d326644a6e6e23e3526",
-            "required": true
-          }
-        ],
-        "contract": {
-          "address": "0xf560ae80ba2c121b18de114c3ab0fb5663ab0190",
-          "chain": "robinhood",
-          "standard": "erc721"
-        },
-        "collection": {
-          "name": "Beleaf Avatars",
-          "slug": "beleaf-avatars",
-          "category": "",
-          "description": "Beleaf Avatars is a limited collection of 500 hand-drawn PFPs featuring 70+ unique traits.\n\nBuilt around the Beleaf IP and connected to the growing world of Beleaf Valley, each avatar is designed to be cute, collectible, and part of the wider Beleaf ecosystem 🍃"
-        },
-        "signals": [
-          "ROYALTY_DATA_PRESENT",
-          "CONTRACT_STANDARD_PRESENT"
-        ],
-        "errors": [
-          {
-            "source": "drop",
-            "message": "OpenSea API error: 401 Unauthorized (/drops/beleaf-avatars)"
-          }
-        ]
-      },
-      "marketIntel": {
-        "status": "ERROR",
-        "verified": false,
-        "stats": null,
-        "errors": [
-          "OpenSea market API error: 401 Unauthorized"
-        ]
-      },
-      "riskIntel": {
-        "level": "LOW",
-        "score": 9,
-        "maxRisk": 40,
-        "penalties": [
-          {
-            "factor": "ELEVATED_ROYALTY",
-            "points": 3,
-            "reason": "Total configured royalty is 6%."
-          },
-          {
-            "factor": "LOW_CREATOR_CONFIDENCE",
-            "points": 5,
-            "reason": "Creator attribution has low confidence."
-          },
-          {
-            "factor": "NO_PUBLIC_CREATOR_IDENTITY",
-            "points": 1,
-            "reason": "No OpenSea username or ENS identity was found."
-          }
-        ],
-        "flags": [
-          "ELEVATED_ROYALTY",
-          "LOW_CREATOR_CONFIDENCE",
-          "NO_PUBLIC_CREATOR_IDENTITY",
-          "NO_PORTFOLIO_HISTORY"
-        ],
-        "context": {
-          "maxSupply": 0,
-          "maxPerWallet": 5,
-          "royaltyPercentage": 6,
-          "creatorConfidence": "LOW",
-          "creatorUsername": null,
-          "creatorEns": null,
-          "ownedCollections": 0,
-          "ownedItems": 0,
-          "contractStandard": "erc721"
-        }
-      },
-      "alphaIntel": {
-        "score": 2,
-        "maxScore": 10,
-        "classification": "LOW_ALPHA",
-        "signals": [
-          {
-            "signal": "PUBLIC_STAGE_READY",
-            "points": 2,
-            "reason": "Collection has an upcoming public mint stage."
-          }
-        ]
-      },
-      "walletIntel": {
-        "score": 0,
-        "maxScore": 10,
-        "classification": "UNKNOWN",
-        "signals": []
-      },
-      "socialIntel": {
-        "score": 4,
-        "maxScore": 10,
-        "classification": "LOW_SOCIAL",
-        "signals": [
-          {
-            "signal": "LONG_PROJECT_DESCRIPTION",
-            "points": 2,
-            "reason": "Project has a detailed collection description."
-          },
-          {
-            "signal": "OPENSEA_COLLECTION_PAGE",
-            "points": 2,
-            "reason": "Collection has an OpenSea page."
-          }
-        ]
-      },
-      "goldenEggScore": {
-        "score": 39,
-        "maxScore": 100,
-        "classification": "IGNORE",
-        "breakdown": [
-          {
-            "factor": "ROBINHOOD_CHAIN",
-            "points": 4,
-            "reason": "Collection is launching on Robinhood Chain."
-          },
-          {
-            "factor": "CONTRACT_PRESENT",
-            "points": 3,
-            "reason": "NFT contract is identified."
-          },
-          {
-            "factor": "PROJECT_DESCRIPTION",
-            "points": 3,
-            "reason": "Project description is available."
-          },
-          {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
-          },
-          {
-            "factor": "OPENSEA_COLLECTION",
-            "points": 2,
-            "reason": "OpenSea collection page exists."
-          },
-          {
-            "factor": "COLLECTION_NAME",
-            "points": 1,
-            "reason": "Collection name is available."
-          },
-          {
-            "factor": "PUBLIC_MINT",
-            "points": 5,
-            "reason": "Public mint stage detected."
-          },
-          {
-            "factor": "MINT_PRICE_KNOWN",
-            "points": 3,
-            "reason": "Mint price is known."
-          },
-          {
-            "factor": "MINT_LIMIT_KNOWN",
-            "points": 2,
-            "reason": "Maximum mint per wallet is known."
-          },
-          {
-            "factor": "MINT_START_KNOWN",
-            "points": 2,
-            "reason": "Mint start time is known."
-          },
-          {
-            "factor": "MINT_END_KNOWN",
-            "points": 1,
-            "reason": "Mint end time is known."
-          },
-          {
-            "factor": "ROYALTY_DATA_PRESENT",
-            "points": 1,
-            "reason": "Royalty configuration is known."
-          },
-          {
-            "factor": "TIMING_KNOWN",
-            "points": 3,
-            "reason": "Mint timing is known."
-          },
-          {
-            "factor": "EXECUTION_WINDOW",
-            "points": 4,
-            "reason": "Candidate currently satisfies execution timing requirements."
-          },
-          {
-            "factor": "LOW_RISK",
-            "points": 2,
-            "reason": "Risk score is 10/40 or lower."
-          }
-        ]
-      },
-      "goldenEgg": {
-        "score": 39,
-        "maxScore": 100,
-        "classification": "IGNORE",
-        "breakdown": [
-          {
-            "factor": "ROBINHOOD_CHAIN",
-            "points": 4,
-            "reason": "Collection is launching on Robinhood Chain."
-          },
-          {
-            "factor": "CONTRACT_PRESENT",
-            "points": 3,
-            "reason": "NFT contract is identified."
-          },
-          {
-            "factor": "PROJECT_DESCRIPTION",
-            "points": 3,
-            "reason": "Project description is available."
-          },
-          {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
-          },
-          {
-            "factor": "OPENSEA_COLLECTION",
-            "points": 2,
-            "reason": "OpenSea collection page exists."
-          },
-          {
-            "factor": "COLLECTION_NAME",
-            "points": 1,
-            "reason": "Collection name is available."
-          },
-          {
-            "factor": "PUBLIC_MINT",
-            "points": 5,
-            "reason": "Public mint stage detected."
-          },
-          {
-            "factor": "MINT_PRICE_KNOWN",
-            "points": 3,
-            "reason": "Mint price is known."
-          },
-          {
-            "factor": "MINT_LIMIT_KNOWN",
-            "points": 2,
-            "reason": "Maximum mint per wallet is known."
-          },
-          {
-            "factor": "MINT_START_KNOWN",
-            "points": 2,
-            "reason": "Mint start time is known."
-          },
-          {
-            "factor": "MINT_END_KNOWN",
-            "points": 1,
-            "reason": "Mint end time is known."
-          },
-          {
-            "factor": "ROYALTY_DATA_PRESENT",
-            "points": 1,
-            "reason": "Royalty configuration is known."
-          },
-          {
-            "factor": "TIMING_KNOWN",
-            "points": 3,
-            "reason": "Mint timing is known."
-          },
-          {
-            "factor": "EXECUTION_WINDOW",
-            "points": 4,
-            "reason": "Candidate currently satisfies execution timing requirements."
-          },
-          {
-            "factor": "LOW_RISK",
-            "points": 2,
-            "reason": "Risk score is 10/40 or lower."
-          }
-        ]
-      },
-      "momentum": {
-        "hasPrevious": true,
-        "scoreDelta": -6,
-        "floorDelta": -0.004,
-        "volumeDelta": -0.30536583084904617,
-        "salesDelta": -195,
-        "ownersDelta": -48,
-        "classification": "WEAKENING"
-      },
-      "executionApproval": {
-        "approved": false,
-        "status": "AUTO_MINT_BLOCKED",
-        "threshold": {
-          "minScore": 90,
-          "maxRisk": 10
-        },
-        "score": 39,
-        "risk": 9,
-        "classification": "IGNORE",
-        "reasons": [
-          "Hard gates passed.",
-          "Mint stage is technically executable.",
-          "Risk score 9/40 is within auto-mint limit."
-        ],
-        "blockers": [
-          "SCORE_BELOW_AUTO_MINT_THRESHOLD",
-          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE"
-        ]
-      },
-      "rank": 1,
-      "tier": "D"
-    },
     {
       "identity": {
         "name": "OpenCatz",
@@ -919,7 +507,7 @@
           "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE"
         ]
       },
-      "rank": 2,
+      "rank": 1,
       "tier": "D"
     },
     {
@@ -1028,25 +616,22 @@
         "contract": {
           "address": "0xfc02048498b65040a4e21a2eba54cfc48846e2ad",
           "chain": "robinhood",
-          "standard": null
+          "standard": "erc721"
         },
         "collection": {
           "name": "Zorpians",
           "slug": "thezorpians",
           "category": "",
-          "description": "4,000 Zorpians, built from almost 200 traits, all of them drawn by hand and with a whole Planet behind them.\n\nEvery Zorpian is minted with one company as a trait. NVIDIA, SpaceX, Tesla and nine more, in different quantities, so the company is part of what makes a piece rare.\n\nSwitch a Zorpian on and the treasury starts buying that company's stock token for it every day, into a wallet the Zorpian itself owns. Built on Robinhood Chain."
+          "description": "4,000 Zorpians, built from more than 150 hand-drawn traits, with a whole planet behind them.\n\nEvery Zorpian carries one company as a trait, revealed with its art. NVIDIA, SpaceX, Tesla and nine more, in different quantities, so the company is part of what makes a piece rare.\n\nSwitch a Zorpian on and the vault buys that company's stock token for it in every daily buy. The stock is credited to the piece, and whoever holds it can claim it at any time. Built on Robinhood Chain."
         },
         "signals": [
-          "ROYALTY_DATA_PRESENT"
+          "ROYALTY_DATA_PRESENT",
+          "CONTRACT_STANDARD_PRESENT"
         ],
         "errors": [
           {
             "source": "drop",
             "message": "OpenSea API error: 401 Unauthorized (/drops/thezorpians)"
-          },
-          {
-            "source": "contract",
-            "message": "OpenSea API error: 401 Unauthorized (/chain/robinhood/contract/0xfc02048498b65040a4e21a2eba54cfc48846e2ad)"
           }
         ]
       },
@@ -1071,7 +656,7 @@
       },
       "riskIntel": {
         "level": "MEDIUM",
-        "score": 15,
+        "score": 12,
         "maxRisk": 40,
         "penalties": [
           {
@@ -1093,11 +678,6 @@
             "factor": "NO_PUBLIC_CREATOR_IDENTITY",
             "points": 1,
             "reason": "No OpenSea username or ENS identity was found."
-          },
-          {
-            "factor": "UNKNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "OpenSea did not provide a recognized contract standard."
           }
         ],
         "flags": [
@@ -1105,8 +685,7 @@
           "ELEVATED_ROYALTY",
           "LOW_CREATOR_CONFIDENCE",
           "NO_PUBLIC_CREATOR_IDENTITY",
-          "NO_PORTFOLIO_HISTORY",
-          "UNKNOWN_CONTRACT_STANDARD"
+          "NO_PORTFOLIO_HISTORY"
         ],
         "context": {
           "maxSupply": 0,
@@ -1117,7 +696,7 @@
           "creatorEns": null,
           "ownedCollections": 0,
           "ownedItems": 0,
-          "contractStandard": null
+          "contractStandard": "erc721"
         }
       },
       "alphaIntel": {
@@ -1156,7 +735,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 34,
+        "score": 37,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -1174,6 +753,11 @@
             "factor": "PROJECT_DESCRIPTION",
             "points": 3,
             "reason": "Project description is available."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -1238,7 +822,7 @@
         ]
       },
       "goldenEgg": {
-        "score": 34,
+        "score": 37,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -1256,6 +840,11 @@
             "factor": "PROJECT_DESCRIPTION",
             "points": 3,
             "reason": "Project description is available."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -1321,7 +910,7 @@
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": -3,
+        "scoreDelta": 3,
         "floorDelta": 0,
         "volumeDelta": 0,
         "salesDelta": 0,
@@ -1335,8 +924,8 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 34,
-        "risk": 15,
+        "score": 37,
+        "risk": 12,
         "classification": "IGNORE",
         "reasons": [
           "Hard gates passed."
@@ -1348,27 +937,27 @@
           "RISK_ABOVE_AUTO_MINT_LIMIT"
         ]
       },
-      "rank": 3,
+      "rank": 2,
       "tier": "D"
     },
     {
       "identity": {
-        "name": "HoodMiners",
-        "slug": "hoodminers-rh",
-        "contract": "0x3d56ab8e3a5d9cf896758051b21e38b3c4b613b4",
+        "name": "BoyMeetsHood",
+        "slug": "boymeetshood",
+        "contract": "0xb036c31a01d7d056f70f339a299111775613cbac",
         "chain": "robinhood"
       },
       "mint": {
         "type": "signed_presale",
-        "label": "Team Phase",
+        "label": "TEAM PHASE",
         "priceWei": "0",
         "currencyAddress": "0x0000000000000000000000000000000000000000",
-        "startTime": "2026-09-15T13:30:00Z",
-        "endTime": "2026-09-15T14:00:00Z",
-        "maxPerWallet": "250"
+        "startTime": "2026-09-14T15:45:00Z",
+        "endTime": "2026-09-14T16:00:00Z",
+        "maxPerWallet": "44"
       },
       "opensea": {
-        "url": "https://opensea.io/collection/hoodminers-rh"
+        "url": "https://opensea.io/collection/boymeetshood"
       },
       "status": {
         "isMinting": false,
@@ -1435,12 +1024,12 @@
         },
         "mint": {
           "type": "signed_presale",
-          "label": "Team Phase",
+          "label": "TEAM PHASE",
           "priceWei": "0",
           "currencyAddress": "0x0000000000000000000000000000000000000000",
-          "maxPerWallet": "250",
-          "startTime": "2026-09-15T13:30:00Z",
-          "endTime": "2026-09-15T14:00:00Z"
+          "maxPerWallet": "44",
+          "startTime": "2026-09-14T15:45:00Z",
+          "endTime": "2026-09-14T16:00:00Z"
         },
         "royalty": [
           {
@@ -1450,20 +1039,20 @@
           },
           {
             "fee": 6,
-            "recipient": "0x2fb59f38109fc7165865a7dfe8fb2dd3c9bd2670",
+            "recipient": "0xf782a2b9581b8473d58fcccdfec763b89bfee2ad",
             "required": true
           }
         ],
         "contract": {
-          "address": "0x3d56ab8e3a5d9cf896758051b21e38b3c4b613b4",
+          "address": "0xb036c31a01d7d056f70f339a299111775613cbac",
           "chain": "robinhood",
           "standard": null
         },
         "collection": {
-          "name": "HoodMiners",
-          "slug": "hoodminers-rh",
+          "name": "BoyMeetsHood",
+          "slug": "boymeetshood",
           "category": "",
-          "description": "# What is HoodMiners?\n\nHoodMiners is a 5,000-supply free-mint NFT collection on Robinhood Chain built around a simple idea: \nHood Miners do not just sit in your wallet. They can earn and accumulate assets over time.\n\n*Each Hood Miner is both a collectible and its own smart wallet.* \nOnce activated, Miners can earn a share of rewards generated across the HoodMiners ecosystem.\n\nRewards are designed to include assets such as Bitcoin, with tokenized stocks, gold, and other digital assets potentially introduced in future reward epochs.\n\nWhat makes the concept different is that these assets accumulate inside the Miner itself. If the NFT is sold, the Miner, its wallet, and the assets accumulated inside it move together to the new owner.\n"
+          "description": "What happens when a Boy Meets HooD? We’ll find out soon. 4,444 boys are ready to meet you on \nRobinhoodCrypto\n "
         },
         "signals": [
           "ROYALTY_DATA_PRESENT"
@@ -1471,11 +1060,11 @@
         "errors": [
           {
             "source": "drop",
-            "message": "OpenSea API error: 401 Unauthorized (/drops/hoodminers-rh)"
+            "message": "OpenSea API error: 401 Unauthorized (/drops/boymeetshood)"
           },
           {
             "source": "contract",
-            "message": "OpenSea API error: 401 Unauthorized (/chain/robinhood/contract/0x3d56ab8e3a5d9cf896758051b21e38b3c4b613b4)"
+            "message": "OpenSea API error: 401 Unauthorized (/chain/robinhood/contract/0xb036c31a01d7d056f70f339a299111775613cbac)"
           }
         ]
       },
@@ -1483,9 +1072,9 @@
         "status": "FOUND",
         "verified": true,
         "collection": {
-          "name": "HoodMiners",
-          "slug": "hoodminers-rh",
-          "owner": "0x2fb59f38109fc7165865a7dfe8fb2dd3c9bd2670",
+          "name": "BoyMeetsHood",
+          "slug": "boymeetshood",
+          "owner": "0xaa0c0d788e5ab01da3480e24bd3250e2f4053d2d",
           "category": ""
         },
         "stats": {
@@ -1500,14 +1089,9 @@
       },
       "riskIntel": {
         "level": "MEDIUM",
-        "score": 17,
+        "score": 12,
         "maxRisk": 40,
         "penalties": [
-          {
-            "factor": "VERY_HIGH_MINT_LIMIT",
-            "points": 5,
-            "reason": "Maximum mint per wallet is 100 or greater."
-          },
           {
             "factor": "ELEVATED_ROYALTY",
             "points": 3,
@@ -1530,7 +1114,6 @@
           }
         ],
         "flags": [
-          "VERY_HIGH_MINT_LIMIT",
           "ELEVATED_ROYALTY",
           "LOW_CREATOR_CONFIDENCE",
           "NO_PUBLIC_CREATOR_IDENTITY",
@@ -1539,7 +1122,7 @@
         ],
         "context": {
           "maxSupply": 0,
-          "maxPerWallet": 250,
+          "maxPerWallet": 44,
           "royaltyPercentage": 7,
           "creatorConfidence": "LOW",
           "creatorUsername": null,
@@ -1765,7 +1348,7 @@
           "maxRisk": 10
         },
         "score": 34,
-        "risk": 17,
+        "risk": 12,
         "classification": "IGNORE",
         "reasons": [
           "Hard gates passed."
@@ -1777,27 +1360,27 @@
           "RISK_ABOVE_AUTO_MINT_LIMIT"
         ]
       },
-      "rank": 4,
+      "rank": 3,
       "tier": "D"
     },
     {
       "identity": {
-        "name": "BoyMeetsHood",
-        "slug": "boymeetshood",
-        "contract": "0xb036c31a01d7d056f70f339a299111775613cbac",
+        "name": "HoodMiners",
+        "slug": "hoodminers-rh",
+        "contract": "0x3d56ab8e3a5d9cf896758051b21e38b3c4b613b4",
         "chain": "robinhood"
       },
       "mint": {
         "type": "signed_presale",
-        "label": "GTD Phase",
-        "priceWei": "2700000000000000",
+        "label": "Team Phase",
+        "priceWei": "0",
         "currencyAddress": "0x0000000000000000000000000000000000000000",
-        "startTime": "2026-09-14T16:00:00Z",
-        "endTime": "2026-09-14T17:00:00Z",
-        "maxPerWallet": "1"
+        "startTime": "2026-09-15T13:30:00Z",
+        "endTime": "2026-09-15T14:00:00Z",
+        "maxPerWallet": "250"
       },
       "opensea": {
-        "url": "https://opensea.io/collection/boymeetshood"
+        "url": "https://opensea.io/collection/hoodminers-rh"
       },
       "status": {
         "isMinting": false,
@@ -1864,78 +1447,56 @@
         },
         "mint": {
           "type": "signed_presale",
-          "label": "GTD Phase",
-          "priceWei": "2700000000000000",
+          "label": "Team Phase",
+          "priceWei": "0",
           "currencyAddress": "0x0000000000000000000000000000000000000000",
-          "maxPerWallet": "1",
-          "startTime": "2026-09-14T16:00:00Z",
-          "endTime": "2026-09-14T17:00:00Z"
+          "maxPerWallet": "250",
+          "startTime": "2026-09-15T13:30:00Z",
+          "endTime": "2026-09-15T14:00:00Z"
         },
-        "royalty": [
-          {
-            "fee": 1,
-            "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
-            "required": true
-          },
-          {
-            "fee": 6,
-            "recipient": "0xf782a2b9581b8473d58fcccdfec763b89bfee2ad",
-            "required": true
-          }
-        ],
+        "royalty": null,
         "contract": {
-          "address": "0xb036c31a01d7d056f70f339a299111775613cbac",
+          "address": "0x3d56ab8e3a5d9cf896758051b21e38b3c4b613b4",
           "chain": "robinhood",
-          "standard": null
+          "standard": "erc721"
         },
         "collection": {
-          "name": "BoyMeetsHood",
-          "slug": "boymeetshood",
-          "category": "",
-          "description": "What happens when a Boy Meets HooD? We’ll find out soon. 4,444 boys are ready to meet you on \nRobinhoodCrypto\n "
+          "name": "HoodMiners",
+          "slug": "hoodminers-rh",
+          "category": null,
+          "description": null
         },
         "signals": [
-          "ROYALTY_DATA_PRESENT"
+          "CONTRACT_STANDARD_PRESENT"
         ],
         "errors": [
           {
             "source": "drop",
-            "message": "OpenSea API error: 401 Unauthorized (/drops/boymeetshood)"
+            "message": "OpenSea API error: 401 Unauthorized (/drops/hoodminers-rh)"
           },
           {
-            "source": "contract",
-            "message": "OpenSea API error: 401 Unauthorized (/chain/robinhood/contract/0xb036c31a01d7d056f70f339a299111775613cbac)"
+            "source": "collection",
+            "message": "OpenSea API error: 401 Unauthorized (/collections/hoodminers-rh)"
           }
         ]
       },
       "marketIntel": {
-        "status": "FOUND",
-        "verified": true,
-        "collection": {
-          "name": "BoyMeetsHood",
-          "slug": "boymeetshood",
-          "owner": "0xaa0c0d788e5ab01da3480e24bd3250e2f4053d2d",
-          "category": ""
-        },
-        "stats": {
-          "floorPrice": 0,
-          "volume": 0,
-          "sales": 0,
-          "averagePrice": null,
-          "numOwners": 0,
-          "marketCap": null
-        },
-        "errors": []
+        "status": "ERROR",
+        "verified": false,
+        "stats": null,
+        "errors": [
+          "OpenSea market API error: 401 Unauthorized"
+        ]
       },
       "riskIntel": {
-        "level": "MEDIUM",
-        "score": 12,
+        "level": "LOW",
+        "score": 11,
         "maxRisk": 40,
         "penalties": [
           {
-            "factor": "ELEVATED_ROYALTY",
-            "points": 3,
-            "reason": "Total configured royalty is 7%."
+            "factor": "VERY_HIGH_MINT_LIMIT",
+            "points": 5,
+            "reason": "Maximum mint per wallet is 100 or greater."
           },
           {
             "factor": "LOW_CREATOR_CONFIDENCE",
@@ -1946,30 +1507,24 @@
             "factor": "NO_PUBLIC_CREATOR_IDENTITY",
             "points": 1,
             "reason": "No OpenSea username or ENS identity was found."
-          },
-          {
-            "factor": "UNKNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "OpenSea did not provide a recognized contract standard."
           }
         ],
         "flags": [
-          "ELEVATED_ROYALTY",
+          "VERY_HIGH_MINT_LIMIT",
           "LOW_CREATOR_CONFIDENCE",
           "NO_PUBLIC_CREATOR_IDENTITY",
-          "NO_PORTFOLIO_HISTORY",
-          "UNKNOWN_CONTRACT_STANDARD"
+          "NO_PORTFOLIO_HISTORY"
         ],
         "context": {
           "maxSupply": 0,
-          "maxPerWallet": 1,
-          "royaltyPercentage": 7,
+          "maxPerWallet": 250,
+          "royaltyPercentage": null,
           "creatorConfidence": "LOW",
           "creatorUsername": null,
           "creatorEns": null,
           "ownedCollections": 0,
           "ownedItems": 0,
-          "contractStandard": null
+          "contractStandard": "erc721"
         }
       },
       "alphaIntel": {
@@ -1991,15 +1546,10 @@
         "signals": []
       },
       "socialIntel": {
-        "score": 4,
+        "score": 2,
         "maxScore": 10,
         "classification": "LOW_SOCIAL",
         "signals": [
-          {
-            "signal": "LONG_PROJECT_DESCRIPTION",
-            "points": 2,
-            "reason": "Project has a detailed collection description."
-          },
           {
             "signal": "OPENSEA_COLLECTION_PAGE",
             "points": 2,
@@ -2008,7 +1558,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 34,
+        "score": 32,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -2023,9 +1573,9 @@
             "reason": "NFT contract is identified."
           },
           {
-            "factor": "PROJECT_DESCRIPTION",
+            "factor": "KNOWN_CONTRACT_STANDARD",
             "points": 3,
-            "reason": "Project description is available."
+            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -2063,11 +1613,6 @@
             "reason": "Mint end time is known."
           },
           {
-            "factor": "ROYALTY_DATA_PRESENT",
-            "points": 1,
-            "reason": "Royalty configuration is known."
-          },
-          {
             "factor": "TIMING_KNOWN",
             "points": 3,
             "reason": "Mint timing is known."
@@ -2076,11 +1621,6 @@
             "factor": "PRE_MINT_OPPORTUNITY",
             "points": 3,
             "reason": "Upcoming mint opportunity detected."
-          },
-          {
-            "factor": "MARKET_VERIFIED",
-            "points": 1,
-            "reason": "OpenSea market data is verified."
           },
           {
             "factor": "CONTROLLED_RISK",
@@ -2090,7 +1630,7 @@
         ]
       },
       "goldenEgg": {
-        "score": 34,
+        "score": 32,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -2105,9 +1645,9 @@
             "reason": "NFT contract is identified."
           },
           {
-            "factor": "PROJECT_DESCRIPTION",
+            "factor": "KNOWN_CONTRACT_STANDARD",
             "points": 3,
-            "reason": "Project description is available."
+            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -2145,11 +1685,6 @@
             "reason": "Mint end time is known."
           },
           {
-            "factor": "ROYALTY_DATA_PRESENT",
-            "points": 1,
-            "reason": "Royalty configuration is known."
-          },
-          {
             "factor": "TIMING_KNOWN",
             "points": 3,
             "reason": "Mint timing is known."
@@ -2158,11 +1693,6 @@
             "factor": "PRE_MINT_OPPORTUNITY",
             "points": 3,
             "reason": "Upcoming mint opportunity detected."
-          },
-          {
-            "factor": "MARKET_VERIFIED",
-            "points": 1,
-            "reason": "OpenSea market data is verified."
           },
           {
             "factor": "CONTROLLED_RISK",
@@ -2173,7 +1703,7 @@
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": -4,
+        "scoreDelta": -2,
         "floorDelta": 0,
         "volumeDelta": 0,
         "salesDelta": 0,
@@ -2187,8 +1717,8 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 34,
-        "risk": 12,
+        "score": 32,
+        "risk": 11,
         "classification": "IGNORE",
         "reasons": [
           "Hard gates passed."
@@ -2200,7 +1730,7 @@
           "RISK_ABOVE_AUTO_MINT_LIMIT"
         ]
       },
-      "rank": 5,
+      "rank": 4,
       "tier": "D"
     }
   ]

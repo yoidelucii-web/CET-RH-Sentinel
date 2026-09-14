@@ -2252,5 +2252,61 @@
     "sales": 0,
     "owners": 0,
     "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-14T01:10:41.450Z",
+    "collectionKey": "0xfc02048498b65040a4e21a2eba54cfc48846e2ad",
+    "name": "Zorpians",
+    "slug": "thezorpians",
+    "contract": "0xfc02048498b65040a4e21a2eba54cfc48846e2ad",
+    "score": 37,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-14T01:10:41.637Z",
+    "collectionKey": "0x3d56ab8e3a5d9cf896758051b21e38b3c4b613b4",
+    "name": "HoodMiners",
+    "slug": "hoodminers-rh",
+    "contract": "0x3d56ab8e3a5d9cf896758051b21e38b3c4b613b4",
+    "score": 32,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-14T01:10:41.828Z",
+    "collectionKey": "0xb036c31a01d7d056f70f339a299111775613cbac",
+    "name": "BoyMeetsHood",
+    "slug": "boymeetshood",
+    "contract": "0xb036c31a01d7d056f70f339a299111775613cbac",
+    "score": 34,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-14T01:10:41.976Z",
+    "collectionKey": "0xf0474980e09c3023655a9ca3e71a763358214efb",
+    "name": "OpenCatz",
+    "slug": "opencatz-by-dizcorvus",
+    "contract": "0xf0474980e09c3023655a9ca3e71a763358214efb",
+    "score": 38,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
   }
 ]
