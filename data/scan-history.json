@@ -2308,5 +2308,61 @@
     "sales": 0,
     "owners": 0,
     "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-16T05:39:37.572Z",
+    "collectionKey": "0x116eaa62241751e0c98da43d458600c6c17cd361",
+    "name": "Rare Friends Genesis",
+    "slug": "rare-friends-genesis",
+    "contract": "0x116eaa62241751e0c98da43d458600c6c17cd361",
+    "score": 41,
+    "classification": "IGNORE",
+    "floor": 5400,
+    "volume": 574.0903462092692,
+    "sales": 1423,
+    "owners": 517,
+    "momentum": "NEW"
+  },
+  {
+    "timestamp": "2026-09-16T05:39:37.886Z",
+    "collectionKey": "0xa6f43bbe42d6f9f569aa49a287021bc6f01c66e9",
+    "name": "WADERZ",
+    "slug": "waderz",
+    "contract": "0xa6f43bbe42d6f9f569aa49a287021bc6f01c66e9",
+    "score": 35,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "NEW"
+  },
+  {
+    "timestamp": "2026-09-16T05:39:38.175Z",
+    "collectionKey": "0xf560ae80ba2c121b18de114c3ab0fb5663ab0190",
+    "name": "Beleaf Avatars",
+    "slug": "beleaf-avatars",
+    "contract": "0xf560ae80ba2c121b18de114c3ab0fb5663ab0190",
+    "score": 36,
+    "classification": "IGNORE",
+    "floor": 0.004,
+    "volume": 0.3503658308490462,
+    "sales": 430,
+    "owners": 59,
+    "momentum": "BREAKOUT"
+  },
+  {
+    "timestamp": "2026-09-16T05:39:38.457Z",
+    "collectionKey": "0xf0474980e09c3023655a9ca3e71a763358214efb",
+    "name": "OpenCatz",
+    "slug": "opencatz-by-dizcorvus",
+    "contract": "0xf0474980e09c3023655a9ca3e71a763358214efb",
+    "score": 36,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 998,
+    "owners": 1,
+    "momentum": "BREAKOUT"
   }
 ]
