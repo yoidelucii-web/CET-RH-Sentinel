@@ -2364,5 +2364,33 @@
     "sales": 998,
     "owners": 1,
     "momentum": "BREAKOUT"
+  },
+  {
+    "timestamp": "2026-09-17T11:16:53.050Z",
+    "collectionKey": "0x116eaa62241751e0c98da43d458600c6c17cd361",
+    "name": "Rare Friends Genesis",
+    "slug": "rare-friends-genesis",
+    "contract": "0x116eaa62241751e0c98da43d458600c6c17cd361",
+    "score": 41,
+    "classification": "IGNORE",
+    "floor": 2190,
+    "volume": 943.2564730218809,
+    "sales": 1675,
+    "owners": 416,
+    "momentum": "BREAKOUT"
+  },
+  {
+    "timestamp": "2026-09-17T11:16:53.816Z",
+    "collectionKey": "0xa6f43bbe42d6f9f569aa49a287021bc6f01c66e9",
+    "name": "WADERZ",
+    "slug": "waderz",
+    "contract": "0xa6f43bbe42d6f9f569aa49a287021bc6f01c66e9",
+    "score": 30,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
   }
 ]
