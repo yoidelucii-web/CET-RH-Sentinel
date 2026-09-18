@@ -2392,5 +2392,19 @@
     "sales": 0,
     "owners": 0,
     "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-18T05:34:49.341Z",
+    "collectionKey": "0xa6f43bbe42d6f9f569aa49a287021bc6f01c66e9",
+    "name": "WADERZ",
+    "slug": "waderz",
+    "contract": "0xa6f43bbe42d6f9f569aa49a287021bc6f01c66e9",
+    "score": 42,
+    "classification": "IGNORE",
+    "floor": 11.7,
+    "volume": 0.31411183155640976,
+    "sales": 246,
+    "owners": 80,
+    "momentum": "BREAKOUT"
   }
 ]

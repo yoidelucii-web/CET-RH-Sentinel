@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-09-17T11:16:53.816Z",
+  "scanTime": "2026-09-18T05:34:49.341Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,42 +16,33 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-09-17T11:16:53.816Z",
+    "scanTime": "2026-09-18T05:34:49.341Z",
     "network": "robinhood",
-    "totalDrops": 2,
-    "executionEligible": 0,
-    "watchOnly": 2,
+    "totalDrops": 1,
+    "executionEligible": 1,
+    "watchOnly": 0,
     "reject": 0,
     "autoMintEligible": 0,
     "alphaCandidates": 0,
     "watchlist": 0,
-    "ignore": 2,
-    "averageScore": 35.5,
+    "ignore": 1,
+    "averageScore": 42,
     "topCandidate": {
-      "name": "Rare Friends Genesis",
-      "slug": "rare-friends-genesis",
-      "score": 41,
+      "name": "WADERZ",
+      "slug": "waderz",
+      "score": 42,
       "classification": "IGNORE",
-      "executionStatus": "WATCH_ONLY"
+      "executionStatus": "EXECUTION_ELIGIBLE"
     },
     "topFive": [
       {
         "rank": 1,
         "tier": "D",
-        "name": "Rare Friends Genesis",
-        "score": 41,
-        "classification": "IGNORE",
-        "stage": "PRESALE",
-        "executionStatus": "WATCH_ONLY"
-      },
-      {
-        "rank": 2,
-        "tier": "D",
         "name": "WADERZ",
-        "score": 30,
+        "score": 42,
         "classification": "IGNORE",
-        "stage": "PRESALE",
-        "executionStatus": "WATCH_ONLY"
+        "stage": "PUBLIC",
+        "executionStatus": "EXECUTION_ELIGIBLE"
       }
     ],
     "scoreDistribution": {
@@ -59,45 +50,45 @@
       "aTier": 0,
       "bTier": 0,
       "cTier": 0,
-      "dTier": 2
+      "dTier": 1
     },
-    "averageRisk": 10.5,
+    "averageRisk": 9,
     "autoMintApproved": 0,
-    "autoMintBlocked": 2,
+    "autoMintBlocked": 1,
     "breakoutCandidates": 1,
     "risingCandidates": 0
   },
   "candidates": [
     {
       "identity": {
-        "name": "Rare Friends Genesis",
-        "slug": "rare-friends-genesis",
-        "contract": "0x116eaa62241751e0c98da43d458600c6c17cd361",
+        "name": "WADERZ",
+        "slug": "waderz",
+        "contract": "0xa6f43bbe42d6f9f569aa49a287021bc6f01c66e9",
         "chain": "robinhood"
       },
       "mint": {
-        "type": "signed_presale",
-        "label": "Whitelist FCFS",
-        "priceWei": "0",
+        "type": "public_sale",
+        "label": "PUBLIC",
+        "priceWei": "1500000000000000",
         "currencyAddress": "0x0000000000000000000000000000000000000000",
-        "startTime": "2026-09-14T20:00:20Z",
-        "endTime": "2026-09-17T14:00:20Z",
-        "maxPerWallet": "1"
+        "startTime": "2026-09-17T17:05:00Z",
+        "endTime": "2026-09-27T17:05:00Z",
+        "maxPerWallet": "10"
       },
       "opensea": {
-        "url": "https://opensea.io/collection/rare-friends-genesis"
+        "url": "https://opensea.io/collection/waderz"
       },
       "status": {
         "isMinting": true,
-        "activeStage": "signed_presale",
+        "activeStage": "public_sale",
         "nextStage": null
       },
       "hardGates": {
         "passed": true,
         "reasons": []
       },
-      "stageClassification": "PRESALE",
-      "executionStatus": "WATCH_ONLY",
+      "stageClassification": "PUBLIC",
+      "executionStatus": "EXECUTION_ELIGIBLE",
       "creatorIntel": {
         "status": "ERROR",
         "address": null,
@@ -151,13 +142,13 @@
           "remaining": null
         },
         "mint": {
-          "type": "signed_presale",
-          "label": "Whitelist FCFS",
-          "priceWei": "0",
+          "type": "public_sale",
+          "label": "PUBLIC",
+          "priceWei": "1500000000000000",
           "currencyAddress": "0x0000000000000000000000000000000000000000",
-          "maxPerWallet": "1",
-          "startTime": "2026-09-14T20:00:20Z",
-          "endTime": "2026-09-17T14:00:20Z"
+          "maxPerWallet": "10",
+          "startTime": "2026-09-17T17:05:00Z",
+          "endTime": "2026-09-27T17:05:00Z"
         },
         "royalty": [
           {
@@ -167,18 +158,18 @@
           },
           {
             "fee": 5,
-            "recipient": "0x1ecbf27dc1f809179b9ef2d382cd76ccba21b6d2",
-            "required": false
+            "recipient": "0xc2c29ce686374dad2224fc08d4bf7a755ea31d1c",
+            "required": true
           }
         ],
         "contract": {
-          "address": "0x116eaa62241751e0c98da43d458600c6c17cd361",
+          "address": "0xa6f43bbe42d6f9f569aa49a287021bc6f01c66e9",
           "chain": "robinhood",
           "standard": "erc721"
         },
         "collection": {
-          "name": "Rare Friends Genesis",
-          "slug": "rare-friends-genesis",
+          "name": "WADERZ",
+          "slug": "waderz",
           "category": "",
           "description": ""
         },
@@ -189,7 +180,7 @@
         "errors": [
           {
             "source": "drop",
-            "message": "OpenSea API error: 401 Unauthorized (/drops/rare-friends-genesis)"
+            "message": "OpenSea API error: 401 Unauthorized (/drops/waderz)"
           }
         ]
       },
@@ -197,17 +188,17 @@
         "status": "FOUND",
         "verified": true,
         "collection": {
-          "name": "Rare Friends Genesis",
-          "slug": "rare-friends-genesis",
-          "owner": "0x1ecbf27dc1f809179b9ef2d382cd76ccba21b6d2",
+          "name": "WADERZ",
+          "slug": "waderz",
+          "owner": "0xd42bd96b117dd6bd63280620ea981bf967a7ad2b",
           "category": ""
         },
         "stats": {
-          "floorPrice": 2190,
-          "volume": 943.2564730218809,
-          "sales": 1675,
+          "floorPrice": 11.7,
+          "volume": 0.31411183155640976,
+          "sales": 246,
           "averagePrice": null,
-          "numOwners": 416,
+          "numOwners": 80,
           "marketCap": null
         },
         "errors": []
@@ -241,7 +232,7 @@
         ],
         "context": {
           "maxSupply": 0,
-          "maxPerWallet": 1,
+          "maxPerWallet": 10,
           "royaltyPercentage": 6,
           "creatorConfidence": "LOW",
           "creatorUsername": null,
@@ -252,14 +243,14 @@
         }
       },
       "alphaIntel": {
-        "score": 2,
+        "score": 3,
         "maxScore": 10,
         "classification": "LOW_ALPHA",
         "signals": [
           {
-            "signal": "SIGNED_PRESALE_STAGE",
-            "points": 1,
-            "reason": "Collection is currently in signed presale."
+            "signal": "PUBLIC_STAGE_READY",
+            "points": 2,
+            "reason": "Collection has an upcoming public mint stage."
           },
           {
             "signal": "SECONDARY_MARKET_EXISTS",
@@ -287,7 +278,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 41,
+        "score": 42,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -317,9 +308,9 @@
             "reason": "Collection name is available."
           },
           {
-            "factor": "SIGNED_PRESALE",
-            "points": 4,
-            "reason": "Signed presale stage detected."
+            "factor": "PUBLIC_MINT",
+            "points": 5,
+            "reason": "Public mint stage detected."
           },
           {
             "factor": "MINT_PRICE_KNOWN",
@@ -352,14 +343,14 @@
             "reason": "Mint timing is known."
           },
           {
+            "factor": "EXECUTION_WINDOW",
+            "points": 4,
+            "reason": "Candidate currently satisfies execution timing requirements."
+          },
+          {
             "factor": "MARKET_VERIFIED",
             "points": 1,
             "reason": "OpenSea market data is verified."
-          },
-          {
-            "factor": "STRONG_MARKET_VOLUME",
-            "points": 3,
-            "reason": "Historical market volume is significant."
           },
           {
             "factor": "STRONG_SALES_ACTIVITY",
@@ -367,9 +358,9 @@
             "reason": "Historical sales activity is significant."
           },
           {
-            "factor": "OWNER_DISTRIBUTION",
-            "points": 2,
-            "reason": "Collection has meaningful owner distribution."
+            "factor": "OWNER_ACTIVITY",
+            "points": 1,
+            "reason": "Collection has measurable owner activity."
           },
           {
             "factor": "FLOOR_PRICE_PRESENT",
@@ -384,7 +375,7 @@
         ]
       },
       "goldenEgg": {
-        "score": 41,
+        "score": 42,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -414,9 +405,9 @@
             "reason": "Collection name is available."
           },
           {
-            "factor": "SIGNED_PRESALE",
-            "points": 4,
-            "reason": "Signed presale stage detected."
+            "factor": "PUBLIC_MINT",
+            "points": 5,
+            "reason": "Public mint stage detected."
           },
           {
             "factor": "MINT_PRICE_KNOWN",
@@ -449,14 +440,14 @@
             "reason": "Mint timing is known."
           },
           {
+            "factor": "EXECUTION_WINDOW",
+            "points": 4,
+            "reason": "Candidate currently satisfies execution timing requirements."
+          },
+          {
             "factor": "MARKET_VERIFIED",
             "points": 1,
             "reason": "OpenSea market data is verified."
-          },
-          {
-            "factor": "STRONG_MARKET_VOLUME",
-            "points": 3,
-            "reason": "Historical market volume is significant."
           },
           {
             "factor": "STRONG_SALES_ACTIVITY",
@@ -464,9 +455,9 @@
             "reason": "Historical sales activity is significant."
           },
           {
-            "factor": "OWNER_DISTRIBUTION",
-            "points": 2,
-            "reason": "Collection has meaningful owner distribution."
+            "factor": "OWNER_ACTIVITY",
+            "points": 1,
+            "reason": "Collection has measurable owner activity."
           },
           {
             "factor": "FLOOR_PRICE_PRESENT",
@@ -482,11 +473,11 @@
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": 0,
-        "floorDelta": -3210,
-        "volumeDelta": 369.16612681261165,
-        "salesDelta": 252,
-        "ownersDelta": -101,
+        "scoreDelta": 12,
+        "floorDelta": 11.7,
+        "volumeDelta": 0.31411183155640976,
+        "salesDelta": 246,
+        "ownersDelta": 80,
         "classification": "BREAKOUT"
       },
       "executionApproval": {
@@ -496,407 +487,20 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 41,
+        "score": 42,
         "risk": 9,
         "classification": "IGNORE",
         "reasons": [
           "Hard gates passed.",
+          "Mint stage is technically executable.",
           "Risk score 9/40 is within auto-mint limit."
         ],
         "blockers": [
-          "NOT_TECHNICALLY_EXECUTABLE",
           "SCORE_BELOW_AUTO_MINT_THRESHOLD",
           "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE"
         ]
       },
       "rank": 1,
-      "tier": "D"
-    },
-    {
-      "identity": {
-        "name": "WADERZ",
-        "slug": "waderz",
-        "contract": "0xa6f43bbe42d6f9f569aa49a287021bc6f01c66e9",
-        "chain": "robinhood"
-      },
-      "mint": {
-        "type": "signed_presale",
-        "label": "TEAM",
-        "priceWei": "0",
-        "currencyAddress": "0x0000000000000000000000000000000000000000",
-        "startTime": "2026-09-17T15:45:00Z",
-        "endTime": "2026-09-17T16:00:00Z",
-        "maxPerWallet": "20"
-      },
-      "opensea": {
-        "url": "https://opensea.io/collection/waderz"
-      },
-      "status": {
-        "isMinting": false,
-        "activeStage": null,
-        "nextStage": "signed_presale"
-      },
-      "hardGates": {
-        "passed": true,
-        "reasons": []
-      },
-      "stageClassification": "PRESALE",
-      "executionStatus": "WATCH_ONLY",
-      "creatorIntel": {
-        "status": "ERROR",
-        "address": null,
-        "identity": {
-          "username": null,
-          "ensName": null
-        },
-        "attribution": {
-          "source": "UNAVAILABLE",
-          "confidence": "LOW"
-        },
-        "portfolio": {
-          "ownedCollections": 0,
-          "ownedItems": 0,
-          "estimatedUsdValue": 0
-        },
-        "historicalCollections": {
-          "collectionCount": 0,
-          "analyzedCollections": 0,
-          "totalVolume": 0,
-          "totalSales": 0,
-          "totalOwners": 0,
-          "averageVolume": 0,
-          "averageSales": 0,
-          "averageOwners": 0,
-          "medianVolume": 0,
-          "medianSales": 0,
-          "medianOwners": 0,
-          "bestFloorPrice": 0,
-          "bestCollection": null,
-          "activeCollections": 0,
-          "highVolumeCollections": 0,
-          "highSalesCollections": 0,
-          "highFloorCollections": 0,
-          "collections": []
-        },
-        "flags": [
-          "CONTRACT_OWNER"
-        ],
-        "score": 0,
-        "maxScore": 25,
-        "errors": [
-          "OpenSea API error: 401 Unauthorized"
-        ]
-      },
-      "metadataIntel": {
-        "status": "FOUND",
-        "supply": {
-          "max": null,
-          "minted": null,
-          "remaining": null
-        },
-        "mint": {
-          "type": "signed_presale",
-          "label": "TEAM",
-          "priceWei": "0",
-          "currencyAddress": "0x0000000000000000000000000000000000000000",
-          "maxPerWallet": "20",
-          "startTime": "2026-09-17T15:45:00Z",
-          "endTime": "2026-09-17T16:00:00Z"
-        },
-        "royalty": [
-          {
-            "fee": 1,
-            "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
-            "required": true
-          },
-          {
-            "fee": 5,
-            "recipient": "0xc2c29ce686374dad2224fc08d4bf7a755ea31d1c",
-            "required": true
-          }
-        ],
-        "contract": {
-          "address": "0xa6f43bbe42d6f9f569aa49a287021bc6f01c66e9",
-          "chain": "robinhood",
-          "standard": null
-        },
-        "collection": {
-          "name": "WADERZ",
-          "slug": "waderz",
-          "category": "",
-          "description": ""
-        },
-        "signals": [
-          "ROYALTY_DATA_PRESENT"
-        ],
-        "errors": [
-          {
-            "source": "drop",
-            "message": "OpenSea API error: 401 Unauthorized (/drops/waderz)"
-          },
-          {
-            "source": "contract",
-            "message": "OpenSea API error: 401 Unauthorized (/chain/robinhood/contract/0xa6f43bbe42d6f9f569aa49a287021bc6f01c66e9)"
-          }
-        ]
-      },
-      "marketIntel": {
-        "status": "ERROR",
-        "verified": false,
-        "stats": null,
-        "errors": [
-          "OpenSea market API error: 401 Unauthorized"
-        ]
-      },
-      "riskIntel": {
-        "level": "MEDIUM",
-        "score": 12,
-        "maxRisk": 40,
-        "penalties": [
-          {
-            "factor": "ELEVATED_ROYALTY",
-            "points": 3,
-            "reason": "Total configured royalty is 6%."
-          },
-          {
-            "factor": "LOW_CREATOR_CONFIDENCE",
-            "points": 5,
-            "reason": "Creator attribution has low confidence."
-          },
-          {
-            "factor": "NO_PUBLIC_CREATOR_IDENTITY",
-            "points": 1,
-            "reason": "No OpenSea username or ENS identity was found."
-          },
-          {
-            "factor": "UNKNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "OpenSea did not provide a recognized contract standard."
-          }
-        ],
-        "flags": [
-          "ELEVATED_ROYALTY",
-          "LOW_CREATOR_CONFIDENCE",
-          "NO_PUBLIC_CREATOR_IDENTITY",
-          "NO_PORTFOLIO_HISTORY",
-          "UNKNOWN_CONTRACT_STANDARD"
-        ],
-        "context": {
-          "maxSupply": 0,
-          "maxPerWallet": 20,
-          "royaltyPercentage": 6,
-          "creatorConfidence": "LOW",
-          "creatorUsername": null,
-          "creatorEns": null,
-          "ownedCollections": 0,
-          "ownedItems": 0,
-          "contractStandard": null
-        }
-      },
-      "alphaIntel": {
-        "score": 1,
-        "maxScore": 10,
-        "classification": "LOW_ALPHA",
-        "signals": [
-          {
-            "signal": "SIGNED_PRESALE_STAGE",
-            "points": 1,
-            "reason": "Collection is currently in signed presale."
-          }
-        ]
-      },
-      "walletIntel": {
-        "score": 0,
-        "maxScore": 10,
-        "classification": "UNKNOWN",
-        "signals": []
-      },
-      "socialIntel": {
-        "score": 2,
-        "maxScore": 10,
-        "classification": "LOW_SOCIAL",
-        "signals": [
-          {
-            "signal": "OPENSEA_COLLECTION_PAGE",
-            "points": 2,
-            "reason": "Collection has an OpenSea page."
-          }
-        ]
-      },
-      "goldenEggScore": {
-        "score": 30,
-        "maxScore": 100,
-        "classification": "IGNORE",
-        "breakdown": [
-          {
-            "factor": "ROBINHOOD_CHAIN",
-            "points": 4,
-            "reason": "Collection is launching on Robinhood Chain."
-          },
-          {
-            "factor": "CONTRACT_PRESENT",
-            "points": 3,
-            "reason": "NFT contract is identified."
-          },
-          {
-            "factor": "OPENSEA_COLLECTION",
-            "points": 2,
-            "reason": "OpenSea collection page exists."
-          },
-          {
-            "factor": "COLLECTION_NAME",
-            "points": 1,
-            "reason": "Collection name is available."
-          },
-          {
-            "factor": "SIGNED_PRESALE",
-            "points": 4,
-            "reason": "Signed presale stage detected."
-          },
-          {
-            "factor": "MINT_PRICE_KNOWN",
-            "points": 3,
-            "reason": "Mint price is known."
-          },
-          {
-            "factor": "MINT_LIMIT_KNOWN",
-            "points": 2,
-            "reason": "Maximum mint per wallet is known."
-          },
-          {
-            "factor": "MINT_START_KNOWN",
-            "points": 2,
-            "reason": "Mint start time is known."
-          },
-          {
-            "factor": "MINT_END_KNOWN",
-            "points": 1,
-            "reason": "Mint end time is known."
-          },
-          {
-            "factor": "ROYALTY_DATA_PRESENT",
-            "points": 1,
-            "reason": "Royalty configuration is known."
-          },
-          {
-            "factor": "TIMING_KNOWN",
-            "points": 3,
-            "reason": "Mint timing is known."
-          },
-          {
-            "factor": "PRE_MINT_OPPORTUNITY",
-            "points": 3,
-            "reason": "Upcoming mint opportunity detected."
-          },
-          {
-            "factor": "CONTROLLED_RISK",
-            "points": 1,
-            "reason": "Risk score is 20/40 or lower."
-          }
-        ]
-      },
-      "goldenEgg": {
-        "score": 30,
-        "maxScore": 100,
-        "classification": "IGNORE",
-        "breakdown": [
-          {
-            "factor": "ROBINHOOD_CHAIN",
-            "points": 4,
-            "reason": "Collection is launching on Robinhood Chain."
-          },
-          {
-            "factor": "CONTRACT_PRESENT",
-            "points": 3,
-            "reason": "NFT contract is identified."
-          },
-          {
-            "factor": "OPENSEA_COLLECTION",
-            "points": 2,
-            "reason": "OpenSea collection page exists."
-          },
-          {
-            "factor": "COLLECTION_NAME",
-            "points": 1,
-            "reason": "Collection name is available."
-          },
-          {
-            "factor": "SIGNED_PRESALE",
-            "points": 4,
-            "reason": "Signed presale stage detected."
-          },
-          {
-            "factor": "MINT_PRICE_KNOWN",
-            "points": 3,
-            "reason": "Mint price is known."
-          },
-          {
-            "factor": "MINT_LIMIT_KNOWN",
-            "points": 2,
-            "reason": "Maximum mint per wallet is known."
-          },
-          {
-            "factor": "MINT_START_KNOWN",
-            "points": 2,
-            "reason": "Mint start time is known."
-          },
-          {
-            "factor": "MINT_END_KNOWN",
-            "points": 1,
-            "reason": "Mint end time is known."
-          },
-          {
-            "factor": "ROYALTY_DATA_PRESENT",
-            "points": 1,
-            "reason": "Royalty configuration is known."
-          },
-          {
-            "factor": "TIMING_KNOWN",
-            "points": 3,
-            "reason": "Mint timing is known."
-          },
-          {
-            "factor": "PRE_MINT_OPPORTUNITY",
-            "points": 3,
-            "reason": "Upcoming mint opportunity detected."
-          },
-          {
-            "factor": "CONTROLLED_RISK",
-            "points": 1,
-            "reason": "Risk score is 20/40 or lower."
-          }
-        ]
-      },
-      "momentum": {
-        "hasPrevious": true,
-        "scoreDelta": -5,
-        "floorDelta": 0,
-        "volumeDelta": 0,
-        "salesDelta": 0,
-        "ownersDelta": 0,
-        "classification": "STABLE"
-      },
-      "executionApproval": {
-        "approved": false,
-        "status": "AUTO_MINT_BLOCKED",
-        "threshold": {
-          "minScore": 90,
-          "maxRisk": 10
-        },
-        "score": 30,
-        "risk": 12,
-        "classification": "IGNORE",
-        "reasons": [
-          "Hard gates passed."
-        ],
-        "blockers": [
-          "NOT_TECHNICALLY_EXECUTABLE",
-          "SCORE_BELOW_AUTO_MINT_THRESHOLD",
-          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE",
-          "RISK_ABOVE_AUTO_MINT_LIMIT"
-        ]
-      },
-      "rank": 2,
       "tier": "D"
     }
   ]
