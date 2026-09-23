@@ -2602,5 +2602,61 @@
     "sales": 0,
     "owners": 0,
     "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-23T11:05:22.378Z",
+    "collectionKey": "0x5abc09893c5b2b8a21b886f7070611960a47515e",
+    "name": "Berry - Special Edition",
+    "slug": "berry-special-edition",
+    "contract": "0x5abc09893c5b2b8a21b886f7070611960a47515e",
+    "score": 37,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-23T11:05:22.916Z",
+    "collectionKey": "0x99b10b280c1fd3625737c51590ddf7191963c5f6",
+    "name": "Mooncats",
+    "slug": "officialmooncats",
+    "contract": "0x99b10b280c1fd3625737c51590ddf7191963c5f6",
+    "score": 37,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-23T11:05:23.508Z",
+    "collectionKey": "0x143e2b4be0fe46e6318ecf42054a46a46e3e1241",
+    "name": "Early Men",
+    "slug": "early-men-origins",
+    "contract": "0x143e2b4be0fe46e6318ecf42054a46a46e3e1241",
+    "score": 37,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-23T11:05:24.090Z",
+    "collectionKey": "0x68be4d47cfd76f9d6af44fc06499fb53767dc17e",
+    "name": "Art Blockers",
+    "slug": "art-blockers",
+    "contract": "0x68be4d47cfd76f9d6af44fc06499fb53767dc17e",
+    "score": 42,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
   }
 ]
