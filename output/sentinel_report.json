@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-09-23T16:26:46.277Z",
+  "scanTime": "2026-09-23T21:17:19.552Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,7 +16,7 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-09-23T16:26:46.277Z",
+    "scanTime": "2026-09-23T21:17:19.552Z",
     "network": "robinhood",
     "totalDrops": 4,
     "executionEligible": 2,
@@ -26,7 +26,7 @@
     "alphaCandidates": 0,
     "watchlist": 0,
     "ignore": 4,
-    "averageScore": 38.75,
+    "averageScore": 36.75,
     "topCandidate": {
       "name": "Berry - Special Edition",
       "slug": "berry-special-edition",
@@ -57,7 +57,7 @@
         "rank": 3,
         "tier": "D",
         "name": "Mooncats",
-        "score": 37,
+        "score": 34,
         "classification": "IGNORE",
         "stage": "PRESALE",
         "executionStatus": "WATCH_ONLY"
@@ -66,7 +66,7 @@
         "rank": 4,
         "tier": "D",
         "name": "Early Men",
-        "score": 37,
+        "score": 32,
         "classification": "IGNORE",
         "stage": "PRESALE",
         "executionStatus": "WATCH_ONLY"
@@ -79,11 +79,11 @@
       "cTier": 0,
       "dTier": 4
     },
-    "averageRisk": 14,
+    "averageRisk": 15.5,
     "autoMintApproved": 0,
     "autoMintBlocked": 4,
-    "breakoutCandidates": 1,
-    "risingCandidates": 0
+    "breakoutCandidates": 0,
+    "risingCandidates": 1
   },
   "candidates": [
     {
@@ -222,10 +222,10 @@
         },
         "stats": {
           "floorPrice": 0,
-          "volume": 0.19600000000000006,
-          "sales": 212,
+          "volume": 0.25202357369774053,
+          "sales": 216,
           "averagePrice": null,
-          "numOwners": 9,
+          "numOwners": 20,
           "marketCap": null
         },
         "errors": []
@@ -495,12 +495,12 @@
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": 5,
+        "scoreDelta": 0,
         "floorDelta": 0,
-        "volumeDelta": 0.19600000000000006,
-        "salesDelta": 212,
-        "ownersDelta": 9,
-        "classification": "BREAKOUT"
+        "volumeDelta": 0.05602357369774047,
+        "salesDelta": 4,
+        "ownersDelta": 11,
+        "classification": "RISING"
       },
       "executionApproval": {
         "approved": false,
@@ -934,7 +934,7 @@
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": -3,
+        "scoreDelta": 0,
         "floorDelta": 0,
         "volumeDelta": 0,
         "salesDelta": 0,
@@ -1070,7 +1070,7 @@
         "contract": {
           "address": "0x99b10b280c1fd3625737c51590ddf7191963c5f6",
           "chain": "robinhood",
-          "standard": "erc721"
+          "standard": null
         },
         "collection": {
           "name": "Mooncats",
@@ -1079,13 +1079,16 @@
           "description": "Mooncats are the Cosmic Guardians of this Universe, the rarest characters under the Mooncats IP, providing constant holder benefits. Being part of these 4,444 is a statement among gamers."
         },
         "signals": [
-          "ROYALTY_DATA_PRESENT",
-          "CONTRACT_STANDARD_PRESENT"
+          "ROYALTY_DATA_PRESENT"
         ],
         "errors": [
           {
             "source": "drop",
             "message": "OpenSea API error: 401 Unauthorized (/drops/officialmooncats)"
+          },
+          {
+            "source": "contract",
+            "message": "OpenSea API error: 401 Unauthorized (/chain/robinhood/contract/0x99b10b280c1fd3625737c51590ddf7191963c5f6)"
           }
         ]
       },
@@ -1110,7 +1113,7 @@
       },
       "riskIntel": {
         "level": "MEDIUM",
-        "score": 14,
+        "score": 17,
         "maxRisk": 40,
         "penalties": [
           {
@@ -1132,6 +1135,11 @@
             "factor": "NO_PUBLIC_CREATOR_IDENTITY",
             "points": 1,
             "reason": "No OpenSea username or ENS identity was found."
+          },
+          {
+            "factor": "UNKNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "OpenSea did not provide a recognized contract standard."
           }
         ],
         "flags": [
@@ -1139,7 +1147,8 @@
           "ELEVATED_ROYALTY",
           "LOW_CREATOR_CONFIDENCE",
           "NO_PUBLIC_CREATOR_IDENTITY",
-          "NO_PORTFOLIO_HISTORY"
+          "NO_PORTFOLIO_HISTORY",
+          "UNKNOWN_CONTRACT_STANDARD"
         ],
         "context": {
           "maxSupply": 0,
@@ -1150,7 +1159,7 @@
           "creatorEns": null,
           "ownedCollections": 0,
           "ownedItems": 0,
-          "contractStandard": "erc721"
+          "contractStandard": null
         }
       },
       "alphaIntel": {
@@ -1189,7 +1198,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 37,
+        "score": 34,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -1207,11 +1216,6 @@
             "factor": "PROJECT_DESCRIPTION",
             "points": 3,
             "reason": "Project description is available."
-          },
-          {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -1276,7 +1280,7 @@
         ]
       },
       "goldenEgg": {
-        "score": 37,
+        "score": 34,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -1294,11 +1298,6 @@
             "factor": "PROJECT_DESCRIPTION",
             "points": 3,
             "reason": "Project description is available."
-          },
-          {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -1364,7 +1363,7 @@
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": 0,
+        "scoreDelta": -3,
         "floorDelta": 0,
         "volumeDelta": 0,
         "salesDelta": 0,
@@ -1378,8 +1377,8 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 37,
-        "risk": 14,
+        "score": 34,
+        "risk": 17,
         "classification": "IGNORE",
         "reasons": [
           "Hard gates passed."
@@ -1500,7 +1499,7 @@
         "contract": {
           "address": "0x143e2b4be0fe46e6318ecf42054a46a46e3e1241",
           "chain": "robinhood",
-          "standard": "erc721"
+          "standard": null
         },
         "collection": {
           "name": "Early Men",
@@ -1509,38 +1508,30 @@
           "description": "From the age of stone. Carved in time."
         },
         "signals": [
-          "ROYALTY_DATA_PRESENT",
-          "CONTRACT_STANDARD_PRESENT"
+          "ROYALTY_DATA_PRESENT"
         ],
         "errors": [
           {
             "source": "drop",
             "message": "OpenSea API error: 401 Unauthorized (/drops/early-men-origins)"
+          },
+          {
+            "source": "contract",
+            "message": "OpenSea API error: 401 Unauthorized (/chain/robinhood/contract/0x143e2b4be0fe46e6318ecf42054a46a46e3e1241)"
           }
         ]
       },
       "marketIntel": {
-        "status": "FOUND",
-        "verified": true,
-        "collection": {
-          "name": "Early Men",
-          "slug": "early-men-origins",
-          "owner": "0x8086fdc2e008436b3eea153caafb0e9a22399b2c",
-          "category": ""
-        },
-        "stats": {
-          "floorPrice": 0,
-          "volume": 0,
-          "sales": 0,
-          "averagePrice": null,
-          "numOwners": 0,
-          "marketCap": null
-        },
-        "errors": []
+        "status": "ERROR",
+        "verified": false,
+        "stats": null,
+        "errors": [
+          "OpenSea market API error: 401 Unauthorized"
+        ]
       },
       "riskIntel": {
         "level": "MEDIUM",
-        "score": 18,
+        "score": 21,
         "maxRisk": 40,
         "penalties": [
           {
@@ -1562,6 +1553,11 @@
             "factor": "NO_PUBLIC_CREATOR_IDENTITY",
             "points": 1,
             "reason": "No OpenSea username or ENS identity was found."
+          },
+          {
+            "factor": "UNKNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "OpenSea did not provide a recognized contract standard."
           }
         ],
         "flags": [
@@ -1569,7 +1565,8 @@
           "HIGH_ROYALTY",
           "LOW_CREATOR_CONFIDENCE",
           "NO_PUBLIC_CREATOR_IDENTITY",
-          "NO_PORTFOLIO_HISTORY"
+          "NO_PORTFOLIO_HISTORY",
+          "UNKNOWN_CONTRACT_STANDARD"
         ],
         "context": {
           "maxSupply": 0,
@@ -1580,7 +1577,7 @@
           "creatorEns": null,
           "ownedCollections": 0,
           "ownedItems": 0,
-          "contractStandard": "erc721"
+          "contractStandard": null
         }
       },
       "alphaIntel": {
@@ -1619,7 +1616,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 37,
+        "score": 32,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -1637,11 +1634,6 @@
             "factor": "PROJECT_DESCRIPTION",
             "points": 3,
             "reason": "Project description is available."
-          },
-          {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -1692,21 +1684,11 @@
             "factor": "PRE_MINT_OPPORTUNITY",
             "points": 3,
             "reason": "Upcoming mint opportunity detected."
-          },
-          {
-            "factor": "MARKET_VERIFIED",
-            "points": 1,
-            "reason": "OpenSea market data is verified."
-          },
-          {
-            "factor": "CONTROLLED_RISK",
-            "points": 1,
-            "reason": "Risk score is 20/40 or lower."
           }
         ]
       },
       "goldenEgg": {
-        "score": 37,
+        "score": 32,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -1724,11 +1706,6 @@
             "factor": "PROJECT_DESCRIPTION",
             "points": 3,
             "reason": "Project description is available."
-          },
-          {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -1779,22 +1756,12 @@
             "factor": "PRE_MINT_OPPORTUNITY",
             "points": 3,
             "reason": "Upcoming mint opportunity detected."
-          },
-          {
-            "factor": "MARKET_VERIFIED",
-            "points": 1,
-            "reason": "OpenSea market data is verified."
-          },
-          {
-            "factor": "CONTROLLED_RISK",
-            "points": 1,
-            "reason": "Risk score is 20/40 or lower."
           }
         ]
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": 0,
+        "scoreDelta": -5,
         "floorDelta": 0,
         "volumeDelta": 0,
         "salesDelta": 0,
@@ -1808,8 +1775,8 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 37,
-        "risk": 18,
+        "score": 32,
+        "risk": 21,
         "classification": "IGNORE",
         "reasons": [
           "Hard gates passed."
