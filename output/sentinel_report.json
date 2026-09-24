@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-09-24T11:22:38.406Z",
+  "scanTime": "2026-09-24T21:18:48.611Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,7 +16,7 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-09-24T11:22:38.406Z",
+    "scanTime": "2026-09-24T21:18:48.611Z",
     "network": "robinhood",
     "totalDrops": 4,
     "executionEligible": 2,
@@ -26,11 +26,11 @@
     "alphaCandidates": 0,
     "watchlist": 0,
     "ignore": 4,
-    "averageScore": 39.5,
+    "averageScore": 39.25,
     "topCandidate": {
       "name": "Berry - Special Edition",
       "slug": "berry-special-edition",
-      "score": 42,
+      "score": 45,
       "classification": "IGNORE",
       "executionStatus": "EXECUTION_ELIGIBLE"
     },
@@ -39,7 +39,7 @@
         "rank": 1,
         "tier": "D",
         "name": "Berry - Special Edition",
-        "score": 42,
+        "score": 45,
         "classification": "IGNORE",
         "stage": "PUBLIC",
         "executionStatus": "EXECUTION_ELIGIBLE"
@@ -48,7 +48,7 @@
         "rank": 2,
         "tier": "D",
         "name": "Art Blockers",
-        "score": 42,
+        "score": 44,
         "classification": "IGNORE",
         "stage": "PUBLIC",
         "executionStatus": "EXECUTION_ELIGIBLE"
@@ -57,7 +57,7 @@
         "rank": 3,
         "tier": "D",
         "name": "Mooncats",
-        "score": 37,
+        "score": 36,
         "classification": "IGNORE",
         "stage": "PRESALE",
         "executionStatus": "WATCH_ONLY"
@@ -66,7 +66,7 @@
         "rank": 4,
         "tier": "D",
         "name": "Early Men",
-        "score": 37,
+        "score": 32,
         "classification": "IGNORE",
         "stage": "PRESALE",
         "executionStatus": "WATCH_ONLY"
@@ -79,10 +79,10 @@
       "cTier": 0,
       "dTier": 4
     },
-    "averageRisk": 13.25,
+    "averageRisk": 14,
     "autoMintApproved": 0,
     "autoMintBlocked": 4,
-    "breakoutCandidates": 0,
+    "breakoutCandidates": 2,
     "risingCandidates": 0
   },
   "candidates": [
@@ -96,11 +96,11 @@
       "mint": {
         "type": "public_sale",
         "label": "Public stage",
-        "priceWei": "14000000000000000",
+        "priceWei": "3400000000000000",
         "currencyAddress": "0x0000000000000000000000000000000000000000",
         "startTime": "2026-09-23T16:15:00Z",
-        "endTime": "2026-09-30T16:15:00Z",
-        "maxPerWallet": "3"
+        "endTime": "2026-09-27T16:15:00Z",
+        "maxPerWallet": "5"
       },
       "opensea": {
         "url": "https://opensea.io/collection/berry-special-edition"
@@ -171,11 +171,11 @@
         "mint": {
           "type": "public_sale",
           "label": "Public stage",
-          "priceWei": "14000000000000000",
+          "priceWei": "3400000000000000",
           "currencyAddress": "0x0000000000000000000000000000000000000000",
-          "maxPerWallet": "3",
+          "maxPerWallet": "5",
           "startTime": "2026-09-23T16:15:00Z",
-          "endTime": "2026-09-30T16:15:00Z"
+          "endTime": "2026-09-27T16:15:00Z"
         },
         "royalty": [
           {
@@ -221,11 +221,11 @@
           "category": ""
         },
         "stats": {
-          "floorPrice": 0,
-          "volume": 0.4900000000000003,
-          "sales": 233,
+          "floorPrice": 0.0056499,
+          "volume": 0.6905999999999971,
+          "sales": 291,
           "averagePrice": null,
-          "numOwners": 22,
+          "numOwners": 51,
           "marketCap": null
         },
         "errors": []
@@ -259,7 +259,7 @@
         ],
         "context": {
           "maxSupply": 0,
-          "maxPerWallet": 3,
+          "maxPerWallet": 5,
           "royaltyPercentage": 6,
           "creatorConfidence": "LOW",
           "creatorUsername": null,
@@ -310,7 +310,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 42,
+        "score": 45,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -393,6 +393,16 @@
             "factor": "STRONG_SALES_ACTIVITY",
             "points": 2,
             "reason": "Historical sales activity is significant."
+          },
+          {
+            "factor": "OWNER_ACTIVITY",
+            "points": 1,
+            "reason": "Collection has measurable owner activity."
+          },
+          {
+            "factor": "FLOOR_PRICE_PRESENT",
+            "points": 2,
+            "reason": "Collection has an established floor price."
           },
           {
             "factor": "LOW_RISK",
@@ -402,7 +412,7 @@
         ]
       },
       "goldenEgg": {
-        "score": 42,
+        "score": 45,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -485,6 +495,16 @@
             "factor": "STRONG_SALES_ACTIVITY",
             "points": 2,
             "reason": "Historical sales activity is significant."
+          },
+          {
+            "factor": "OWNER_ACTIVITY",
+            "points": 1,
+            "reason": "Collection has measurable owner activity."
+          },
+          {
+            "factor": "FLOOR_PRICE_PRESENT",
+            "points": 2,
+            "reason": "Collection has an established floor price."
           },
           {
             "factor": "LOW_RISK",
@@ -495,12 +515,12 @@
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": 0,
-        "floorDelta": 0,
-        "volumeDelta": -0.014000000000000012,
-        "salesDelta": -1,
-        "ownersDelta": 0,
-        "classification": "WEAKENING"
+        "scoreDelta": 3,
+        "floorDelta": 0.0056499,
+        "volumeDelta": 0.20059999999999678,
+        "salesDelta": 58,
+        "ownersDelta": 29,
+        "classification": "BREAKOUT"
       },
       "executionApproval": {
         "approved": false,
@@ -509,7 +529,7 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 42,
+        "score": 45,
         "risk": 9,
         "classification": "IGNORE",
         "reasons": [
@@ -545,9 +565,9 @@
         "url": "https://opensea.io/collection/art-blockers"
       },
       "status": {
-        "isMinting": false,
-        "activeStage": null,
-        "nextStage": "public_sale"
+        "isMinting": true,
+        "activeStage": "public_sale",
+        "nextStage": null
       },
       "hardGates": {
         "passed": true,
@@ -636,7 +656,7 @@
         "collection": {
           "name": "Art Blockers",
           "slug": "art-blockers",
-          "category": "",
+          "category": "pfps",
           "description": "ART BLOCKERS is a generative pixel art collection of 1,111 unique identities by Raul Casillas.\nEvery Blocker begins as an original geometric identity constructed on a 32×32 pixel grid. These identities are then processed through a generative system controlling shape, algorithm, material, damage, motion, lighting and color.\nUnlike traditional trait-based PFP collections, ART BLOCKERS does not build characters by simply swapping predefined traits. The algorithm transforms the underlying geometry itself.\nIdentity → Generative System → Final State\n1,111 unique identities. One generative system. Infinite states."
         },
         "signals": [
@@ -657,14 +677,14 @@
           "name": "Art Blockers",
           "slug": "art-blockers",
           "owner": "0xb7a4c554f9fa91cb2f7d5f1b535a67d85d6df07d",
-          "category": ""
+          "category": "pfps"
         },
         "stats": {
-          "floorPrice": 0,
-          "volume": 0,
-          "sales": 0,
+          "floorPrice": 0.34,
+          "volume": 0.04500000000000003,
+          "sales": 18,
           "averagePrice": null,
-          "numOwners": 0,
+          "numOwners": 16,
           "marketCap": null
         },
         "errors": []
@@ -715,7 +735,7 @@
         }
       },
       "alphaIntel": {
-        "score": 2,
+        "score": 3,
         "maxScore": 10,
         "classification": "LOW_ALPHA",
         "signals": [
@@ -723,6 +743,11 @@
             "signal": "PUBLIC_STAGE_READY",
             "points": 2,
             "reason": "Collection has an upcoming public mint stage."
+          },
+          {
+            "signal": "SECONDARY_MARKET_EXISTS",
+            "points": 1,
+            "reason": "Historical secondary market activity detected."
           }
         ]
       },
@@ -750,7 +775,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 42,
+        "score": 44,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -768,6 +793,11 @@
             "factor": "PROJECT_DESCRIPTION",
             "points": 3,
             "reason": "Project description is available."
+          },
+          {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
           },
           {
             "factor": "KNOWN_CONTRACT_STANDARD",
@@ -820,11 +850,6 @@
             "reason": "Mint timing is known."
           },
           {
-            "factor": "PRE_MINT_OPPORTUNITY",
-            "points": 3,
-            "reason": "Upcoming mint opportunity detected."
-          },
-          {
             "factor": "EXECUTION_WINDOW",
             "points": 4,
             "reason": "Candidate currently satisfies execution timing requirements."
@@ -833,6 +858,16 @@
             "factor": "MARKET_VERIFIED",
             "points": 1,
             "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "SALES_ACTIVITY",
+            "points": 1,
+            "reason": "Historical sales activity exists."
+          },
+          {
+            "factor": "FLOOR_PRICE_PRESENT",
+            "points": 2,
+            "reason": "Collection has an established floor price."
           },
           {
             "factor": "CONTROLLED_RISK",
@@ -842,7 +877,7 @@
         ]
       },
       "goldenEgg": {
-        "score": 42,
+        "score": 44,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -860,6 +895,11 @@
             "factor": "PROJECT_DESCRIPTION",
             "points": 3,
             "reason": "Project description is available."
+          },
+          {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
           },
           {
             "factor": "KNOWN_CONTRACT_STANDARD",
@@ -912,11 +952,6 @@
             "reason": "Mint timing is known."
           },
           {
-            "factor": "PRE_MINT_OPPORTUNITY",
-            "points": 3,
-            "reason": "Upcoming mint opportunity detected."
-          },
-          {
             "factor": "EXECUTION_WINDOW",
             "points": 4,
             "reason": "Candidate currently satisfies execution timing requirements."
@@ -925,6 +960,16 @@
             "factor": "MARKET_VERIFIED",
             "points": 1,
             "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "SALES_ACTIVITY",
+            "points": 1,
+            "reason": "Historical sales activity exists."
+          },
+          {
+            "factor": "FLOOR_PRICE_PRESENT",
+            "points": 2,
+            "reason": "Collection has an established floor price."
           },
           {
             "factor": "CONTROLLED_RISK",
@@ -935,12 +980,12 @@
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": 0,
-        "floorDelta": 0,
-        "volumeDelta": 0,
-        "salesDelta": 0,
-        "ownersDelta": 0,
-        "classification": "STABLE"
+        "scoreDelta": 2,
+        "floorDelta": 0.34,
+        "volumeDelta": 0.04500000000000003,
+        "salesDelta": 18,
+        "ownersDelta": 16,
+        "classification": "BREAKOUT"
       },
       "executionApproval": {
         "approved": false,
@@ -949,7 +994,7 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 42,
+        "score": 44,
         "risk": 12,
         "classification": "IGNORE",
         "reasons": [
@@ -1091,23 +1136,12 @@
         ]
       },
       "marketIntel": {
-        "status": "FOUND",
-        "verified": true,
-        "collection": {
-          "name": "Mooncats",
-          "slug": "officialmooncats",
-          "owner": "0x0e3b902408a76e81374803219afa78923bda1db0",
-          "category": ""
-        },
-        "stats": {
-          "floorPrice": 0,
-          "volume": 0,
-          "sales": 0,
-          "averagePrice": null,
-          "numOwners": 0,
-          "marketCap": null
-        },
-        "errors": []
+        "status": "ERROR",
+        "verified": false,
+        "stats": null,
+        "errors": [
+          "OpenSea market API error: 401 Unauthorized"
+        ]
       },
       "riskIntel": {
         "level": "MEDIUM",
@@ -1190,7 +1224,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 37,
+        "score": 36,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -1263,11 +1297,6 @@
             "factor": "PRE_MINT_OPPORTUNITY",
             "points": 3,
             "reason": "Upcoming mint opportunity detected."
-          },
-          {
-            "factor": "MARKET_VERIFIED",
-            "points": 1,
-            "reason": "OpenSea market data is verified."
           },
           {
             "factor": "CONTROLLED_RISK",
@@ -1277,7 +1306,7 @@
         ]
       },
       "goldenEgg": {
-        "score": 37,
+        "score": 36,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -1350,11 +1379,6 @@
             "factor": "PRE_MINT_OPPORTUNITY",
             "points": 3,
             "reason": "Upcoming mint opportunity detected."
-          },
-          {
-            "factor": "MARKET_VERIFIED",
-            "points": 1,
-            "reason": "OpenSea market data is verified."
           },
           {
             "factor": "CONTROLLED_RISK",
@@ -1365,7 +1389,7 @@
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": 0,
+        "scoreDelta": -1,
         "floorDelta": 0,
         "volumeDelta": 0,
         "salesDelta": 0,
@@ -1379,7 +1403,7 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 37,
+        "score": 36,
         "risk": 14,
         "classification": "IGNORE",
         "reasons": [
@@ -1501,7 +1525,7 @@
         "contract": {
           "address": "0x143e2b4be0fe46e6318ecf42054a46a46e3e1241",
           "chain": "robinhood",
-          "standard": "erc721"
+          "standard": null
         },
         "collection": {
           "name": "Early Men",
@@ -1510,38 +1534,30 @@
           "description": "From the age of stone. Carved in time."
         },
         "signals": [
-          "ROYALTY_DATA_PRESENT",
-          "CONTRACT_STANDARD_PRESENT"
+          "ROYALTY_DATA_PRESENT"
         ],
         "errors": [
           {
             "source": "drop",
             "message": "OpenSea API error: 401 Unauthorized (/drops/early-men-origins)"
+          },
+          {
+            "source": "contract",
+            "message": "OpenSea API error: 401 Unauthorized (/chain/robinhood/contract/0x143e2b4be0fe46e6318ecf42054a46a46e3e1241)"
           }
         ]
       },
       "marketIntel": {
-        "status": "FOUND",
-        "verified": true,
-        "collection": {
-          "name": "Early Men",
-          "slug": "early-men-origins",
-          "owner": "0x8086fdc2e008436b3eea153caafb0e9a22399b2c",
-          "category": ""
-        },
-        "stats": {
-          "floorPrice": 0,
-          "volume": 0,
-          "sales": 0,
-          "averagePrice": null,
-          "numOwners": 0,
-          "marketCap": null
-        },
-        "errors": []
+        "status": "ERROR",
+        "verified": false,
+        "stats": null,
+        "errors": [
+          "OpenSea market API error: 401 Unauthorized"
+        ]
       },
       "riskIntel": {
         "level": "MEDIUM",
-        "score": 18,
+        "score": 21,
         "maxRisk": 40,
         "penalties": [
           {
@@ -1563,6 +1579,11 @@
             "factor": "NO_PUBLIC_CREATOR_IDENTITY",
             "points": 1,
             "reason": "No OpenSea username or ENS identity was found."
+          },
+          {
+            "factor": "UNKNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "OpenSea did not provide a recognized contract standard."
           }
         ],
         "flags": [
@@ -1570,7 +1591,8 @@
           "HIGH_ROYALTY",
           "LOW_CREATOR_CONFIDENCE",
           "NO_PUBLIC_CREATOR_IDENTITY",
-          "NO_PORTFOLIO_HISTORY"
+          "NO_PORTFOLIO_HISTORY",
+          "UNKNOWN_CONTRACT_STANDARD"
         ],
         "context": {
           "maxSupply": 0,
@@ -1581,7 +1603,7 @@
           "creatorEns": null,
           "ownedCollections": 0,
           "ownedItems": 0,
-          "contractStandard": "erc721"
+          "contractStandard": null
         }
       },
       "alphaIntel": {
@@ -1620,7 +1642,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 37,
+        "score": 32,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -1638,11 +1660,6 @@
             "factor": "PROJECT_DESCRIPTION",
             "points": 3,
             "reason": "Project description is available."
-          },
-          {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -1693,21 +1710,11 @@
             "factor": "PRE_MINT_OPPORTUNITY",
             "points": 3,
             "reason": "Upcoming mint opportunity detected."
-          },
-          {
-            "factor": "MARKET_VERIFIED",
-            "points": 1,
-            "reason": "OpenSea market data is verified."
-          },
-          {
-            "factor": "CONTROLLED_RISK",
-            "points": 1,
-            "reason": "Risk score is 20/40 or lower."
           }
         ]
       },
       "goldenEgg": {
-        "score": 37,
+        "score": 32,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -1725,11 +1732,6 @@
             "factor": "PROJECT_DESCRIPTION",
             "points": 3,
             "reason": "Project description is available."
-          },
-          {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -1780,22 +1782,12 @@
             "factor": "PRE_MINT_OPPORTUNITY",
             "points": 3,
             "reason": "Upcoming mint opportunity detected."
-          },
-          {
-            "factor": "MARKET_VERIFIED",
-            "points": 1,
-            "reason": "OpenSea market data is verified."
-          },
-          {
-            "factor": "CONTROLLED_RISK",
-            "points": 1,
-            "reason": "Risk score is 20/40 or lower."
           }
         ]
       },
       "momentum": {
         "hasPrevious": true,
-        "scoreDelta": 1,
+        "scoreDelta": -5,
         "floorDelta": 0,
         "volumeDelta": 0,
         "salesDelta": 0,
@@ -1809,8 +1801,8 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 37,
-        "risk": 18,
+        "score": 32,
+        "risk": 21,
         "classification": "IGNORE",
         "reasons": [
           "Hard gates passed."
