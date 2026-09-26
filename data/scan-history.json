@@ -3260,5 +3260,33 @@
     "sales": 0,
     "owners": 0,
     "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-26T20:49:25.025Z",
+    "collectionKey": "0x99b10b280c1fd3625737c51590ddf7191963c5f6",
+    "name": "Mooncats",
+    "slug": "officialmooncats",
+    "contract": "0x99b10b280c1fd3625737c51590ddf7191963c5f6",
+    "score": 40,
+    "classification": "IGNORE",
+    "floor": 0.045,
+    "volume": 1.5960000000000008,
+    "sales": 194,
+    "owners": 24,
+    "momentum": "RISING"
+  },
+  {
+    "timestamp": "2026-09-26T20:49:25.607Z",
+    "collectionKey": "0x143e2b4be0fe46e6318ecf42054a46a46e3e1241",
+    "name": "Early Men",
+    "slug": "early-men-origins",
+    "contract": "0x143e2b4be0fe46e6318ecf42054a46a46e3e1241",
+    "score": 42,
+    "classification": "IGNORE",
+    "floor": 0.0014,
+    "volume": 1.5625942461977402,
+    "sales": 1200,
+    "owners": 408,
+    "momentum": "BREAKOUT"
   }
 ]
