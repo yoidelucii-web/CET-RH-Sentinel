@@ -3218,5 +3218,47 @@
     "sales": 0,
     "owners": 0,
     "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-26T11:03:17.918Z",
+    "collectionKey": "0x68be4d47cfd76f9d6af44fc06499fb53767dc17e",
+    "name": "Art Blockers",
+    "slug": "art-blockers",
+    "contract": "0x68be4d47cfd76f9d6af44fc06499fb53767dc17e",
+    "score": 46,
+    "classification": "IGNORE",
+    "floor": 0.05,
+    "volume": 0.20250000000000012,
+    "sales": 117,
+    "owners": 46,
+    "momentum": "RISING"
+  },
+  {
+    "timestamp": "2026-09-26T11:03:18.053Z",
+    "collectionKey": "0x99b10b280c1fd3625737c51590ddf7191963c5f6",
+    "name": "Mooncats",
+    "slug": "officialmooncats",
+    "contract": "0x99b10b280c1fd3625737c51590ddf7191963c5f6",
+    "score": 39,
+    "classification": "IGNORE",
+    "floor": 0.045,
+    "volume": 1.5760000000000007,
+    "sales": 192,
+    "owners": 20,
+    "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-09-26T11:03:18.177Z",
+    "collectionKey": "0x143e2b4be0fe46e6318ecf42054a46a46e3e1241",
+    "name": "Early Men",
+    "slug": "early-men-origins",
+    "contract": "0x143e2b4be0fe46e6318ecf42054a46a46e3e1241",
+    "score": 33,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
   }
 ]
