@@ -3330,5 +3330,33 @@
     "sales": 0,
     "owners": 0,
     "momentum": "NEW"
+  },
+  {
+    "timestamp": "2026-10-08T05:16:56.953Z",
+    "collectionKey": "0xb640e77f8b88cab4300d2844c929f2256a221059",
+    "name": "Mooniez",
+    "slug": "mooniezworld",
+    "contract": "0xb640e77f8b88cab4300d2844c929f2256a221059",
+    "score": 48,
+    "classification": "IGNORE",
+    "floor": 0.0044879,
+    "volume": 2.829573412367922,
+    "sales": 1398,
+    "owners": 154,
+    "momentum": "BREAKOUT"
+  },
+  {
+    "timestamp": "2026-10-08T05:16:57.364Z",
+    "collectionKey": "0xbe19d8e30cb02bea4534b528507eadecfe99254e",
+    "name": "Slippy Club",
+    "slug": "slippy-nft",
+    "contract": "0xbe19d8e30cb02bea4534b528507eadecfe99254e",
+    "score": 37,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "STABLE"
   }
 ]

@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-10-07T12:56:06.976Z",
+  "scanTime": "2026-10-08T05:16:57.364Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,7 +16,7 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-10-07T12:56:06.976Z",
+    "scanTime": "2026-10-08T05:16:57.364Z",
     "network": "robinhood",
     "totalDrops": 2,
     "executionEligible": 1,
@@ -64,7 +64,7 @@
     "averageRisk": 10,
     "autoMintApproved": 0,
     "autoMintBlocked": 2,
-    "breakoutCandidates": 0,
+    "breakoutCandidates": 1,
     "risingCandidates": 0
   },
   "candidates": [
@@ -80,8 +80,8 @@
         "label": "Public stage",
         "priceWei": "3900000000000000",
         "currencyAddress": "0x0000000000000000000000000000000000000000",
-        "startTime": "2026-10-06T17:45:00Z",
-        "endTime": "2026-10-31T17:45:00Z",
+        "startTime": "2026-10-06T18:45:00Z",
+        "endTime": "2026-10-31T18:45:00Z",
         "maxPerWallet": "5"
       },
       "opensea": {
@@ -156,8 +156,8 @@
           "priceWei": "3900000000000000",
           "currencyAddress": "0x0000000000000000000000000000000000000000",
           "maxPerWallet": "5",
-          "startTime": "2026-10-06T17:45:00Z",
-          "endTime": "2026-10-31T17:45:00Z"
+          "startTime": "2026-10-06T18:45:00Z",
+          "endTime": "2026-10-31T18:45:00Z"
         },
         "royalty": [
           {
@@ -208,11 +208,11 @@
           "category": "pfps"
         },
         "stats": {
-          "floorPrice": 0.004718,
-          "volume": 2.473837412367935,
-          "sales": 1308,
+          "floorPrice": 0.0044879,
+          "volume": 2.829573412367922,
+          "sales": 1398,
           "averagePrice": null,
-          "numOwners": 135,
+          "numOwners": 154,
           "marketCap": null
         },
         "errors": []
@@ -511,13 +511,13 @@
         ]
       },
       "momentum": {
-        "hasPrevious": false,
+        "hasPrevious": true,
         "scoreDelta": 0,
-        "floorDelta": 0,
-        "volumeDelta": 0,
-        "salesDelta": 0,
-        "ownersDelta": 0,
-        "classification": "NEW"
+        "floorDelta": -0.00023009999999999958,
+        "volumeDelta": 0.35573599999998695,
+        "salesDelta": 90,
+        "ownersDelta": 19,
+        "classification": "BREAKOUT"
       },
       "executionApproval": {
         "approved": false,
@@ -930,13 +930,13 @@
         ]
       },
       "momentum": {
-        "hasPrevious": false,
+        "hasPrevious": true,
         "scoreDelta": 0,
         "floorDelta": 0,
         "volumeDelta": 0,
         "salesDelta": 0,
         "ownersDelta": 0,
-        "classification": "NEW"
+        "classification": "STABLE"
       },
       "executionApproval": {
         "approved": false,
