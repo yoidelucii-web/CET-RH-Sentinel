@@ -3358,5 +3358,33 @@
     "sales": 0,
     "owners": 0,
     "momentum": "STABLE"
+  },
+  {
+    "timestamp": "2026-10-14T11:28:09.305Z",
+    "collectionKey": "0xd3d7d974286f2f533007e5664de74c57e427eff8",
+    "name": "The New Gen Society",
+    "slug": "new-gen-society",
+    "contract": "0xd3d7d974286f2f533007e5664de74c57e427eff8",
+    "score": 41,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0.08190000000000003,
+    "sales": 88,
+    "owners": 25,
+    "momentum": "NEW"
+  },
+  {
+    "timestamp": "2026-10-14T11:28:09.900Z",
+    "collectionKey": "0x947c1501fdeb97d2aa0642c14afbd8a99427d227",
+    "name": "Minds Dot Games",
+    "slug": "mindsdotgames",
+    "contract": "0x947c1501fdeb97d2aa0642c14afbd8a99427d227",
+    "score": 36,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 1130,
+    "owners": 2,
+    "momentum": "NEW"
   }
 ]
