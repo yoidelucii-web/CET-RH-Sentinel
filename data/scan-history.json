@@ -3386,5 +3386,19 @@
     "sales": 1130,
     "owners": 2,
     "momentum": "NEW"
+  },
+  {
+    "timestamp": "2026-10-15T11:04:46.527Z",
+    "collectionKey": "0xd3d7d974286f2f533007e5664de74c57e427eff8",
+    "name": "The New Gen Society",
+    "slug": "new-gen-society",
+    "contract": "0xd3d7d974286f2f533007e5664de74c57e427eff8",
+    "score": 38,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "WEAKENING"
   }
 ]
