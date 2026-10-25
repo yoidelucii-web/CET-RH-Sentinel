@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-10-15T11:04:46.529Z",
+  "scanTime": "2026-10-25T20:35:33.192Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,33 +16,33 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-10-15T11:04:46.529Z",
+    "scanTime": "2026-10-25T20:35:33.192Z",
     "network": "robinhood",
     "totalDrops": 1,
-    "executionEligible": 1,
-    "watchOnly": 0,
+    "executionEligible": 0,
+    "watchOnly": 1,
     "reject": 0,
     "autoMintEligible": 0,
     "alphaCandidates": 0,
     "watchlist": 0,
     "ignore": 1,
-    "averageScore": 38,
+    "averageScore": 34,
     "topCandidate": {
-      "name": "The New Gen Society",
-      "slug": "new-gen-society",
-      "score": 38,
+      "name": "Digital humans",
+      "slug": "digitalhumans",
+      "score": 34,
       "classification": "IGNORE",
-      "executionStatus": "EXECUTION_ELIGIBLE"
+      "executionStatus": "WATCH_ONLY"
     },
     "topFive": [
       {
         "rank": 1,
         "tier": "D",
-        "name": "The New Gen Society",
-        "score": 38,
+        "name": "Digital humans",
+        "score": 34,
         "classification": "IGNORE",
-        "stage": "PUBLIC",
-        "executionStatus": "EXECUTION_ELIGIBLE"
+        "stage": "PRESALE",
+        "executionStatus": "WATCH_ONLY"
       }
     ],
     "scoreDistribution": {
@@ -52,7 +52,7 @@
       "cTier": 0,
       "dTier": 1
     },
-    "averageRisk": 13,
+    "averageRisk": 17,
     "autoMintApproved": 0,
     "autoMintBlocked": 1,
     "breakoutCandidates": 0,
@@ -61,34 +61,34 @@
   "candidates": [
     {
       "identity": {
-        "name": "The New Gen Society",
-        "slug": "new-gen-society",
-        "contract": "0xd3d7d974286f2f533007e5664de74c57e427eff8",
+        "name": "Digital humans",
+        "slug": "digitalhumans",
+        "contract": "0xd6889961584a42dc5d8196bd82a4c6d0f2b684c5",
         "chain": "robinhood"
       },
       "mint": {
-        "type": "public_sale",
-        "label": "Public Stage",
-        "priceWei": "2100000000000000",
+        "type": "signed_presale",
+        "label": "VALT",
+        "priceWei": "0",
         "currencyAddress": "0x0000000000000000000000000000000000000000",
-        "startTime": "2026-10-14T02:00:00Z",
-        "endTime": "2026-10-19T02:00:00Z",
-        "maxPerWallet": "4"
+        "startTime": "2026-10-27T16:00:00Z",
+        "endTime": "2026-10-27T17:00:00Z",
+        "maxPerWallet": "300"
       },
       "opensea": {
-        "url": "https://opensea.io/collection/new-gen-society"
+        "url": "https://opensea.io/collection/digitalhumans"
       },
       "status": {
-        "isMinting": true,
-        "activeStage": "public_sale",
-        "nextStage": null
+        "isMinting": false,
+        "activeStage": null,
+        "nextStage": "signed_presale"
       },
       "hardGates": {
         "passed": true,
         "reasons": []
       },
-      "stageClassification": "PUBLIC",
-      "executionStatus": "EXECUTION_ELIGIBLE",
+      "stageClassification": "PRESALE",
+      "executionStatus": "WATCH_ONLY",
       "creatorIntel": {
         "status": "ERROR",
         "address": null,
@@ -142,13 +142,13 @@
           "remaining": null
         },
         "mint": {
-          "type": "public_sale",
-          "label": "Public Stage",
-          "priceWei": "2100000000000000",
+          "type": "signed_presale",
+          "label": "VALT",
+          "priceWei": "0",
           "currencyAddress": "0x0000000000000000000000000000000000000000",
-          "maxPerWallet": "4",
-          "startTime": "2026-10-14T02:00:00Z",
-          "endTime": "2026-10-19T02:00:00Z"
+          "maxPerWallet": "300",
+          "startTime": "2026-10-27T16:00:00Z",
+          "endTime": "2026-10-27T17:00:00Z"
         },
         "royalty": [
           {
@@ -157,50 +157,69 @@
             "required": true
           },
           {
-            "fee": 8.5,
-            "recipient": "0xbd77dd0f2099f711c835accb54409b545a2bec98",
+            "fee": 5,
+            "recipient": "0xe3c8d0277c38eba89a9762617c2f67c549d7c608",
             "required": true
           }
         ],
         "contract": {
-          "address": "0xd3d7d974286f2f533007e5664de74c57e427eff8",
+          "address": "0xd6889961584a42dc5d8196bd82a4c6d0f2b684c5",
           "chain": "robinhood",
-          "standard": "erc721"
+          "standard": null
         },
         "collection": {
-          "name": "The New Gen Society",
-          "slug": "new-gen-society",
+          "name": "Digital humans",
+          "slug": "digitalhumans",
           "category": "",
-          "description": "A generation of Misfits"
+          "description": "Main character in the \"Shadow\" universe.\nEquip and send Digital humans on a journey into the dungeon, build and defend, capture mines with tokens."
         },
         "signals": [
-          "ROYALTY_DATA_PRESENT",
-          "CONTRACT_STANDARD_PRESENT"
+          "ROYALTY_DATA_PRESENT"
         ],
         "errors": [
           {
             "source": "drop",
-            "message": "OpenSea API error: 401 Unauthorized (/drops/new-gen-society)"
+            "message": "OpenSea API error: 401 Unauthorized (/drops/digitalhumans)"
+          },
+          {
+            "source": "contract",
+            "message": "OpenSea API error: 401 Unauthorized (/chain/robinhood/contract/0xd6889961584a42dc5d8196bd82a4c6d0f2b684c5)"
           }
         ]
       },
       "marketIntel": {
-        "status": "ERROR",
-        "verified": false,
-        "stats": null,
-        "errors": [
-          "OpenSea market API error: 401 Unauthorized"
-        ]
+        "status": "FOUND",
+        "verified": true,
+        "collection": {
+          "name": "Digital humans",
+          "slug": "digitalhumans",
+          "owner": "0xe3c8d0277c38eba89a9762617c2f67c549d7c608",
+          "category": ""
+        },
+        "stats": {
+          "floorPrice": 0,
+          "volume": 0,
+          "sales": 0,
+          "averagePrice": null,
+          "numOwners": 0,
+          "marketCap": null
+        },
+        "errors": []
       },
       "riskIntel": {
         "level": "MEDIUM",
-        "score": 13,
+        "score": 17,
         "maxRisk": 40,
         "penalties": [
           {
-            "factor": "HIGH_ROYALTY",
-            "points": 7,
-            "reason": "Total configured royalty is 9.5%."
+            "factor": "VERY_HIGH_MINT_LIMIT",
+            "points": 5,
+            "reason": "Maximum mint per wallet is 100 or greater."
+          },
+          {
+            "factor": "ELEVATED_ROYALTY",
+            "points": 3,
+            "reason": "Total configured royalty is 6%."
           },
           {
             "factor": "LOW_CREATOR_CONFIDENCE",
@@ -211,35 +230,42 @@
             "factor": "NO_PUBLIC_CREATOR_IDENTITY",
             "points": 1,
             "reason": "No OpenSea username or ENS identity was found."
+          },
+          {
+            "factor": "UNKNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "OpenSea did not provide a recognized contract standard."
           }
         ],
         "flags": [
-          "HIGH_ROYALTY",
+          "VERY_HIGH_MINT_LIMIT",
+          "ELEVATED_ROYALTY",
           "LOW_CREATOR_CONFIDENCE",
           "NO_PUBLIC_CREATOR_IDENTITY",
-          "NO_PORTFOLIO_HISTORY"
+          "NO_PORTFOLIO_HISTORY",
+          "UNKNOWN_CONTRACT_STANDARD"
         ],
         "context": {
           "maxSupply": 0,
-          "maxPerWallet": 4,
-          "royaltyPercentage": 9.5,
+          "maxPerWallet": 300,
+          "royaltyPercentage": 6,
           "creatorConfidence": "LOW",
           "creatorUsername": null,
           "creatorEns": null,
           "ownedCollections": 0,
           "ownedItems": 0,
-          "contractStandard": "erc721"
+          "contractStandard": null
         }
       },
       "alphaIntel": {
-        "score": 2,
+        "score": 1,
         "maxScore": 10,
         "classification": "LOW_ALPHA",
         "signals": [
           {
-            "signal": "PUBLIC_STAGE_READY",
-            "points": 2,
-            "reason": "Collection has an upcoming public mint stage."
+            "signal": "SIGNED_PRESALE_STAGE",
+            "points": 1,
+            "reason": "Collection is currently in signed presale."
           }
         ]
       },
@@ -250,14 +276,14 @@
         "signals": []
       },
       "socialIntel": {
-        "score": 3,
+        "score": 4,
         "maxScore": 10,
         "classification": "LOW_SOCIAL",
         "signals": [
           {
-            "signal": "PROJECT_DESCRIPTION",
-            "points": 1,
-            "reason": "Project has a collection description."
+            "signal": "LONG_PROJECT_DESCRIPTION",
+            "points": 2,
+            "reason": "Project has a detailed collection description."
           },
           {
             "signal": "OPENSEA_COLLECTION_PAGE",
@@ -267,7 +293,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 38,
+        "score": 34,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -287,11 +313,6 @@
             "reason": "Project description is available."
           },
           {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
-          },
-          {
             "factor": "OPENSEA_COLLECTION",
             "points": 2,
             "reason": "OpenSea collection page exists."
@@ -302,9 +323,9 @@
             "reason": "Collection name is available."
           },
           {
-            "factor": "PUBLIC_MINT",
-            "points": 5,
-            "reason": "Public mint stage detected."
+            "factor": "SIGNED_PRESALE",
+            "points": 4,
+            "reason": "Signed presale stage detected."
           },
           {
             "factor": "MINT_PRICE_KNOWN",
@@ -337,9 +358,14 @@
             "reason": "Mint timing is known."
           },
           {
-            "factor": "EXECUTION_WINDOW",
-            "points": 4,
-            "reason": "Candidate currently satisfies execution timing requirements."
+            "factor": "PRE_MINT_OPPORTUNITY",
+            "points": 3,
+            "reason": "Upcoming mint opportunity detected."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
           },
           {
             "factor": "CONTROLLED_RISK",
@@ -349,7 +375,7 @@
         ]
       },
       "goldenEgg": {
-        "score": 38,
+        "score": 34,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -369,11 +395,6 @@
             "reason": "Project description is available."
           },
           {
-            "factor": "KNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "ERC721 contract standard identified."
-          },
-          {
             "factor": "OPENSEA_COLLECTION",
             "points": 2,
             "reason": "OpenSea collection page exists."
@@ -384,9 +405,9 @@
             "reason": "Collection name is available."
           },
           {
-            "factor": "PUBLIC_MINT",
-            "points": 5,
-            "reason": "Public mint stage detected."
+            "factor": "SIGNED_PRESALE",
+            "points": 4,
+            "reason": "Signed presale stage detected."
           },
           {
             "factor": "MINT_PRICE_KNOWN",
@@ -419,9 +440,14 @@
             "reason": "Mint timing is known."
           },
           {
-            "factor": "EXECUTION_WINDOW",
-            "points": 4,
-            "reason": "Candidate currently satisfies execution timing requirements."
+            "factor": "PRE_MINT_OPPORTUNITY",
+            "points": 3,
+            "reason": "Upcoming mint opportunity detected."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
           },
           {
             "factor": "CONTROLLED_RISK",
@@ -431,13 +457,13 @@
         ]
       },
       "momentum": {
-        "hasPrevious": true,
-        "scoreDelta": -3,
+        "hasPrevious": false,
+        "scoreDelta": 0,
         "floorDelta": 0,
-        "volumeDelta": -0.08190000000000003,
-        "salesDelta": -88,
-        "ownersDelta": -25,
-        "classification": "WEAKENING"
+        "volumeDelta": 0,
+        "salesDelta": 0,
+        "ownersDelta": 0,
+        "classification": "NEW"
       },
       "executionApproval": {
         "approved": false,
@@ -446,14 +472,14 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 38,
-        "risk": 13,
+        "score": 34,
+        "risk": 17,
         "classification": "IGNORE",
         "reasons": [
-          "Hard gates passed.",
-          "Mint stage is technically executable."
+          "Hard gates passed."
         ],
         "blockers": [
+          "NOT_TECHNICALLY_EXECUTABLE",
           "SCORE_BELOW_AUTO_MINT_THRESHOLD",
           "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE",
           "RISK_ABOVE_AUTO_MINT_LIMIT"

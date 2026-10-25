@@ -3400,5 +3400,19 @@
     "sales": 0,
     "owners": 0,
     "momentum": "WEAKENING"
+  },
+  {
+    "timestamp": "2026-10-25T20:35:33.190Z",
+    "collectionKey": "0xd6889961584a42dc5d8196bd82a4c6d0f2b684c5",
+    "name": "Digital humans",
+    "slug": "digitalhumans",
+    "contract": "0xd6889961584a42dc5d8196bd82a4c6d0f2b684c5",
+    "score": 34,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0,
+    "sales": 0,
+    "owners": 0,
+    "momentum": "NEW"
   }
 ]
