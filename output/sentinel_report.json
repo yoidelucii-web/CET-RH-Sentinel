@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-10-25T20:35:33.192Z",
+  "scanTime": "2026-10-26T05:47:30.562Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,7 +16,7 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-10-25T20:35:33.192Z",
+    "scanTime": "2026-10-26T05:47:30.562Z",
     "network": "robinhood",
     "totalDrops": 1,
     "executionEligible": 0,
@@ -26,11 +26,11 @@
     "alphaCandidates": 0,
     "watchlist": 0,
     "ignore": 1,
-    "averageScore": 34,
+    "averageScore": 37,
     "topCandidate": {
       "name": "Digital humans",
       "slug": "digitalhumans",
-      "score": 34,
+      "score": 37,
       "classification": "IGNORE",
       "executionStatus": "WATCH_ONLY"
     },
@@ -39,7 +39,7 @@
         "rank": 1,
         "tier": "D",
         "name": "Digital humans",
-        "score": 34,
+        "score": 37,
         "classification": "IGNORE",
         "stage": "PRESALE",
         "executionStatus": "WATCH_ONLY"
@@ -52,7 +52,7 @@
       "cTier": 0,
       "dTier": 1
     },
-    "averageRisk": 17,
+    "averageRisk": 14,
     "autoMintApproved": 0,
     "autoMintBlocked": 1,
     "breakoutCandidates": 0,
@@ -165,7 +165,7 @@
         "contract": {
           "address": "0xd6889961584a42dc5d8196bd82a4c6d0f2b684c5",
           "chain": "robinhood",
-          "standard": null
+          "standard": "erc721"
         },
         "collection": {
           "name": "Digital humans",
@@ -174,16 +174,13 @@
           "description": "Main character in the \"Shadow\" universe.\nEquip and send Digital humans on a journey into the dungeon, build and defend, capture mines with tokens."
         },
         "signals": [
-          "ROYALTY_DATA_PRESENT"
+          "ROYALTY_DATA_PRESENT",
+          "CONTRACT_STANDARD_PRESENT"
         ],
         "errors": [
           {
             "source": "drop",
             "message": "OpenSea API error: 401 Unauthorized (/drops/digitalhumans)"
-          },
-          {
-            "source": "contract",
-            "message": "OpenSea API error: 401 Unauthorized (/chain/robinhood/contract/0xd6889961584a42dc5d8196bd82a4c6d0f2b684c5)"
           }
         ]
       },
@@ -208,7 +205,7 @@
       },
       "riskIntel": {
         "level": "MEDIUM",
-        "score": 17,
+        "score": 14,
         "maxRisk": 40,
         "penalties": [
           {
@@ -230,11 +227,6 @@
             "factor": "NO_PUBLIC_CREATOR_IDENTITY",
             "points": 1,
             "reason": "No OpenSea username or ENS identity was found."
-          },
-          {
-            "factor": "UNKNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "OpenSea did not provide a recognized contract standard."
           }
         ],
         "flags": [
@@ -242,8 +234,7 @@
           "ELEVATED_ROYALTY",
           "LOW_CREATOR_CONFIDENCE",
           "NO_PUBLIC_CREATOR_IDENTITY",
-          "NO_PORTFOLIO_HISTORY",
-          "UNKNOWN_CONTRACT_STANDARD"
+          "NO_PORTFOLIO_HISTORY"
         ],
         "context": {
           "maxSupply": 0,
@@ -254,7 +245,7 @@
           "creatorEns": null,
           "ownedCollections": 0,
           "ownedItems": 0,
-          "contractStandard": null
+          "contractStandard": "erc721"
         }
       },
       "alphaIntel": {
@@ -293,7 +284,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 34,
+        "score": 37,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -311,6 +302,11 @@
             "factor": "PROJECT_DESCRIPTION",
             "points": 3,
             "reason": "Project description is available."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -375,7 +371,7 @@
         ]
       },
       "goldenEgg": {
-        "score": 34,
+        "score": 37,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -393,6 +389,11 @@
             "factor": "PROJECT_DESCRIPTION",
             "points": 3,
             "reason": "Project description is available."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
           },
           {
             "factor": "OPENSEA_COLLECTION",
@@ -457,13 +458,13 @@
         ]
       },
       "momentum": {
-        "hasPrevious": false,
-        "scoreDelta": 0,
+        "hasPrevious": true,
+        "scoreDelta": 3,
         "floorDelta": 0,
         "volumeDelta": 0,
         "salesDelta": 0,
         "ownersDelta": 0,
-        "classification": "NEW"
+        "classification": "STABLE"
       },
       "executionApproval": {
         "approved": false,
@@ -472,8 +473,8 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 34,
-        "risk": 17,
+        "score": 37,
+        "risk": 14,
         "classification": "IGNORE",
         "reasons": [
           "Hard gates passed."
