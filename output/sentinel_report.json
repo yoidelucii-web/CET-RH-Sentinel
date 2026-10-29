@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-10-26T12:31:25.874Z",
+  "scanTime": "2026-10-29T12:33:24.160Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,33 +16,33 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-10-26T12:31:25.874Z",
+    "scanTime": "2026-10-29T12:33:24.160Z",
     "network": "robinhood",
     "totalDrops": 1,
-    "executionEligible": 0,
-    "watchOnly": 1,
+    "executionEligible": 1,
+    "watchOnly": 0,
     "reject": 0,
     "autoMintEligible": 0,
     "alphaCandidates": 0,
     "watchlist": 0,
     "ignore": 1,
-    "averageScore": 34,
+    "averageScore": 44,
     "topCandidate": {
-      "name": "Digital humans",
-      "slug": "digitalhumans",
-      "score": 34,
+      "name": "Vangrid Agents",
+      "slug": "vangrid-agents",
+      "score": 44,
       "classification": "IGNORE",
-      "executionStatus": "WATCH_ONLY"
+      "executionStatus": "EXECUTION_ELIGIBLE"
     },
     "topFive": [
       {
         "rank": 1,
         "tier": "D",
-        "name": "Digital humans",
-        "score": 34,
+        "name": "Vangrid Agents",
+        "score": 44,
         "classification": "IGNORE",
-        "stage": "PRESALE",
-        "executionStatus": "WATCH_ONLY"
+        "stage": "PUBLIC",
+        "executionStatus": "EXECUTION_ELIGIBLE"
       }
     ],
     "scoreDistribution": {
@@ -52,7 +52,7 @@
       "cTier": 0,
       "dTier": 1
     },
-    "averageRisk": 17,
+    "averageRisk": 6,
     "autoMintApproved": 0,
     "autoMintBlocked": 1,
     "breakoutCandidates": 0,
@@ -61,34 +61,34 @@
   "candidates": [
     {
       "identity": {
-        "name": "Digital humans",
-        "slug": "digitalhumans",
-        "contract": "0xd6889961584a42dc5d8196bd82a4c6d0f2b684c5",
+        "name": "Vangrid Agents",
+        "slug": "vangrid-agents",
+        "contract": "0x3accce7e1fc70ab5af10c10a8870c62344d5eef5",
         "chain": "robinhood"
       },
       "mint": {
-        "type": "signed_presale",
-        "label": "VALT",
-        "priceWei": "0",
+        "type": "public_sale",
+        "label": "Public stage",
+        "priceWei": "400000000000000",
         "currencyAddress": "0x0000000000000000000000000000000000000000",
-        "startTime": "2026-10-27T16:00:00Z",
-        "endTime": "2026-10-27T17:00:00Z",
-        "maxPerWallet": "300"
+        "startTime": "2026-10-30T13:00:00Z",
+        "endTime": "2026-11-06T13:00:00Z",
+        "maxPerWallet": "5"
       },
       "opensea": {
-        "url": "https://opensea.io/collection/digitalhumans"
+        "url": "https://opensea.io/collection/vangrid-agents"
       },
       "status": {
         "isMinting": false,
         "activeStage": null,
-        "nextStage": "signed_presale"
+        "nextStage": "public_sale"
       },
       "hardGates": {
         "passed": true,
         "reasons": []
       },
-      "stageClassification": "PRESALE",
-      "executionStatus": "WATCH_ONLY",
+      "stageClassification": "PUBLIC",
+      "executionStatus": "EXECUTION_ELIGIBLE",
       "creatorIntel": {
         "status": "ERROR",
         "address": null,
@@ -142,85 +142,56 @@
           "remaining": null
         },
         "mint": {
-          "type": "signed_presale",
-          "label": "VALT",
-          "priceWei": "0",
+          "type": "public_sale",
+          "label": "Public stage",
+          "priceWei": "400000000000000",
           "currencyAddress": "0x0000000000000000000000000000000000000000",
-          "maxPerWallet": "300",
-          "startTime": "2026-10-27T16:00:00Z",
-          "endTime": "2026-10-27T17:00:00Z"
+          "maxPerWallet": "5",
+          "startTime": "2026-10-30T13:00:00Z",
+          "endTime": "2026-11-06T13:00:00Z"
         },
         "royalty": [
           {
             "fee": 1,
             "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
             "required": true
-          },
-          {
-            "fee": 5,
-            "recipient": "0xe3c8d0277c38eba89a9762617c2f67c549d7c608",
-            "required": true
           }
         ],
         "contract": {
-          "address": "0xd6889961584a42dc5d8196bd82a4c6d0f2b684c5",
+          "address": "0x3accce7e1fc70ab5af10c10a8870c62344d5eef5",
           "chain": "robinhood",
-          "standard": null
+          "standard": "erc721"
         },
         "collection": {
-          "name": "Digital humans",
-          "slug": "digitalhumans",
-          "category": "",
-          "description": "Main character in the \"Shadow\" universe.\nEquip and send Digital humans on a journey into the dungeon, build and defend, capture mines with tokens."
+          "name": "Vangrid Agents",
+          "slug": "vangrid-agents",
+          "category": "agents",
+          "description": "Vangrid Agents | Your identity in the Physical AI era\n\nVangrid Agents is a generative, soul-bound collection of identities for the people building the world's largest map for Physical AI."
         },
         "signals": [
-          "ROYALTY_DATA_PRESENT"
+          "ROYALTY_DATA_PRESENT",
+          "CONTRACT_STANDARD_PRESENT"
         ],
         "errors": [
           {
             "source": "drop",
-            "message": "OpenSea API error: 401 Unauthorized (/drops/digitalhumans)"
-          },
-          {
-            "source": "contract",
-            "message": "OpenSea API error: 401 Unauthorized (/chain/robinhood/contract/0xd6889961584a42dc5d8196bd82a4c6d0f2b684c5)"
+            "message": "OpenSea API error: 401 Unauthorized (/drops/vangrid-agents)"
           }
         ]
       },
       "marketIntel": {
-        "status": "FOUND",
-        "verified": true,
-        "collection": {
-          "name": "Digital humans",
-          "slug": "digitalhumans",
-          "owner": "0xe3c8d0277c38eba89a9762617c2f67c549d7c608",
-          "category": ""
-        },
-        "stats": {
-          "floorPrice": 0,
-          "volume": 0,
-          "sales": 0,
-          "averagePrice": null,
-          "numOwners": 0,
-          "marketCap": null
-        },
-        "errors": []
+        "status": "ERROR",
+        "verified": false,
+        "stats": null,
+        "errors": [
+          "OpenSea market API error: 401 Unauthorized"
+        ]
       },
       "riskIntel": {
-        "level": "MEDIUM",
-        "score": 17,
+        "level": "LOW",
+        "score": 6,
         "maxRisk": 40,
         "penalties": [
-          {
-            "factor": "VERY_HIGH_MINT_LIMIT",
-            "points": 5,
-            "reason": "Maximum mint per wallet is 100 or greater."
-          },
-          {
-            "factor": "ELEVATED_ROYALTY",
-            "points": 3,
-            "reason": "Total configured royalty is 6%."
-          },
           {
             "factor": "LOW_CREATOR_CONFIDENCE",
             "points": 5,
@@ -230,42 +201,34 @@
             "factor": "NO_PUBLIC_CREATOR_IDENTITY",
             "points": 1,
             "reason": "No OpenSea username or ENS identity was found."
-          },
-          {
-            "factor": "UNKNOWN_CONTRACT_STANDARD",
-            "points": 3,
-            "reason": "OpenSea did not provide a recognized contract standard."
           }
         ],
         "flags": [
-          "VERY_HIGH_MINT_LIMIT",
-          "ELEVATED_ROYALTY",
           "LOW_CREATOR_CONFIDENCE",
           "NO_PUBLIC_CREATOR_IDENTITY",
-          "NO_PORTFOLIO_HISTORY",
-          "UNKNOWN_CONTRACT_STANDARD"
+          "NO_PORTFOLIO_HISTORY"
         ],
         "context": {
           "maxSupply": 0,
-          "maxPerWallet": 300,
-          "royaltyPercentage": 6,
+          "maxPerWallet": 5,
+          "royaltyPercentage": 1,
           "creatorConfidence": "LOW",
           "creatorUsername": null,
           "creatorEns": null,
           "ownedCollections": 0,
           "ownedItems": 0,
-          "contractStandard": null
+          "contractStandard": "erc721"
         }
       },
       "alphaIntel": {
-        "score": 1,
+        "score": 2,
         "maxScore": 10,
         "classification": "LOW_ALPHA",
         "signals": [
           {
-            "signal": "SIGNED_PRESALE_STAGE",
-            "points": 1,
-            "reason": "Collection is currently in signed presale."
+            "signal": "PUBLIC_STAGE_READY",
+            "points": 2,
+            "reason": "Collection has an upcoming public mint stage."
           }
         ]
       },
@@ -293,7 +256,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 34,
+        "score": 44,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -313,6 +276,16 @@
             "reason": "Project description is available."
           },
           {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
             "factor": "OPENSEA_COLLECTION",
             "points": 2,
             "reason": "OpenSea collection page exists."
@@ -323,9 +296,9 @@
             "reason": "Collection name is available."
           },
           {
-            "factor": "SIGNED_PRESALE",
-            "points": 4,
-            "reason": "Signed presale stage detected."
+            "factor": "PUBLIC_MINT",
+            "points": 5,
+            "reason": "Public mint stage detected."
           },
           {
             "factor": "MINT_PRICE_KNOWN",
@@ -363,19 +336,19 @@
             "reason": "Upcoming mint opportunity detected."
           },
           {
-            "factor": "MARKET_VERIFIED",
-            "points": 1,
-            "reason": "OpenSea market data is verified."
+            "factor": "EXECUTION_WINDOW",
+            "points": 4,
+            "reason": "Candidate currently satisfies execution timing requirements."
           },
           {
-            "factor": "CONTROLLED_RISK",
-            "points": 1,
-            "reason": "Risk score is 20/40 or lower."
+            "factor": "LOW_RISK",
+            "points": 2,
+            "reason": "Risk score is 10/40 or lower."
           }
         ]
       },
       "goldenEgg": {
-        "score": 34,
+        "score": 44,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -395,6 +368,16 @@
             "reason": "Project description is available."
           },
           {
+            "factor": "PROJECT_CATEGORY",
+            "points": 2,
+            "reason": "Project category is identified."
+          },
+          {
+            "factor": "KNOWN_CONTRACT_STANDARD",
+            "points": 3,
+            "reason": "ERC721 contract standard identified."
+          },
+          {
             "factor": "OPENSEA_COLLECTION",
             "points": 2,
             "reason": "OpenSea collection page exists."
@@ -405,9 +388,9 @@
             "reason": "Collection name is available."
           },
           {
-            "factor": "SIGNED_PRESALE",
-            "points": 4,
-            "reason": "Signed presale stage detected."
+            "factor": "PUBLIC_MINT",
+            "points": 5,
+            "reason": "Public mint stage detected."
           },
           {
             "factor": "MINT_PRICE_KNOWN",
@@ -445,25 +428,25 @@
             "reason": "Upcoming mint opportunity detected."
           },
           {
-            "factor": "MARKET_VERIFIED",
-            "points": 1,
-            "reason": "OpenSea market data is verified."
+            "factor": "EXECUTION_WINDOW",
+            "points": 4,
+            "reason": "Candidate currently satisfies execution timing requirements."
           },
           {
-            "factor": "CONTROLLED_RISK",
-            "points": 1,
-            "reason": "Risk score is 20/40 or lower."
+            "factor": "LOW_RISK",
+            "points": 2,
+            "reason": "Risk score is 10/40 or lower."
           }
         ]
       },
       "momentum": {
-        "hasPrevious": true,
-        "scoreDelta": -3,
+        "hasPrevious": false,
+        "scoreDelta": 0,
         "floorDelta": 0,
         "volumeDelta": 0,
         "salesDelta": 0,
         "ownersDelta": 0,
-        "classification": "STABLE"
+        "classification": "NEW"
       },
       "executionApproval": {
         "approved": false,
@@ -472,17 +455,17 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 34,
-        "risk": 17,
+        "score": 44,
+        "risk": 6,
         "classification": "IGNORE",
         "reasons": [
-          "Hard gates passed."
+          "Hard gates passed.",
+          "Mint stage is technically executable.",
+          "Risk score 6/40 is within auto-mint limit."
         ],
         "blockers": [
-          "NOT_TECHNICALLY_EXECUTABLE",
           "SCORE_BELOW_AUTO_MINT_THRESHOLD",
-          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE",
-          "RISK_ABOVE_AUTO_MINT_LIMIT"
+          "CLASSIFICATION_NOT_AUTO_MINT_ELIGIBLE"
         ]
       },
       "rank": 1,
