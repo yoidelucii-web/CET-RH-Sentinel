@@ -3456,5 +3456,19 @@
     "sales": 0,
     "owners": 0,
     "momentum": "NEW"
+  },
+  {
+    "timestamp": "2026-10-31T11:54:26.708Z",
+    "collectionKey": "0x3accce7e1fc70ab5af10c10a8870c62344d5eef5",
+    "name": "Vangrid Agents",
+    "slug": "vangrid-agents",
+    "contract": "0x3accce7e1fc70ab5af10c10a8870c62344d5eef5",
+    "score": 46,
+    "classification": "IGNORE",
+    "floor": 0,
+    "volume": 0.7947999999999753,
+    "sales": 1987,
+    "owners": 823,
+    "momentum": "BREAKOUT"
   }
 ]

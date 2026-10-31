@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-10-29T12:33:24.160Z",
+  "scanTime": "2026-10-31T11:54:26.710Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,7 +16,7 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-10-29T12:33:24.160Z",
+    "scanTime": "2026-10-31T11:54:26.710Z",
     "network": "robinhood",
     "totalDrops": 1,
     "executionEligible": 1,
@@ -26,11 +26,11 @@
     "alphaCandidates": 0,
     "watchlist": 0,
     "ignore": 1,
-    "averageScore": 44,
+    "averageScore": 46,
     "topCandidate": {
       "name": "Vangrid Agents",
       "slug": "vangrid-agents",
-      "score": 44,
+      "score": 46,
       "classification": "IGNORE",
       "executionStatus": "EXECUTION_ELIGIBLE"
     },
@@ -39,7 +39,7 @@
         "rank": 1,
         "tier": "D",
         "name": "Vangrid Agents",
-        "score": 44,
+        "score": 46,
         "classification": "IGNORE",
         "stage": "PUBLIC",
         "executionStatus": "EXECUTION_ELIGIBLE"
@@ -55,7 +55,7 @@
     "averageRisk": 6,
     "autoMintApproved": 0,
     "autoMintBlocked": 1,
-    "breakoutCandidates": 0,
+    "breakoutCandidates": 1,
     "risingCandidates": 0
   },
   "candidates": [
@@ -79,9 +79,9 @@
         "url": "https://opensea.io/collection/vangrid-agents"
       },
       "status": {
-        "isMinting": false,
-        "activeStage": null,
-        "nextStage": "public_sale"
+        "isMinting": true,
+        "activeStage": "public_sale",
+        "nextStage": null
       },
       "hardGates": {
         "passed": true,
@@ -126,7 +126,8 @@
           "collections": []
         },
         "flags": [
-          "CONTRACT_OWNER"
+          "CONTRACT_OWNER",
+          "OPENSEA_USERNAME"
         ],
         "score": 0,
         "maxScore": 25,
@@ -180,12 +181,23 @@
         ]
       },
       "marketIntel": {
-        "status": "ERROR",
-        "verified": false,
-        "stats": null,
-        "errors": [
-          "OpenSea market API error: 401 Unauthorized"
-        ]
+        "status": "FOUND",
+        "verified": true,
+        "collection": {
+          "name": "Vangrid Agents",
+          "slug": "vangrid-agents",
+          "owner": "0x8bc9fcb8af2e6b72b9d886c1e38bb398f6f31a3a",
+          "category": "agents"
+        },
+        "stats": {
+          "floorPrice": 0,
+          "volume": 0.7947999999999753,
+          "sales": 1987,
+          "averagePrice": null,
+          "numOwners": 823,
+          "marketCap": null
+        },
+        "errors": []
       },
       "riskIntel": {
         "level": "LOW",
@@ -221,7 +233,7 @@
         }
       },
       "alphaIntel": {
-        "score": 2,
+        "score": 3,
         "maxScore": 10,
         "classification": "LOW_ALPHA",
         "signals": [
@@ -229,6 +241,11 @@
             "signal": "PUBLIC_STAGE_READY",
             "points": 2,
             "reason": "Collection has an upcoming public mint stage."
+          },
+          {
+            "signal": "SECONDARY_MARKET_EXISTS",
+            "points": 1,
+            "reason": "Historical secondary market activity detected."
           }
         ]
       },
@@ -256,7 +273,7 @@
         ]
       },
       "goldenEggScore": {
-        "score": 44,
+        "score": 46,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -331,14 +348,24 @@
             "reason": "Mint timing is known."
           },
           {
-            "factor": "PRE_MINT_OPPORTUNITY",
-            "points": 3,
-            "reason": "Upcoming mint opportunity detected."
-          },
-          {
             "factor": "EXECUTION_WINDOW",
             "points": 4,
             "reason": "Candidate currently satisfies execution timing requirements."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "STRONG_SALES_ACTIVITY",
+            "points": 2,
+            "reason": "Historical sales activity is significant."
+          },
+          {
+            "factor": "OWNER_DISTRIBUTION",
+            "points": 2,
+            "reason": "Collection has meaningful owner distribution."
           },
           {
             "factor": "LOW_RISK",
@@ -348,7 +375,7 @@
         ]
       },
       "goldenEgg": {
-        "score": 44,
+        "score": 46,
         "maxScore": 100,
         "classification": "IGNORE",
         "breakdown": [
@@ -423,14 +450,24 @@
             "reason": "Mint timing is known."
           },
           {
-            "factor": "PRE_MINT_OPPORTUNITY",
-            "points": 3,
-            "reason": "Upcoming mint opportunity detected."
-          },
-          {
             "factor": "EXECUTION_WINDOW",
             "points": 4,
             "reason": "Candidate currently satisfies execution timing requirements."
+          },
+          {
+            "factor": "MARKET_VERIFIED",
+            "points": 1,
+            "reason": "OpenSea market data is verified."
+          },
+          {
+            "factor": "STRONG_SALES_ACTIVITY",
+            "points": 2,
+            "reason": "Historical sales activity is significant."
+          },
+          {
+            "factor": "OWNER_DISTRIBUTION",
+            "points": 2,
+            "reason": "Collection has meaningful owner distribution."
           },
           {
             "factor": "LOW_RISK",
@@ -440,13 +477,13 @@
         ]
       },
       "momentum": {
-        "hasPrevious": false,
-        "scoreDelta": 0,
+        "hasPrevious": true,
+        "scoreDelta": 2,
         "floorDelta": 0,
-        "volumeDelta": 0,
-        "salesDelta": 0,
-        "ownersDelta": 0,
-        "classification": "NEW"
+        "volumeDelta": 0.7947999999999753,
+        "salesDelta": 1987,
+        "ownersDelta": 823,
+        "classification": "BREAKOUT"
       },
       "executionApproval": {
         "approved": false,
@@ -455,7 +492,7 @@
           "minScore": 90,
           "maxRisk": 10
         },
-        "score": 44,
+        "score": 46,
         "risk": 6,
         "classification": "IGNORE",
         "reasons": [
