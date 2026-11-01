@@ -2,7 +2,7 @@
   "scanner": "CET RH Sentinel",
   "version": "1.3.0",
   "network": "robinhood",
-  "scanTime": "2026-11-01T07:09:42.816Z",
+  "scanTime": "2026-11-01T12:54:08.150Z",
   "executionPolicy": {
     "autoMintMinScore": 90,
     "autoMintMaxRisk": 10,
@@ -16,7 +16,7 @@
     "breakoutFloorDelta": 0.25
   },
   "summary": {
-    "scanTime": "2026-11-01T07:09:42.816Z",
+    "scanTime": "2026-11-01T12:54:08.150Z",
     "network": "robinhood",
     "totalDrops": 1,
     "executionEligible": 1,
@@ -55,8 +55,8 @@
     "averageRisk": 6,
     "autoMintApproved": 0,
     "autoMintBlocked": 1,
-    "breakoutCandidates": 0,
-    "risingCandidates": 1
+    "breakoutCandidates": 1,
+    "risingCandidates": 0
   },
   "candidates": [
     {
@@ -190,10 +190,10 @@
         },
         "stats": {
           "floorPrice": 0,
-          "volume": 0.9223999999999631,
-          "sales": 2306,
+          "volume": 0.9467999999999605,
+          "sales": 2367,
           "averagePrice": null,
-          "numOwners": 934,
+          "numOwners": 956,
           "marketCap": null
         },
         "errors": []
@@ -479,10 +479,10 @@
         "hasPrevious": true,
         "scoreDelta": 0,
         "floorDelta": 0,
-        "volumeDelta": 0.0019999999999997797,
-        "salesDelta": 5,
-        "ownersDelta": 3,
-        "classification": "RISING"
+        "volumeDelta": 0.024399999999997313,
+        "salesDelta": 61,
+        "ownersDelta": 22,
+        "classification": "BREAKOUT"
       },
       "executionApproval": {
         "approved": false,
